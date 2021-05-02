@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/btn_buyer"
+        android:background="@drawable/bg_login_gadient"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_buyer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/tv_buyer"
+            android:text="@string/buyer"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_xxxlarge"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewCondensedRegular
+            android:padding="@dimen/dimen_1x"
+            android:text="@string/manager_and_track_bought_deals"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_buyer"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_seller"
+        android:background="@drawable/bg_login_gadient"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_seller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/tv_seller"
+            android:text="@string/seller"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_xxxlarge"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewCondensedRegular
+            android:layout_below="@+id/tv_seller"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dimen_1x"
+            android:text="@string/manager_upload_your_items_and_track_your_store"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>

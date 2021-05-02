@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <!--<item-->
+        <!--android:id="@+id/nav_home"-->
+        <!--android:checked="true"-->
+        <!--android:icon="@drawable/ic_home_black"-->
+        <!--android:title="@string/all_deal" />-->
+        <item
+            android:id="@+id/nav_all_deals"
+            android:checked="false"
+            android:icon="@drawable/ic_all_deals"
+            android:title="@string/all_deal" />
+        <item
+            android:id="@+id/nav_buyer"
+            android:icon="@drawable/ic_nav_buyer"
+            android:title="@string/buy_deals" />
+        <item
+            android:id="@+id/nav_seller"
+            android:icon="@drawable/ic_nav_seller"
+            android:title="@string/sell_deals" />
+        <item
+            android:id="@+id/nav_payment"
+            android:checkable="true"
+            android:icon="@drawable/ic_payment"
+            android:title="@string/payment" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/profile" />
+        <!--<item-->
+            <!--android:id="@+id/nav_my_deal"-->
+            <!--android:icon="@drawable/ic_all_deals"-->
+            <!--android:title="@string/my_deals" />-->
+
+
+    </group>
+
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news_and_events"
+            android:checkable="false"
+            android:icon="@drawable/ic_news"
+            android:title="@string/news_and_events" />
+        <item
+            android:id="@+id/nav_share"
+            android:checkable="false"
+            android:icon="@drawable/ic_share"
+            android:title="@string/share" />
+        <item
+            android:id="@+id/nav_faqs"
+            android:checkable="true"
+            android:icon="@drawable/ic_faq"
+            android:title="@string/faq" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/nav_help"
+            android:checkable="true"
+            android:icon="@drawable/ic_help"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:checkable="true"
+            android:icon="@drawable/ic_info"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/nav_log_out"
+            android:checkable="false"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/log_out" />
+    </group>
+</menu>
+    <!--<item-->
+    <!--android:id="@+id/nav_transport_deals"-->
+    <!--android:checkable="false"-->
+    <!--android:icon="@drawable/ic_car"-->
+    <!--android:title="@string/iwanaride" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/nav_delivery"-->
+    <!--android:checkable="false"-->
+    <!--android:icon="@drawable/ic_delivery"-->
+    <!--android:title="@string/iwanadelivery" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/nav_work"-->
+    <!--android:checkable="false"-->
+    <!--android:icon="@drawable/ic_iwanawork"-->
+    <!--android:title="@string/iwanawork" />-->

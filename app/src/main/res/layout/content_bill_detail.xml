@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_1x"
+    android:layout_marginTop="@dimen/dimen_1x"
+    android:layout_marginRight="@dimen/dimen_1x"
+    android:layout_marginBottom="@dimen/dimen_2dp"
+    android:elevation="1dp"
+    android:id="@+id/cardView"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="@dimen/dimen_24dp"
+            android:layout_height="@dimen/dimen_24dp"
+            android:src="@drawable/ic_close_white"
+            android:background="@drawable/bg_cycle_badge"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimen_1x"/>
+        <ImageView
+            android:id="@+id/imgSyn"
+            android:layout_width="@dimen/dimen_24dp"
+            android:layout_height="@dimen/dimen_24dp"
+            android:src="@drawable/ic_sync_white"
+            android:background="@drawable/bg_cycle"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimen_1x"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_1x">
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Name"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="@dimen/text_size_large"-->
+            <!--android:layout_marginLeft="@dimen/dimen_1x"-->
+            <!--android:id="@+id/tvName"/>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dimen_1x">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/id_order"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:textSize="@dimen/text_size_xnormal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23156135 "
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:id="@+id/tvIdBill"
+                android:textSize="@dimen/text_size_xnormal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dimen_1x">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Order: "
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:textSize="@dimen/text_size_xnormal"/>
+            <TextView
+                android:id="@+id/tvDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20/04/2019 "
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:textSize="@dimen/text_size_xnormal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dimen_1x">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:textSize="@dimen/text_size_xnormal"/>
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Da huy"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:textSize="@dimen/text_size_xnormal"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

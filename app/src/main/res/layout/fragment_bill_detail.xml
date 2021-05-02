@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/grey">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:text="Ma don hang"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngay dat hang:"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:text="14:20, 20/04/2019"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginBottom="@dimen/dimen_2x"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trang thai:"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:text="Dang chuyen"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:text="Dia chi nguoi nhan"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:textSize="@dimen/text_size_normal"/>
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:textSize="@dimen/text_size_normal"/>
+                <TextView
+                    android:id="@+id/tvAllAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginBottom="@dimen/dimen_2x"
+                    android:textSize="@dimen/text_size_normal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:text="Hinh thuc giao hang"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giao hang tieu chuan (Du kien giao hang Thu Nam, 25/04/2019)"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginBottom="@dimen/dimen_2x"
+                    android:textSize="@dimen/text_size_normal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:text="Hinh thuc thanh toan"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toan tien mat khi nhan hang"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginBottom="@dimen/dimen_2x"
+                    android:textSize="@dimen/text_size_normal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:text="Thong tin don hang"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+               <androidx.recyclerview.widget.RecyclerView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/contentRcl"
+                   android:layout_marginTop="@dimen/dimen_1x">
+
+               </androidx.recyclerview.widget.RecyclerView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginBottom="@dimen/dimen_2x">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phi van chuyen"
+                        android:textSize="@dimen/text_size_normal"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/dimen_1x"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 $"
+                        android:textSize="@dimen/text_size_normal"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dimen_1x"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dimen_1x">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dimen_1x">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh tien"
+                    android:textSize="@dimen/text_size_large"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_1x"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5000 $"
+                    android:textSize="@dimen/text_size_large"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dimen_1x"
+                    android:textColor="@color/red"/>
+            </RelativeLayout>
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/btnGoCart"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:textSize="@dimen/text_size_xlarge"
+                android:text="Huy don hang" />
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

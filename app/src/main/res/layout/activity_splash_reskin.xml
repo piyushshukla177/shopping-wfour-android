@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".view.activities.SplashLoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <!--        <ImageView-->
+        <!--            android:layout_margin="@dimen/dimen_image_contact"-->
+        <!--            android:src="@drawable/shoping"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent" />-->
+        <!--        &lt;!&ndash;<ImageView&ndash;&gt;-->
+        <!--android:layout_margin="@dimen/dimen_9x"-->
+        <!--android:src="@mipmap/ic_launcher"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:fontFamily="@font/inter_regular"
+            android:paddingBottom="@dimen/dimen_62dp"
+            android:text="@string/it_s_good_to_see_you_again"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_normal" />
+
+    </RelativeLayout>
+
+    <!--
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@drawable/ic_croco"
+            tools:ignore="MissingClass" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_5x"
+            android:layout_marginRight="@dimen/dimen_5x"
+            android:layout_weight="0.6">
+
+            <LinearLayout
+                android:id="@+id/llbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/lbl_google_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_login_google"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_23"
+                        android:layout_height="@dimen/dimen_23"
+                        android:layout_margin="@dimen/dimen_16dp"
+                        android:src="@drawable/google_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_12dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_2dp"
+                        android:text="@string/login_with_google"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_small" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:id="@+id/lbl_facebook_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:background="@drawable/bg_btn_login_google"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_23"
+                        android:layout_height="@dimen/dimen_23"
+                        android:layout_margin="@dimen/dimen_16dp"
+                        android:src="@drawable/fb_logo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_12dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_2dp"
+                        android:text="Login with Facebook"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_small" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/lbl_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:background="@drawable/bg_btn_login"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_16dp"
+                    android:text="@string/login"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/lbl_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_2x"
+                    android:text="@string/don_t_have_account_register_here"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_small" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="8">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

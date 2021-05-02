@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_top_success">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_3x">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ok" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen_2x"
+                android:text="@string/create_success"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xxxlarge" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:text="@string/your_deal_will_approved_soon"
+                android:textColor="@color/black1"
+                android:textSize="@dimen/text_size_large" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_dialog_bottom_success"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:text="@string/create_another"
+            android:id="@+id/btn_create_another"
+            android:paddingTop="@dimen/dimen_2x"
+            android:paddingBottom="@dimen/dimen_2x"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/btn_view_deal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/dimen_2x"
+            android:paddingBottom="@dimen/dimen_2x"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/white"
+            android:text="@string/view_your_deal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

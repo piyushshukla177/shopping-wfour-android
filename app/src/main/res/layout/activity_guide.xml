@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/circle_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_indicator"
+        android:layout_above="@+id/rlt_parent_button_control"
+        android:layout_marginBottom="@dimen/dimen_1x"
+        app:ci_drawable="@drawable/bg_pressed_radius_primary" />
+
+    <RelativeLayout
+        android:id="@+id/rlt_parent_button_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_2x">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/tv_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_pressed_transparent"
+            android:paddingBottom="@dimen/dimen_x1x"
+            android:paddingLeft="@dimen/dimen_2x"
+            android:paddingRight="@dimen/dimen_2x"
+            android:paddingTop="@dimen/dimen_x1x"
+            android:text="@string/previous"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_size_large" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_pressed_transparent"
+            android:paddingBottom="@dimen/dimen_x1x"
+            android:paddingLeft="@dimen/dimen_2x"
+            android:paddingRight="@dimen/dimen_2x"
+            android:paddingTop="@dimen/dimen_x1x"
+            android:text="@string/next"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_size_large" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:text="@string/favorite"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:paddingTop="@dimen/dimen_2x"
+                    android:paddingBottom="@dimen/dimen_1x"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include layout="@layout/layout_viewpager_indicator"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:text="@string/category"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:paddingTop="@dimen/dimen_2x"
+                    android:paddingBottom="@dimen/dimen_1x"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <!--<include layout="@layout/layout_custom_item_cate"/>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_data"
+                    android:layout_margin="@dimen/dimen_item_category_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_no_data" />
+
+            <include layout="@layout/layout_no_connection" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

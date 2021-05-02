@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sw_trip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lbl_delete_all">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcl_trip_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dimen_1x" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/layout_no_data" />
+
+    <include layout="@layout/layout_no_connection" />
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:id="@+id/lbl_delete_all"
+        style="@style/Button.DarkGrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_2x"
+        android:layout_marginLeft="@dimen/dimen_8x"
+        android:layout_marginRight="@dimen/dimen_8x"
+        android:text="@string/delete_all" />
+</RelativeLayout>

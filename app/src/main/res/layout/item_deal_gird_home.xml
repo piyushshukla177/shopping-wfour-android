@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/rowimage_width"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_2x"
+        android:layout_marginTop="@dimen/dimen_1x"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{viewModel::onItemClicked}"
+        app:cardElevation="3dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imv_avatar"
+                android:layout_width="@dimen/rowimage_width"
+                android:layout_height="@dimen/rowimage_height_width"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                />
+
+            <!--<com.suusoft.ebook.widgets.textview.TextViewBold-->
+                <!--android:layout_width="@dimen/dimen_6x"-->
+                <!--android:layout_height="@dimen/dimen_6x"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:padding="@dimen/dimen_05x"-->
+                <!--android:rotation="45"-->
+                <!--android:text=""-->
+                <!--android:textAllCaps="true"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/text_size_tiny" />-->
+
+
+            <LinearLayout
+                android:id="@+id/rlt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_x05x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:singleLine="true"
+                    android:text="Deskrisaun"
+                    android:textSize="@dimen/text_size_tiny"
+                    android:textColor="@color/grey"
+                    />
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:singleLine="true"
+                    android:text="Titlu"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/grey"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:ignore="RtlHardcoded">
+
+    <RelativeLayout
+        android:id="@+id/rlt_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <RelativeLayout
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_white_shadow_bottom_right"
+            android:layout_above="@+id/rlt_action"
+            android:layout_centerHorizontal="true">
+
+            <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+                android:id="@+id/list_chat_messages"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dimen_1x"
+                android:layout_above="@+id/rlt_chat"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_tell_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:layout_marginRight="@dimen/dimen_1x"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_tell_user_about_chat_screen"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_large"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_above="@+id/rlt_chat"
+                android:background="@color/dividerColor" />
+
+            <RelativeLayout
+                android:id="@+id/rlt_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <EditText
+                    android:id="@+id/txt_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/img_send"
+                    android:layout_toStartOf="@+id/img_send"
+                    android:background="@color/transparent"
+                    android:hint="@string/write_a_message"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences"
+                    android:maxLength="500"
+                    android:paddingLeft="@dimen/dimen_2x"
+                    android:paddingRight="@dimen/dimen_05x"
+                    android:paddingTop="@dimen/dimen_2x"
+                    android:paddingBottom="@dimen/dimen_2x"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <ImageView
+                    android:id="@+id/img_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/dimen_1x"
+                    android:layout_marginRight="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_send_grey" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlt_action"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/large_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x">
+
+            <ImageView
+                android:id="@+id/img_reviews"
+                android:layout_width="@dimen/normal_icon"
+                android:layout_height="@dimen/normal_icon"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/img_deal"
+                android:layout_toStartOf="@+id/img_deal"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_review" />
+
+            <ImageView
+                android:id="@+id/img_deal"
+                android:layout_width="@dimen/large_icon"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_deal" />
+
+            <ImageView
+                android:id="@+id/img_no_deal"
+                android:layout_width="@dimen/normal_icon"
+                android:layout_height="@dimen/normal_icon"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/img_deal"
+                android:layout_toRightOf="@+id/img_deal"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_no_deal" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/layout_no_data"
+        android:id="@+id/include" />
+
+    <include layout="@layout/layout_no_connection"/>
+
+
+
+</RelativeLayout>

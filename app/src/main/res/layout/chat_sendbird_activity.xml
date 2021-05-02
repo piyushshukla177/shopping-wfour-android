@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wfour.onlinestoreapp.view.chat.mainchat.ChatSendbirdActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:background="@color/red"
+            android:layout_weight="0">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:theme="@style/Toolbar"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/Theme.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/linear_layout_open_channels"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_7x"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_4x"
+                    android:layout_height="@dimen/dimen_4x"
+                    android:background="@drawable/ic_facebook"
+                    android:layout_marginLeft="19.5dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/open_chat"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_xnormal"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="0"
+                android:background="#e0e0e0"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_disconnect"
+            android:text="Disconnect"
+            style="@style/Widget.AppCompat.Button.Colored"
+            app:theme="@style/AppTheme.ButtonStyle2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_weight="0"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginBottom="@dimen/dimen_24dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            android:layout_marginRight="@dimen/dimen_16dp"
+            android:stateListAnimator="@null"
+            android:background="@drawable/selector_btn_white">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/text_main_versions"
+            android:text="@string/all_app_version"
+            android:textSize="@dimen/dimen_12sp"
+            android:textColor="#a0a0a0"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="@dimen/dimen_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

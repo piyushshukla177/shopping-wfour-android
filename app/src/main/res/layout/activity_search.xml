@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".view.activities.SearchActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dimen_2x"
+            android:paddingRight="@dimen/dimen_2x">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/search_style_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:theme="@style/search_style_edittext">
+
+                <EditText
+                    android:id="@+id/txt_keyword"
+                    style="@style/search_style_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_2x"
+                    android:hint="@string/keyword"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spn_cate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:background="@color/dividerColor" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:text="@string/radius"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_small" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_radius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <SeekBar
+                android:id="@+id/skb_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_marginLeft="@dimen/dimen_05x"
+                android:max="10"
+                android:progress="0"
+                android:theme="@style/search_style_edittext" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:text="@string/amount_of_deals_to_show"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_small" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_deals_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/skb_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_marginLeft="@dimen/dimen_05x"
+                android:max="20"
+                android:progress="0"
+                android:theme="@style/search_style_edittext"
+                app:paddingEnd="0dp"
+                app:paddingStart="0dp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chk_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:checked="true"
+                android:text="@string/available_now"
+                android:textSize="@dimen/text_size_normal"
+                app:buttonTint="@color/primary"
+                app:paddingEnd="0dp"
+                app:paddingStart="0dp" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/lbl_search"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_4x"
+                android:layout_marginLeft="@dimen/dimen_5x"
+                android:layout_marginRight="@dimen/dimen_5x"
+                android:layout_marginTop="@dimen/dimen_4x"
+                android:text="@string/search" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

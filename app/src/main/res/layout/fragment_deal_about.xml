@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:orientation="vertical">
+            <!--android:background="@color/bg_deal_list"-->
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/rlt_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/min_height_image"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/img_deal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitCenter" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_parent_end_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#60000000"
+                        android:paddingTop="@dimen/dimen_x1x"
+                        android:paddingBottom="@dimen/dimen_x1x"
+                        android:visibility="visible">
+
+                        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_2x"
+                            android:layout_marginRight="@dimen/dimen_1x"
+                            android:text="@string/end_time"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                            android:id="@+id/tv_end_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12:00 TUE"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_normal" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_deal"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_2x">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_1x"
+                        android:layout_marginRight="@dimen/dimen_1x"
+                        android:text="Name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_large" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dimen_1x">
+
+                        <RatingBar
+                            android:id="@+id/rating"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/lbl_rate_quantity"
+                            android:layout_toLeftOf="@+id/lbl_rate_quantity"
+                            android:theme="@style/custom_rating"
+                            android:visibility="visible"
+                            android:paddingTop="@dimen/dimen_05x"
+                            />
+
+                        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                            android:id="@+id/lbl_rate_quantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dimen_1x"
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="@dimen/text_size_normal"
+                            android:visibility="visible" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(1232 nhan xet)"
+                            android:textColor="@color/green"
+                            android:layout_marginLeft="@dimen/dimen_05x"
+                            android:textSize="@dimen/text_size_xnormal"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lo_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/dimen_05x"
+                        android:layout_marginRight="@dimen/dimen_2x"
+                        android:orientation="horizontal">
+
+                        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                            android:id="@+id/tvPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:textColor="@color/text_color_price"
+                            android:textSize="@dimen/text_size_xxxlarge" />
+
+                        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                            android:id="@+id/tvPriceOld"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_2x"
+                            android:text="150"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="@dimen/text_size_xnormal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dimen_1x"
+                android:paddingBottom="@dimen/dimen_1x">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Thong tin chi tiet"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:padding="@dimen/dimen_2x">-->
+
+                    <!--<com.suusoft.ecommerce.widgets.textview.TextViewRegular-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/about"-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:textSize="@dimen/text_size_xnormal" />-->
+
+                    <!--<com.suusoft.ecommerce.widgets.textview.TextViewRegular-->
+                        <!--android:id="@+id/tv_about"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="@dimen/dimen_1x"-->
+                        <!--android:layout_marginTop="@dimen/dimen_05x"-->
+                        <!--android:text="about"-->
+                        <!--android:textColor="@color/textColorSecondary"-->
+                        <!--android:textSize="@dimen/text_size_xnormal" />-->
+
+                    <!--<com.suusoft.ecommerce.widgets.textview.TextViewRegular-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="@dimen/dimen_1x"-->
+                        <!--android:text="@string/business_address"-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:textSize="@dimen/text_size_xnormal" />-->
+
+                    <!--<com.suusoft.ecommerce.widgets.textview.TextViewRegular-->
+                        <!--android:id="@+id/edt_address"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="@dimen/dimen_1x"-->
+                        <!--android:layout_marginTop="@dimen/dimen_05x"-->
+                        <!--android:layout_marginBottom="@dimen/dimen_1x"-->
+                        <!--android:drawableLeft="@drawable/ic_location_on_white"-->
+                        <!--android:drawablePadding="@dimen/dimen_1x"-->
+                        <!--android:text="17 Phung chi kien, Cau Giay, Ha Noi"-->
+                        <!--android:textColor="@color/light_blue_facebook"-->
+                        <!--android:textSize="@dimen/text_size_xnormal" />-->
+
+                    <!--<com.suusoft.ecommerce.widgets.textview.TextViewRegular-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="@dimen/dimen_1x"-->
+                        <!--android:text="@string/further_information"-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:textSize="@dimen/text_size_xnormal" />-->
+
+                    <!--<com.suusoft.ecommerce.widgets.textview.TextViewRegular-->
+                        <!--android:id="@+id/tv_file_name"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="@dimen/dimen_1x"-->
+                        <!--android:layout_marginTop="@dimen/dimen_1x"-->
+                        <!--android:layout_marginBottom="@dimen/dimen_1x"-->
+                        <!--android:text="@string/view_attachment"-->
+                        <!--android:textColor="@color/light_blue_facebook"-->
+                        <!--android:textSize="@dimen/text_size_xnormal" />-->
+                <!--</LinearLayout>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:text="Reviews"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:text="4,5/5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_huge" />
+
+                    <RatingBar
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:theme="@style/custom_rating" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:text="2000 nhan xet"
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:textColor="@color/green"/>
+                </LinearLayout>
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+
+                    style="@style/Button.Grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5x"
+                    android:layout_marginTop="@dimen/dimen_4x"
+                    android:layout_marginRight="@dimen/dimen_5x"
+                    android:layout_marginBottom="@dimen/dimen_4x"
+                    android:text="Viet nhan xet" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rat Hay"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:theme="@style/custom_rating" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_1x"
+                            android:text="Da mua hang"
+                            android:textColor="@color/bg_button_blue"
+                            android:textSize="@dimen/text_size_xnormal" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:paddingBottom="@dimen/dimen_05x"
+                        android:text="Quyen sach nay rat huu ich voi bat ky ai, khong rieng gi gioi tre. Toi uoc sao gia ma khi toi con tre, toi doc duoc quyen sach nay."
+                        android:textSize="@dimen/text_size_xnormal" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:id="@+id/tv_deal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dimen_5x"
+        android:layout_marginTop="@dimen/dimen_4x"
+        android:layout_marginRight="@dimen/dimen_5x"
+        android:layout_marginBottom="@dimen/dimen_4x"
+        android:background="@drawable/bg_press_deal_blue"
+        android:gravity="center"
+        android:padding="@dimen/dimen_2x"
+        android:text="@string/deal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

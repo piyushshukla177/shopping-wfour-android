@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/cardView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_1x"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_05x">
+
+            <ImageView
+                android:src="@color/bg_button_blue"
+                android:id="@+id/img_deal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/lnl"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/lnl"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_deal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:minLines="2"
+                    android:text="Ronaldo Ronaldo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:id="@+id/lbl_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="$10"
+                    android:textColor="@color/text_color_price"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:textStyle="bold" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_price_old"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="$100"
+                    android:textColor="@color/black1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/screen_sign_up2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/llbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_text" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dimen_4x"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/countryCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_normal"
+                android:padding="@dimen/dimen_05x"
+                style="@style/mySpinnerItemStyle"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.3"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="0.7"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:textColorHint="@color/white">
+
+                <EditText
+                    android:id="@+id/txt_phone"
+                    style="@style/edt_line_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_number"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/edt_address"
+                style="@style/edt_line_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/edt3"
+                style="@style/edt_line_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/full_name"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

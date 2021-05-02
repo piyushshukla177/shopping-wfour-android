@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:visibility="gone"
+    android:id="@+id/layout_btn_deal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_btn_gadient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/btn_update"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_large"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/dimen_2x"
+        android:layout_height="wrap_content"
+        android:text="@string/update" />
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/btn_renew"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_large"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/dimen_2x"
+        android:layout_height="wrap_content"
+        android:text="@string/renew_deal" />
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/btn_deactive"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_large"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/dimen_2x"
+        android:layout_height="wrap_content"
+        android:text="@string/deactivate" />
+
+
+</LinearLayout>

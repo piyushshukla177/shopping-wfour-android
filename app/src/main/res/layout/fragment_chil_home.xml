@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_2x"
+        android:translationZ="@dimen/dimen_1x"
+        app:cardCornerRadius="@dimen/dimen_1x">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_radius_top_red_gadient"
+                android:paddingBottom="@dimen/dimen_2x"
+                android:paddingLeft="@dimen/dimen_x2x"
+                android:paddingRight="@dimen/dimen_2x"
+                android:paddingTop="@dimen/dimen_2x">
+
+                <TextView
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:id="@+id/tv_get_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/ic_home"
+                    android:text="Get more special deal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ic_setting"
+                    android:layout_width="@dimen/dimen_3x"
+                    android:layout_height="@dimen/dimen_3x"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_setting_white" />
+
+                <ImageView
+                    android:id="@+id/ic_to"
+                    android:layout_width="@dimen/dimen_3x"
+                    android:layout_height="@dimen/dimen_3x"
+                    android:layout_marginRight="@dimen/dimen_1x"
+                    android:layout_toLeftOf="@+id/ic_setting"
+                    android:src="@drawable/ic_arrow_forward_white" />
+
+                <ImageView
+                    android:id="@+id/ic_home"
+                    android:layout_width="@dimen/dimen_3x"
+                    android:layout_height="@dimen/dimen_3x"
+                    android:layout_marginRight="@dimen/dimen_1x"
+                    android:layout_toLeftOf="@+id/ic_to"
+                    android:src="@drawable/ic_home_white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_get_more"
+                    android:layout_marginTop="@dimen/dimen_1x">
+
+                    <TextView
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:id="@+id/tv_go_to_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_get_more"
+                        android:text="Go to setting"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_3x"
+                        android:layout_height="@dimen/dimen_3x"
+                        android:src="@drawable/ic_chevron_right_white" />
+
+                    <TextView
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_get_more"
+                        android:text="Notify"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_radius_bottom_white_1x"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen_2x"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewCondensedBold
+                    android:id="@+id/tv_count_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_huge" />
+
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:text="@string/your_favorite_deal_now_avaiable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_marginTop="@dimen/dimen_05x"
+                        android:textColor="@color/black1"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="@string/you_have_it_on_your_way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_list"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:id="@+id/rvData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/btn_get_it_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_3x"
+                android:background="@drawable/bg_btn_manager_radius"
+                android:paddingBottom="@dimen/dimen_x1x"
+                android:paddingLeft="@dimen/dimen_3x"
+                android:paddingRight="@dimen/dimen_3x"
+                android:paddingTop="@dimen/dimen_x1x"
+                android:text="Get it NOW"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_size_xlarge"
+            android:textColor="@color/colorAccent"
+            android:text="@string/no_favorite_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

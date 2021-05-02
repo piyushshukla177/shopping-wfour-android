@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_2x"
+            app:cardElevation="@dimen/dimen_05x"
+            app:cardCornerRadius="@dimen/dimen_2x"
+            android:translationZ="@dimen/dimen_1x"
+            android:padding="@dimen/dimen_1x"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/layout_top_credits"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="@dimen/dimen_1x"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.wfour.onlinestoreapp.widgets.textview.TextViewCondensedBold
+                                android:id="@+id/tv_count_deal_sold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dimen_05x"
+                                android:layout_marginLeft="@dimen/dimen_1x"
+                                android:layout_gravity="center"
+                                android:text="0"
+                                android:textColor="@color/primary"
+                                android:textSize="@dimen/text_size_title_about" />
+
+                            <TextView
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/deals_was_sold_in_this_month"
+                                android:layout_width="wrap_content"
+                                android:textColor="@color/primary"
+                                android:textSize="@dimen/text_size_large"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:background="@color/colorAccent"
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"/>
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_centerInParent="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/earn_credit"
+                                android:textColor="@color/primary"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                                android:id="@+id/tv_earn_credits"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:text="0"
+                                android:textColor="@color/primary"
+                                android:textSize="@dimen/text_size_title_about" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_radius_bottom_primary_gadient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_margin="@dimen/dimen_2x"
+            android:layout_width="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_height="1px"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_2x"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/btn_go_to_product"
+                android:background="@drawable/bg_btn_manager_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:tint="@color/white"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_seller"
+                    android:layout_width="@dimen/dimen_9x"
+                    android:layout_height="@dimen/dimen_9x" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/dimen_3x"
+                    android:textSize="@dimen/text_size_xxxlarge"
+                    android:textColor="@color/white"
+                    android:text="@string/all_deal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:id="@+id/btn_go_to_sold"
+                android:background="@drawable/bg_btn_manager_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:tint="@color/white"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_seller"
+                    android:layout_width="@dimen/dimen_9x"
+                    android:layout_height="@dimen/dimen_9x" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/dimen_3x"
+                    android:textSize="@dimen/text_size_xxxlarge"
+                    android:textColor="@color/white"
+                    android:text="@string/go_to_sold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:id="@+id/btn_new_deal"
+                android:background="@drawable/bg_btn_manager_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:tint="@color/white"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_seller"
+                    android:layout_width="@dimen/dimen_9x"
+                    android:layout_height="@dimen/dimen_9x" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/dimen_3x"
+                    android:textSize="@dimen/text_size_xxxlarge"
+                    android:textColor="@color/white"
+                    android:text="@string/new_deal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

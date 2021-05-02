@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dimen_05x"
+    android:layout_height="@dimen/dimen_9x">
+
+    <TextView
+        android:id="@+id/btn_view_reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_pressed_radius_accent"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:paddingLeft="@dimen/dimen_3x"
+        android:paddingRight="@dimen/dimen_3x"
+        android:paddingTop="@dimen/dimen_1x"
+        android:text="@string/button_reviews"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large" />
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:padding="@dimen/dimen_05x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_contact"
+            android:layout_width="@dimen/dimen_image_contact"
+            android:layout_height="@dimen/dimen_image_contact"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginStart="@dimen/dimen_2x"
+            android:layout_toEndOf="@+id/img_contact"
+            android:layout_toLeftOf="@+id/img_action"
+            android:layout_toRightOf="@+id/img_contact"
+            android:layout_toStartOf="@+id/img_action"
+            android:orientation="vertical">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/lbl_deal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:maxLines="2"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_large" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_action"
+            android:layout_width="@dimen/small_icon"
+            android:layout_height="@dimen/small_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_below="@id/img_contact"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorPrimary" />
+</LinearLayout>

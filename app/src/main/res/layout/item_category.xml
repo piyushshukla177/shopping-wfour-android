@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lnl"
+    android:layout_width="@dimen/dimen_14x"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_1x">
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imv_avatar"-->
+    <!--android:layout_width="@dimen/dimen_10x"-->
+    <!--android:layout_height="@dimen/dimen_10x"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@color/white"/>-->
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_avatar"
+        android:layout_width="@dimen/dimen_11x"
+        android:layout_height="@dimen/dimen_11x"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/bg_item_labor" />
+    <!--<LinearLayout-->
+    <!--android:id="@+id/root_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!---->
+
+    <!--</LinearLayout>-->
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="Kategoria"
+        android:textSize="@dimen/text_size_normal" />
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_1x"
+    android:layout_marginTop="@dimen/dimen_1x"
+    android:layout_marginRight="@dimen/dimen_1x"
+    android:elevation="1dp"
+    android:id="@+id/cardView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="@dimen/min_width_image"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_item_orther"
+            android:layout_margin="@dimen/dimen_1x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_1x">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Tên sản phẩm"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal"/>
+
+
+            </LinearLayout>
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewLightItalic
+                android:id="@+id/lbl_price_old"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABC"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                />
+
+            <TextView
+                android:id="@+id/lbl_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:text="30.000 đ"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_xnormal"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

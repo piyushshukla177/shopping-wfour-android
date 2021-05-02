@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_1x">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_2x"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/img_cancel"
+                    android:layout_toStartOf="@+id/img_cancel"
+                    android:orientation="vertical">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_trip_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_1x"
+                        android:text="#Trip 01"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="08:30, Sun 05/12/2016"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/img_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_clear_grey" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginBottom="@dimen/dimen_x1x"
+                android:layout_marginTop="@dimen/dimen_x1x"
+                android:background="@color/dividerColor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/label_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/from"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_2x"
+                    android:layout_marginStart="@dimen/dimen_2x"
+                    android:layout_toEndOf="@id/label_from"
+                    android:layout_toRightOf="@id/label_from"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="17 Phung Chi Kien, Nghia Do, Cau Giay, Ha Noi, Vietnam"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginBottom="@dimen/dimen_x1x"
+                android:layout_marginTop="@dimen/dimen_x1x"
+                android:background="@color/dividerColor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/label_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_2x"
+                    android:layout_marginStart="@dimen/dimen_2x"
+                    android:layout_toEndOf="@id/label_to"
+                    android:layout_toRightOf="@id/label_to"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="Ben xe Giap Bat, Ha Noi"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginBottom="@dimen/dimen_x1x"
+                android:layout_marginTop="@dimen/dimen_x1x"
+                android:background="@color/dividerColor" />
+
+            <LinearLayout
+                android:id="@+id/ll_canceled_trip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/label_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/payment"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_payment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:layout_marginStart="@dimen/dimen_2x"
+                        android:layout_toEndOf="@id/label_payment"
+                        android:layout_toRightOf="@id/label_payment"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="@string/cash"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginBottom="@dimen/dimen_x1x"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/dividerColor" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/label_fare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/estimateFare"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_fare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:layout_marginStart="@dimen/dimen_2x"
+                        android:layout_toEndOf="@id/label_fare"
+                        android:layout_toRightOf="@id/label_fare"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="$12"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginBottom="@dimen/dimen_x1x"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/dividerColor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_estimate_fare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/label_estimate_fare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/estimate_fare"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_estimate_fare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:layout_marginStart="@dimen/dimen_2x"
+                        android:layout_toEndOf="@id/label_estimate_fare"
+                        android:layout_toRightOf="@id/label_estimate_fare"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="$12"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginBottom="@dimen/dimen_x1x"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/dividerColor" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/label_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_2x"
+                    android:layout_marginStart="@dimen/dimen_2x"
+                    android:layout_toEndOf="@id/label_status"
+                    android:layout_toRightOf="@id/label_status"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/finished"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_normal" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

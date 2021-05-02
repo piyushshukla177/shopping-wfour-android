@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_activate"
+        android:orderInCategory="100"
+        android:title="@string/activate"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_call"
+        android:orderInCategory="101"
+        android:title="@string/call"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_voice_call"
+        android:orderInCategory="102"
+        android:title="@string/voice_call"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_add_to_contact"
+        android:orderInCategory="103"
+        android:title="@string/add_to_contact"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_picked_up"
+        android:orderInCategory="104"
+        android:title="@string/picked_up"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_track_deal"
+        android:orderInCategory="105"
+        android:title="@string/track_deal"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_cancel_deal"
+        android:orderInCategory="106"
+        android:title="@string/cancel_deal"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:headerBackground">@color/colorPrimary</item>
+        <item name="android:dayOfWeekBackground">@color/grey</item>
+        <item name="android:yearListSelectorColor">@color/colorAccent</item>
+        <item name="android:datePickerMode">calendar</item>
+    </style>
+</resources>

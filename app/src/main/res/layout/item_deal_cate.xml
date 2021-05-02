@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_cate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_1x"
+        android:layout_marginLeft="@dimen/dimen_x1x"
+        android:layout_marginRight="@dimen/dimen_x1x"
+        android:layout_marginTop="@dimen/dimen_1x"
+        android:background="@drawable/bg_pressed_radius_primary"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_2x"
+        android:paddingLeft="@dimen/dimen_2x"
+        android:paddingRight="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_2x"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_xlarge" />
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_05x"
+        android:layout_marginLeft="@dimen/dimen_x1x"
+        android:layout_marginRight="@dimen/dimen_x1x"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

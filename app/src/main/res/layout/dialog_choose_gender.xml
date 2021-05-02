@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_choose_gender"
+    android:minWidth="@dimen/min_width_dialog"
+    android:padding="@dimen/dimen_2x"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dimen_2x">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_1x"
+        android:gravity="center_horizontal"
+        android:text="@string/choose_gender"
+        android:textColor="@color/textColorBlackPrimary"
+        android:textSize="@dimen/text_size_large" />
+
+    <RadioGroup
+        android:layout_marginTop="@dimen/dimen_2x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_marginBottom="@dimen/dimen_1x"
+            android:padding="@dimen/dimen_1x"
+            android:id="@+id/rb_male"
+            android:text="@string/male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:background="@color/dividerColor"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+        <RadioButton
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:padding="@dimen/dimen_1x"
+            android:id="@+id/rb_female"
+            android:text="@string/female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+</LinearLayout>

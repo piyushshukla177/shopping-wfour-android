@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dimen_2x"
+    android:paddingRight="@dimen/dimen_2x"
+    android:paddingTop="@dimen/dimen_1x"
+    android:paddingBottom="@dimen/dimen_1x">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/normal_icon"
+            android:layout_height="@dimen/normal_icon" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_deal_name"
+            android:layout_width="@dimen/normal_icon"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:text="Jonathan"
+            android:textColor="@color/deal_review_username"
+            android:textSize="@dimen/text_size_small" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_05x">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:text="this is great deal "
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <RatingBar
+            android:id="@+id/rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_alignParentRight="true"                        android:layout_centerVertical="true"
+            android:theme="@style/custom_rating" />
+
+    </LinearLayout>
+
+</LinearLayout>

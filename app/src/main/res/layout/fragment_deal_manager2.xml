@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg_deal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/screen_btn_buyer"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_x2x"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:text="@string/buyer"
+                android:textAllCaps="true"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:padding="@dimen/dimen_3x"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/primary"
+                android:text="@string/manager_and_track_bought_deals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/btn_buyer"
+                android:gravity="center_horizontal"
+                android:background="@drawable/bg_btn_manager_radius"
+                android:textAllCaps="true"
+                android:padding="@dimen/dimen_3x"
+                android:textColor="@color/white"
+                android:text="@string/go_to_manager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/screen_btn_producer"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/dimen_x2x"
+            android:layout_marginLeft="@dimen/dimen_x2x"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_x2x"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/textViewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/producer"
+                android:textAllCaps="true"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_xxlarge" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:padding="@dimen/dimen_3x"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/primary"
+                android:text="@string/manager_upload_your_items_and_track_your_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/btn_producer"
+                android:gravity="center_horizontal"
+                android:background="@drawable/bg_btn_manager_radius"
+                android:textAllCaps="true"
+                android:padding="@dimen/dimen_3x"
+                android:textColor="@color/white"
+                android:text="@string/go_to_manager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

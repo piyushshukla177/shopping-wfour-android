@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen_1x"
+        android:background="@color/white">
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_1x"
+            android:checked="true"
+            android:textSize="@dimen/text_size_normal"
+            app:buttonTint="@color/primary"
+            app:paddingEnd="0dp"
+            app:paddingStart="0dp"
+            android:layout_marginTop="@dimen/dimen_1x"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="@dimen/dimen_1x">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Naran"
+                android:id="@+id/tvName"
+                android:layout_marginTop="@dimen/dimen_1x" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0336540462"
+                android:id="@+id/tvPhone"
+                android:layout_marginTop="@dimen/dimen_05x"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ex_vera_cruz_vila_verde_dili"
+                android:id="@+id/tvAllAddress"
+                android:layout_marginTop="@dimen/dimen_05x"/>
+        </LinearLayout>
+        <!--<com.suusoft.ecommerce.widgets.textview.TextViewBold-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/ic_close_black"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/btnDelete"/>-->
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_edit_black"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_marginLeft="@dimen/dimen_1x"
+            android:layout_marginRight="@dimen/dimen_1x"
+            android:id="@+id/btnEdit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

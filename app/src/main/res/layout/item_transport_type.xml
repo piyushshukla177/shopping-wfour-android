@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimen_1x"
+    android:paddingRight="@dimen/dimen_1x">
+
+    <ImageView
+        android:id="@+id/img_type"
+        android:layout_width="@dimen/xsmall_icon"
+        android:layout_height="@dimen/xsmall_icon"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_taxi" />
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Delivery"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_normal" />
+</LinearLayout>

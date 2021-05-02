@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_verification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_keyboard_arrow_left_white_36dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/back"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_xnormal"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/otp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:text="Enter OTP"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xnormal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/otp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:fontFamily="@font/inter_regular"
+            android:text="We have send you accses code
+Via sms for mobile number verificationa"
+            android:textAlignment="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_xnormal" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dimen_5x"
+            android:background="@drawable/btn_shape"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="@dimen/dimen_x1x"
+            android:text="Verifika"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/resend"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/verificationMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <EditText
+            android:id="@+id/otp1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="x"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/otp2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="x"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/otp3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="x"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/otp4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="x"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout> -->
+
+
+</RelativeLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.SoloveFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/toolbar"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dimen_1x"
+            android:paddingTop="@dimen/dimen_1x"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/dimen_1x">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_location"
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enderesu"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-----------------"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:textColor="@color/primary"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_wallet"
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selu"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-----------------"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:textColor="@color/grey"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_done_gray"
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Konfirma"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/dimen_05x">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/metode_haruka"
+                android:background="@color/grey"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/black"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingBottom="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_1x"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Metode Pagamentu"
+                android:background="@color/grey"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/black"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingBottom="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_1x"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_1x"
+                android:id="@+id/radioGroup">
+                <RadioButton
+                    android:id="@+id/RdbMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/primary"
+                    android:paddingEnd="0dp"
+                    android:paddingStart="0dp"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:checked="true"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:text="Selu iha fatin" />
+                <RadioButton
+                    android:visibility="gone"
+                    android:id="@+id/RdbBankCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/primary"
+                    android:paddingEnd="0dp"
+                    android:paddingStart="0dp"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:checked="false"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:text="Payment in bank card"/>
+
+
+            </RadioGroup>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingTop="10dp"-->
+                <!--android:paddingBottom="10dp"-->
+                <!--android:background="@drawable/bg_view"-->
+                <!--&gt;-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/RdbMoney"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:buttonTint="@color/primary"-->
+                    <!--android:paddingEnd="0dp"-->
+                    <!--android:paddingStart="0dp"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:checked="false"-->
+                    <!--android:textSize="@dimen/text_size_large"-->
+                    <!--android:layout_marginTop="10dp">-->
+
+                <!--</RadioButton>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Thanh toan bang tien mat khi nhan hang"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:textColor="@color/black"/>-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingTop="10dp"-->
+                <!--android:paddingBottom="10dp"-->
+                <!--android:background="@drawable/bg_view">-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/RdbBankCard"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:buttonTint="@color/primary"-->
+                    <!--android:paddingEnd="0dp"-->
+                    <!--android:paddingStart="0dp"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:checked="false"-->
+                    <!--android:textSize="@dimen/text_size_large"-->
+                    <!--android:layout_marginTop="10dp">-->
+
+                <!--</RadioButton>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Thanh toan bang the quoc te Visa, Master,JCB"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:textColor="@color/black"/>-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/btnNext"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:textSize="@dimen/text_size_xnormal"
+                android:text="Kontinua" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

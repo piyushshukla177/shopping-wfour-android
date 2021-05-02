@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dimen_05x"
+    android:layout_height="match_parent">
+
+        <ImageView
+            android:visibility="visible"
+            android:id="@+id/img_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/img_cate"
+            android:src="@drawable/ic_hotel_white_24dp"
+            android:layout_width="@dimen/dimen_6x"
+            android:layout_height="@dimen/dimen_6x" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:layout_alignParentBottom="true"
+            android:id="@+id/lbl_cate"
+            android:text="Labor "
+            android:background="@color/black_transparent_50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:layout_margin="@dimen/dimen_05x"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="@dimen/dimen_1x"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:layout_below="@+id/lbl_cate"
+            android:id="@+id/lbl_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_05x"
+            android:layout_marginLeft="@dimen/dimen_x1x"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dimen_x1x"
+            android:gravity="center"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_pay"
+        android:title="@string/pay_deal" />
+    <item
+        android:id="@+id/action_rate"
+        android:title="@string/rate_deal" />
+
+
+</menu>

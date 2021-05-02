@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_6x"
+        android:layout_marginRight="@dimen/dimen_6x"
+        android:layout_marginTop="@dimen/dimen_8x"
+        android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/textColorPrimary"
+                app:passwordToggleEnabled="false">
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint="@string/email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:singleLine="true"
+                    android:textColorHint="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_xnormal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            app:passwordToggleEnabled="false">
+
+            <EditText
+                android:id="@+id/edt_current_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/current_password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/text_size_xnormal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:textColorHint="@color/black"
+            app:passwordToggleEnabled="false">
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/password_require"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:singleLine="true"
+
+                android:textColor="@color/black"
+                android:textColorHint="@color/primary"
+                android:textSize="@dimen/text_size_xnormal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:textColorHint="@color/black"
+            app:passwordToggleEnabled="false">
+
+            <EditText
+                android:id="@+id/edt_password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/password_confirm"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/text_size_xnormal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/btn_change_password"
+            style="@style/Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_4x"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dimen_x1x"
+            android:paddingTop="@dimen/dimen_x1x"
+            android:text="@string/button_change_pass"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dimen_05x"
+    android:layout_height="@dimen/dimen_9x">
+
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/dimen_3x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/btn_deal"
+        android:background="@drawable/ic_deal"
+        android:layout_width="@dimen/dimen_9x"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/deal"
+        android:textAllCaps="true"
+        android:textColor="@color/primary"
+        android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/dimen_3x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/btn_no_deal"
+            android:background="@drawable/ic_no_deal"
+            android:layout_width="@dimen/dimen_9x"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_deal"
+            android:textAllCaps="true"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>

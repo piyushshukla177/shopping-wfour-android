@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckBox android:id="@+id/chk_remember_me"
+    style="@style/WhiteCheck"
+    android:textColor="@color/white"
+    android:textSize="@dimen/text_size_normal"
+    android:text="@string/remember_me"
+    android:layout_width="wrap_content"
+    android:checked="false"
+    android:visibility="gone"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

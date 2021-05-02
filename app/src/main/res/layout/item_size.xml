@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="70dp"
+    android:layout_height="30dp"
+    android:id="@+id/cardView"
+    android:padding="@dimen/dimen_1x"
+   android:orientation="vertical"
+    android:layout_marginRight="@dimen/dimen_2x"
+    android:background="@color/grey"
+    >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="@dimen/text_size_xnormal"
+            android:id="@+id/tvName"
+            android:padding="@dimen/dimen_05x"
+            android:layout_gravity="center"/>
+
+
+</androidx.cardview.widget.CardView>

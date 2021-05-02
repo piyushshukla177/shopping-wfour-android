@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_gravity="center_vertical"
+    android:background="@color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/ll_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.8"
+        android:padding="@dimen/dimen_05x">
+
+       <include layout="@layout/layout_about_name"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingRight="@dimen/dimen_x1x"
+        android:layout_gravity="center_vertical"
+        android:layout_toRightOf="@+id/ll_title"
+        android:layout_weight="1"
+        android:gravity="right">
+
+        <include layout="@layout/layout_about_price"/>
+
+    </RelativeLayout>
+</LinearLayout>

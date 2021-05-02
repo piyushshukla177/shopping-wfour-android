@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--labor & travel-->
+    <LinearLayout
+        android:paddingLeft="@dimen/dimen_1px"
+        android:paddingRight="@dimen/dimen_1px"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!--item labor-->
+
+        <RelativeLayout
+            android:background="@drawable/background_shadow"
+            android:id="@+id/item_labor"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_margin="@dimen/dimen_1px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_item_labor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+            <TextView
+                android:paddingTop="@dimen/dimen_1x"
+                android:background="@drawable/bg_item_deal_gadient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="@string/labor"
+                android:textColor="@color/white" />
+
+
+
+        </RelativeLayout>
+
+        <!--item traveling-->
+        <RelativeLayout
+            android:background="@drawable/background_shadow"
+            android:id="@+id/item_hotel_travel"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:layout_margin="@dimen/dimen_1px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_item_hotel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bg_item_deal_gadient"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/dimen_1x"
+                android:text="@string/travel_hotel"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- shopping & new event-->
+    <LinearLayout
+        android:paddingLeft="@dimen/dimen_1px"
+        android:paddingRight="@dimen/dimen_1px"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--item labor-->
+        <RelativeLayout
+            android:background="@drawable/background_shadow"
+            android:id="@+id/item_shopping_beauty"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:layout_marginLeft="10dp"
+           >
+
+            <ImageView
+                android:layout_margin="@dimen/dimen_1px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_item_shopping"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:paddingTop="@dimen/dimen_1x"
+                android:background="@drawable/bg_item_deal_gadient"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@string/shopping"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  />
+
+        </RelativeLayout>
+
+        <!--item traveling-->
+        <RelativeLayout
+            android:background="@drawable/background_shadow"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/item_new_event"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_margin="@dimen/dimen_1px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_item_new_event"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:paddingTop="@dimen/dimen_1x"
+                android:background="@drawable/bg_item_deal_gadient"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:text="@string/news_and_events"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"  />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- food and other-->
+    <LinearLayout
+        android:paddingLeft="@dimen/dimen_1px"
+        android:paddingRight="@dimen/dimen_1px"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--item food and other-->
+        <RelativeLayout
+
+            android:id="@+id/item_food"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="@drawable/background_shadow"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:layout_margin="@dimen/dimen_1px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:paddingTop="@dimen/dimen_1x"
+                android:background="@drawable/bg_item_deal_gadient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:gravity="center_horizontal"
+                android:text="@string/food_and_beverages"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/background_shadow"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/item_other_deal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_margin="@dimen/dimen_1px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_item_orther"
+                android:id="@+id/imageView" />
+
+            <TextView
+                android:paddingTop="@dimen/dimen_1x"
+                android:background="@drawable/bg_item_deal_gadient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/imageView"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/imageView"
+                android:gravity="center_horizontal"
+                android:text="@string/settings_other_near_by_deal"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:paddingLeft="@dimen/dimen_2x"
+        android:paddingRight="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_1x"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:src="@drawable/img_menu_header"
+            android:layout_width="@dimen/large_icon"
+            android:layout_height="@dimen/large_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_05x">
+
+
+            <TextView
+                android:id="@+id/lbl_deal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:ellipsize="marquee"
+                android:text="Jonathan"
+                android:textColor="@color/deal_review_username"
+                android:textSize="@dimen/text_size_large" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="5"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:theme="@style/custom_rating" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:text="this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal this is great deal "
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/text_size_xnormal" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="@dimen/dimen_2x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        android:background="@color/dividerColor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

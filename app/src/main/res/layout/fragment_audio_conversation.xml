@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentIncomeCall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_info_about_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/action_bar_height"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_8x"
+        android:paddingRight="@dimen/dimen_8x">
+
+        <ImageView
+            android:id="@+id/image_caller_avatar"
+            style="@style/CallerAvatar" />
+
+        <TextView
+            android:id="@+id/text_caller_name"
+            style="@style/WrapContent"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="@dimen/dimen_3x"
+            android:textColor="@color/text_color_caller_name"
+            android:textSize="@dimen/text_size_xxlarge" />
+
+        <Chronometer
+            android:id="@+id/chronometer_timer_audio_call"
+            style="@style/WrapContent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dimen_2x"
+            android:textColor="@color/text_color_call_type"
+            android:textSize="@dimen/text_size_xlarge"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/text_also_on_call"
+            style="@style/WrapContent"
+            android:layout_marginTop="24dp"
+            android:text="@string/also_on_call"
+            android:textColor="@color/text_color_call_type"
+            android:textSize="@dimen/text_size_xnormal" />
+
+        <TextView
+            android:id="@+id/text_other_inc_users"
+            style="@style/WrapContent"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textColor="@color/text_color_other_inc_users"
+            android:textSize="@dimen/text_size_xnormal"
+            tools:text="@string/user_list_on_call" />
+
+    </LinearLayout>
+
+    <include layout="@layout/view_outgoing_screen" />
+
+    <include layout="@layout/view_action_buttons_conversation_fragment" />
+
+</RelativeLayout>

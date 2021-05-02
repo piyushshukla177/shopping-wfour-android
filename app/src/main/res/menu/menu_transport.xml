@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activities.TransportActivity">
+
+    <group android:id="@+id/grp">
+        <item
+            android:id="@+id/action_available_for_driving"
+            android:checkable="true"
+            android:title="@string/i_am_available_for_driving"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_duration_buying"
+            android:checkable="false"
+            android:title="@string/duration_buying"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_iwanaride_deals"
+            android:checkable="false"
+            android:title="@string/iwanaride_deals"
+            app:showAsAction="never" />
+    </group>
+</menu>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingRight="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_1x"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:layout_toLeftOf="@+id/tv_sale_percent">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/lbl_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="$10"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_size_xnormal"
+            android:textStyle="bold" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:visibility="visible"
+            android:id="@+id/lbl_price_old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$100"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/black1"
+            android:textSize="@dimen/text_size_small" />
+
+    </LinearLayout>
+
+    <TextView
+        android:backgroundTint="@color/colorAccent"
+        android:visibility="visible"
+        android:id="@+id/tv_sale_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dimen_1x"
+        android:background="@drawable/ic_tag"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:paddingLeft="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_1x"
+        android:paddingRight="@dimen/dimen_1x"
+        android:text="1%"
+        android:textSize="@dimen/text_size_normal"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

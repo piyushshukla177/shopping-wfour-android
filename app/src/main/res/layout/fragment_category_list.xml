@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.fragments.AllDealsFragment">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:text="@string/favorite"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:paddingTop="@dimen/dimen_2x"
+                    android:paddingBottom="@dimen/dimen_1x"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include layout="@layout/layout_viewpager_indicator"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:text="@string/category"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:paddingTop="@dimen/dimen_2x"
+                    android:paddingBottom="@dimen/dimen_1x"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <include layout="@layout/layout_custom_item_cate"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="gone"
+                    android:id="@+id/rcv_data"
+                    android:layout_margin="@dimen/dimen_item_category_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_no_data" />
+
+            <include layout="@layout/layout_no_connection" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/btn_sell_deal"
+        android:layout_marginBottom="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_1x"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:paddingRight="@dimen/dimen_3x"
+        android:paddingLeft="@dimen/dimen_3x"
+        android:background="@drawable/bg_btn_selldeal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:tint="@color/black"
+            android:src="@drawable/ic_seller_white"
+            android:layout_width="@dimen/dimen_x2x"
+            android:layout_height="@dimen/dimen_x2x" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/dimen_1x"
+            android:text="@string/sell_your_item"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

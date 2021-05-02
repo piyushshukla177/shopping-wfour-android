@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fr_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:background="@color/grey"
+            android:paddingBottom="@dimen/dimen_1x"
+            android:paddingTop="@dimen/dimen_1x"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/ckb_become_driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x1x"
+                android:background="@color/grey"
+                android:checked="false"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:text="@string/i_want_to_become_driver"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_size_normal"
+                android:visibility="visible"
+                app:buttonTint="@color/primary" />
+
+
+        </FrameLayout>
+
+        <!--start drive info-->
+        <LinearLayout
+            android:id="@+id/ll_parent_info_driver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/tv_info_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:text="@string/driver_information"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_car_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_x1x"
+                android:text="@string/car_photo"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_normal" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_image_car"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginRight="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_x1x"
+                android:background="@color/grey"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imgCar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/img_chose_image_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_insert_image" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:background="@color/grey"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/fr_content_cb_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:paddingBottom="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_1x"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ckb_delivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_x1x"
+                    android:checked="false"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:text="@string/is_delivery"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_normal"
+                    android:visibility="visible"
+                    app:buttonTint="@color/primary" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_car_make"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="@string/hint_car_make"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <EditText
+                    android:id="@+id/edt_car_make"
+                    style="@style/my_account_style_editext"
+                    android:layout_toRightOf="@+id/lbl_car_make"
+                    android:hint="@string/car_make"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:text="" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_model"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="@string/hint_model"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <EditText
+                    android:id="@+id/edt_model"
+                    style="@style/my_account_style_editext"
+                    android:layout_toRightOf="@+id/lbl_model"
+                    android:hint="@string/model"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:text="" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="@string/hint_year"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <EditText
+                    android:id="@+id/edt_year"
+                    style="@style/my_account_style_editext"
+                    android:layout_toRightOf="@+id/lbl_year"
+                    android:hint="@string/year"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:text="" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_car_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="@string/car_color"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <EditText
+                    android:id="@+id/edt_car_color"
+                    style="@style/my_account_style_editext"
+                    android:layout_toRightOf="@+id/lbl_year"
+                    android:hint="@string/hint_car_color"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLength="50"
+                    android:text="" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_license_plate_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/license_plate_number"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <EditText
+                    android:layout_weight="0.5"
+                    android:id="@+id/edt_license_plate_number"
+                    style="@style/my_account_style_editext"
+                    android:layout_toRightOf="@+id/lbl_year"
+                    android:hint="@string/hint_license_plate_number"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLength="20"
+                    android:text="" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_type_of_transport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/type_of_transport"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Spinner
+                    android:id="@+id/spn_type_of_transport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_2x"
+                    android:padding="@dimen/dimen_1x"
+                    tools:listitem="@android:layout/simple_spinner_item" />
+            </RelativeLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/fuel"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Spinner
+                    android:id="@+id/spn_fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_2x"
+                    android:padding="@dimen/dimen_1x"
+
+                    tools:listitem="@android:layout/simple_spinner_item" />
+            </RelativeLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_amount_of_yearly_kilometres"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/amount_of_yearly_kilometres" />
+
+
+                <EditText
+                    android:id="@+id/edt_amount_kilometres_per_year"
+                    style="@style/become_pro_style_editext"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="@dimen/dimen_2x"
+                    android:layout_weight="0.4"
+                    android:gravity="right"
+                    android:hint="@string/input"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_num_year_use_car"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/num_years_use_car" />
+
+
+                <EditText
+                    android:id="@+id/edt_num_year_use_car"
+                    style="@style/become_pro_style_editext"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="@dimen/dimen_2x"
+                    android:layout_weight="0.4"
+                    android:gravity="right"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:selectAllOnFocus="true"
+                    android:text="" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_road_taxes_per_year"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/road_taxes_per_year" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_road_taxes_per_year" />
+
+                    <EditText
+                        android:id="@+id/edt_road_taxes_per_year"
+                        style="@style/become_pro_style_editext"
+                        android:hint="@string/input"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_average_consumption_of_car"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/average_consumption_of_car" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <EditText
+                        android:id="@+id/edt_average_consumption_of_car"
+                        style="@style/become_pro_style_editext"
+                        android:gravity="right"
+                        android:hint="@string/input"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_price_per_liter"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/price_per_liter" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <EditText
+                        android:id="@+id/edt_price_per_liter"
+                        style="@style/become_pro_style_editext"
+                        android:gravity="right"
+                        android:hint="@string/input"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:text="" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_cost_of_garage"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/cost_of_garage" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_cost_of_garage" />
+
+                    <EditText
+                        android:id="@+id/edt_cost_of_garage"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+
+                        android:text="" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_insurance_costs"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/insurance_costs" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_insurance_costs" />
+
+                    <EditText
+                        android:id="@+id/edt_insurance_costs"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:maxLength="6"
+                        android:inputType="number"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_maintenance_costs"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/maintenance_costs" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_maintenance_costs" />
+
+                    <EditText
+                        android:id="@+id/edt_maintenance_costs"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_price_new_tyres"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/price_new_tyres" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_price_new_tyres" />
+
+                    <EditText
+                        android:id="@+id/edt_price_new_tyres"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_unexpected_cost"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/unexpected_cost" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_unexpected_cost" />
+
+                    <EditText
+                        android:id="@+id/edt_unexpected_cost"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_value_your_car_bought"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/value_your_car_bought" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_value_your_car_bought" />
+
+                    <EditText
+                        android:id="@+id/edt_value_your_car_bought"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_value_of_car"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/value_of_car" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_value_of_car" />
+
+                    <EditText
+                        android:id="@+id/edt_value_of_car"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+                        android:text="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:id="@+id/ll_parent_caculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_cost_per_kilometer"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/cost_per_kilometer" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/tv_use_caculate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimen_1x"
+                        android:layout_toLeftOf="@+id/tv_symbol"
+                        android:background="@drawable/bg_pressed_radius_primary"
+                        android:paddingBottom="@dimen/dimen_05x"
+                        android:paddingLeft="@dimen/dimen_2x"
+                        android:paddingRight="@dimen/dimen_2x"
+                        android:paddingTop="@dimen/dimen_05x"
+                        android:text="@string/use"
+                        android:textColor="@color/white"
+                        android:visibility="visible" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/tv_symbol"
+                        android:visibility="gone"
+
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_cost_per_kilometer" />
+
+                    <EditText
+                        android:id="@+id/edt_cost_per_kilometer"
+                        style="@style/become_pro_style_editext"
+                        android:hint=""
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="15"
+                        android:text=""
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:id="@+id/ll_parent_your_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_cost_you_charge_per_kilometer"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/cost_you_charge_per_kilometer" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/tv_use_your_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimen_1x"
+                        android:layout_toLeftOf="@+id/tv_symbol2"
+                        android:background="@drawable/bg_pressed_radius_primary"
+                        android:paddingBottom="@dimen/dimen_05x"
+                        android:paddingLeft="@dimen/dimen_2x"
+                        android:paddingRight="@dimen/dimen_2x"
+                        android:paddingTop="@dimen/dimen_05x"
+                        android:text="@string/use"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/tv_symbol2"
+                        android:visibility="gone"
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_cost_you_charge_per_kilometer" />
+
+                    <EditText
+                        android:id="@+id/edt_cost_you_charge_per_kilometer"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+                        android:text=""
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_your_estimate"
+                    style="@style/become_pro_style_text_view"
+                    android:text="@string/your_estimate" />
+
+                <RelativeLayout style="@style/become_pro_style_relative">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        style="@style/become_pro_style_text_view_currency_symbol"
+                        android:layout_toLeftOf="@+id/edt_your_estimate"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/edt_your_estimate"
+                        style="@style/become_pro_style_editext"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+                        android:text="0"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/tv_certification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:text="@string/certification"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_normal" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_image_car"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginRight="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_x1x"
+                android:background="@color/grey">
+
+                <ImageView
+                    android:id="@+id/img_certification"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/img_chose_certification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_insert_image" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--end drive info-->
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/tv_active_driver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:background="@color/grey"
+            android:paddingBottom="@dimen/dimen_x1x"
+            android:paddingLeft="@dimen/dimen_2x"
+            android:paddingTop="@dimen/dimen_x1x"
+            android:text="@string/msg_wait_active_driver"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>

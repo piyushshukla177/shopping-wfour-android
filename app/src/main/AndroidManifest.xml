@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wfour.onlinestoreapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--
+    You need to request only the ACCESS_FINE_LOCATION permission, because it includes permission
+    for both providers. Permission for ACCESS_COARSE_LOCATION allows access only to NETWORK_PROVIDER.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.network" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.activities.UpdateProfileActivity"></activity>
+        <activity android:name=".view.activities.ViewProfileActivity" />
+        <activity android:name=".view.activities.StartScreenActivity" />
+        <activity android:name=".view.activities.SubCategoryActivity" />
+        <activity
+            android:name=".view.activities.SearchActivity2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".view.activities.ProductListActivity" />
+        <activity android:name=".view.activities.BillInformationActivity" />
+        <activity android:name=".view.activities.DeleteBillActivity" />
+        <activity android:name=".view.activities.BillDetailActivity" />
+        <activity android:name=".view.activities.CartActivity" />
+        <activity android:name=".view.activities.BillTakingActivity" />
+        <activity
+            android:name=".view.activities.SplashActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.SplashLoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.SearchActivity"
+            android:label="@string/advance_search"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.DealsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.VideoActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
+        <activity
+            android:name=".view.activities.TransportActivity"
+            android:label="@string/iwanaride"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.activities.TransportDealsActivity"
+            android:label="@string/iwanaride_deals"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activities.TripTrackingActivity"
+            android:label="@string/trip_tracking"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activities.TripFinishingActivity"
+            android:label="@string/trip_finishing"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".view.activities.ChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activities.ProductManagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activities.NewDealActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activities.ChatActivityReskin"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activities.ChatActivityReskin2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".view.activities.RecentChatsActivity"
+            android:label="@string/recent_chat"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".quickblox.conversation.CallActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".view.activities.DealDetailActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.ViewReviewsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.BuyCreditsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.RedeemActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.TransferActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.activities.ChangePassWordActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.PassengerViewDriverActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".view.activities.BecomeAProActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.FindUsOnMapActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.HistoryActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.AllCategoryActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.PaymentJudoActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.GuideActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.WebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.PhoneCountryListActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.VerificationActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" />
+        <activity
+            android:name=".view.activities.ImageViewerActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" /> <!-- chat activity -->
+        <activity
+            android:name=".view.chat.mainchat.LoginChatActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.chat.chatutils.PhotoViewerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.chat.chatutils.MediaPlayerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.chat.mainchat.ChatSendbirdActivity"
+            android:label="@string/select_channel_type"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- group chat -->
+        <activity
+            android:name=".view.chat.groupchat.MemberListActivity"
+            android:label="@string/member_list" />
+        <activity
+            android:name=".view.chat.groupchat.MemberInfoActivity"
+            android:label="@string/member_info" />
+        <activity
+            android:name=".view.chat.groupchat.CreateGroupChannelActivity"
+            android:label="@string/create_group_channel" />
+        <activity
+            android:name=".view.chat.groupchat.GroupChannelActivity"
+            android:windowSoftInputMode="stateHidden" /> <!-- end chat -->
+        <activity
+            android:name=".view.activities.UpdateDealActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppNoActionBar" /> <!-- Google map -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/own_google_api_key" />
+
+        <service
+            android:name=".utils.map.FetchAddressIntentService"
+            android:exported="false" />
+        <service
+            android:name=".utils.map.LocationService"
+            android:exported="false" /> <!-- End of google map -->
+        <!-- [START firebase_service] -->
+        <service android:name=".fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Start of Quickblox notification -->
+        <meta-data
+            android:name="com.quickblox.messages.TYPE"
+            android:value="FCM" />
+        <meta-data
+            android:name="com.quickblox.messages.SENDER_ID"
+            android:value="@string/sender_id" />
+        <meta-data
+            android:name="com.quickblox.messages.QB_ENVIRONMENT"
+            android:value="DEVELOPMENT" />
+
+        <service android:name=".quickblox.conversation.services.CallService" /> <!-- End of Quickblox notification -->
+        <!-- Start of Facebook -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" /> <!-- payment stripe -->
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" /> <!-- judo pay -->
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" /> <!-- Enable Chrome Custom Tabs -->
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

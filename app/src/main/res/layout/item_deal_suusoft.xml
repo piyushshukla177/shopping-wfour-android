@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_16x"
+    android:id="@+id/contentGdl">
+
+    <LinearLayout
+        android:layout_toLeftOf="@+id/img_more"
+        android:layout_above="@+id/divider"
+        android:id="@+id/ll_about"
+        android:background="?attr/selectableItemBackground"
+        android:layout_margin="@dimen/dimen_item_category_margin"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_margin="@dimen/dimen_1x"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:background="@color/grey"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/img_deal"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:visibility="visible"
+                android:id="@+id/tv_sale_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/ic_tag"
+                android:paddingBottom="@dimen/dimen_x05x"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_x05x"
+                android:paddingRight="@dimen/dimen_05x"
+                android:layout_margin="@dimen/dimen_05x"
+                android:text="1%"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_margin="@dimen/dimen_05x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <ImageView
+                    android:id="@+id/img_favorite"
+                    android:layout_width="@dimen/dimen_3x"
+                    android:layout_height="@dimen/dimen_3x"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_heart_grey" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_favorite_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginStart="@dimen/dimen_1x"
+                    android:layout_toEndOf="@+id/img_favorite"
+                    android:layout_toRightOf="@+id/img_favorite"
+                    android:text="2"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_margin="@dimen/dimen_05x"
+            android:orientation="vertical"
+            android:layout_weight="0.55"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_deal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingTop="@dimen/dimen_05x"
+                android:singleLine="true"
+                android:text="Ronaldo Ronaldo"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <LinearLayout
+                android:id="@+id/ll_parent_end_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen_margin_in_item"
+                android:visibility="visible">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_1x"
+                    android:text="@string/end_time"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:00 TUE"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+
+            <!--rate-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_deal_name">
+
+                <RatingBar
+                    android:id="@+id/rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dimen_05x"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:theme="@style/custom_rating"
+                    android:visibility="visible" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_rate_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lbl_deal_name"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toRightOf="@+id/rating"
+                    android:drawableLeft="@drawable/ic_person_black"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:text="125"
+                    android:textColor="@color/black1"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen_margin_in_item">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:id="@+id/lbl_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="$10"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:textStyle="bold" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:visibility="visible"
+                    android:id="@+id/lbl_price_old"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$100"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textColor="@color/black1"
+                    android:textSize="@dimen/text_size_normal" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<View-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:id="@+id/divider"-->
+        <!--android:background="@color/dividerColor"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1px"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/img_more"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:padding="@dimen/dimen_1x"-->
+        <!--app:srcCompat="@drawable/ic_more_vert_black_24dp"-->
+        <!--android:visibility="visible" />-->
+
+</RelativeLayout>

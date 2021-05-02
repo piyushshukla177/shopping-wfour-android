@@ -1,0 +1,26 @@
+<RelativeLayout android:id="@+id/btn_functions"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    style="@style/Button.Primary"
+    android:layout_margin="@dimen/dimen_2x">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:id="@+id/tv_btn"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_redeem"
+        />
+
+    <!--<ImageView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/ic_creidits"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+</RelativeLayout>

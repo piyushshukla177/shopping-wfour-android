@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:padding="@dimen/dimen_1x"
+    android:layout_height="220dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:padding="2dp"
+        android:id="@+id/rl_item"
+        android:background="@drawable/bg_item_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_above="@+id/ll_about"
+            android:id="@+id/img_deal"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/ll_about"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/layout_about_name"/>
+
+            <View
+                android:background="@color/dividerColor"
+                android:layout_width="match_parent"
+                android:layout_height="1px"/>
+
+            <LinearLayout
+                android:padding="@dimen/dimen_1x"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:visibility="visible"
+                        android:layout_marginRight="@dimen/dimen_1x"
+                        android:id="@+id/lbl_price_old"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$100"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:textColor="@color/black1"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                        android:id="@+id/lbl_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:text="$10"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_size_xlarge"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:paddingRight="@dimen/dimen_05x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:id="@+id/tv_sale_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_tag"
+                    android:gravity="center"
+                    android:text="1%"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_selected"
+            android:visibility="gone"
+            android:src="@drawable/ic_check_circle_primary"
+            android:layout_margin="@dimen/dimen_x1x"
+            android:layout_width="@dimen/dimen_3x"
+            android:layout_height="@dimen/dimen_3x" />
+    </RelativeLayout>
+
+</RelativeLayout>

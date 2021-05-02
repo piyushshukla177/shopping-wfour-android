@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activities.TransportActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lbl_iwanaride"
+        android:layout_below="@id/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="@dimen/dimen_2x"
+        android:background="@drawable/bg_white_radius_shadow_bottom_right"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:paddingEnd="@dimen/dimen_05x"
+        android:paddingLeft="@dimen/dimen_2x"
+        android:paddingRight="@dimen/dimen_05x"
+        android:paddingStart="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_1x">
+
+        <RelativeLayout
+            android:id="@+id/rlt_departure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_box_height">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_from"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/img_location_departure"
+                android:layout_toStartOf="@+id/img_location_departure"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="@string/from"
+                android:maxLines="2"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <ImageView
+                android:id="@+id/img_location_departure"
+                android:layout_width="@dimen/search_box_height"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/dimen_1x"
+                android:src="@drawable/ic_place_accent" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_divider"
+            android:layout_marginEnd="@dimen/dimen_x1x"
+            android:layout_marginRight="@dimen/dimen_x1x"
+            android:background="@color/dividerColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_box_height">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_to"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/img_location_destination"
+                android:layout_toStartOf="@+id/img_location_destination"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="@string/to"
+                android:maxLines="2"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <ImageView
+                android:id="@+id/img_location_destination"
+                android:layout_width="@dimen/search_box_height"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/dimen_1x"
+                android:src="@drawable/ic_place_red" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lbl_iwanaride"
+        android:layout_margin="@dimen/dimen_2x"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_xbutton"
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:background="@drawable/bg_white_radius_shadow_bottom_right"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_1x">
+
+            <LinearLayout
+                android:id="@+id/ll_transport_type"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:minWidth="@dimen/min_width_button_transport"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_transport_type"
+                    android:layout_width="@dimen/xsmall_icon"
+                    android:layout_height="@dimen/xsmall_icon"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_wheel" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_transport_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_transport_type"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_xbutton"
+            android:background="@drawable/bg_white_radius_shadow_bottom_right"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_1x">
+
+            <LinearLayout
+                android:id="@+id/ll_passenger_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minWidth="@dimen/min_width_button_transport"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/xsmall_icon"
+                    android:layout_height="@dimen/xsmall_icon"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_person" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_passenger_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_passenger_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_iwanaride"
+        style="@style/Button.Accent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="@dimen/dimen_2x"
+        android:paddingTop="@dimen/dimen_2x"
+        android:text="@string/iwanaride"
+        android:textAllCaps="false" />
+</RelativeLayout>

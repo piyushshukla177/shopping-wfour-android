@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_deal"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:title=""
+        app:titleTextColor="@color/black"
+        app:popupTheme="@style/AppTheme"
+        app:theme="@style/ToolbarStyle"/>
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/btn_functions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_4x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:id="@+id/lbl_dollar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dollar_value"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_xhuge" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_credits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/value_credits"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:text="@string/payment_method"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_large" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_payment_methods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingRight="@dimen/dimen_1x" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:layout_marginLeft="@dimen/dimen_8x"
+                android:layout_marginRight="@dimen/dimen_8x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/dividerColor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txt_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:paddingLeft="@dimen/dimen_x1x"
+                    android:paddingRight="@dimen/dimen_x1x"
+                    android:text="230"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_xxxlarge" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_monetary_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/credits"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_xnormal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:layout_marginLeft="@dimen/dimen_8x"
+                android:layout_marginRight="@dimen/dimen_8x"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/dividerColor" />
+
+            <LinearLayout
+                android:id="@+id/ll_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/xsmall_icon"
+                    android:layout_height="@dimen/xsmall_icon"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_info_primary" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginStart="@dimen/dimen_1x"
+                    android:text="@string/you_have_to_pay_transaction_fee"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_large" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:text="@string/value_credits"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xxxlarge" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_4x"/>
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/lbl_pay"
+                android:visibility="gone"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_8x"
+                android:layout_marginRight="@dimen/dimen_8x"
+                android:text="@string/pay" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <include layout="@layout/layout_btn_function"/>
+</RelativeLayout>
+

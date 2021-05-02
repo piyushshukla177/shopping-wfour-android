@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><!--start credits-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="@dimen/dimen_2x"
+    android:layout_marginRight="@dimen/dimen_2x"
+    android:layout_marginTop="@dimen/dimen_2x"
+    app:cardElevation="@dimen/dimen_05x"
+    app:cardCornerRadius="@dimen/dimen_2x"
+    android:translationZ="@dimen/dimen_1x"
+    android:padding="@dimen/dimen_1x">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/layout_top_credits"/>
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_payment_gadient"
+            android:orientation="vertical">
+
+            <com.mozagroup.dealpro.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen_2x"
+                android:paddingRight="@dimen/dimen_2x"
+                android:paddingLeft="@dimen/dimen_2x"
+                android:paddingBottom="@dimen/dimen_1x"
+                android:text="@string/available_now"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mozagroup.dealpro.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_credits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="2000000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_huge" />
+
+                <com.mozagroup.dealpro.widgets.textview.TextViewRegular
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/tv_credits"
+                    android:gravity="bottom"
+                    android:layout_marginBottom="@dimen/dimen_05x"
+                    android:paddingLeft="@dimen/dimen_1x"
+                    android:text="@string/credits"
+                    android:textColor="@color/white2"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>-->
+
+        <TextView
+            android:visibility="visible"
+            android:text="Withdraw your credits to cash or bank."
+            android:textColor="@color/primary"
+            android:padding="@dimen/dimen_2x"
+            android:textSize="@dimen/text_size_xnormal"
+            android:background="@drawable/bg_payment_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView><!--end credits-->

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_deal"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_above="@+id/btn_functions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--start credits-->
+            <include layout="@layout/layout_iwanapay_credits_available" />
+            <!--end credits-->
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:text="@string/payment_method"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_xnormal" />
+            <!--method payment-->
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:layout_marginBottom="@dimen/dimen_3x"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <FrameLayout
+                    android:id="@+id/btn_paypal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_05x"
+                    android:layout_weight="0.5">
+
+                    <ImageView
+                        android:id="@+id/img_paypal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/paypal_off" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/btn_skrill"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_05x"
+                    android:layout_weight="0.5">
+
+
+                    <ImageView
+                        android:id="@+id/img_skrill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/stripe_off" />
+                </FrameLayout>
+
+            </LinearLayout>
+            <!--end method payment-->
+            <!--enter num credits-->
+            <include layout="@layout/layout_iwanapay_input_credits" />
+            <!--end. enter num credits-->
+            <!--start info-->
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dimen_3x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/img_info"
+                    android:layout_width="@dimen/dimen_img_info"
+                    android:layout_height="@dimen/dimen_img_info"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_info_primary" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/tv_fee"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/dimen_05x"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_toRightOf="@+id/img_info"
+                    android:drawablePadding="@dimen/dimen_1x"
+                    android:gravity="center_vertical"
+                    android:text="@string/you_have_to_pay_01_dollar_transaction_fee"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_xnormal" />
+            </RelativeLayout>
+            <!--end info-->
+            <!--total-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_3x"
+                android:background="@color/grey"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen_3x"
+                android:paddingTop="@dimen/dimen_x1x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buy_credit_total"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_05x"
+                    android:text="@string/currency_symbol"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xxxlarge" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_sub_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_05x"
+                    android:text=".0"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:visibility="gone"/>
+            </LinearLayout>
+            <!--end total.-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_8x"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/layout_btn_function"/>
+
+</RelativeLayout>

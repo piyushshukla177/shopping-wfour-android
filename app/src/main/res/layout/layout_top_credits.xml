@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bg_payment_gadient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="@dimen/dimen_1x"
+        android:id="@+id/ll_credit"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_credit"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_large" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/tv_credits"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_huge" />
+    </LinearLayout>
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/ll_credit"
+        android:gravity="bottom"
+        android:text="@string/credits"
+        android:textColor="@color/white2"
+        android:textSize="@dimen/text_size_large" />
+
+</RelativeLayout>

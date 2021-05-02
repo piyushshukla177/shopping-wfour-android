@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:background="@color/white"
+    tools:context=".view.activities.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout_screen"
+            android:layout_marginLeft="@dimen/dimen_5x"
+            android:layout_marginRight="@dimen/dimen_5x"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_148"
+            android:gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/dimen_2x"
+                        android:text="@string/hi_there"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_xlarge"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/dimen_2x"
+                        android:text="@string/enter_your_informations_below_to_login"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/txt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_16dp"
+                        android:layout_marginBottom="@dimen/dimen_2x"
+                        android:hint="@string/email"
+                        android:layout_marginTop="@dimen/dimen_10px"
+                        android:background="@drawable/bg_edit_text"
+                        android:fontFamily="@font/inter_regular"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black_transparent_50"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+                        android:id="@+id/txt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_16dp"
+                        android:hint="@string/password"
+                        app:drawable_show="@drawable/visibility"
+                        app:drawable_hide="@drawable/invisible"
+                        android:inputType="textPassword"
+                        android:background="@drawable/bg_edit_text"
+                        android:imeOptions="actionDone"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black_transparent_50"
+                        android:textSize="@dimen/text_size_small"
+                        tools:ignore="MissingClass" />
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--                    <CheckBox-->
+                        <!--                        android:visibility="visible"-->
+                        <!--                        android:checked="false"-->
+                        <!--                        android:id="@+id/chk_remember_me"-->
+                        <!--                        style="@style/WhiteCheck"-->
+                        <!--                        android:textColor="@color/black"-->
+                        <!--                        android:textSize="@dimen/text_size_normal"-->
+                        <!--                        android:text="@string/remember_me"-->
+                        <!--                        android:fontFamily="@font/inter_semibold"-->
+                        <!--                        android:layout_width="wrap_content"-->
+                        <!--                        android:layout_height="wrap_content" />-->
+
+
+                        <TextView
+                            android:id="@+id/lbl_forget_password"
+                            android:gravity="right"
+                            android:layout_width="match_parent"
+                            android:text="@string/forget_password"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/dimen_2dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/inter_semibold"
+                            android:textSize="@dimen/text_size_normal"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lbl_login"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:padding="@dimen/dimen_x1x"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:text="@string/login"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_normal"
+                    android:background="@drawable/bg_btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/lbl_signup"
+                    android:layout_marginTop="@dimen/dimen_2x"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/dimen_2x"
+                    android:textSize="@dimen/text_size_small"
+                    android:text="@string/don_t_have_account_register_here"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

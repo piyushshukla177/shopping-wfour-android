@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_2x">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/tv_general"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:text="@string/general_infomations"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/btn_edit_infomation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@drawable/bg_pressed_radius_grey"
+                android:drawableLeft="@drawable/ic_edit_profile"
+                android:drawablePadding="@dimen/dimen_05x"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingTop="@dimen/dimen_05x"
+                android:paddingRight="@dimen/dimen_1x"
+                android:paddingBottom="@dimen/dimen_05x"
+                android:text="@string/edit_image"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_xnormal" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_divider"
+            android:layout_marginLeft="@dimen/dimen_x3x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_x3x"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_bussiness_name"
+                style="@style/account_style_textview"
+                android:text="@string/hint_full_name" />
+
+            <EditText
+                android:id="@+id/edt_bussiness_name"
+                style="@style/my_account_style_editext"
+                android:layout_toRightOf="@+id/lbl_bussiness_name"
+                android:hint="@string/full_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:nextFocusRight="@+id/lbl_email"
+                android:nextFocusDown="@+id/lbl_email"
+                android:nextFocusForward="@+id/lbl_email"
+                android:text="" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_parent_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <include layout="@layout/layout_pro_divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_05x"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="1">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_email"
+                    style="@style/account_style_textview"
+                    android:text="@string/hint_email_address" />
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    style="@style/my_account_style_editext"
+                    android:layout_toRightOf="@+id/lbl_email"
+                    android:enabled="true"
+                    android:hint="@string/email_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:nextFocusDown="@+id/edt_address"
+                    android:text="" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include layout="@layout/layout_pro_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_x3x"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.3"
+                android:padding="@dimen/dimen_1x"
+                android:text="@string/hint_phone_number"
+                android:textColor="@color/textColorBlackPrimary"
+                android:textSize="@dimen/text_size_xnormal"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/lbl_phone_number"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/tv_phone_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/edt_phone_number"
+                    android:background="@drawable/bg_choose_phone_code"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dimen_2x"
+                    android:paddingTop="@dimen/dimen_05x"
+                    android:paddingRight="@dimen/dimen_2x"
+                    android:paddingBottom="@dimen/dimen_x05x"
+                    android:text="+670"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_normal"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/edt_phone_number"
+                    style="@style/my_account_style_editext"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:hint="@string/phone_number"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxWidth="@dimen/max_width"
+                    android:text="" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <include layout="@layout/layout_pro_divider" />
+
+        <RelativeLayout
+            android:id="@+id/ll_parent_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_x3x"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:weightSum="1">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_address"
+                style="@style/my_account_style_textview"
+                android:gravity="center_vertical"
+                android:text="@string/hint_business_address"
+                android:textColor="@color/textColorBlackPrimary"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <EditText
+                android:id="@+id/edt_address"
+                style="@style/my_account_style_editext"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/lbl_address"
+                android:hint="@string/business_address"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:text="" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvEg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_4x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_marginBottom="@dimen/dimen_1x"
+            android:text="@string/ex_vera_cruz_vila_verde_dili"
+            android:textColor="@color/textColorBlackPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <FrameLayout
+            android:id="@+id/fr_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_divider"
+            android:layout_marginLeft="@dimen/dimen_x3x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_marginBottom="@dimen/dimen_1x"
+            android:background="@color/grey"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_2x">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Bill"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/dividerColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Favoritu"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/bg_deal_list" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:text="Kontaktu Ami"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/inter_extrabold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Facebook Menssenger"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/dividerColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Wfourstore.com"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/bg_deal_list" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Sentru Ajuda"
+                android:textSize="12sp"
+                app:fontFamily="@font/inter_extrabold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="FAQ"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/dividerColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Ajuda"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/dividerColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Konaba Ami"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:fontFamily="@font/inter_semibold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/bg_deal_list" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="314dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/transparent_bg_bordered_button"
+            android:fontFamily="@font/inter_bold"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Versaun App 4.8.0"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

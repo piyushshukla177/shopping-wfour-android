@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_rate"
+        android:layout_gravity="center_vertical" />
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:id="@+id/tv_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_2x"
+        android:layout_marginLeft="@dimen/dimen_4x"
+        android:layout_marginRight="@dimen/dimen_4x"
+        android:layout_marginTop="@dimen/dimen_2x"
+        android:background="@drawable/bg_pressed_primary"
+        android:gravity="center"
+        android:padding="@dimen/dimen_2x"
+        android:text="@string/rate"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+    <include layout="@layout/layout_no_data" />
+
+    <include layout="@layout/layout_no_connection" />
+</RelativeLayout>

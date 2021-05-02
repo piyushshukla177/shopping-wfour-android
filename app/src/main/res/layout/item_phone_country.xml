@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/dimen_1x">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_normal"
+        android:textColor="@color/textColorSecondary"
+        android:id="@+id/lbl_deal_name"/>
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/text_size_normal"
+        android:textColor="@color/textColorSecondary"
+        android:id="@+id/tv_code"/>
+
+</RelativeLayout>

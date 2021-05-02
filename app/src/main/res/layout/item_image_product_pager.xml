@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.adapters.FragmentPagerDetailProduct"
+    android:orientation="vertical"
+    android:id="@+id/lnl_container">
+
+    <!-- TODO: Update blank fragment layout -->
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scaleType="centerCrop"
+       android:id="@+id/imageView"
+       android:layout_marginTop="@dimen/dimen_1x"
+       android:layout_marginBottom="@dimen/dimen_1x"
+       />
+
+</LinearLayout>

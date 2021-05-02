@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_chat_message_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:gravity="right"
+    tools:ignore="RtlHardcoded">
+
+    <RelativeLayout
+        android:id="@+id/layout_message_content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_05x"
+        android:layout_marginTop="@dimen/dimen_05x"
+        tools:background="@drawable/bg_message_red">
+
+        <TextView
+            android:id="@+id/text_image_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_message_author"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_05x"
+            android:layout_marginRight="@dimen/dimen_05x"
+            android:paddingBottom="@dimen/dimen_x1x"
+            android:paddingLeft="@dimen/dimen_x1x"
+            android:paddingRight="@dimen/dimen_x1x"
+            android:paddingTop="@dimen/dimen_x1x"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal"
+            tools:text="Test message" />
+
+        <!--android:maxWidth="@dimen/max_width_chat_content"-->
+
+        <TextView
+            android:id="@+id/text_message_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dimen_05x"
+            android:layout_marginRight="@dimen/dimen_05x"
+            android:maxWidth="@dimen/max_width_chat_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xnormal"
+            android:visibility="gone"
+            tools:text="User 2" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_message_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_05x"
+        android:maxWidth="@dimen/max_width_chat_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_size_small"
+        android:visibility="visible"
+        tools:text="10:50" />
+</LinearLayout>

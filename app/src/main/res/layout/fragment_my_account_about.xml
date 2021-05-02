@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_above="@+id/btn_functions">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_header_my_account" />
+
+            <include layout="@layout/layout_general_infomation" />
+            <!--<include layout="@layout/layout_gen_info_new" />-->
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/tv_change_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:paddingTop="@dimen/dimen_x1x"
+                android:paddingBottom="@dimen/dimen_x1x"
+                android:text=""
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_size_xnormal"
+                android:visibility="gone" />
+
+            <!--end general-->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

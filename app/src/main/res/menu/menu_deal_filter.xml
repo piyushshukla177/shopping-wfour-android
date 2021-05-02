@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_view_on_map"
+        android:icon="@drawable/ic_location_on_white"
+        android:orderInCategory="100"
+        android:title="@string/view_on_map"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <group android:id="@+id/action_group_sort">
+        <item
+            android:id="@+id/action_by_distance"
+            android:orderInCategory="100"
+            android:title="@string/sort_by_distance"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_by_rating"
+            android:orderInCategory="100"
+            android:title="@string/sort_by_rating"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_by_name"
+            android:orderInCategory="101"
+            android:title="@string/sort_by_name"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_by_price"
+            android:orderInCategory="102"
+            android:title="@string/sort_by_price"
+            app:showAsAction="never" />
+    </group>
+</menu>

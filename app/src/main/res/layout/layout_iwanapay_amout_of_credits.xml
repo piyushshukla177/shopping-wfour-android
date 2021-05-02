@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_4x"
+        android:layout_marginTop="@dimen/dimen_2x"
+        android:text="@string/amount_of_credits"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text_size_xnormal" />
+
+    <LinearLayout
+        android:layout_width="@dimen/dimen_width_credits"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_2x"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_divider"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="4"
+                android:minWidth="@dimen/dimen_6x"
+                android:paddingBottom="@dimen/dimen_x1x"
+                android:paddingTop="@dimen/dimen_x1x"
+                android:text=""
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_xxxlarge" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edt_credits"
+                android:layout_alignBottom="@+id/edt_credits"
+                android:layout_marginLeft="@dimen/dimen_1x"
+                android:layout_toRightOf="@+id/edt_credits"
+                android:text="@string/credits"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/text_size_xnormal" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_divider"
+            android:background="@color/grey" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

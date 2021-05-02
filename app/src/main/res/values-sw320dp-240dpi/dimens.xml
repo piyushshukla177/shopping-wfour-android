@@ -1,0 +1,91 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_x05x">1dp</dimen>
+    <dimen name="dimen_05x">3dp</dimen>
+    <dimen name="dimen_1x">6dp</dimen>
+    <dimen name="dimen_x1x">8dp</dimen>
+    <dimen name="dimen_2x">11dp</dimen>
+    <dimen name="dimen_x2x">14dp</dimen>
+    <dimen name="dimen_3x">17dp</dimen>
+    <dimen name="dimen_23">16dp</dimen>
+    <dimen name="dimen_x3x">20dp</dimen>
+    <dimen name="dimen_4x">22dp</dimen>
+    <dimen name="dimen_4xx">24dp</dimen>
+    <dimen name="dimen_x4x">24dp</dimen>
+    <dimen name="dimen_5x">28dp</dimen>
+    <dimen name="dimen_6x">33dp</dimen>
+    <dimen name="dimen_7x">40dp</dimen>
+    <dimen name="dimen_8x">45dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="text_size_small">9sp</dimen>
+    <dimen name="text_size_normal">11sp</dimen>
+    <dimen name="text_size_xnormal">13sp</dimen>
+    <dimen name="text_size_large">15sp</dimen>
+    <dimen name="text_size_xlarge">17sp</dimen>
+    <dimen name="text_size_xxlarge">19sp</dimen>
+    <dimen name="text_size_xxxlarge">21sp</dimen>
+    <dimen name="text_size_title_about">23sp</dimen>
+    <dimen name="text_size_huge">34sp</dimen>
+    <dimen name="text_size_xhuge">38sp</dimen>
+    <dimen name="text_size_buycredits">50sp</dimen>
+
+    <!-- Width/height -->
+    <dimen name="nav_header_height">155dp</dimen>
+    <dimen name="nav_header_height_reskin">210dp</dimen>
+    <dimen name="nav_width">250dp</dimen>
+    <dimen name="search_box_height">34dp</dimen>
+    <dimen name="min_width_dialog">250dp</dimen>
+    <dimen name="min_width_button_transport">34dp</dimen>
+    <dimen name="dimen_xbutton">43dp</dimen>
+    <dimen name="dimen_shadow_small">2dp</dimen>
+    <dimen name="max_width_chat_content">215dp</dimen>
+
+    <!-- Others -->
+    <dimen name="dimen_progressbar">30dp</dimen>
+    <dimen name="xsmall_icon">12dp</dimen>
+    <dimen name="small_icon">24dp</dimen>
+    <dimen name="normal_icon">42dp</dimen>
+    <dimen name="large_icon">60dp</dimen>
+    <dimen name="xlarge_icon">80dp</dimen>
+    <dimen name="dimen_infowindow_driver">105dp</dimen>
+    <!--settings fragment-->
+    <dimen name="dimen_divider">1dp</dimen>
+    <!--header my acount-->
+    <dimen name="dimen_avatar">135dp</dimen>
+    <dimen name="dimens_avatar_signup">110dp</dimen>
+    <dimen name="dimen_image_car">135dp</dimen>
+    <dimen name="heigh_deal_new">135dp</dimen>
+    <dimen name="max_width">140dp</dimen>
+    <!--fragment become pro-->
+    <dimen name="become_pro_maxwidth_edittext">95dp</dimen>
+    <!---->
+    <dimen name="heigh_deal_item">170dp</dimen>
+
+    <dimen name="width_button_submit">135dp</dimen>
+
+    <!--fragment contact-->
+    <dimen name="dimen_image_contact">63dp</dimen>
+    <!--fragment faq-->
+    <dimen name="dimen_image_faq">48dp</dimen>
+    <dimen name="dimen_faq_height_title">230dp</dimen>
+    <!--fragment buy credits-->
+    <dimen name="dimen_width_credits">170dp</dimen>
+    <dimen name="dimen_img_info">12dp</dimen>
+    <dimen name="width_divider_item_history">6dp</dimen>
+    <dimen name="height_divider_item_history">58dp</dimen>
+    <dimen name="img_history">12dp</dimen>
+    <dimen name="dimen_button_close">28dp</dimen>
+    <dimen name="dimen_ratingbar_height">20dp</dimen>
+
+    <!-- Quickbox dimens -->
+    <dimen name="action_bar_height">65dp</dimen>
+    <dimen name="toggle_button_params">50dp</dimen>
+    <dimen name="element_fragment_margin">27dp</dimen>
+    <dimen name="call_avatar_diameter">70dp</dimen>
+    <dimen name="padding_bottom">56dp</dimen>
+    <dimen name="income_call_buttons_margin">80dp</dimen>
+    <dimen name="item_height">120dp</dimen>
+    <dimen name="dimen_indicator">40dp</dimen>
+</resources>

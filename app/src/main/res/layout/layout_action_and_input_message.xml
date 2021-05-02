@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dimen_10px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dimen_1x"
+        android:background="@drawable/bg_action_deal"
+        android:id="@+id/ll_action_deal"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_show_hide_action"
+            android:layout_margin="@dimen/dimen_1x"
+            app:srcCompat="@drawable/ic_hide_action"
+            android:layout_width="@dimen/dimen_4x"
+            android:layout_height="@dimen/dimen_4x" />
+
+        <LinearLayout
+            android:id="@+id/ll_btn_action"
+            android:visibility="visible"
+            android:orientation="horizontal"
+            android:layout_toLeftOf="@+id/ll_input_messange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:tint="@color/primary"
+                android:layout_margin="@dimen/dimen_1x"
+                android:id="@+id/btn_deal"
+                android:src="@drawable/ic_deal"
+                android:layout_width="@dimen/dimen_4x"
+                android:layout_height="@dimen/dimen_4x" />
+
+            <ImageView
+                android:tint="@color/red"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:layout_marginRight="@dimen/dimen_1x"
+                android:id="@+id/btn_no_deal"
+                android:src="@drawable/ic_no_deal"
+                android:layout_width="@dimen/dimen_4x"
+                android:layout_height="@dimen/dimen_4x" />
+
+            <ImageView
+                android:tint="@color/primary"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:layout_marginBottom="@dimen/dimen_1x"
+                android:layout_marginRight="@dimen/dimen_1x"
+                android:id="@+id/btn_track_deal"
+                android:src="@drawable/ic_track_deal"
+                android:layout_width="@dimen/dimen_4x"
+                android:layout_height="@dimen/dimen_4x" />
+
+
+            <ImageView
+                android:visibility="gone"
+                android:tint="@color/primary"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dimen_x1x"
+                android:id="@+id/btn_complete_deal"
+                android:src="@drawable/ic_complete_deal"
+                android:layout_width="@dimen/dimen_5x"
+                android:layout_height="@dimen/dimen_5x" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_input_messange"
+        android:layout_alignParentRight="true"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_marginBottom="@dimen/dimen_1x"
+            android:id="@+id/txt_message"
+            android:paddingTop="@dimen/dimen_x1x"
+            android:paddingBottom="@dimen/dimen_x1x"
+            android:paddingLeft="@dimen/dimen_x1x"
+            android:paddingRight="@dimen/dimen_x1x"
+            android:maxLines="5"
+            android:text=""
+            android:textSize="@dimen/text_size_xnormal"
+            android:hint="@string/input"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_input_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/img_send"
+            android:layout_width="@dimen/dimen_x4x"
+            android:layout_height="@dimen/dimen_x4x"
+            android:layout_margin="@dimen/dimen_1x"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_send_red" />
+
+    </LinearLayout>
+</LinearLayout>

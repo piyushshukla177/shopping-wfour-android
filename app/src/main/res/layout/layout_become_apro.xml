@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/fr_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x"
+        android:background="@color/grey"
+        android:paddingBottom="@dimen/dimen_1x"
+        android:paddingTop="@dimen/dimen_1x"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/ckb_become_pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_x1x"
+            android:background="@color/grey"
+            android:checked="false"
+            android:paddingLeft="@dimen/dimen_1x"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="visible"
+            app:buttonTint="@color/primary" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_05x"
+            android:layout_toRightOf="@+id/ckb_become_pro"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_become_pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/i_want_to_become_pro"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <LinearLayout
+                    android:layout_marginLeft="@dimen/dimen_05x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/tv_terms_and_conditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/terms_and_conditions"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_divider"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@color/primary" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+        android:id="@+id/btn_become_pro"
+        style="@style/Button.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="@string/confirm"
+        android:layout_marginLeft="@dimen/dimen_7x"
+        android:layout_marginRight="@dimen/dimen_7x"
+        android:layout_below="@+id/fr_content"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

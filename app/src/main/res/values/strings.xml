@@ -1,0 +1,1714 @@
+<resources>
+
+    <string name="send_email">Manda Email</string>
+
+    <string name="no_email_client">La iha email kliente nebe instala.</string>
+
+    <string name="no_email">This user has no email business_address</string>
+
+    <string name="no_phone_number">Uzuariu ida ne la iha numeru telemovel</string>
+
+    <string name="msg_request_time_out">Request timeout</string>
+
+    <string name="msg_network_not_available">Redi la disponivel</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="sign_in">Log in</string>
+
+    <string name="google">Google</string>
+
+    <string name="facebook">Facebook</string>
+
+    <string name="sign_up">Rejistu</string>
+
+    <string name="continue_">Kontinua</string>
+    <string name="Edit_Profile">Edit Profile</string>
+    <string name="register_">Rejistu</string>
+
+    <string name="email">Email</string>
+
+    <string name="email_address">E-mail address</string>
+
+    <string name="hint_email_address">E-mail address*</string>
+
+    <string name="phone_number">Numeru Telemovel</string>
+
+    <string name="zipcode">Zipcode</string>
+
+    <string name="gender">Sexo</string>
+
+    <string name="birthday">Birthday</string>
+
+    <string name="hint_phone_number">Telemovel*</string>
+
+    <string name="password">Password</string>
+
+    <string name="password_require">Password*</string>
+
+    <string name="retype_password">Repete fali password</string>
+
+    <string name="forget_password">Haluha password?</string>
+
+    <string name="no_account_yet">Seidauk iha account? Kria agora</string>
+
+    <string name="full_name">Naran kompletu</string>
+
+    <string name="hint_full_name">Naran kompletu*</string>
+
+    <string name="create_account">Kria account</string>
+
+    <string name="start_now">Komesa agora</string>
+
+    <string name="already_a_member">Rejistu ona? LOGIN AGORA</string>
+
+    <!-- All deal -->
+    <string name="chose_category">Hili kategoria</string>
+    <string name="my_favorites">Hau nia favoritu</string>
+    <string name="transport_deliveries">Transporte &amp; Deliveries </string>
+    <string name="food_beverages">Hahan &amp; Bebidas</string>
+    <string name="labor">Labor (jobs)</string>
+    <string name="travel_hotel">Hotels &amp; Traveling</string>
+    <string name="shopping">Shopping, Beauty &amp; Health</string>
+    <string name="other_deals">Other nearby deals</string>
+    <string name="other_deal">Other nearby deal</string>
+    <string name="all_deals">All other deals</string>
+    <string name="all_deal">All deals</string>
+
+    <!-- description -->
+    <string name="description_food">Find a deal at a nearby cafe, bar or restaurant...</string>
+
+    <string name="description_hotel">Find a deal to booking hotel or traveling many place...</string>
+
+    <string name="description_shopping">Find thousand deal to have a best choose...</string>
+
+    <string name="description_beauty">Find a deal at a nearby spa, hospital, relax,...</string>
+
+    <string name="description_orther">Find a orther deal at a nearby...</string>
+
+    <string name="description_labor">Find a temporary work in many place nearby...</string>
+
+    <string name="cart">Karosa</string>
+
+    <string name="Buy">Sosa</string>
+    <string name="Kontinua">Kontinua</string>
+
+    <string name="Hot">"Hot "</string>
+
+    <string name="New">Foun</string>
+
+    <string name="Feature">"Feature "</string>
+
+    <string name="search">Peskiza</string>
+
+    <string name="iwanaride">WFOUR</string>
+
+    <string name="iwanadelivery">Delivery</string>
+
+    <string name="work">Servisu</string>
+
+    <string name="iwanachat">Chat</string>
+
+    <string name="profile">Profile</string>
+
+    <string name="my_deals">My deals</string>
+
+    <string name="deal_manager">Deal Manager</string>
+
+    <string name="iwanapay">Selu</string>
+
+    <string name="news_and_events">Notisia &amp; Eventu</string>
+
+    <string name="iwanabiz">Biz</string>
+
+    <string name="share">Share</string>
+
+    <string name="help">Ajuda</string>
+
+    <string name="settings">Konfigurasaun</string>
+
+    <string name="about_us">Konaba Ami</string>
+
+    <string name="me">Hau</string>
+
+    <string name="log_out">Log out</string>
+
+    <string name="notification">Notifikasaun</string>
+
+    <string name="advance_search">Peskiza tuir mai</string>
+
+    <string name="keyword">Keywords</string>
+
+    <string name="value_km">%1$s Km</string>
+
+    <string name="value_meter">%1$s m</string>
+
+    <string name="value_best_deals">Show %1$s best deals</string>
+
+    <string name="available_now">Disponivel agora</string>
+
+    <string name="remember_me">Fo hanoin hau</string>
+
+    <string name="dollar_value">$%1$s</string>
+
+    <string name="negative_dollar_value">-$%1$s</string>
+
+    <string name="sort_by_rating">Sort by rating</string>
+
+    <string name="sort_by_distance">Sort by distance</string>
+
+    <string name="view_on_map">Hare iha mapa</string>
+
+    <string name="sort_by_name">Sort by name</string>
+
+    <string name="sort_by_price">Sort by price</string>
+
+    <string name="i_am_available_for_driving">I\'m available for driving</string>
+
+    <string name="duration_buying">Durasaun da kompra</string>
+
+    <string name="my_trip">My trips</string>
+
+    <string name="iwanaride_deals">iwanaride deals</string>
+
+    <string name="deal">Deal</string>
+
+    <string name="invalid_lat_long_used">Invalid latitude or longitude used</string>
+
+    <string name="no_address_found">Sorry, no business_address found</string>
+
+    <string name="address_found">fatin hetan ona</string>
+
+    <string name="address_">Hela fatin</string>
+
+    <string name="service_not_available">No geocoder available</string>
+
+    <string name="msg_no_network">Network is not available</string>
+
+    <string name="msg_can_not_get_email">Failed to login. Can not get your email business_address</string>
+
+    <string name="msg_have_some_errors">Have some errors, please try again</string>
+
+    <!-- for deal -->
+
+    -
+    <array name="list_seller">
+
+        <item>Ativu</item>
+
+        <item>Inactive</item>
+
+        <item>End time</item>
+
+    </array>
+
+
+    -
+    <array name="list_buyer">
+
+        <item>Wishlist</item>
+
+        <item>Reviewed</item>
+
+        <item>Sosa ona</item>
+
+        <item>No deals</item>
+
+    </array>
+
+
+    -
+    <array name="deal_detail">
+
+        <item>Konaba</item>
+
+        <item>Reviews</item>
+
+    </array>
+
+
+    -
+    <string-array name="months">
+
+        <item>01</item>
+
+        <item>02</item>
+
+        <item>03</item>
+
+        <item>04</item>
+
+        <item>05</item>
+
+        <item>06</item>
+
+        <item>07</item>
+
+        <item>08</item>
+
+        <item>09</item>
+
+        <item>10</item>
+
+        <item>11</item>
+
+        <item>12</item>
+
+    </string-array>
+
+    <string name="msg_remind_user_grants_permissions">Application can not work correctly if it\'s not enough permissions</string>
+
+    <string name="msg_remind_user_turn_on_location">Application can not work correctly if you don\'t turn on Google\'s location</string>
+
+    <string name="msg_remind_user_grant_location">Passengers will not find you if you don\'t grant location permission.\nPlease grant location or you will not be available for searching</string>
+
+    <string name="no_thank">No</string>
+
+    <string name="allow">Allow</string>
+
+    <string name="msg_name_is_required">Naran tenke prense</string>
+
+    <string name="msg_email_is_required">Email la validu</string>
+
+    <string name="msg_phone_is_required">Numeru telemovel tenke prense</string>
+
+    <string name="msg_zipcode_is_required">Zipcode is required</string>
+
+    <string name="msg_image_is_required">Imajen presiza</string>
+
+    <string name="msg_birthday_is_required">Birthday is required</string>
+
+    <string name="msg_gneder_is_required">Sexo tenke prense</string>
+
+    <string name="msg_password_is_required">Password includes at least 8 characters containing at least 1 number and no special characters</string>
+
+    <string name="msg_password_is_not_match">Password la hanesan</string>
+
+    <string name="from">Husi</string>
+
+    <string name="from_value">Husi: %1$s</string>
+
+    <string name="to">Ba</string>
+
+    <string name="to_value">Ba: %1$s</string>
+
+    <string name="approximate_price_value">Presu aprosimadu: $%1$s</string>
+
+    <string name="passengers_value">Pasageiru: %1$s</string>
+
+    <string name="turn_on">Turn on</string>
+
+    <string name="yes">Yes</string>
+
+    <string name="ok">Ok</string>
+
+    <string name="all">All</string>
+
+    <string name="taxi">Taxi</string>
+
+    <string name="taxi_delivery">Taxi-Delivery</string>
+
+    <string name="vip">VIP</string>
+
+    <string name="vip_delivery">VIP-Delivery</string>
+
+    <string name="lifts">Lifts</string>
+
+    <string name="lift_delivery">Lifts-Delivery</string>
+
+    <string name="motorbike">Moto</string>
+
+    <string name="motor_delivery">Motor-Delivery</string>
+
+    <string name="delivery">Selu ona</string>
+
+    <string name="more_info">Info seluk tan</string>
+    <!--settings fragment-->
+    <string name="settings_notification">Permite Notifikasaun</string>
+
+    <string name="settings_my_favourite">hau nia favoritu</string>
+
+
+    -
+    <string name="settings_transport_deliveries">
+
+-<![CDATA[Transport & Deliveries]]>
+</string>
+
+
+    -
+    <string name="settings_food_beverages">
+
+-<![CDATA[Foods & Beverages]]>
+</string>
+
+    <string name="settings_labor">Servisu (jobs)</string>
+
+    <string name="settings_travelling">Viajen</string>
+
+    <string name="settings_shopping">Kompra</string>
+
+    <string name="settings_other_near_by_deal">Others nearby deals</string>
+
+    <!--iwana pay fragment-->
+
+
+    <string name="iwana_pay_buy_credit">Sosa kreditu</string>
+
+    <string name="iwana_pay_redeem">Redeem</string>
+
+    <string name="iwana_pay_tranfers">Transferensia</string>
+
+    <string name="iwana_pay_histories">History</string>
+
+    <string name="business_address">Enderesu</string>
+
+    <string name="hint_business_address">Enderesu*</string>
+
+    <!--header my account-->
+
+
+    <string name="edit_image">Edit</string>
+
+    <string name="title_my_account">Canning vate WA 6155, AU</string>
+
+    <string name="button_reviews">View Reviews</string>
+
+    <!--my account -->
+
+
+    <string name="general">Geral</string>
+
+    <string name="bussiness_name">Naran empreza</string>
+
+    <string name="hint_bussiness_name">Naran empreza*</string>
+
+    <string name="info_car">Informasaun Kareta</string>
+
+    <string name="car_make">Car make</string>
+
+    <string name="hint_car_make">Car make*</string>
+
+    <string name="model">Modelu</string>
+
+    <string name="hint_model">Modelu*</string>
+
+    <string name="year">Tinan</string>
+
+    <string name="hint_year">Tinan*</string>
+
+    <string name="petrol">Petrol</string>
+
+    <string name="gaz">Gaz</string>
+
+    <string name="gaz_online">Gazolina</string>
+
+    <string name="yearly_insurance">Yearly insurance</string>
+
+    <string name="yearly_tax">Yearly tax</string>
+
+    <string name="permit">Permit</string>
+
+    <string name="pro">Pro</string>
+
+    <string name="msg_settings_notifications">Halo favor ativa notifikasaun</string>
+
+    <string name="rate">Rate</string>
+
+    <string name="msg_choose_pickup">Please choose pickup</string>
+
+    <string name="msg_choose_destination">Please choose destination</string>
+
+    <string name="msg_choose_driver">Please click on a transport marker to choose your driver</string>
+
+    <string name="headphone">Headphone</string>
+
+    <string name="product">Produtu</string>
+
+    <string name="price">Presu</string>
+
+    <string name="discount">Diskontu</string>
+
+    <string name="description">Deskrisaun</string>
+
+    <string name="timming">Duration of deal (hours)</string>
+
+    <string name="days">Lor-loron</string>
+
+    <string name="hours">Oras</string>
+
+    <string name="type_deal">Deal Type</string>
+
+    <string name="standard">Standard</string>
+
+    <string name="premium">Premium</string>
+
+    <string name="total">Total</string>
+
+    <string name="total_credit">Total kreditu</string>
+
+    <string name="submit">Submit</string>
+
+    <string name="view_reviews">Reve</string>
+
+    <string name="distance">Distansia</string>
+
+    <string name="eta">ETA</string>
+
+    <string name="estimateFare">Tarifa</string>
+
+    <string name="estimate_fare">Estimate fare</string>
+
+    <string name="track">Track</string>
+
+    <string name="finish">Finish</string>
+
+    <string name="trip_tracking">Trip tracking</string>
+
+    <string name="trip_finishing">Trip finishing</string>
+
+
+    -
+    <string name="button_save_and_submit">
+
+-<![CDATA[Save & Submit]]>
+</string>
+
+    <string name="msg_update_avatar">Favor update ita-nia imajen!</string>
+
+    <!--fragment transfer, redeem,buy credits-->
+
+
+    <string name="button_redeem">Redeem</string>
+
+    <string name="button_transfer">Transferensia</string>
+
+    <string name="input">Hatama</string>
+
+    <string name="hint_input">Hatama*</string>
+
+    <string name="msg_enought_credits">Ita-nia kreditu la sufisiente</string>
+
+    <!--fragment search-->
+
+
+    <string name="radius">Radius</string>
+
+    <!--activity become pro -->
+
+
+    <string name="amount_of_deals_to_show">Amount of deals to show</string>
+
+    <string name="title">Titlu</string>
+
+    <string name="original_price">Presu Original(*)</string>
+
+    <string name="type_of_transport">Tipu Transporte</string>
+
+    <string name="fuel">Fuel</string>
+
+    <string name="amount_of_yearly_kilometres">Amount of yearly kilometres (kms)*</string>
+
+    <string name="num_years_use_car">Years you intend to use the car</string>
+
+
+    -
+    <string name="road_taxes_per_year">
+
+-<![CDATA[Yearly car & road taxes*($)]]>
+</string>
+
+    <string name="my_location">Hau nia fatin</string>
+
+    <string name="category">Kategoria</string>
+
+    <string name="average_consumption_of_car">Fuel consumption (km/l)*</string>
+
+    <string name="price_per_liter">Price per liter of your fuel($/l)*</string>
+
+    <string name="cost_of_garage">Yearly parking costs (if any)($)</string>
+
+    <string name="insurance_costs">Yearly insurance costs*($)</string>
+
+    <string name="maintenance_costs">Yearly maintenance costs*($)</string>
+
+    <string name="price_new_tyres">Price of 4 new tyres($)</string>
+
+    <string name="value_of_car">Rest value of car after selling it($)</string>
+
+    <string name="unexpected_cost">Yearly unexpected costs($)</string>
+
+    <string name="value_your_car_bought">Presu nebe ita selu ba ita-nia kareta*($)</string>
+
+    <string name="general_infomations">Informasaun Geral</string>
+
+    <string name="driver_information">Informasaun Driver</string>
+
+    <string name="certification">Business license or equivalent</string>
+
+    <string name="button_finish">Finish</string>
+
+    <string name="msg_fill_bussiness_name">Halo favor prense ita-nia naran empreza</string>
+
+    <string name="msg_fill_email">Halo favor prense ita-nia email</string>
+
+    <string name="msg_address_is_required">Halo favor prense ita-nia hela fatin</string>
+
+    <string name="msg_car_make">Please fill your car make</string>
+
+    <string name="msg_model_is_required">Please fill your car of model</string>
+
+    <string name="msg_year_is_required">Please fill year</string>
+
+    <string name="msg_amount_kilometres_is_required">Please fill amount of yearly kilometres</string>
+
+    <string name="msg_num_year_use_car_is_required">Please fill number year you intend to use the car</string>
+
+
+    -
+    <string name="msg_road_taxes_yearly_car_required">
+
+-<![CDATA[Please fill yearly car & road taxes]]>
+</string>
+
+    <string name="msg_average_consumption_of_your_car_required">Please fill average consumption of your car</string>
+
+    <string name="msg_price_per_liter_is_required">Please fill price per liter or gallon of your fuel</string>
+
+    <string name="msg_cost_of_garage_is_required">Please fill yearly costs of your garage where you park the car</string>
+
+    <string name="msg_insurance_cost_is_required">Please fill yearly insurance costs</string>
+
+    <string name="msg_maintence_cost_is_required">Please fill yearly maintenance costs</string>
+
+    <string name="msg_price_new_tyres_is_required">Please fill price of 4 new tyres</string>
+
+    <string name="msg_value_car_sell_is_required">Please fill rest value of the car after you sell it</string>
+
+    <string name="msg_unexpected_cost_is_required">Please fill yearly unexpected costs</string>
+
+    <string name="msg_value_your_car_bought_is_required">Please fill value for which you bought the car</string>
+
+    <string name="msg_chose_car">Favor upload ita-nia imajen kareta!</string>
+
+    <string name="msg_chose_certification">Please upload your image certification!</string>
+
+    <string name="button_become_pro">I am a Pro</string>
+
+    <string name="become_pro">Become A Pro</string>
+
+    <string name="become">Become</string>
+
+    <string name="msg_enable_edit">Please enable edit</string>
+
+
+    -
+    <array name="fuel">
+
+        <item>Gasolina</item>
+
+        <item>Diesel</item>
+
+        <item>Electric</item>
+
+        <item>Gas</item>
+
+        <item>Ethanol</item>
+
+        <item>Hybrid</item>
+
+    </array>
+
+    <string name="is_delivery">Disponivel ba delivery</string>
+
+
+    -
+    <string name="msg_accept_the_terms_conditions">
+
+-<![CDATA[Please check I want to become pro and Accept the Terms & Conditions!]]>
+</string>
+
+
+    -
+    <string name="i_want_to_become_pro">
+
+-<![CDATA[I want to become Pro and Accept the ]]>
+</string>
+
+
+    -
+    <string name="i_want_to_become_driver">
+
+-<![CDATA[I want to become a driver]]>
+</string>
+
+    <string name="i_m_a_driver">I am a driver</string>
+
+    <!--activity change password-->
+
+
+    <string name="change_pass">Troka password</string>
+
+    <string name="button_change_pass">Troka Password</string>
+
+    <string name="password_confirm">Konfirma Password</string>
+    <string name="password_repeat">Repete Password</string>
+    <string name="select_location">Hela fatin</string>
+
+    <string name="address">Enderesu</string>
+
+    <string name="msg_confirm_pass_is_required">Favor konfirma password</string>
+
+    <!---->
+
+
+    <string name="payment">Pagamentu</string>
+
+    <string name="bill">Bill</string>
+
+    <string name="payment_method">Metode pagamentu</string>
+
+    <string name="credits">Kreditu</string>
+
+    <string name="cash">Cash</string>
+
+    <string name="paypal">Paypal</string>
+
+    <string name="skrill">Skrill</string>
+
+    <string name="stripe">Stripe</string>
+
+    <string name="other">Seluk tan</string>
+
+    <string name="accounting">Kontabilidade</string>
+
+    <string name="pay">Selu</string>
+
+    <string name="you_have_to_pay_transaction_fee">You have to pay 1 credit for transaction fee.</string>
+
+    <string name="value_credits">%1$s credits</string>
+
+    <string name="trip_value">#Trip %1$s</string>
+
+    <string name="dollars">Dollars</string>
+
+    <string name="dollar_symbol">$</string>
+
+    <string name="comment">Komentariu</string>
+
+    <string name="msg_please_review_deal">Please leave your review for this deal</string>
+
+    <string name="status">Status</string>
+
+    <string name="finished">Terminadu</string>
+
+    <string name="not_paid">La selu</string>
+
+    <string name="canceled">Kanseladu</string>
+
+    <string name="msg_no_data_found">Oops… La iha data nebe hetan</string>
+
+    <string name="delete_all">Halakon hotu kedas</string>
+
+    <string name="delete">Halakon</string>
+
+    <string name="msg_confirm_deleting_all">Do you want to delete all?</string>
+
+    <string name="msg_confirm_deleting_a_trip">Do you want to delete this trip?</string>
+
+    <string name="msg_have_no_trip_to_delete">You have no trip to delete</string>
+
+    <string name="msg_have_no_trip_to_share">You have no trip to share</string>
+
+    <string name="msg_choose_trip_to_share">Please choose a trip which you want to share</string>
+
+    <string name="msg_confirm_cancel_trip">Do you want to cancel this trip?</string>
+
+    <string name="msg_confirm_driver_is_unavailable">You will be not available for searching. Do you still want to exit?</string>
+
+    <string name="call">Phone Call</string>
+
+    <string name="voice_call">VoiP call</string>
+
+    <string name="add_to_contact">Add to contacts</string>
+
+    <string name="remove_from_contact">Remove from contacts</string>
+
+    <string name="added_to_your_contacts">Added to your contacts</string>
+
+    <string name="write_a_message">Hakerek mensajen…</string>
+
+    <string name="currency_symbol">$</string>
+
+    <string name="button_save">Salva</string>
+
+    <string name="value_minutes_away">%1$s\nminutu hira tan</string>
+
+    <string name="revenue">Reseita</string>
+
+    <string name="expense">Despesas</string>
+
+    <string name="error">Erru</string>
+
+    <string name="retry">Koko fali</string>
+
+    <string name="error_recreate_session">Login Chat error</string>
+
+    <string name="chat_load_users_error">Load chat users errors</string>
+
+    <string name="chat_unsupported_type">Unsupported dialog type</string>
+
+    <string name="subtitle_text_logged_in_as">Logged in as %s</string>
+
+    <string name="pref_displayhud_key">displayhud_preference</string>
+
+    <string name="pref_displayhud_title">Display call statistics.</string>
+
+    <string name="pref_displayhud_dlg">Display call statistics.</string>
+
+    <string name="pref_displayhud_default" translatable="false">false</string>
+
+    <string name="pref_audiocodec_key">pref_audio_codec</string>
+
+    <string name="pref_audiocodec_title">Default audio codec</string>
+
+    <string name="pref_audiocodec_def">ISAC</string>
+
+    <string name="pref_audiocodec_dlg">Select default audio codec</string>
+
+    <string name="pref_version">QuickBlox WebRTC\nBuild version 1.12</string>
+
+    <string name="btn_screen_capture">screenShot</string>
+
+    <string name="accepted">Accepted</string>
+
+    <string name="connection_was_lost">Connection was lost</string>
+
+    <string name="pref_disable_built_in_aec_key">disable_built_in_aec_preference</string>
+
+    <string name="pref_disable_built_in_aec_title">Disable built-in AEC</string>
+
+    <string name="pref_disable_built_in_aec_dlg">Disable built-in AEC</string>
+
+    <string name="pref_disable_built_in_aec_default">false</string>
+
+    <string name="pref_built_in_aec_not_available">Built-in AEC is not available</string>
+
+    <string name="pref_noaudioprocessing_key">audioprocessing_preference</string>
+
+    <string name="pref_noaudioprocessing_title">Disable audio processing</string>
+
+    <string name="pref_noaudioprocessing_dlg">Disable audio processing pipeline</string>
+
+    <string name="pref_noaudioprocessing_default">false</string>
+
+    <string name="pref_opensles_key">opensles_preference</string>
+
+    <string name="pref_opensles_title">Use OpenSL ES for audio playback</string>
+
+    <string name="pref_opensles_dlg">Use OpenSL ES for audio playback</string>
+
+    <string name="pref_opensles_default">false</string>
+
+    <string name="pref_hwcodec_key">hwcodec_preference</string>
+
+    <string name="pref_hwcodec_title">Video codec hardware acceleration</string>
+
+    <string name="pref_hwcodec_default">true</string>
+
+    <string name="pref_startbitratevalue_key">startbitratevalue_preference</string>
+
+    <string name="pref_startbitratevalue_title">Bandwidth (0–2000)</string>
+
+    <string name="pref_startbitratevalue_default">0</string>
+
+    <integer name="pref_startbitratevalue_min_value">0</integer>
+
+    <integer name="pref_startbitratevalue_max_value">2000</integer>
+
+    <integer name="pref_startbitratevalue_step_size">100</integer>
+
+    <string name="pref_answer_time_interval_key">answer_time_interval</string>
+
+    <string name="pref_answer_time_interval_title">Answer Time Interval (15–90s)</string>
+
+    <string name="pref_answer_time_interval_default_value">60</string>
+
+    <integer name="pref_answer_time_interval_min_value">15</integer>
+
+    <integer name="pref_answer_time_interval_max_value">90</integer>
+
+    <integer name="pref_answer_time_interval_step_size">5</integer>
+
+    <string name="pref_disconnect_time_interval_key">disconnect_time_interval</string>
+
+    <string name="pref_disconnect_time_interval_title">Disconnect Time Interval (10–90s)</string>
+
+    <string name="pref_disconnect_time_interval_default_value">10</string>
+
+    <integer name="pref_disconnect_time_interval_min_value">10</integer>
+
+    <integer name="pref_disconnect_time_interval_max_value">90</integer>
+
+    <integer name="pref_disconnect_time_interval_step_size">5</integer>
+
+    <string name="pref_dialing_time_interval_key">Dialing_time_interval</string>
+
+    <string name="pref_dialing_time_interval_title">Dialing Time Interval (3–10s)</string>
+
+    <string name="pref_dialing_time_interval_default_value">5</string>
+
+    <integer name="pref_dialing_time_interval_min_value">3</integer>
+
+    <integer name="pref_dialing_time_interval_max_value">10</integer>
+
+    <integer name="pref_dialing_time_interval_step_size">1</integer>
+
+    <string name="pref_frame_rate_key">frame_rate</string>
+
+    <string name="pref_frame_rate_title">Frame Rate (0–30)</string>
+
+    <string name="pref_frame_rate_default">0</string>
+
+    <integer name="pref_frame_rate_min_value">0</integer>
+
+    <integer name="pref_frame_rate_max_value">30</integer>
+
+    <integer name="pref_frame_rate_stepSize">5</integer>
+
+    <string name="pref_videocodec_key">videocodec_preference</string>
+
+    <string name="pref_videocodec_title">Default video codec</string>
+
+    <string name="pref_videocodec_dlg">Select default video codec</string>
+
+    <string name="pref_videocodec_default">0</string>
+
+    <string name="pref_resolution_key">resolution_preference</string>
+
+    <string name="text_push_notification_message">"%s is calling you"</string>
+
+    <string name="title_video_category">Video</string>
+
+    <string name="versionName">QuickBlox WebRTC\nBuild version 2.0.0</string>
+
+    <string name="pref_resolution_title">Video Format</string>
+
+    <string name="pref_resolution_dlg">Enter RTC local video resolution</string>
+
+    <string name="pref_resolution_default">-1</string>
+
+    <string name="title_call_settings_category">Call Settings</string>
+
+    <string name="also_on_call">Also on call:</string>
+
+    <string name="text_incoming_audio_call">Incoming Audio Call</string>
+
+    <string name="text_incoming_video_call">Incoming Video Call</string>
+
+    <string name="user_list_on_call">User 1, User 2, User 3, User 4, User 5, User 6</string>
+
+    <string name="ringing">Ringing</string>
+
+    <string name="dlg_signal_error">Disconnected… Please check your Internet connection!</string>
+
+    <string name="text_status_hang_up">Hung up</string>
+
+    <string name="permission_unavailable">%s is not available now!</string>
+
+    <string name="text_status_connect">Connect…</string>
+
+    <string name="text_status_checking">Checking…</string>
+
+    <string name="text_status_connected">Connected</string>
+
+    <string name="text_status_disconnected">Disconnected</string>
+
+    <string name="text_status_closed">Taka</string>
+
+    <string name="text_status_time_out">Time Out</string>
+
+    <string name="text_status_failed">Failed</string>
+
+    <string name="text_status_rejected">Rejected</string>
+
+    <string name="text_status_no_answer">La iha resposta</string>
+
+    <string name="action_settings">Konfigurasaun</string>
+
+    <string name="opponents">and %s other</string>
+
+    <string name="opponent">and %s </string>
+
+    <string name="opponent_pending">Pending</string>
+
+    <string name="opponent_closed">Taka</string>
+
+    <string name="field_name_user_name">Naran uzuariu</string>
+
+    <string name="field_name_chat_room_name">Chat room name</string>
+
+    <string name="error_name_must_not_contain_special_characters_from_app">%1$s must contain 3 — %2$s alphanumeric Latin characters without space, the first char must be a letter</string>
+
+    <string name="price_value">$ %1$s</string>
+
+    <string name="btn_iwana_ride">Iwana Ride</string>
+
+    <string name="car_photo">Car photo</string>
+
+    <string name="msg_update_success">Updated susesu!</string>
+
+    <string name="msg_activate_success">Activated successfully!</string>
+
+    <string name="msg_deactivate_success">Deactivated successfully!</string>
+
+    <!-- new deal -->
+
+
+    <string name="auto_renew">Auto-renew</string>
+
+    <string name="name">Naran Kompletu</string>
+
+    <string name="upgrade_pro_account">You need to upgrate to premium account</string>
+
+    <string name="title_required">Titlu tenki prense</string>
+
+    <string name="price_required">Presu tenki prense</string>
+
+    <string name="address_is_required">Hela fatin tenki prense</string>
+
+    <string name="deal_premium_description">Deal including notifications send to nearby users</string>
+
+    <string name="discount_required">Discount is required</string>
+
+    <string name="deal_standard_description">Deal without notification</string>
+
+    <string name="value_of_total">%1$s credits</string>
+
+    <string name="connection_error">Chat connection has been dropped</string>
+
+    <string name="reconnect_alert">Reconnecting in %s seconds</string>
+
+    <string name="public_group_chat_cannot_be_deleted">Public Group chat can be deleted only by owner</string>
+
+    <string name="current_password">Password Atual*</string>
+
+    <string name="msg_fill_old_pass">Halo favor prense ita-nia password atual!</string>
+
+    <string name="msg_create_success">Kria ona ho susesu!</string>
+
+    <string name="successfully">Susesu!</string>
+
+    <string name="dialogs_creation_error">Dialog creation errors</string>
+
+    <string name="creating_chat_dialog">Creating chat dialog…</string>
+
+    <string name="favorited">Wishlist</string>
+
+    <string name="msg_wait_active_driver">Your account is currently waiting to be activated</string>
+
+    <string name="unfavorited">Unfavorited</string>
+
+    <string name="msg_success">Susesu!</string>
+
+    <string name="title_about">Moza Tech</string>
+
+    <string name="contact_us">Kontaktu Ami</string>
+
+    <!--fragment about-->
+
+
+    <string name="msg_no_email_client">La iha email kliente nebe instala.</string>
+
+    <string name="msg_no_email">Uzuariu ida ne la iha email enderesu</string>
+
+    <string name="msg_no_phone_number">Uzuariu ida ne la iha numeru telemovel</string>
+
+    <!--fragment FAQ-->
+
+
+    <string name="faq">FAQs</string>
+
+    <string name="forgot_message_description">Favor hatama ita-nia email no \n ami sei manda link hodi hafoun ita-nia password</string>
+
+    <string name="msg_forget_password_success">Hafoun password susesu ona! Amin manda ona pedidu ba ita-nia email.</string>
+
+    <string name="attachment">Anexo</string>
+
+    <string name="select_file">Hili arkivu…</string>
+
+
+    -
+    <string name="file_is_max">
+
+-<![CDATA[File is required < 1MB]]>
+</string>
+
+    <string name="select_file_to_upload">Hili arkivu hodi Upload</string>
+
+    <string name="pls_install_file_manager">Halo favor instala File Manager</string>
+
+    <!--fragment buy credit-->
+
+
+    <string name="you_have_to_pay_01_dollar_transaction_fee">Ita tenki selu kreditu %1$s ba taxa tranzasaun.</string>
+
+    <string name="buy_credit_total">Total:</string>
+
+    <string name="button_buy">Sosa</string>
+
+    <string name="amount_of_credits">Kuantidade kreditu</string>
+
+    <string name="msg_transaction_success">Tranzasaun Susesu!</string>
+
+    <!--history-->
+
+
+    <string name="history">History</string>
+
+    <string name="msg_delete_history_success">Halakon Susesu!</string>
+
+    <string name="msg_confirm_delete_history">Ita bot iha hakarak duni hodi halakon hotu history ita-bot nian?</string>
+
+    <string name="no">Lae</string>
+
+    <string name="msg_delete_item_history_success">Ita bot iha hakarak duni hodi halakon history?</string>
+
+    <!---->
+
+
+    <string name="msg_need_to_become_driver">You are not a driver, do you want to become one?</string>
+
+    <string name="msg_enter_duration_to_be_available">For how many hours you will be available?</string>
+
+    <string name="msg_enter_deal_duration_to_be_available">Your deal is out of activation time, you need to pay to activate it again.\nFor how many hours your deal will be available?</string>
+
+    <string name="msg_subtract_credits">You need to pay %1$s credits</string>
+
+    <string name="activate">Ativa</string>
+
+    <string name="deactivate">Deactivate</string>
+
+    <string name="duration">Durasaun</string>
+
+    <string name="msg_duration_must_gt_zero">Duration must be between 1 and 24</string>
+
+    <string name="msg_balance_is_not_enough">Your account is not enough credits to be available for %1$s hours</string>
+
+    <string name="rating_success">Rating Success</string>
+
+    <string name="msg_amout_is_require">Credits is require!</string>
+
+
+    -
+    <string name="msg_value_credits">
+
+-<![CDATA[Please enter credits >0]]>
+</string>
+
+    <string name="msg_chose_method_payment">Favor hili metode pagamentu!</string>
+
+    <string name="msg_description_is_require">Deskrisaun tenki prense!</string>
+
+    <string name="address_of_deal">Address of deal (*)</string>
+
+    <string name="description_of_deal">Description of deal</string>
+
+    <string name="duration_deal_description">Your deal must be available when active!</string>
+
+    <string name="msg_file_is_not_format">Simu deit *.jpg, *.png file</string>
+
+    <string name="further_information">Informasaun Seluk</string>
+
+    <string name="msg_deal_create_success">Your deal ends at %1$s</string>
+
+    <string name="des_my_favourite">Preset your favorite deals</string>
+
+    <string name="des_transport">Find a nearby taxi, a VIP car, a Lift, a Mototaxi or get a delivery done</string>
+
+    <string name="des_foodandbever">Find a deal at a nearby café, bar or restaurant that is available now!</string>
+
+    <string name="des_other">Find out all the nearby deals iwanadeal can offer you</string>
+
+    <string name="msg_notify_opponent_agreed_deal">%1$s agrees the deal</string>
+
+    <string name="msg_notify_opponent_agreed_deal_with_id">%1$s agrees the deal %2$s - #%3$s</string>
+
+    <string name="msg_notify_opponent_disagreed_deal">%1$s disagrees the deal</string>
+
+    <string name="msg_confirm_pro_agrees_deal">Your client agreed the deal. Do you agree?</string>
+
+    <string name="agree">Aseita</string>
+
+    <string name="disagree">La Aseita</string>
+
+    <string name="pay_deal">Pay Deal</string>
+
+    <string name="go_home">Ba Varanda</string>
+
+    <string name="rate_deal">Rate Deal</string>
+
+    <string name="msg_no_history">La iha history sasan!</string>
+
+    <string name="transaction_note">Please tell us your redeem information, eg: Bank info, Paypal info, etc</string>
+
+    <string name="recent_chat">Recent chat</string>
+
+    <string name="msg_register_driver">Please register driver before!</string>
+
+    <string name="do_you_want_to_start_driving_or_delivering_now">Do you want to start driving/delivering now?</string>
+
+    <string name="once_you_click_the_confirm_button_your_deal_will_be_active_for_12_hours">Once you click the CONFIRM button your deal will be active for 12 hours</string>
+
+    <string name="confirm">Konfirma</string>
+
+    <string name="you_are_not_driver">You are not a driver, Do you want to become one?</string>
+
+    <string name="button_cancel">Kansela</string>
+
+    <string name="loading_data">Prosesu data…</string>
+
+    <string name="rating_is_required">Please rate for deal</string>
+
+    <string name="comment_is_required">Please comment for deal</string>
+
+    <string name="msg_not_enought_credits">You don\'t have enought credits. Do you want to buy credits?</string>
+
+    <string name="button_buy_credits">Sosa Kreditu</string>
+
+    <string name="button_promotions">Promosaun</string>
+
+    <string name="msg_promotion_is_developping">Under Development!</string>
+
+
+    -
+    <string name="terms_and_conditions">
+
+-<![CDATA[ terms & conditions]]>
+</string>
+
+    <string name="msg_balance_is_not_enough_to_pay">Ita-nia saldo la sufisiente para selu. Favor sosa kreditu no selu fila fali</string>
+
+    <!--Activity guide-->
+
+
+    <string name="previous">Previous</string>
+
+    <string name="next">Kontinua</string>
+
+    <string name="done">Done</string>
+
+    <string name="find_deals"></string>
+
+    <string name="description_find_deal"></string>
+
+    <string name="description_chat"></string>
+
+    <string name="description_vip">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+
+    <string name="guide_for_you">Politika Privasidade</string>
+
+    <string name="msg_price_is_zero">Presu tenki bot liu husi 0</string>
+
+    <string name="driver">Driver</string>
+
+    <string name="time">Tempu</string>
+
+    <string name="msg_year_is_invalid">Tinan la validu!</string>
+
+    <string name="deals">Deals</string>
+
+    <string name="biz">Biz</string>
+
+    <string name="msg_discount_need_smaller_price">Valor diskontu labele liu ka hanesan ho presu</string>
+
+    <string name="msg_register_success">Rejistu susesu! Favor revista ita-nia email hodi halo kompleta</string>
+
+    <string name="pick_image_intent_text">Hili imajen</string>
+
+    <string name="or">Ka</string>
+
+    <string name="dont_have_an_account_SIGN_UP_now">La iha account? REJISTU AGORA</string>
+
+    <!-- message from backend -->
+
+
+    <string name="msg_err_success">Susesu</string>
+
+    <string name="msg_err_fail">Failha</string>
+
+    <string name="msg_err_missing_params">Missing params</string>
+
+    <string name="msg_err_invalid_input">Invalid input</string>
+
+    <string name="msg_err_token_missing">Token missing</string>
+
+    <string name="msg_err_token_mismatch">Token mismatch</string>
+
+    <string name="msg_err_can_not_perform">Can not perform</string>
+
+    <string name="msg_err_paid_fail">Paid fail</string>
+
+    <string name="msg_err_user_not_found">Uzuariu la eziste</string>
+
+    <string name="msg_err_wrong_password">Password sala</string>
+
+    <string name="msg_err_email_not_exist">Email la existe</string>
+
+    <string name="msg_err_email_or_user_not_exist">Email ka naran uzuariu la eziste</string>
+
+    <string name="msg_err_email_existed">Email eziste</string>
+
+    <string name="msg_err_email_user_existed">Email ka naran uzuariu eziste</string>
+
+    <string name="msg_err_current_password_mismatch">Current password mismatch</string>
+
+    <string name="msg_err_your_account_not_actived">Ita-nia account la ativa</string>
+
+    <string name="msg_err_mail_fail">Fail to send email, please check your email address</string>
+
+    <string name="msg_err_your_balance_not_enough">Your account balance is not enough to do this action</string>
+
+    <string name="msg_err_update_bussiness_profile">Please update your business profile first</string>
+
+    <string name="msg_err_your_request_is_pending">Your another request is pending, please try again later</string>
+
+    <string name="msg_err_deal_not_found">Deal not found</string>
+
+    <string name="msg_err_reservation_not_found">Reservation not found</string>
+
+    <string name="msg_err_trip_not_found">Trip not found</string>
+
+    <string name="msg_err_driver_role_not_actived">Your driver role is not activated</string>
+
+    <string name="msg_err_update_profile_driver_first">Please update your driver profile first</string>
+
+    <string name="msg_err_need_charge_duration">You need to charge your online duration</string>
+
+    <string name="view_attachment">Hare anexo</string>
+
+    <string name="msg_fill_full_name">Halo favor prense naran kompletu</string>
+
+    <string name="picture_your_self">Ita-nia imajen</string>
+
+    <string name="type_of_job">Tipu Servisu(*)</string>
+
+    <string name="profession">Profisaun</string>
+
+    <string name="my_hourly_fee">My hourly fee</string>
+
+    <string name="newdeal_description_hint">Fo informasaun konaba ita-nia aan no saida mak ita oferese</string>
+
+    <string name="fee">Taxa</string>
+
+    <string name="msg_confirm_deactivating_deal">This deal will be deactivated for temporary</string>
+
+    <string name="msg_confirm_deactivating_transport_deal">Passengers will not find you for temporary</string>
+
+    <string name="title_field">Titlu (*)</string>
+
+    <string name="original_price_field">Presu original (*)</string>
+
+    <string name="title_chose_image">Hili Imajen Husi</string>
+
+    <string name="from_gallery">Gallery</string>
+
+    <string name="from_camera">Uza Camera</string>
+
+    <string name="msg_no_network_to_update_location">Network is not available. Can not update your location</string>
+
+    <string name="msg_can_not_send_message_to_yourself">Can not send message to yourself</string>
+
+    <string name="msg_tell_user_about_chat_screen">You have an active \'%1$s\' deal, your potential clients will contact you here</string>
+
+    <string name="transport">Transporte</string>
+
+    <string name="category_field">Kategoria (*)</string>
+
+    <string name="about">Konaba</string>
+
+    <string name="msg_remind_user_grant_camera_permission">Application need to be granted accessing camera to take a photo</string>
+
+    <string name="fee_one_hour_online">Fee per one hour online(credits/hour)</string>
+
+    <string name="update">Update</string>
+
+    <string name="inactivate">Inactivate</string>
+
+    <string name="deal_completed">Deal completed</string>
+
+    <string name="you_can_not_change_hours">You can not update your hours online of deal and deal type!</string>
+
+    <string name="time_out">Time out!</string>
+
+    <string name="user_name">Email:</string>
+
+    <string name="create_pass">Kria Password</string>
+
+    <string name="button_create_pass">Kria Password</string>
+
+    <string name="renew_deal">Renew Deal</string>
+
+    <string name="msg_waiting_for_confirming">Hein konfirmasaun</string>
+
+    <string name="msg_paid_successfully">Selu ona ho susesu</string>
+
+    <string name="cost_per_kilometer">Your estimated costs/km($)</string>
+
+    <string name="cost_you_charge_per_kilometer">Costs you charge per km($)</string>
+
+    <string name="car_color">Kor kareta*</string>
+
+    <string name="hint_car_color">Kor kareta</string>
+
+    <string name="hint_license_plate_number">License plate number</string>
+
+    <string name="license_plate_number">License plate number*</string>
+
+    <string name="msg_car_color">Car color is require</string>
+
+    <string name="msg_license_plate_number">License plate number is require</string>
+
+    <string name="msg_cost_you_charge_per_kilometer_is_required">Costs you charge per kilometer is require</string>
+
+    <string name="agreed_price">Agreed price</string>
+
+    <string name="other_price">Presu seluk tan</string>
+
+    <string name="msg_ask_user_chooses_price">Please let us know your decision</string>
+
+    <string name="cancel_deal">Kansela deal</string>
+
+    <string name="track_deal">Track deal</string>
+
+    <string name="picked_up">Picked up</string>
+
+    <string name="driver_picked_up">%1$s picked up</string>
+
+    <string name="user_canceled_deal">%1$s canceled deal</string>
+
+    <string name="msg_chose_image_deal">Please chose deal image!</string>
+
+    <string name="msg_content_require">Content is required!</string>
+
+    <string name="use">Ativu</string>
+
+    <string name="your_estimate">Your estimated margin/km($)</string>
+
+    <string name="end_time">End Time:</string>
+
+    <string name="end_time_">End Time</string>
+
+    <string name="msg_expired">Deal Expired</string>
+
+    <string name="value_is_invalid">Valor la validu!</string>
+
+    <string name="msg_rating_require">Please choose your rate</string>
+
+    <string name="msg_deal_was_negotiated_already">The deal was negotiated already</string>
+
+    <string name="msg_deal_has_not_been_negotiated">The deal has not been negotiated</string>
+
+    <string name="msg_ask_driver_activate_again">Ready to be available for driving again?</string>
+
+    <string name="msg_remind_driver_activate_again">Don\’t forget to activate your availability again, otherwise you will not be found.</string>
+
+    <string name="msg_remind_driver_finish_trip">Please finish or cancel the last trip before activating again</string>
+
+    <string name="note_transfer">Please tell us your transfer information, eg: Bank info, Paypal info, etc…</string>
+
+    <string name="search_results">Rezultadu peskiza</string>
+
+    <string name="i_was_a_driver">I am a driver (add/edit my details)</string>
+
+    <string name="msg_paid_for_deal">%1$s just paid %2$s credit(s) for the deal</string>
+
+    <string name="msg_paid_for_deal_dollar">%1$s just paid $%2$s for the deal</string>
+
+    <string name="msg_remind_driver_online">You are not available for driving then you can not accept any trips</string>
+
+    <string name="msg_transfer_to_yourself">You can not transfer to yourself!</string>
+
+    <string name="msg_connection_network_error">There are no network. Please check connection networking</string>
+
+    <string name="home">WFOUR</string>
+
+    <string name="chat">Chat</string>
+
+    <string name="deal_">Deal</string>
+
+    <string name="call_phone">Call</string>
+
+    <string name="female">Feto</string>
+
+    <string name="male">Mane</string>
+
+    <string name="choose_gender">Hili sexo</string>
+
+    <string name="hot">Hot</string>
+
+    <string name="new_">Foun</string>
+
+    <string name="new_deal">New Deal</string>
+
+    <string name="sold">Fan ona</string>
+
+    <string name="bougth">Sosa ona</string>
+
+    <string name="review">Review</string>
+
+    <string name="no_deal">No Deal</string>
+
+    <string name="favorite">Wishlist</string>
+
+    <string name="favorite_deals">Favorite Deals</string>
+
+    <string name="buyer">Komprador</string>
+
+    <string name="manager_and_track_bought_deals">Manager and track bought deals.</string>
+
+    <string name="seller">vendedor</string>
+
+    <string name="go_to_manager">Go to manager</string>
+
+    <string name="producer">produtor</string>
+
+    <string name="buy_deals">Buy Deals</string>
+
+    <string name="product_management">Product Management</string>
+
+    <string name="sell_deals">Sell Deals</string>
+
+    <string name="sell_your_item">Fan Ita-nia Sasan</string>
+
+    <string name="food_and_beverages">Hahan no Bebidas</string>
+
+    <string name="create_another">Kria seluk fali</string>
+
+    <string name="view_your_deal">View your deal</string>
+
+    <string name="create_success">Kria Susesu!</string>
+
+    <string name="your_deal_will_approved_soon">Your Deal will approved soon</string>
+
+    <string name="text_here">Text iha ne</string>
+
+    <string name="no_favorite_deal">No favorite deal.</string>
+
+    <string name="your_favorite_deal_now_avaiable">Your favorite deal now avaiable</string>
+
+    <string name="you_have_it_on_your_way">You have it on your way.</string>
+
+    <string name="no_data">Komesa foti produtu!\nAumenta produtu ba ita-nia karosa kompra no hameno fatin iha ne.</string>
+
+    <string name="no_connection">La iha koneksaun!</string>
+
+    <string name="refresh">Refresh</string>
+
+    <string name="earn_credit">Earn credit</string>
+
+    <string name="deals_was_sold_in_this_month">deals was sold</string>
+
+    <string name="go_to_products">Go to Products</string>
+
+    <string name="manager_upload_your_items_and_track_your_store">Manager, upload your items and track your store..</string>
+
+    <string name="go_to_sold">go to sold</string>
+
+    <string name="http_suusoft_com">http://suusoft.com</string>
+
+    <string name="follow_us">Follow us:</string>
+
+    <!--about us-->
+
+
+    <string name="about_content1">Provides Android, iOS, Web Source Codes and Development Services.</string>
+
+    <string name="about_content2">Highly Committed to Quality Products and Excellent Services.</string>
+
+    <string name="cancel">Kansela</string>
+
+    <string name="you_wanto_logout">Ita-bot hakarak log out?</string>
+
+    <string name="you_need_login">Presiza login ba ita-nia account</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="go_to_cart">Hatama ba karosa</string>
+
+    <string name="delivery_address">Enderesu Reseptor</string>
+
+    <string name="confirmInformation">Informasaun Detalle</string>
+
+    <string name="informasaun_order">Informasaun Produtu</string>
+
+    <string name="bill_detail">Bill Detalle</string>
+
+    <string name="id_order">ID Hameno:</string>
+
+    <string name="bill_code">Bill code:</string>
+
+    <string name="moving">Prosesu</string>
+
+    <string name="metode_haruka">Metode Haruka</string>
+
+    <string name="title_start_screen12">EXCELLENT ONLINE SHOPPING EXPERIENCE</string>
+    <string name="title_start_screen11">Hola ida ne hola ida neba sem duvida \n Disponivel produtu oioin, hahan no bebidas, produtu fresku, produtu local no barak liu tan</string>
+    <string name="title_start_screen21">Ho aplikasaun wfour ita hein deit iha fatin hodi simu sasan</string>
+
+    <string name="title_start_screen4">COD (Cash On Delivery) Selu wainhira simu ona sasan</string>
+    <string name="title_start_screen5">Kria ita-nia perfil bele liu husi Facebook ka Google.\nHalo Kompleta ita-nia perfil hodi hameno sasan ho fasil liu tan 1, 2, &amp; 3</string>
+    <string name="CATEGORIES">KATEGORIA</string>
+    <string name="PRODUCTLALAIS">PRODUTU DISKONTU</string>
+    <string name="PRODUCTPROMOTION">LISTA PRODUTU</string>
+    <string name="PRODUTUFOUN">PRODUTU LAIS</string>
+    <string name="BANNER">BANNER</string>
+    <string name="ex_vera_cruz_vila_verde_dili">Munisipiu-Posto Administrativu-Suco-Aldeia</string>
+    <string name="Haruka_ona">Haruka ona</string>
+    <string name="Cancelled">Kanseladu</string>
+    <string name="Cash_payment_on_delivery">Selu Iha Fatin</string>
+    <string name="informasaun_produtu">Informasaun Produtu</string>
+    <string name="color">Kor</string>
+    <string name="color2">Kor :</string>
+
+    <string name="hare_fatura">Hare Bill</string>
+    <string name="Bill_Information">Informasaun Bill</string>
+    <string name="confirm_email">Sasan prosesu ona no sei haruka ba ita bot, halo favor selu tuir montante nebe iha bill detalle</string>
+    <string name="hintSearchMess">Peskiza</string>
+    <string name="appoved">Haruka ona</string>
+
+    <string name="paid">Paid</string>
+    <string name="troka_ona">Troka Ona</string>
+    <string name="haruka_ona">Haruka ona</string>
+    <string name="rejected">Rejeita</string>
+    <string name="nota">Nota</string>
+    <string name="note_content">Wainhira produtu nebe mak ita hameno ona ho status:Prosesu hela ita bele halo kansela, sei labele kansela wainhira status: Haruka ona</string>
+    <string name="add_infomation">Aumenta Informasaun</string>
+    <string name="add">AUMENTA</string>
+    <string name="edit_information">Edit Informasaun</string>
+
+
+    <!--   Chat-->
+    <string name="open_chat">Open Chat</string>
+    <string name="all_app_version">Sample UI v%1$s / SDK v%2$s</string>
+
+    <string name="all_create">Create</string>
+    <string name="all_invite">Invite</string>
+
+    <string name="all_group_channels">Group Channels</string>
+    <string name="all_open_channels">Open Channels</string>
+
+    <!-- main -->
+    <string name="main_drawer_open">Open navigation drawer</string>
+    <string name="main_drawer_close">Close navigation drawer</string>
+    <string name="select_channel_type">Select channel type</string>
+    <string name="blocked_members_list">Blocked members</string>
+
+    <!-- login -->
+    <string name="login_user_id">User ID</string>
+    <string name="login_user_nickname">Nickname</string>
+    <string name="login_connect">Connect</string>
+    <string name="login_disconnect">Disconnect</string>
+
+    <!-- Open Channel List -->
+    <string name="open_channel_list_participant_count">%1$d participants</string>
+
+    <string name="create_open_channel">Create Open Channel</string>
+    <string name="participant_list">Participants</string>
+
+    <!-- Group Channel List -->
+    <string name="group_channel_list_file_message_text">%1$s has uploaded a file.</string>
+
+    <string name="create_group_channel">Create Group Channel</string>
+    <string name="member_list">Members</string>
+    <string name="invite_member">Invite members</string>
+
+    <string name="member_info"></string>
+
+    <!-- Content descriptions -->
+    <string name="open_channel_chat_content_desc_profile">Profile image</string>
+
+    <!-- Menu actions -->
+    <string name="action_create_channel">Create channel</string>
+
+    <string name="download">Download</string>
+    <string name="upload">Upload</string>
+    <string name="resend_message">Resend</string>
+    <string name="delete_message">Delete</string>
+
+    <!-- Message Status -->
+    <string name="message_sending">Sending</string>
+    <string name="message_failed">Failed</string>
+    <string name="channel_name">Channel Name</string>
+    <string name="create">Create</string>
+    <string name="dowload">Download File?</string>
+    <string name="msg_text_chat_admin">User has enterered the chat</string>
+    <string name="date">February 22nd</string>
+    <string name="daniel_silberschatz">Daniel Silberschatz</string>
+    <string name="des">Description will be here. Blah Blah WWW Blah Wl Blah W WW WW ABCD EFG WW WW WW W Third Line. WWW Z XCVB QWER</string>
+    <string name="title_will_be_here">Title will be here.</string>
+    <string name="hi_how_are_you_today">Hi, how are you today?</string>
+    <string name="reddit">\@Reddit</string>
+    <string name="title_will_be_her">Title will be her.</string>
+    <string name="user_has_enterered_the_chat">User has enterered the chat</string>
+    <string name="terry">Terry</string>
+    <string name="upload_file">Uploaded a file:</string>
+    <string name="mb">1.3MB</string>
+    <string name="message">message</string>
+    <string name="make_channel_distinct">Make channel distinct?</string>
+    <string name="conversation">Conversation</string>
+    <string name="enter_you_name">Enter your name</string>
+    <string name="you_are_not_login">You are not logged in !</string>
+    <string name="transport_fee">Transport fee</string>
+    <string name="enderesu_reseptor">Enderesu Reseptor</string>
+    <string name="msg_enderesu">Enderesu Wfour</string>
+    <string name="msg_foti_iha">Foti iha loja</string>
+    <string name="msg_transport">Halo favor ba iha loja wfour hatudu ita-nia Bill Code ba kasier no selu tuir montante nebe iha Bill Detalle</string>
+    <string name="remove_success">Remove success</string>
+    <string name="phone_code_default">+670</string>
+    <string name="edit">Edit</string>
+    <string name="validation_req_phone_valid">Enter a valid phone number</string>
+    <string name="confirm_phone">Tuir mai Ita-nia password sei haruka ba numeru ida ne! Kontinua ho numeru ida ne?</string>
+    <string name="verification_code">Enter OTP ?</string>
+    <string name="resend">Resend code?</string>
+    <string name="otp_sending">Sending OTP</string>
+    <string name="otp_verifying">Verifying OTP</string>
+    <string name="otp_verifying_msg">Verifying OTP…</string>
+    <string name="otp_sending_msg">To your phone number</string>
+    <string name="error_detail">Something went wrong</string>
+    <string name="otp_sent">Favor prenxe code nebe manda ba</string>
+    <string name="verification_cancel_title">Cancel verification</string>
+    <string name="verification_cancel_message">Verification is in progress! do you want to cancel and go back?</string>
+    <string name="logging_in">Logging you in!</string>
+    <string name="troka_poin">TROKA POINT</string>
+    <string name="updatephone">Konfirma numeru</string>
+    <string name="input_number_phone">Input number phone</string>
+    <string name="point">POINT </string>
+    <string name="p">P.</string>
+    <!--chat-->
+
+    <!--Menu Bar -->
+    <string name="home_navbar">Home</string>
+    <string name="wishlist_navbar">Wishlist</string>
+    <string name="chats_navbar">Chats</string>
+    <string name="cart_navbar">Cart</string>
+    <string name="akun_navbar">Profile</string>
+    <string name="it_s_good_to_see_you_again">It\'s good to see you again</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="don_t_have_account_register_here"><ul>Don\'t have account?  Register here</ul></string>
+    <string name="login">Login</string>
+    <string name="hi_there">Hi There!</string>
+    <string name="enter_your_informations_below_to_login">Enter your informations below \nto Login</string>
+    <string name="enter_your_informations_below_to_register">Enter your informations below \nto Register</string>
+    <string name="already_have_account_login_here">Already have account? Login here</string>
+    <string name="register">Register</string>
+    <string name="completed_your_profile">Completed Your Profile</string>
+    <string name="your_birthdate">Your Birthdate</string>
+    <!--End Menu Bar-->
+
+</resources>

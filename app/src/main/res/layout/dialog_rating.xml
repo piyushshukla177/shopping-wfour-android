@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_1x"
+    android:background="@color/transparent"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:padding="@dimen/dimen_2x"
+            android:background="@drawable/bg_dialog_top_success"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_centerHorizontal="true"
+                android:id="@+id/lbl_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/rate"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_xlarge" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_msg"
+                android:layout_below="@+id/lbl_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_please_review_deal"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_large" />
+
+
+            <RatingBar
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/lbl_msg"
+                style="?android:attr/ratingBarStyle"
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:theme="@style/custom_rating" />
+
+            <EditText
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rating_bar"
+                android:id="@+id/txt_comment"
+                android:text=""
+                android:imeOptions="actionDone"
+                android:textSize="@dimen/text_size_xnormal"
+                android:hint="@string/comment"
+                android:textColor="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:background="@drawable/bg_dialog_bottom_success"
+            android:id="@+id/lbl_submit"
+            android:paddingTop="@dimen/dimen_2x"
+            android:paddingBottom="@dimen/dimen_2x"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+    </LinearLayout>
+
+
+</LinearLayout>

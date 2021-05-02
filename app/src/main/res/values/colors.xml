@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--main color-->
+    <color name="colorPrimary">#DB3B21</color>
+    <color name="colorSecondary">#FFCC00</color>
+
+    <color name="colorPrimaryDark">#cf2004</color>
+
+    <color name="colorAccent">#189EFF</color>
+
+    <color name="textColorPrimary">#FFF</color>
+
+    <color name="greySmooth">#F3F4F6</color>
+
+    <color name="textColorBlackPrimary">#000</color>
+
+    <color name="textColorSecondary">#585858</color>
+
+    <color name="lightColorPrimary">#FAFAFA</color>
+
+    <color name="dividerColor">#e1e1e1</color>
+
+    <color name="backgroundColor">#FAFAFA</color>
+
+    <!--base color-->
+    <color name="bg_transparent">#88000000</color>
+
+    <color name="black">#000</color>
+    <color name="text_black">#141313</color>
+    <color name="text_onboard">#664F84</color>
+
+    <color name="pink">#fddbd9</color>
+
+    <color name="cam">#d8d8d8</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="white1">#e4e4e4</color>
+
+    <color name="yellow">#f8e71c</color>
+
+    <color name="grey">#dedfe0</color>
+
+    <color name="dark_grey">#979797</color>
+
+    <color name="light_red_google">#F3F4F6</color>
+
+    <color name="blue_facebook">#3b5998</color>
+
+    <color name="light_blue_facebook">#5d8be9</color>
+
+    <color name="black_transparent">#06000000</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="primary_transparent">#f9a11f</color>
+
+    <color name="green">#21e02f</color>
+
+    <color name="yellows">#ffcc00</color>
+
+    <color name="red">#f22a2a</color>
+
+    <color name="bg_deal_list">#e8e8e8</color>
+
+    <color name="bg_deal_review">#f6f6f6</color>
+
+    <color name="text_tab_unselected">#CCffffff</color>
+
+    <!-- bg message -->
+    <color name="starColorBgMessage">#f9ca73</color>
+
+    <color name="centerColorBgMessage">#f9ca73</color>
+
+    <color name="endColorBgMessage">#f9ca73</color>
+
+    <color name="colorTextDeal">#000</color>
+
+    <color name="colorGrey">#dedfe0</color>
+
+    <color name="coloBgIncome">#f3f3f4</color>
+
+    <!-- Others -->
+    <color name="textColorToolbar">#FFF</color>
+
+    <color name="backgroundColorToolbar">@color/colorAccent</color>
+
+    <color name="primary">#189EFF</color>
+
+    <color name="colorControlActivated">@color/colorAccent</color>
+
+    <color name="colorControlNormal">#585858</color>
+
+    <color name="colorBackgroundNodata">#f8e5ea</color>
+
+    <color name="colorIncomeAction">#c6a2a5</color>
+
+    <color name="colorBackgroundToolbar">@color/colorAccent</color>
+
+    <color name="textPrimaryColorToolbar">@color/textColorPrimary</color>
+
+    <color name="bg_logo">#eee</color>
+    <!--tab layout-->
+    <color name="colorTabTextSelected">#000</color>
+
+    <color name="colorTabTextUnselect">#686767</color>
+
+    <color name="cl_btn_login_socia">#F3F4F6</color>
+
+    <color name="black1">#5C5A5A</color>
+
+    <color name="white2">#bfbbbb</color>
+
+    <color name="red_google">#df4f3f</color>
+
+    <color name="dark_grey_50">#33979797</color>
+
+    <color name="bg_button_blue">#5677fc</color>
+
+    <color name="bg_button_edit_image">#b5bfce</color>
+
+    <color name="deal_review_username">#000</color>
+
+    <color name="image_default">#f8f8f8</color>
+
+    <color name="color_alpha">#33000000</color>
+
+    <color name="color_button_delete_all">#adadad</color>
+
+    <!-- Quickblox color -->
+    <color name="text_color_outgoing_opponents_names_audio_call">#1f1f1f</color>
+
+    <color name="text_color_call_type">#6e6e6e</color>
+
+    <color name="toolbar_title_color">#1f1f1f</color>
+
+    <color name="toolbar_subtitle_color">#6e6e6e</color>
+
+    <color name="text_color_caller_name">#1f1f1f</color>
+
+    <color name="text_color_other_inc_users">#1f1f1f</color>
+
+    <color name="black_transparent_50">#50000000</color>
+
+    <color name="black_transparent_70">#B3000000</color>
+
+    <color name="grey_transparent_20">#20606060</color>
+
+    <color name="grey_transparent_50">#50606060</color>
+
+    <color name="white_green">#A9FF80</color>
+
+    <color name="background_fragment_conversation">#2B2A2A</color>
+
+    <color name="button_end_call_pressed_color">#FC5876</color>
+
+    <color name="background_color_normal_user_item">#ffffff</color>
+
+    <color name="icon_background_color_selected_user">#959595</color>
+
+    <color name="background_color_selected_user_item">#eeeeee</color>
+
+    <color name="text_color_price">#f22a2a</color>
+
+    <!-- Login -->
+    <color name="colorButton">#774df2</color>
+
+    <!-- Open Chat -->
+    <color name="openChatText">#47505d</color>
+    <color name="openChatNicknameOther">#3a414d</color>
+    <color name="openChatNicknameMe">#00BCD4</color>
+
+    <!-- Group Chat -->
+    <color name="groupChatBubbleMe">#774df2</color>
+    <color name="groupChatTextMe">#ffffff</color>
+    <color name="groupChatBubbleOther">#eef1f6</color>
+    <color name="groupChatTextOther">#000000</color>
+
+    <color name="groupChatReadReceiptMe">#1fcc94</color>
+    <color name="groupChatReadReceiptOther">#00BCD4</color>
+
+    <color name="groupChatAdminBackground">#e0fcff</color>
+    <color name="groupChatAdminText">#39474e</color>
+
+    <color name="groupChatDateText">#ffffff</color>
+    <color name="groupChatDateBackground">#C0C0C0</color>
+
+    <!-- Group Channel List -->
+    <color name="groupChannelUnreadCountBackground">#7d62df</color>
+    <color name="groupChannelUnreadCountText">#ffffff</color>
+
+    <!-- Selector -->
+    <color name="btn_create">#ffffff</color>
+    <color name="btn_create_disabled">#c1acff</color>
+    <color name="btn_edit">#ffffff</color>
+    <color name="btn_edit_disabled">#c1acff</color>
+    <color name="btn_send">#774df2</color>
+    <color name="btn_send_disabled">#8e8e8e</color>
+    <color name="color_editText">#F3F4F6</color>
+    <color name="color_textHint">#A39E9E</color>
+
+</resources>

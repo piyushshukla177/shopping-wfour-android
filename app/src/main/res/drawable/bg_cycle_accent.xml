@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:exitFadeDuration="@android:integer/config_longAnimTime"
+    android:shape="oval">
+
+    <solid android:color="@color/colorAccent" />
+
+    <size
+        android:width="@dimen/dimen_infowindow_driver"
+        android:height="@dimen/dimen_infowindow_driver" />
+</shape>

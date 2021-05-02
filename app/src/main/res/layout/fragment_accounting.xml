@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_2x">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/lbl_year_revenue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:paddingBottom="@dimen/dimen_1x"
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:paddingTop="@dimen/dimen_1x"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_huge" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/lbl_month_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_xhuge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_2x"
+            android:baselineAligned="true"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_05x"
+                    android:text="@string/revenue"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_revenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xxlarge" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_05x"
+                    android:text="@string/expense"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_xxlarge" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/dimen_2x"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text_size_xlarge" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_months"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

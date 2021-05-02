@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_above="@+id/btn_functions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:id="@+id/tv_settings_notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_notification"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_notifications"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_notifications" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_my_favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_my_favourite"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_my_favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_my_favourite"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_my_favourite" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_transport_deliveries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_transport_deliveries"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_transport_deliveries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_transport_deliveries"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_transport_deliveries" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_food_beverages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_food_beverages"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_food_beverages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_food_beverages"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_food_beverages" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_labor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_labor"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_labor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_labor"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_labor" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_travelling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_travelling"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_travelling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_travelling"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_travelling" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_shopping"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_shopping"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_shopping" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_new_and_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/news_and_events"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_new_and_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_new_and_event"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_new_and_event" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/tv_settings_other_near_by_deal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/settings_other_near_by_deal"
+                    android:textColor="@color/textColorBlackPrimary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Switch
+                    android:id="@+id/sw_near_by_deal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_settings_other_near_by_deal"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_settings_other_near_by_deal" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_3x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/grey" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/layout_btn_function"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dimen_2x"/>
+    
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

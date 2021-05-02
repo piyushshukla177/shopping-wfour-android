@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_update"
+        android:title="@string/update" />
+    <item
+        android:id="@+id/action_renew_deal"
+        android:title="@string/renew_deal"
+        android:visible="true"/>
+    <item
+        android:id="@+id/action_activate"
+        android:title="@string/activate" />
+    <item
+        android:id="@+id/action_deactivate"
+        android:title="@string/deactivate" />
+</menu>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="@dimen/min_width_dialog"
+    android:orientation="vertical">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_2x"
+        android:gravity="center_horizontal"
+        android:text="@string/msg_choose_trip_to_share"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text_size_large" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_trip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_1x" />
+</LinearLayout>

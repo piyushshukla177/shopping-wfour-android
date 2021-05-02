@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bill"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"
+        android:layout_marginLeft="@dimen/dimen_2x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favoritu"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/bg_deal_list"
+        android:layout_marginTop="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kontaktu Ami"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facebook Menssenger"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"
+        android:layout_marginLeft="@dimen/dimen_2x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wfourstore.com"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/bg_deal_list"
+        android:layout_marginTop="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sentru Ajuda"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FAQ"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"
+        android:layout_marginLeft="@dimen/dimen_2x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajuda"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"
+        android:layout_marginLeft="@dimen/dimen_2x"
+        android:layout_marginRight="@dimen/dimen_2x"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2x">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Konaba Ami"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            />
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/bg_deal_list"
+        android:layout_marginTop="15dp"/>
+
+</LinearLayout>

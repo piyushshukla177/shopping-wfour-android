@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:minWidth="@dimen/min_width_dialog"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingTop="@dimen/dimen_3x"
+        android:paddingBottom="@dimen/dimen_2x"
+        android:paddingLeft="@dimen/dimen_2x"
+        android:paddingRight="@dimen/dimen_2x"
+        android:background="@drawable/bg_dialog_top_success"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_1x"
+            android:gravity="center_horizontal"
+            android:text="@string/msg_ask_user_chooses_price"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_large" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rad_agreed_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/agreed_price"
+                android:textSize="@dimen/text_size_xnormal" />
+
+            <RadioButton
+                android:id="@+id/rad_other_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/other_price"
+                android:textSize="@dimen/text_size_xnormal" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_4x"
+            android:orientation="horizontal">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dollar_symbol"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_large" />
+
+            <EditText
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:paddingRight="@dimen/dimen_4x"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/bg_dialog_bottom_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/lbl_negative"
+            android:paddingTop="@dimen/dimen_2x"
+            android:paddingBottom="@dimen/dimen_2x"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cancel" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/lbl_positive"
+            android:paddingTop="@dimen/dimen_2x"
+            android:paddingBottom="@dimen/dimen_2x"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ok" />
+    </LinearLayout>
+</LinearLayout>

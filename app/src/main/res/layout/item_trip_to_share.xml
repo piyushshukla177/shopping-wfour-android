@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+        android:id="@+id/lbl_trip_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_1x"
+        android:text="#trip 1"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_large" />
+
+    <View
+        android:id="@+id/vw_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_divider"
+        android:layout_marginLeft="@dimen/dimen_1x"
+        android:layout_marginRight="@dimen/dimen_1x"
+        android:background="@color/dividerColor" />
+</LinearLayout>

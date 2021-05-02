@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--app's name-->
+    <string name="app_name">Wfour</string>
+    <string name="URL_API">https://wfour.store/shopping/</string>
+
+    <string name="URL_Company">http://suusoft.com</string>
+
+    <!--config Quickblox credentials-->
+    <string name="QB_ACCOUNT_KEY">V7Vs3nXmHxxGrXYm63vw</string>
+    <string name="QB_APP_ID">69300</string>
+    <string name="QB_AUTH_KEY">WtRQquHgegFPLru</string>
+    <string name="QB_AUTH_SECRET">VPm3TvO3YpeZpsb</string>
+    <string name="QB_DEFAULT_PASSWORD">a1s2d3f4g5h6</string> <!--password you set yourself-->
+
+    <!--config facebook-->
+    <string name="facebook_app_id">2676645642621223</string> <!--config by acc suusoft.dev-->
+    <string name="fb_login_protocol_scheme">fb2676645642621223</string>
+
+    <!--config quickblox-->
+    <string name="sender_id">888049999981</string> <!--config by acc suusoft.truongnv@gmail.com  project Market Deal-->
+
+    <!--config map-->
+    <string name="own_google_api_key">AIzaSyBowepAtPUQ-nOWmdWOxr19eg0Xr4P1Uw4</string> <!--config by acc register.moza@gmail.com-->
+
+    <!--AIzaSyB0omuwzTYpYMcZNxunuvgLHg2NbMLhBOw key push iwanadeal-->
+</resources>

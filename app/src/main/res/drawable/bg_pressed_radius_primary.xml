@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:exitFadeDuration="@android:integer/config_longAnimTime">
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/lightColorPrimary" />
+
+            <corners android:radius="@dimen/dimen_6x" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:endColor="@color/colorPrimaryDark"
+                android:centerColor="@color/colorPrimaryDark"
+                android:startColor="@color/colorPrimaryDark"
+                android:type="linear" />
+            <corners android:radius="@dimen/dimen_6x" />
+        </shape>
+    </item>
+
+</selector>

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_deal"
+    android:id="@+id/ll_root"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_light" />
+    <ScrollView
+        android:id="@+id/scv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_3x"
+                android:paddingLeft="@dimen/dimen_2x">
+
+                <TextView
+                    android:id="@+id/lbl_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/category_field"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spn_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_1x"
+                    android:spinnerMode="dropdown"></Spinner>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlt_parent_chose_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/heigh_deal_new"
+                android:layout_marginLeft="@dimen/dimen_2x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:background="@color/bg_deal_list"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_deal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/image_default"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_chose_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_insert_image" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlt_parent_attach_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:visibility="gone">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_file"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/attachment"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <TextView
+                    android:id="@+id/tv_attachment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/lbl_file"
+                    android:layout_toRightOf="@+id/lbl_file"
+                    android:gravity="right"
+                    android:text="@string/select_file"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:textColor="@color/colorAccent" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lbl_form_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:paddingLeft="@dimen/dimen_2x"
+                android:text="@string/product"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rlt_parent_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2x"
+                android:paddingLeft="@dimen/dimen_x3x"
+                android:visibility="visible">
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                    android:id="@+id/lbl_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/title_field"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="@dimen/text_size_xnormal" />
+
+                <EditText
+                    android:id="@+id/edt_name"
+                    style="@style/deal_new_editext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_xnormal"
+                    android:layout_toRightOf="@+id/lbl_product"
+                    android:hint="@string/title"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_divider"
+                android:layout_marginLeft="@dimen/dimen_x3x"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:id="@+id/ll_parent_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dimen_x3x"
+                android:visibility="visible">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_x1x">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/original_price_field"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal"  />
+
+                    <EditText
+                        android:id="@+id/edt_price"
+                        style="@style/deal_new_editext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/lbl_price"
+                        android:hint="0 Credits"
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="8" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/divider_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/grey"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rlt_parent_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:visibility="gone">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/discount"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                    <EditText
+                        android:id="@+id/edt_discount"
+                        style="@style/deal_new_editext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/lo_discount"
+                        android:layout_toRightOf="@+id/lbl_discount"
+                        android:hint="0"
+                        android:textSize="@dimen/text_size_xnormal"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <LinearLayout
+                        android:id="@+id/lo_discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dimen_2x"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_primary_radius_left"
+                            android:paddingBottom="@dimen/dimen_x1x"
+                            android:paddingLeft="@dimen/dimen_2x"
+                            android:paddingRight="@dimen/dimen_2x"
+                            android:paddingTop="@dimen/dimen_x1x"
+                            android:text="%"
+                            android:textSize="@dimen/text_size_xnormal"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_curency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_white_radius_right"
+                            android:paddingBottom="@dimen/dimen_x1x"
+                            android:paddingLeft="@dimen/dimen_2x"
+                            android:paddingRight="@dimen/dimen_2x"
+                            android:paddingTop="@dimen/dimen_x1x"
+                            android:text="@string/currency_symbol"
+                            android:textSize="@dimen/text_size_xnormal"
+                            android:textColor="@color/textColorPrimary" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/divider_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:background="@color/grey"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rlt_parent_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:visibility="gone">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/address_of_deal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                    <EditText
+                        android:id="@+id/edt_address"
+                        style="@style/deal_new_editext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:layout_toRightOf="@+id/lbl_address"
+                        android:hint="@string/business_address"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <!--  <com.wa.iwanadeal.widgets.textview.TextViewRegular
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimen_2x"
+                        android:layout_toRightOf="@+id/lbl_address"
+                        android:gravity="right"
+                        android:text=""
+                        android:hint="@string/select_address"
+                        android:textColorHint="@color/dark_grey"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size_xnormal" />-->
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/divider_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/grey"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/ll_parent_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_of_deal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                    <EditText
+                        android:id="@+id/edt_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_05x"
+                        android:background="@color/black_transparent"
+                        android:hint="@string/description"
+                        android:inputType="textCapSentences"
+                        android:maxLength="500"
+                        android:maxLines="10"
+                        android:padding="@dimen/dimen_1x"
+                        android:textSize="@dimen/text_size_xnormal" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/grey"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rlt_parent_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:visibility="gone">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_timming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/timming"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewItalic
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_timming"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:text="@string/duration_deal_description"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <Spinner
+                        android:id="@+id/spn_timming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimen_2x" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/divider_type_deal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:background="@color/grey"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/rg_type_deal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                        android:id="@+id/lbl_type_deal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/type_deal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/rb_standard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/standard"
+                            android:textColor="@color/black"
+                            app:buttonTint="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/tv_des_standard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_4x"
+                            android:text="@string/deal_standard_description"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="@dimen/text_size_small" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/rb_premium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/premium"
+                            android:textColor="@color/black"
+                            app:buttonTint="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/tv_des_premium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_4x"
+                            android:text="@string/deal_premium_description"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_divider"
+                    android:layout_marginTop="@dimen/dimen_x1x"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rlt_parent_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_3x">
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                        android:id="@+id/lbl_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:text="@string/total"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                        android:id="@+id/tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:layout_marginRight="@dimen/dimen_2x"
+                        android:text=""
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_size_xnormal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2x">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/chk_renew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:text="@string/auto_renew"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/text_size_xnormal"
+                        app:buttonTint="@color/primary" />
+
+                </RelativeLayout>
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:id="@+id/tv_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3x"
+                    android:layout_marginLeft="@dimen/dimen_4x"
+                    android:layout_marginRight="@dimen/dimen_7x"
+                    android:layout_marginTop="@dimen/dimen_3x"
+                    android:background="@drawable/bg_pressed_primary"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_2x"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large" />
+
+                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_3x"
+                    android:layout_marginLeft="@dimen/dimen_4x"
+                    android:layout_marginRight="@dimen/dimen_7x"
+                    android:background="@drawable/bg_pressed_accent"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_2x"
+                    android:text="@string/button_cancel"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

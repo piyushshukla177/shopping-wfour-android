@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/dimen_infowindow_driver"
+        android:layout_height="@dimen/dimen_infowindow_driver"
+        android:background="@drawable/bg_cycle_accent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_05x">
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_05x"
+            android:gravity="center_horizontal"
+            android:text="@string/value_minutes_away"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_driver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="Jason Statham"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/delivery"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_05x"
+            android:gravity="center_vertical">
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:rating="4"
+                android:theme="@style/custom_rating" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+                android:id="@+id/lbl_rate_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_fare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_05x"
+            android:text="@string/dollar_value"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/lbl_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/more_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/dimen_divider"
+        android:layout_height="@dimen/dimen_x1x"
+        android:background="@color/colorAccent" />
+</LinearLayout>

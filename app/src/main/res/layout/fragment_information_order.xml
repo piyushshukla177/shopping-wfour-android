@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="350dp"
+    android:minHeight="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.InformationOrderFragment"
+    android:background="@color/white"
+    android:layout_marginRight="@dimen/dimen_1x"
+    android:layout_marginLeft="@dimen/dimen_1x">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+        <!--<include layout="@layout/toolbar"></include>-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorAccent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_large"
+                android:paddingTop="@dimen/dimen_1x"
+                android:text="Aumenta"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_1x"
+                android:id="@+id/tvTitle"
+                android:layout_centerVertical="true"/>
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/btnClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:background="@drawable/ic_close_white"
+                android:layout_marginTop="@dimen/dimen_1x"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/search_style_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:theme="@style/search_style_edittext"
+            >
+
+            <EditText
+                android:id="@+id/edtName"
+                style="@style/search_style_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:hint="Naran"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/search_style_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:theme="@style/search_style_edittext">
+
+            <EditText
+                android:id="@+id/edtPhone"
+                style="@style/search_style_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:hint="Numeru telemovel"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--style="@style/search_style_edittext"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/dimen_2x"-->
+            <!--android:layout_marginTop="@dimen/dimen_1x"-->
+            <!--android:theme="@style/search_style_edittext">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/edtCity"-->
+                <!--style="@style/search_style_edittext"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="@dimen/dimen_05x"-->
+                <!--android:hint="City"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:inputType="text"-->
+                <!--android:maxLength="100"-->
+                <!--android:maxLines="1"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/text_size_large" />-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--style="@style/search_style_edittext"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/dimen_2x"-->
+            <!--android:layout_marginTop="@dimen/dimen_1x"-->
+            <!--android:theme="@style/search_style_edittext">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/edtTown"-->
+                <!--style="@style/search_style_edittext"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="@dimen/dimen_05x"-->
+                <!--android:hint="Town"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:inputType="text"-->
+                <!--android:maxLength="100"-->
+                <!--android:maxLines="1"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/text_size_large" />-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/search_style_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:theme="@style/search_style_edittext">
+
+            <EditText
+                android:id="@+id/edtAddress"
+                style="@style/search_style_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:hint="Enderesu"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ex_vera_cruz_vila_verde_dili"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:textColor="@color/textColorBlackPrimary"
+            android:textSize="@dimen/text_size_xnormal"/>
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dimen_3x">
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/btn_AddAddress"
+            style="@style/Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_marginRight="@dimen/dimen_3x"
+            android:layout_marginBottom="@dimen/dimen_3x"
+            android:textSize="@dimen/text_size_xnormal"
+            android:text="Aumenta Enderesu" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
