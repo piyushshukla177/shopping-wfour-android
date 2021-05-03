@@ -1,157 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragments.DeliveryAddressFragment"
     android:background="@color/backgroundColor"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.fragments.DeliveryAddressFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
-        <include  layout="@layout/toolbar"/>
-        <LinearLayout
+
+        <include layout="@layout/toolbar" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/dimen_1x"
             android:paddingTop="@dimen/dimen_1x"
-            android:background="@color/white">
+            android:paddingBottom="@dimen/dimen_1x">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="@dimen/dimen_1x">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_location"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enderesu"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_gravity="center_horizontal"/>
-            </LinearLayout>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-----------------"
-                android:layout_marginTop="@dimen/dimen_1x"
-                android:textColor="@color/grey"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_wallet_gray"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/next_red" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Selu"
-                    android:textColor="@color/grey"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_gravity="center_horizontal"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-----------------"
-                android:layout_marginTop="@dimen/dimen_1x"
-                android:textColor="@color/grey"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Delivery"
+                    android:textSize="@dimen/text_size_small" />
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_done_gray"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/next_gray" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Konfirma"
-                    android:textColor="@color/grey"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Payment"
+                    android:textSize="@dimen/text_size_small" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/next_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Confirm"
+                    android:textSize="@dimen/text_size_small" />
             </LinearLayout>
 
-        </LinearLayout>
+
+        </RelativeLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fillViewport="true"
             android:scrollbars="none">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:orientation="vertical">
+
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rclView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rclView"
+                    android:layout_marginTop="5dp"
                     android:scrollbars="vertical">
 
                 </androidx.recyclerview.widget.RecyclerView>
+
                 <LinearLayout
                     android:id="@+id/lnlAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
+                    android:orientation="horizontal"
                     android:paddingTop="@dimen/dimen_1x"
                     android:paddingBottom="@dimen/dimen_1x"
-                    android:visibility="visible">
+                    android:visibility="gone">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_add"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/dimen_1x"
-                        android:layout_gravity="center_vertical"/>
+                        app:srcCompat="@drawable/ic_add" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Aumenta Enderesu"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/dimen_1x"
-                        android:textSize="@dimen/text_size_large"
+                        android:text="Aumenta Enderesu"
                         android:textColor="@color/primary"
-                        android:layout_gravity="center_vertical"/>
+                        android:textSize="@dimen/text_size_large" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Metode Delivery"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
+
         <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
             android:id="@+id/btn_Next"
             style="@style/Button.Primary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_1x"
+            android:layout_width="112dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dimen_2x"
-            android:layout_marginBottom="@dimen/dimen_2x"
+            android:layout_marginTop="@dimen/dimen_1x"
             android:layout_marginRight="@dimen/dimen_2x"
-            android:textSize="@dimen/text_size_xnormal"
-            android:text="Kontinua" />
-    </LinearLayout>
+            android:layout_marginBottom="@dimen/dimen_2x"
+            android:text="Kontinua"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold" />
+    </RelativeLayout>
 </LinearLayout>

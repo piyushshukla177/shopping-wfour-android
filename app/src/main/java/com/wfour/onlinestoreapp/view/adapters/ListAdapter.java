@@ -293,14 +293,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             circleIndicator = itemView.findViewById(R.id.circle_indicator);
         }
 
-//        public void setAdapter(ArrayList<ProductObj> listData) {
-//            adapter = new HeaderItemAdapter(listData);
-//            viewPager.setAdapter(adapter);
-//            circleIndicator.setViewPager(viewPager);
-//            adapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
-//            adapter.setAutoSlide();
-//        }
-
         public void setAdapter() {
             adapter = new HeaderItemAdapter(listbanner);
             viewPager.setAdapter(adapter);

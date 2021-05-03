@@ -33,9 +33,6 @@
                     android:id="@+id/rcvData"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/dimen_item_category_margin"
-                    android:layout_marginRight="@dimen/dimen_item_category_margin"
-                    android:layout_marginTop="@dimen/dimen_item_category_margin"
                     android:layout_marginBottom="55dp"
                     android:background="@color/backgroundColor"/>
 

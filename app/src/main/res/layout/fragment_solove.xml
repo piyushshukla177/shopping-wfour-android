@@ -1,248 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragments.SoloveFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.fragments.SoloveFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include layout="@layout/toolbar"/>
-        <LinearLayout
+
+        <include layout="@layout/toolbar" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/dimen_1x"
-            android:paddingTop="@dimen/dimen_1x"
-            android:background="@color/white">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="@dimen/dimen_1x">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_location"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enderesu"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_gravity="center_horizontal"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-----------------"
-                android:layout_marginTop="@dimen/dimen_1x"
-                android:textColor="@color/primary"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_wallet"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Selu"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_gravity="center_horizontal"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-----------------"
-                android:layout_marginTop="@dimen/dimen_1x"
-                android:textColor="@color/grey"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_done_gray"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Konfirma"
-                    android:textColor="@color/grey"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_gravity="center_horizontal"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@color/white"
-            android:paddingBottom="@dimen/dimen_05x">
-            <TextView
-                android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_1x"
+            android:paddingBottom="@dimen/dimen_1x">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/metode_haruka"
-                android:background="@color/grey"
-                android:textSize="@dimen/text_size_large"
-                android:textColor="@color/black"
-                android:paddingLeft="@dimen/dimen_1x"
-                android:paddingBottom="@dimen/dimen_1x"
-                android:paddingTop="@dimen/dimen_1x"/>
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvData"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/next_gray" />
 
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Delivery"
+                    android:textSize="@dimen/text_size_small" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/next_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Payment"
+                    android:textSize="@dimen/text_size_small" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/next_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Confirm"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@color/white"
             android:orientation="vertical"
-            android:background="@color/white">
+            android:layout_marginTop="5dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Metode Pagamentu"
-                android:background="@color/grey"
-                android:textSize="@dimen/text_size_large"
-                android:textColor="@color/black"
-                android:paddingLeft="@dimen/dimen_1x"
+                android:paddingLeft="15dp"
+                android:paddingTop="@dimen/dimen_1x"
                 android:paddingBottom="@dimen/dimen_1x"
-                android:paddingTop="@dimen/dimen_1x"/>
-            <RadioGroup
+                android:text="Metode Pagamentu"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_normal" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/dimen_1x"
-                android:paddingTop="@dimen/dimen_1x"
-                android:id="@+id/radioGroup">
-                <RadioButton
-                    android:id="@+id/RdbMoney"
+                android:layout_margin="15dp">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/primary"
-                    android:paddingEnd="0dp"
-                    android:paddingStart="0dp"
-                    android:layout_marginLeft="@dimen/dimen_1x"
-                    android:checked="true"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_marginTop="@dimen/dimen_1x"
-                    android:text="Selu iha fatin" />
-                <RadioButton
-                    android:visibility="gone"
-                    android:id="@+id/RdbBankCard"
+                    android:orientation="vertical"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_black"
+                        android:text="Cash on Delivery"
+                        android:layout_marginTop="15dp"
+                        android:textSize="@dimen/text_size_normal"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_black"
+                        android:layout_marginTop="25dp"
+                        android:text="Telkomcel Pay"
+                        android:textSize="@dimen/text_size_normal"
+                        />
+                </LinearLayout>
+                <RadioGroup
+                    android:id="@+id/radioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/primary"
-                    android:paddingEnd="0dp"
-                    android:paddingStart="0dp"
-                    android:layout_marginLeft="@dimen/dimen_1x"
-                    android:checked="false"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:layout_marginTop="@dimen/dimen_1x"
-                    android:text="Payment in bank card"/>
+                    android:layout_alignParentRight="true"
+                    >
 
+                    <RadioButton
+                        android:id="@+id/RdbMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:buttonTint="@color/red"
+                        android:checked="true"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:textSize="@dimen/text_size_small" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/RdbBankCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_1x"
+                        android:buttonTint="@color/red"
+                        android:checked="false"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:textSize="@dimen/text_size_small"
+                        android:visibility="visible" />
+                </RadioGroup>
+            </RelativeLayout>
+
             <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:paddingTop="10dp"-->
-                <!--android:paddingBottom="10dp"-->
-                <!--android:background="@drawable/bg_view"-->
-                <!--&gt;-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:background="@drawable/bg_view"-->
+            <!--&gt;-->
 
-                <!--<RadioButton-->
-                    <!--android:id="@+id/RdbMoney"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:buttonTint="@color/primary"-->
-                    <!--android:paddingEnd="0dp"-->
-                    <!--android:paddingStart="0dp"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:checked="false"-->
-                    <!--android:textSize="@dimen/text_size_large"-->
-                    <!--android:layout_marginTop="10dp">-->
+            <!--<RadioButton-->
+            <!--android:id="@+id/RdbMoney"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:buttonTint="@color/primary"-->
+            <!--android:paddingEnd="0dp"-->
+            <!--android:paddingStart="0dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:checked="false"-->
+            <!--android:textSize="@dimen/text_size_large"-->
+            <!--android:layout_marginTop="10dp">-->
 
-                <!--</RadioButton>-->
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Thanh toan bang tien mat khi nhan hang"-->
-                    <!--android:layout_marginLeft="10dp"-->
-                    <!--android:textSize="20sp"-->
-                    <!--android:textColor="@color/black"/>-->
+            <!--</RadioButton>-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Thanh toan bang tien mat khi nhan hang"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textColor="@color/black"/>-->
             <!--</LinearLayout>-->
             <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:paddingTop="10dp"-->
-                <!--android:paddingBottom="10dp"-->
-                <!--android:background="@drawable/bg_view">-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:background="@drawable/bg_view">-->
 
-                <!--<RadioButton-->
-                    <!--android:id="@+id/RdbBankCard"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:buttonTint="@color/primary"-->
-                    <!--android:paddingEnd="0dp"-->
-                    <!--android:paddingStart="0dp"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:checked="false"-->
-                    <!--android:textSize="@dimen/text_size_large"-->
-                    <!--android:layout_marginTop="10dp">-->
+            <!--<RadioButton-->
+            <!--android:id="@+id/RdbBankCard"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:buttonTint="@color/primary"-->
+            <!--android:paddingEnd="0dp"-->
+            <!--android:paddingStart="0dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:checked="false"-->
+            <!--android:textSize="@dimen/text_size_large"-->
+            <!--android:layout_marginTop="10dp">-->
 
-                <!--</RadioButton>-->
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="Thanh toan bang the quoc te Visa, Master,JCB"-->
-                    <!--android:layout_marginLeft="10dp"-->
-                    <!--android:textSize="20sp"-->
-                    <!--android:textColor="@color/black"/>-->
+            <!--</RadioButton>-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Thanh toan bang the quoc te Visa, Master,JCB"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textColor="@color/black"/>-->
             <!--</LinearLayout>-->
         </LinearLayout>
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white">
+
             <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
                 android:id="@+id/btnNext"
                 style="@style/Button.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_2x"
+                android:layout_width="112dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dimen_2x"
-                android:layout_marginRight="@dimen/dimen_2x"
                 android:layout_marginTop="@dimen/dimen_1x"
-                android:textSize="@dimen/text_size_xnormal"
-                android:text="Kontinua" />
-        </LinearLayout>
+                android:layout_marginRight="@dimen/dimen_2x"
+                android:layout_marginBottom="@dimen/dimen_2x"
+                android:text="Kontinua"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
     </LinearLayout>
-
-
-
 </LinearLayout>

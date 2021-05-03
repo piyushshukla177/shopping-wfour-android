@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lnl_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:id="@+id/lnl_container">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,12 +13,12 @@
 
         <RadioButton
             android:id="@+id/radioButton"
-            app:buttonTint="@color/primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_1x"
             android:layout_marginTop="@dimen/dimen_1x"
-            android:textSize="@dimen/text_size_normal" />
+            android:textSize="@dimen/text_size_normal"
+            app:buttonTint="@color/red" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -34,30 +34,34 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tranpost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tranpost"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/transport_fee"
                     android:textColor="@color/black"
-                    android:text="@string/transport_fee"/>
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvPrice"
-                    android:layout_marginLeft="@dimen/dimen_05x"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_05x"
+                    android:fontFamily="@font/inter_regular"
                     android:text="3$"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
 
             </LinearLayout>
-
 
             <TextView
                 android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
                 android:text="Du kien Thu sau , 26/04/2019"
                 android:textColor="@color/green"
-                android:textSize="@dimen/text_size_xnormal" />
+                android:textSize="@dimen/text_size_normal" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -69,9 +73,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_05x"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingBottom="@dimen/dimen_1x"
                     android:text="Giao hang tieu chuan"
                     android:textColor="@color/black"
-                    android:paddingBottom="@dimen/dimen_1x"/>
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
         </LinearLayout>

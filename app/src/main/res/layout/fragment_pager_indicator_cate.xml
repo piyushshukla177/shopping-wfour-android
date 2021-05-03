@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <ImageView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:scaleType="fitStart"-->
-<!--        android:src="@drawable/bg_header_banner" />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:src="@drawable/bg_header_banner" />
 
     <androidx.cardview.widget.CardView
         xmlns:app="http://schemas.android.com/apk/res-auto"

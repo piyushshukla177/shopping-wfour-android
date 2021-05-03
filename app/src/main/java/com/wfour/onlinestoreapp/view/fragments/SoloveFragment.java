@@ -49,7 +49,7 @@ public class SoloveFragment extends BaseFragment {
 
     private ArrayList<DeliveryObj> deliveryObjList;
     private DeliveryObj deliveryObj = new DeliveryObj();
-    private RecyclerView rcv_data;
+//    private RecyclerView rcv_data;
     private DeliveryAdapter mAdapter;
     private Bundle bundle = new Bundle();
     private  int count;
@@ -92,7 +92,7 @@ public class SoloveFragment extends BaseFragment {
         tvPrice = view.findViewById(R.id.tvPrice);
         tvName = view.findViewById(R.id.tvName);
         mCartActivity= ((CartActivity)getActivity());
-        rcv_data = view.findViewById(R.id.rcvData);
+//        rcv_data = view.findViewById(R.id.rcvData);
 
         mCartActivity.setSupportActionBar(toolbar);
         mCartActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -113,31 +113,29 @@ public class SoloveFragment extends BaseFragment {
                 deliveryObj = deliveryObjList.get(position);
             }
         });
-
-
-
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(self);
-        rcv_data.setLayoutManager(layoutManager);
-        rcv_data.setAdapter(mAdapter);
-        rcv_data.setNestedScrollingEnabled(false);
-        mAdapter.notifyDataSetChanged();
+//
+//
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(self);
+//        rcv_data.setLayoutManager(layoutManager);
+//        rcv_data.setAdapter(mAdapter);
+//        rcv_data.setNestedScrollingEnabled(false);
+//        mAdapter.notifyDataSetChanged();
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!deliveryObjList.get(0).isSelected()
-                        && !deliveryObjList.get(1).isSelected()
-                        && !deliveryObjList.get(2).isSelected()
-                        && !deliveryObjList.get(3).isSelected()) {
-                    Toast.makeText(self, "Choose shipping method", Toast.LENGTH_LONG).show();
-                    return;
-                }else if (!rdbBankCard.isChecked() && !rdbMoney.isChecked()) {
+//                if (!deliveryObjList.get(0).isSelected()
+//                        && !deliveryObjList.get(1).isSelected()
+//                        && !deliveryObjList.get(2).isSelected()
+//                        && !deliveryObjList.get(3).isSelected()) {
+//                    Toast.makeText(self, "Choose shipping method", Toast.LENGTH_LONG).show();
+//                    return;
+//                }
+                if (!rdbBankCard.isChecked() && !rdbMoney.isChecked()) {
 
                 } else {
                     if (deliveryObj != null) {
                         if (rdbMoney.isChecked()) {
-                            //deliveryObj = deliveryObjList.get(1);
                             text = "Selu Iha Fatin";
                         } else if (rdbBankCard.isChecked()) {
 
@@ -147,14 +145,7 @@ public class SoloveFragment extends BaseFragment {
                         Toast.makeText(self, "Item cannot be empty", Toast.LENGTH_LONG).show();
                     }
                 }
-
-
-
-
-
-
             }
-
         });
 
     }

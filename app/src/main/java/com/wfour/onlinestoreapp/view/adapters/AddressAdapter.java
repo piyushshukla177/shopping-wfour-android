@@ -96,7 +96,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvName, tvPhone, tvAllAddress, btnDelete, btnEdit;
-        private RadioButton radioButton;
+//        private RadioButton radioButton;
 
         public MyViewHolder(View itemView) {
             super(itemView);

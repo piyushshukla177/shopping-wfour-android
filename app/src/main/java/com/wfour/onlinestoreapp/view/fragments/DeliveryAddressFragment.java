@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,18 +21,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wfour.onlinestoreapp.R;
+import com.wfour.onlinestoreapp.base.ApiResponse;
 import com.wfour.onlinestoreapp.base.BaseFragment;
 import com.wfour.onlinestoreapp.datastore.DataStoreManager;
 import com.wfour.onlinestoreapp.globals.GlobalFunctions;
 import com.wfour.onlinestoreapp.interfaces.IOnItemClickListener;
 import com.wfour.onlinestoreapp.interfaces.MyOnClick;
+import com.wfour.onlinestoreapp.interfaces.MyOnClickDelivery;
+import com.wfour.onlinestoreapp.network.modelmanager.ModelManager;
+import com.wfour.onlinestoreapp.network.modelmanager.ModelManagerListener;
 import com.wfour.onlinestoreapp.network.modelmanager.singletonmanager.AddressManager;
+import com.wfour.onlinestoreapp.network1.NetworkUtility;
+import com.wfour.onlinestoreapp.objects.DeliveryObj;
 import com.wfour.onlinestoreapp.objects.Person;
 import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.quickblox.conversation.utils.DialogUtil;
 import com.wfour.onlinestoreapp.view.activities.CartActivity;
 import com.wfour.onlinestoreapp.view.activities.MainActivity;
 import com.wfour.onlinestoreapp.view.adapters.AddressAdapter;
+import com.wfour.onlinestoreapp.view.adapters.DeliveryAdapter;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -74,13 +84,16 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
     private CartListFragment cartListFragment;
 
     private DeliveryAddressFragment deliveryAddressFragment;
+    private ArrayList<DeliveryObj> deliveryObjList;
 
     private String city;
     private String town;
     private int position;
     private int count;
     private ArrayList<ProductObj> cartList;
-
+    private DeliveryObj deliveryObj = new DeliveryObj();
+    private RecyclerView rcv_data;
+    private DeliveryAdapter mAAdapter;
     @Override
     protected int getLayoutInflate() {
         return R.layout.fragment_delivery_address;
@@ -128,6 +141,17 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
 
             }
         });
+
+        mAAdapter = new DeliveryAdapter(self, deliveryObjList, new MyOnClickDelivery() {
+
+            @Override
+            public void onClick(int position) {
+                deliveryObj = new DeliveryObj();
+                deliveryObj = deliveryObjList.get(position);
+            }
+        });
+
+        initDeliveryList();
         mAdapter.notifyDataSetChanged();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mCartActivity);
@@ -139,7 +163,51 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
         } else {
             lnl_add.setVisibility(View.VISIBLE);
         }
+        rcv_data = view.findViewById(R.id.rcvData);
+
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(self);
+        rcv_data.setLayoutManager(layoutManager1);
+        rcv_data.setAdapter(mAAdapter);
+        rcv_data.setNestedScrollingEnabled(false);
+         mAAdapter.notifyDataSetChanged();
+
     }
+
+
+
+    private void initDeliveryList(){
+        if(NetworkUtility.getInstance(self).isNetworkAvailable()){
+            ModelManager.deliveryList(self, new ModelManagerListener() {
+                @Override
+                public void onSuccess(Object object) {
+                    JSONObject obj = (JSONObject) object;
+                    ApiResponse response = new ApiResponse(obj);
+                    deliveryObjList = new ArrayList<>();
+                    if(!response.isError()){
+                        deliveryObjList.addAll(response.getDataList(DeliveryObj.class));
+
+
+//                        deliveryObj = deliveryObjList.get(0);
+//                        deliveryObj = deliveryObjList.get(1);
+//                        deliveryObj = deliveryObjList.get(2);
+//                        deliveryObj = deliveryObjList.get(3);
+
+                        mAAdapter.addList(deliveryObjList);
+                    }
+                    Log.e("TAG", "onError: " + "Success");
+                }
+
+                @Override
+                public void onError() {
+                    Log.e("TAG", "onError: " + "Error");
+                }
+            });
+        }else {
+            Toast.makeText(self, getString(R.string.msg_no_network), Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_go_home, menu);
@@ -185,6 +253,14 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
     public void onClick(View view) {
         FragmentTransaction fragmentTransaction = mCartActivity.getSupportFragmentManager().beginTransaction();
         if (view == btn_Next) {
+            if (!deliveryObjList.get(0).isSelected()
+                    && !deliveryObjList.get(1).isSelected()
+                    && !deliveryObjList.get(2).isSelected()
+                    && !deliveryObjList.get(3).isSelected()) {
+                Toast.makeText(self, "Choose shipping method", Toast.LENGTH_LONG).show();
+                return;
+            }
+
             if (AddressManager.getInstance().getArray().size() != 0) {
                 if (soloveFragment == null) {
                     soloveFragment = SoloveFragment.newInstance();
@@ -193,14 +269,10 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
             } else {
                 Toast.makeText(mCartActivity, "You need to enter the address", Toast.LENGTH_LONG).show();
             }
-
         } else if (view == lnl_add) {
             if (AddressManager.getInstance().getArray().size() == 0 ) {
                 showDialogInformation();
-//            }else if(AddressManager.getInstance().getArray().size() != 0 && name != null   phone != null && address != null){
-//                showDialogInformation();
             }
-
         }
     }
 
@@ -297,5 +369,4 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
             inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
     }
-
 }

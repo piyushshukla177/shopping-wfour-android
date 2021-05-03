@@ -20,16 +20,10 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text=""
+        android:textSize="@dimen/text_size_large"
         android:maxLines="1"
+        android:textStyle="bold"
         android:singleLine="true"
         android:textColor="@color/textColorToolbar" />
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:src="@drawable/img_menu_header"-->
-        <!--android:scaleType="fitXY"/>-->
-
-
 
 </androidx.appcompat.widget.Toolbar>
