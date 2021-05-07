@@ -60,8 +60,8 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
         } else {
             holder.tvOldPrice.setText(" $" + StringUtil.convertNumberToString(orderDetailObj.getOld_price(), 2));
         }
-
         holder.tvNumber.setText(String.valueOf(orderDetailObj.getQuantity()));
+        holder.tvStatus.setText("Prosesu");
         ImageUtil.setImage(context, holder.img, orderDetailObj.getImage());
         if (orderDetailObj.getSize() == null) {
             holder.lnlSize.setVisibility(View.GONE);
@@ -84,7 +84,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvName, tvPrice, btnDelete, tvNumber, tvColor, tvSize, tvOldPrice;
+        private TextView tvName, tvPrice, btnDelete, tvNumber, tvColor, tvSize, tvOldPrice, tvStatus;
         private ImageView img;
         private LinearLayout lnlColor, lnlSize;
 
@@ -101,6 +101,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
             lnlColor = itemView.findViewById(R.id.lnlColor);
             lnlSize = itemView.findViewById(R.id.lnlSize);
             tvOldPrice = itemView.findViewById(R.id.lbl_price_old);
+            tvStatus = itemView.findViewById(R.id.tvStatus);
             tvOldPrice.setPaintFlags(tvOldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         }

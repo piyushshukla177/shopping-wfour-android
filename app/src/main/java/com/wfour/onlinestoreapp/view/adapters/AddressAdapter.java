@@ -64,14 +64,6 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.MyViewHo
         holder.tvName.setText(person.getName());
         holder.tvPhone.setText(String.valueOf(person.getPhone()));
         holder.tvAllAddress.setText(person.getAddress());
-//        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClickSize(View view) {
-//                if(onClickSize != null){
-//                    onClickSize.DeleteItem(position);
-//                }
-//            }
-//        });
 
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +71,8 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.MyViewHo
                 if(onClick != null){
                     onClick.EditItem(person, position);
                 }
-
-
             }
         });
-
-        //holder.radioButton.setChecked(position == mSelectedITEM);
-
     }
 
     @Override
@@ -96,16 +83,13 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvName, tvPhone, tvAllAddress, btnDelete, btnEdit;
-//        private RadioButton radioButton;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvName);
             tvPhone = itemView.findViewById(R.id.tvPhone);
             tvAllAddress = itemView.findViewById(R.id.tvAllAddress);
-//            btnDelete = itemView.findViewById(R.id.btnDelete);
             btnEdit = itemView.findViewById(R.id.btnEdit);
-           // radioButton = itemView.findViewById(R.id.radioButton);
         }
     }
 }

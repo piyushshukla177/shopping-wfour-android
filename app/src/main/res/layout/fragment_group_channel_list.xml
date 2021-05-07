@@ -29,8 +29,6 @@
         android:layout_gravity="bottom|end"
         app:useCompatPadding="true"
         app:srcCompat="@drawable/ic_add_white_24dp"
-        android:visibility="gone"/>
-
-
+        android:visibility="visible"/>
 
 </FrameLayout>

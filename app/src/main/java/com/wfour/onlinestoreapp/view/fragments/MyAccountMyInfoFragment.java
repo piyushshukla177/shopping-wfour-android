@@ -92,7 +92,7 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
     private TextViewRegular btnEdit;
     private TextViewRegular tvChangePassword, tvNumRate, btnViewReviews, tvLogout;
     private TextView tvPhoneCode, tvEg;
-    private RelativeLayout btnSave;
+    private RelativeLayout btnSave, bill_relative;
     private TextView tvFunction, tvPoint;
     private RatingBar rating_bar;
     private boolean isEdit = false;
@@ -126,6 +126,8 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
         return inflater.inflate(R.layout.fragment_my_account_about, container, false);
     }
 
+    private BillManagementFragment mBillManagementFragment;
+
     @Override
     void initUI(View view) {
         tvPoint = view.findViewById(R.id.tv_point);
@@ -135,6 +137,7 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
         tvNumRate = view.findViewById(R.id.tv_num_rate);
         rating_bar = view.findViewById(R.id.rating_bar);
         btnViewReviews = view.findViewById(R.id.btn_view_reviews);
+        bill_relative = view.findViewById(R.id.bill_relative);
 
         edtBusinessName = view.findViewById(R.id.edt_bussiness_name);
         edtPhoneNumber = view.findViewById(R.id.edt_phone_number);
@@ -155,10 +158,36 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
         ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
 //        passWord = DataStoreManager.getUser().getPassWord();
+        bill_relative.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        if (DataStoreManager.getUser() != null) {
+                            if (mBillManagementFragment == null) {
+                                mBillManagementFragment = BillManagementFragment.newInstance();
+                            }
 
+                            fragmentTransaction.replace(R.id.frl_main, mBillManagementFragment).commit();
+                            getActivity().setTitle(R.string.bill);
+                        } else {
+//                    AppUtil.showToast(self, "No Account");
+                            showLogout();
+                        }
+                    }
+                }
+        );
         initRemoveActionBar(view);
     }
 
+    private void showLogout() {
+        DialogUtil.showAlertDialog(self, R.string.notification, R.string.you_need_login, new DialogUtil.IDialogConfirm() {
+            @Override
+            public void onClickOk() {
+                goLogin();
+            }
+        });
+    }
 
     public void initRemoveActionBar(View view) {
         MaterialToolbar toolbars = getActivity().findViewById(R.id.toolbar);

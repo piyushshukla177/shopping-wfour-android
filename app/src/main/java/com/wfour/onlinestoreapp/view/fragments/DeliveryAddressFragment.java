@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,7 @@ import com.wfour.onlinestoreapp.R;
 import com.wfour.onlinestoreapp.base.ApiResponse;
 import com.wfour.onlinestoreapp.base.BaseFragment;
 import com.wfour.onlinestoreapp.datastore.DataStoreManager;
+import com.wfour.onlinestoreapp.globals.Args;
 import com.wfour.onlinestoreapp.globals.GlobalFunctions;
 import com.wfour.onlinestoreapp.interfaces.IOnItemClickListener;
 import com.wfour.onlinestoreapp.interfaces.MyOnClick;
@@ -94,6 +96,8 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
     private DeliveryObj deliveryObj = new DeliveryObj();
     private RecyclerView rcv_data;
     private DeliveryAdapter mAAdapter;
+    String text;
+
     @Override
     protected int getLayoutInflate() {
         return R.layout.fragment_delivery_address;
@@ -169,21 +173,20 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
         rcv_data.setLayoutManager(layoutManager1);
         rcv_data.setAdapter(mAAdapter);
         rcv_data.setNestedScrollingEnabled(false);
-         mAAdapter.notifyDataSetChanged();
+        mAAdapter.notifyDataSetChanged();
 
     }
 
 
-
-    private void initDeliveryList(){
-        if(NetworkUtility.getInstance(self).isNetworkAvailable()){
+    private void initDeliveryList() {
+        if (NetworkUtility.getInstance(self).isNetworkAvailable()) {
             ModelManager.deliveryList(self, new ModelManagerListener() {
                 @Override
                 public void onSuccess(Object object) {
                     JSONObject obj = (JSONObject) object;
                     ApiResponse response = new ApiResponse(obj);
                     deliveryObjList = new ArrayList<>();
-                    if(!response.isError()){
+                    if (!response.isError()) {
                         deliveryObjList.addAll(response.getDataList(DeliveryObj.class));
 
 
@@ -202,7 +205,7 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
                     Log.e("TAG", "onError: " + "Error");
                 }
             });
-        }else {
+        } else {
             Toast.makeText(self, getString(R.string.msg_no_network), Toast.LENGTH_SHORT).show();
 
         }
@@ -231,18 +234,18 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
             name = DataStoreManager.getUser().getName();
             phone = DataStoreManager.getUser().getPhone();
             address = DataStoreManager.getUser().getAddress();
-            if(name != null && phone != null && address != null) {
+            if (name != null && phone != null && address != null) {
                 AddressManager.getInstance().addItem(new Person(name, phone, address));
             }
             personList = AddressManager.getInstance().getArray();
-            if(name != null && phone != null && address != null) {
+            if (name != null && phone != null && address != null) {
                 mAdapter.addList(personList);
             }
         } else {
             personList = AddressManager.getInstance().getArray();
             mAdapter.addList(personList);
         }
-        if (AddressManager.getInstance().getArray().size() != 0 ) {
+        if (AddressManager.getInstance().getArray().size() != 0) {
             lnl_add.setVisibility(View.GONE);
         } else {
             lnl_add.setVisibility(View.VISIBLE);
@@ -262,15 +265,16 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
             }
 
             if (AddressManager.getInstance().getArray().size() != 0) {
-                if (soloveFragment == null) {
-                    soloveFragment = SoloveFragment.newInstance();
-                }
-                fragmentTransaction.replace(R.id.frgCart, soloveFragment).addToBackStack("soloveFragment").commit();
+                setNext();
+//                if (soloveFragment == null) {
+//                    soloveFragment = SoloveFragment.newInstance();
+//                }
+//                fragmentTransaction.replace(R.id.frgCart, soloveFragment).addToBackStack("soloveFragment").commit();
             } else {
                 Toast.makeText(mCartActivity, "You need to enter the address", Toast.LENGTH_LONG).show();
             }
         } else if (view == lnl_add) {
-            if (AddressManager.getInstance().getArray().size() == 0 ) {
+            if (AddressManager.getInstance().getArray().size() == 0) {
                 showDialogInformation();
             }
         }
@@ -366,7 +370,39 @@ public class DeliveryAddressFragment extends BaseFragment implements View.OnClic
         View v = getActivity().getCurrentFocus();
         if (v != null) {
             InputMethodManager inputManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+
             inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
     }
+
+    private void setNext() {
+        Bundle bundle = new Bundle();
+        deliveryObj = new DeliveryObj();
+        for (int i = 0; i < deliveryObjList.size(); i++) {
+            if (deliveryObjList.get(i).isSelected()) {
+                deliveryObj = deliveryObjList.get(i);
+            }
+        }
+        bundle.putParcelable(Args.KEY_DELIVERY_OBJECT, deliveryObj);
+        bundle.putString("TEXT", text);
+
+        FragmentTransaction fragmentTransaction = ((CartActivity) getActivity()).getSupportFragmentManager().beginTransaction();
+//        if (AddressManager.getInstance().getArray().size() != 0) {
+//            if (soloveFragment == null) {
+//                soloveFragment = SoloveFragment.newInstance();
+//            }
+//            fragmentTransaction.replace(R.id.frgCart, soloveFragment).addToBackStack("soloveFragment").commit();
+//        } else {
+//            Toast.makeText(mCartActivity, "You need to enter the address", Toast.LENGTH_LONG).show();
+//        }
+
+        if (soloveFragment == null) {
+            soloveFragment = SoloveFragment.newInstance();
+        }
+        soloveFragment.setArguments(bundle);
+        fragmentTransaction.add(R.id.frgCart, soloveFragment).addToBackStack("ConfirmInformationFragment").commit();
+
+    }
+
 }

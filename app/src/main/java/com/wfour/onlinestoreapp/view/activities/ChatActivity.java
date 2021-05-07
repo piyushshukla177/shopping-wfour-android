@@ -157,8 +157,6 @@ public class ChatActivity extends BaseActivity implements View.OnClickListener, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         // Init quickblox
         if (mRecentChatObj != null && mRecentChatObj.getQbUser() != null) {
             if (DataStoreManager.getUser() != null && (DataStoreManager.getUser().getToken() != null

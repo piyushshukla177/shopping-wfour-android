@@ -54,12 +54,12 @@ public class BillInformationActivity extends BaseActivity implements View.OnClic
 
         btnBill = findViewById(R.id.btnBill);
         btnGoBy = findViewById(R.id.btnGoBy);
-        ImageView gif_done= findViewById(R.id.gif_done);
-        DrawableImageViewTarget target = new DrawableImageViewTarget(gif_done);
-
-        Glide.with(self).load(R.drawable.gif_done)
-                .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
-                .into(target);
+//        ImageView gif_done= findViewById(R.id.gif_done);
+//        DrawableImageViewTarget target = new DrawableImageViewTarget(gif_done);
+//
+//        Glide.with(self).load(R.drawable.gif_done)
+//                .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
+//                .into(target);
 
         btnGoBy.setOnClickListener(this);
         btnBill.setOnClickListener(this);
@@ -90,9 +90,7 @@ public class BillInformationActivity extends BaseActivity implements View.OnClic
             tvDelivery.setText(delivery);
             tvBillCode.setText(billCode);
         }
-
     }
-
 
     private void getProfile() {
         if (DataStoreManager.getUser() != null) {

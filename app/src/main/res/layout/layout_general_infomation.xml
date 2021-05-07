@@ -237,6 +237,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/bill_relative"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_2x">

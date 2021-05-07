@@ -1,10 +1,12 @@
 package com.wfour.onlinestoreapp.view.fragments;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -38,7 +40,7 @@ import java.util.ArrayList;
 public class SoloveFragment extends BaseFragment {
 
     public static final String TEXT = "text";
-    protected final static  String TAG = SoloveFragment.class.getSimpleName();
+    protected final static String TAG = SoloveFragment.class.getSimpleName();
 
     private RadioButton rdbMoney, rdbBankCard;
     private RadioGroup radioGroup;
@@ -49,10 +51,10 @@ public class SoloveFragment extends BaseFragment {
 
     private ArrayList<DeliveryObj> deliveryObjList;
     private DeliveryObj deliveryObj = new DeliveryObj();
-//    private RecyclerView rcv_data;
+    //    private RecyclerView rcv_data;
     private DeliveryAdapter mAdapter;
     private Bundle bundle = new Bundle();
-    private  int count;
+    private int count;
     private ArrayList<ProductObj> cartList;
     private CartListFragment cartListFragment;
     private ArrayList<DeliveryObj> list;
@@ -61,7 +63,7 @@ public class SoloveFragment extends BaseFragment {
 
     private ConfirmInformationFragment confirmInformationFragment;
 
-    public static SoloveFragment newInstance(){
+    public static SoloveFragment newInstance() {
         Bundle bundle = new Bundle();
         SoloveFragment fragment = new SoloveFragment();
         fragment.setArguments(bundle);
@@ -79,6 +81,7 @@ public class SoloveFragment extends BaseFragment {
 
     }
 
+    String address;
 
     @Override
     protected void initView(View view) {
@@ -91,7 +94,7 @@ public class SoloveFragment extends BaseFragment {
         tvDescription = view.findViewById(R.id.tvDescription);
         tvPrice = view.findViewById(R.id.tvPrice);
         tvName = view.findViewById(R.id.tvName);
-        mCartActivity= ((CartActivity)getActivity());
+        mCartActivity = ((CartActivity) getActivity());
 //        rcv_data = view.findViewById(R.id.rcvData);
 
         mCartActivity.setSupportActionBar(toolbar);
@@ -113,14 +116,15 @@ public class SoloveFragment extends BaseFragment {
                 deliveryObj = deliveryObjList.get(position);
             }
         });
-//
+        Bundle bundle1 = getArguments();
+        deliveryObj = bundle1.getParcelable(Args.KEY_DELIVERY_OBJECT);
+
 //
 //        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(self);
 //        rcv_data.setLayoutManager(layoutManager);
 //        rcv_data.setAdapter(mAdapter);
 //        rcv_data.setNestedScrollingEnabled(false);
 //        mAdapter.notifyDataSetChanged();
-
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,24 +145,24 @@ public class SoloveFragment extends BaseFragment {
 
                         }
                         setData();
-                    }else{
+                    } else {
                         Toast.makeText(self, "Item cannot be empty", Toast.LENGTH_LONG).show();
                     }
                 }
             }
         });
 
+
     }
 
-    private void setData(){
+    private void setData() {
         Bundle bundle = new Bundle();
-        deliveryObj = new DeliveryObj();
-        for(int i= 0; i< deliveryObjList.size(); i++){
-            if(deliveryObjList.get(i).isSelected()){
-                deliveryObj = deliveryObjList.get(i);
-            }
-
-        }
+//        deliveryObj = new DeliveryObj();
+//        for(int i= 0; i< deliveryObjList.size(); i++){
+//            if(deliveryObjList.get(i).isSelected()){
+//                deliveryObj = deliveryObjList.get(i);
+//            }
+//        }
         bundle.putParcelable(Args.KEY_DELIVERY_OBJECT, deliveryObj);
         bundle.putString(TEXT, text);
         FragmentTransaction fragmentTransaction = ((CartActivity) getActivity()).getSupportFragmentManager().beginTransaction();
@@ -192,15 +196,15 @@ public class SoloveFragment extends BaseFragment {
     }
 
 
-    private void initDeliveryList(){
-        if(NetworkUtility.getInstance(self).isNetworkAvailable()){
+    private void initDeliveryList() {
+        if (NetworkUtility.getInstance(self).isNetworkAvailable()) {
             ModelManager.deliveryList(self, new ModelManagerListener() {
                 @Override
                 public void onSuccess(Object object) {
                     JSONObject obj = (JSONObject) object;
                     ApiResponse response = new ApiResponse(obj);
                     deliveryObjList = new ArrayList<>();
-                    if(!response.isError()){
+                    if (!response.isError()) {
                         deliveryObjList.addAll(response.getDataList(DeliveryObj.class));
 
 
@@ -219,17 +223,18 @@ public class SoloveFragment extends BaseFragment {
                     Log.e(TAG, "onError: " + "Error");
                 }
             });
-        }else {
+        } else {
             Toast.makeText(self, getString(R.string.msg_no_network), Toast.LENGTH_SHORT).show();
 
         }
     }
+
     private void doOnDifficultyLevelChanged(RadioGroup group, int checkedId) {
         int checkedRadioId = group.getCheckedRadioButtonId();
 
-        if(checkedRadioId== R.id.RdbMoney) {
+        if (checkedRadioId == R.id.RdbMoney) {
             //Toast.makeText(mCartActivity, "ban chon 1 ", Toast.LENGTH_LONG).show();
-        } else if(checkedRadioId== R.id.RdbBankCard ) {
+        } else if (checkedRadioId == R.id.RdbBankCard) {
             //Toast.makeText(mCartActivity, "ban chon 2 ", Toast.LENGTH_LONG).show();
         }
     }
@@ -237,25 +242,25 @@ public class SoloveFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.e(TAG, "onDestroy: " );
+        Log.e(TAG, "onDestroy: ");
 
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.e(TAG, "onStart: " );
+        Log.e(TAG, "onStart: ");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.e(TAG, "onStop: " );
+        Log.e(TAG, "onStop: ");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e(TAG, "onResume: " );
+        Log.e(TAG, "onResume: ");
     }
 }

@@ -33,7 +33,8 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activities.UpdateProfileActivity"></activity>
+        <activity android:name=".view.activities.NotificationActivity"></activity>
+        <activity android:name=".view.activities.UpdateProfileActivity" />
         <activity android:name=".view.activities.ViewProfileActivity" />
         <activity android:name=".view.activities.StartScreenActivity" />
         <activity android:name=".view.activities.SubCategoryActivity" />

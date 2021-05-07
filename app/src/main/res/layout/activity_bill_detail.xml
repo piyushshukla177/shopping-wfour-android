@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <include layout="@layout/toolbar"></include>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,7 +21,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_1x"
                 android:background="@color/white"
                 android:orientation="vertical">
 
@@ -30,18 +30,22 @@
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/bill_code"
+                        android:text="ID"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_large" />
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/tvIdBill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_large"
-                        android:id="@+id/tvIdBill"/>
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
 
@@ -55,17 +59,37 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Data order:"
-                        android:textSize="@dimen/text_size_xnormal" />
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Data Order:"
+                        android:textSize="@dimen/text_size_small" />
 
                     <TextView
+                        android:id="@+id/tvDateTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_1x"
+                        android:fontFamily="@font/inter_regular"
                         android:text="14:20, 20/04/2019"
-                        android:textSize="@dimen/text_size_xnormal"
-                        android:id="@+id/tvDateTime"/>
+                        android:textSize="@dimen/text_size_small" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#b7b7b7" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/contentRcl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:layout_marginBottom="@dimen/dimen_16dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -73,7 +97,8 @@
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:layout_marginBottom="@dimen/dimen_2x"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -82,12 +107,12 @@
                         android:textSize="@dimen/text_size_xnormal" />
 
                     <TextView
+                        android:id="@+id/tvStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_1x"
                         android:text="Dang chuyen"
-                        android:textSize="@dimen/text_size_xnormal"
-                        android:id="@+id/tvStatus"/>
+                        android:textSize="@dimen/text_size_xnormal" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -100,14 +125,15 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_delivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="Enderesu Reseptor"
-                    android:id="@+id/tv_delivery"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_large" />
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvName"
@@ -115,8 +141,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_2x"
+                    android:fontFamily="@font/inter_regular"
                     android:text="Naran"
-                    android:textSize="@dimen/text_size_xnormal" />
+                    android:textColor="#7E7E7E"
+                    android:textSize="@dimen/text_size_small" />
 
                 <TextView
                     android:id="@+id/tvPhone"
@@ -124,8 +152,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
+                    android:fontFamily="@font/inter_regular"
                     android:text="Telemovel"
-                    android:textSize="@dimen/text_size_xnormal" />
+                    android:textColor="#7E7E7E"
+                    android:textSize="@dimen/text_size_small" />
 
                 <TextView
                     android:id="@+id/tvAllAddress"
@@ -134,8 +164,10 @@
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:layout_marginBottom="@dimen/dimen_2x"
+                    android:fontFamily="@font/inter_regular"
                     android:text="Enderesu"
-                    android:textSize="@dimen/text_size_xnormal" />
+                    android:textColor="#7E7E7E"
+                    android:textSize="@dimen/text_size_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,60 +178,71 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_devery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="@string/metode_haruka"
-                    android:id="@+id/tv_devery"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_large" />
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold" />
 
                 <TextView
 
+                    android:id="@+id/tvShippingMethod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
+                    android:fontFamily="@font/inter_regular"
                     android:text="Shipping method"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:id="@+id/tvShippingMethod"/>
+                    android:textColor="#7E7E7E"
+                    android:textSize="@dimen/text_size_small" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_1x"
-                    android:paddingBottom="@dimen/dimen_2x"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dimen_2x">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="@dimen/dimen_1x"
+                        android:fontFamily="@font/inter_regular"
                         android:text="Transporte Fee"
-                        android:textSize="@dimen/text_size_xnormal" />
+                        android:textColor="#7E7E7E"
+                        android:textSize="@dimen/text_size_small" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_alignParentRight="true">
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
 
                             android:layout_marginRight="@dimen/dimen_1x"
+                            android:fontFamily="@font/inter_regular"
                             android:text="$"
-                            android:textSize="@dimen/text_size_xnormal"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:textColor="#7E7E7E"
+                            android:textSize="@dimen/text_size_small" />
 
+                        <TextView
+                            android:id="@+id/tvTransportFee"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/dimen_1x"
+                            android:fontFamily="@font/inter_regular"
                             android:text="0"
-                            android:textSize="@dimen/text_size_xnormal"
-                            android:id="@+id/tvTransportFee"/>
+                            android:textColor="#7E7E7E"
+                            android:textSize="@dimen/text_size_small" />
                     </LinearLayout>
 
 
@@ -220,17 +263,20 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="Metode Pagamentu"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_large" />
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvPayMethod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:layout_marginBottom="@dimen/dimen_2x"
+                    android:fontFamily="@font/inter_regular"
                     android:text="Thanh toan tien mat khi nhan hang"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:id="@+id/tvPayMethod"/>
+                    android:textColor="#7E7E7E"
+                    android:textSize="@dimen/text_size_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -247,84 +293,240 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="@string/informasaun_produtu"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_large" />
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/contentRcl"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Naran Produtu"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Qty"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Presu"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Subtotal"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/info_detailRcl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_marginTop="@dimen/dimen_1x">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_1x"
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:paddingBottom="@dimen/dimen_2x">
-
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_1x"
-                    android:orientation="horizontal">
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="@dimen/dimen_1x"
-                        android:text="Total"
-                        android:textSize="@dimen/text_size_large" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="@dimen/dimen_1x"-->
+<!--                        android:layout_marginTop="@dimen/dimen_2x"-->
+<!--                        android:text="@string/informasaun_produtu"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="@dimen/text_size_small"-->
+<!--                        android:textStyle="bold" />-->
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:orientation="horizontal"
-                        android:layout_alignParentRight="true">
-                        <TextView
-                            android:visibility="gone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$"
-                            android:layout_marginLeft="@dimen/dimen_05x"
-                            android:layout_marginRight="@dimen/dimen_1x"
-                            android:textColor="@color/red"
-                            android:textSize="@dimen/text_size_xxlarge"
-                            android:textStyle="bold"
+                        android:weightSum="2">
 
-                            />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Subtotal"
+                            android:textColor="@color/text_black"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_small" />
+
                         <TextView
                             android:id="@+id/tvPay"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="50.00"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="$ 108"
                             android:textColor="@color/red"
-                            android:textSize="@dimen/text_size_xxlarge"
-                            android:textStyle="bold"
-
-                            />
-
+                            android:textSize="10sp" />
                     </LinearLayout>
-                </RelativeLayout>
 
-                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
-                    android:id="@+id/btnDeleteBill"
-                    style="@style/Button.Primary"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Delivery Charge"
+                            android:textColor="@color/text_black"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/inter_regular"
+                            android:text=""
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <TextView
+                            android:id="@+id/tv_delivery_charges"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Free"
+                            android:textColor="@color/text_black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dimen_2x"
-                    android:layout_marginTop="@dimen/dimen_2x"
-                    android:layout_marginRight="@dimen/dimen_2x"
-                    android:text="Kansela order"
-                    android:textSize="@dimen/text_size_large" />
+                    android:layout_marginTop="@dimen/dimen_1x"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_2x"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="@dimen/dimen_1x"
+                            android:text="Total"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dimen_05x"
+                                android:layout_marginRight="@dimen/dimen_1x"
+                                android:text="$"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/text_size_xxlarge"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+
+                                />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="50.00"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/text_size_xxlarge"
+                                android:textStyle="bold"
+
+                                />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                        android:id="@+id/btnDeleteBill"
+                        style="@style/Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2x"
+                        android:layout_marginTop="@dimen/dimen_2x"
+                        android:layout_marginRight="@dimen/dimen_2x"
+                        android:text="Kansela order"
+                        android:textSize="@dimen/text_size_large" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-
 </LinearLayout>

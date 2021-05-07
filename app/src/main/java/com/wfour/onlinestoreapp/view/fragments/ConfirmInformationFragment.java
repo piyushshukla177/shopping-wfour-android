@@ -1,9 +1,14 @@
 package com.wfour.onlinestoreapp.view.fragments;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,6 +33,7 @@ import com.wfour.onlinestoreapp.objects.CartObj;
 import com.wfour.onlinestoreapp.objects.DeliveryObj;
 import com.wfour.onlinestoreapp.objects.Person;
 import com.wfour.onlinestoreapp.objects.ProductObj;
+import com.wfour.onlinestoreapp.quickblox.conversation.utils.DialogUtil;
 import com.wfour.onlinestoreapp.utils.StringUtil;
 import com.wfour.onlinestoreapp.view.activities.BillInformationActivity;
 import com.wfour.onlinestoreapp.view.activities.BillTakingActivity;
@@ -70,8 +76,6 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
     private String billCode;
     private String address;
     private TextView tvInfo, tvNameDevery;
-
-
 
     public static ConfirmInformationFragment newInstance() {
         Bundle bundle = new Bundle();
@@ -129,32 +133,31 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
         Bundle bundle = getArguments();
         if (bundle != null) {
             deliveryObj = bundle.getParcelable(Args.KEY_DELIVERY_OBJECT);
-            Log.e("initData", "initData: "+ deliveryObj.getAddress() );
+            Log.e("initData", "initData: " + deliveryObj.getAddress());
             String text = bundle.getString(SoloveFragment.TEXT);
-            if (CartManager.getInstance().getTotal() < 10.0 && "Wfour Delivery".equals(deliveryObj.getName()) && CartManager.getInstance().getTotal() > 0.0 ) {
+            if (CartManager.getInstance().getTotal() < 10.0 && "Wfour Delivery".equals(deliveryObj.getName()) && CartManager.getInstance().getTotal() > 0.0) {
                 tvPrice.setText("1.0");
-            }else if (CartManager.getInstance().getTotal() >= 10.0 && "Wfour Delivery".equals(deliveryObj.getName()) || CartManager.getInstance().getTotal() == 0.0) {
+            } else if (CartManager.getInstance().getTotal() >= 10.0 && "Wfour Delivery".equals(deliveryObj.getName()) || CartManager.getInstance().getTotal() == 0.0) {
                 tvPrice.setText("0");
-            }else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
+            } else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
                 tvPrice.setText("0");
             }
             tvPay.setText(text);
             //tvPrice.setText(StringUtil.convertNumberToString(deliveryObj.getPrice(), 2));
             transportFee = deliveryObj.getPrice();
             transportType = deliveryObj.getName() + "(" + deliveryObj.getDescription() + ")";
-            address      = deliveryObj.getAddress();
+            address = deliveryObj.getAddress();
             delivery = deliveryObj.getName() + " (" + deliveryObj.getDescription() + ")";
-            if (CartManager.getInstance().getTotal() >=  10.00 && "Wfour Delivery".equals(deliveryObj.getName())) {
+            if (CartManager.getInstance().getTotal() >= 10.00 && "Wfour Delivery".equals(deliveryObj.getName())) {
                 tvDelivery.setText("Wfour Delivery (Above $10)");
-            }else if (CartManager.getInstance().getTotal() <  10.00 && "Wfour Delivery".equals(deliveryObj.getName())) {
+            } else if (CartManager.getInstance().getTotal() < 10.00 && "Wfour Delivery".equals(deliveryObj.getName())) {
                 tvDelivery.setText("Wfour Delivery (Bellow $10)");
-            }else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
+            } else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
                 tvDelivery.setText(deliveryObj.getDescription());
             }
             a = tvPrice.getText().toString();
 
-        }
-        else {
+        } else {
 
         }
 
@@ -165,8 +168,6 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
             total = money + Double.parseDouble(tvPrice.getText().toString());
 
             tvMoney.setText(StringUtil.convertNumberToString(total, 2));
-
-
             Gson gson = new Gson();
             items = gson.toJson(cartObjList);
             Log.e("hihi", "initData: " + new Gson().toJson(items));
@@ -186,7 +187,7 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
             tvAdres.setVisibility(View.GONE);
             tvInfo.setText(R.string.enderesu_reseptor);
             tvNameDevery.setText(R.string.metode_haruka);
-        }else if (!"Wfour Delivery".equals(deliveryObj.getName()) && personList != null) {
+        } else if (!"Wfour Delivery".equals(deliveryObj.getName()) && personList != null) {
             person = personList.get(0);
             allAddress = deliveryObj.getAddress();
             billName = person.getName();
@@ -220,8 +221,8 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
     private void orderProduct() {
         if (NetworkUtility.getInstance(self).isNetworkAvailable()) {
             final String user_id = DataStoreManager.getUser().getId();
-            if(CartManager.getInstance().getTotalPoint()>0){
-                ModelManager.orderProduct(self, user_id, billName, billPhone, allAddress, CartManager.getInstance().getTotalPoint(), "point", items, transportFee, transportType,new ModelManagerListener() {
+            if (CartManager.getInstance().getTotalPoint() > 0) {
+                ModelManager.orderProduct(self, user_id, billName, billPhone, allAddress, CartManager.getInstance().getTotalPoint(), "point", items, transportFee, transportType, new ModelManagerListener() {
                     @Override
                     public void onSuccess(Object object) {
                         try {
@@ -230,11 +231,11 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
 
                             if (!response.isError()) {
                                 //OrderObj orderObj = response.getDataObject(OrderObj.class);
-                                billCode =response.getDataObject().get("billingCode").toString();
+                                billCode = response.getDataObject().get("billingCode").toString();
 
                                 if ("Wfour Delivery".equals(deliveryObj.getName())) {
                                     goBillInformationActivity();
-                                }else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
+                                } else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
                                     goBillTakingActivity();
                                 }
 
@@ -242,18 +243,17 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
                                 Toast.makeText(self, "Cannot creat order", Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
-                            Log.e(DELIVERY, "onSuccess: " + e.getMessage() );
+                            Log.e(DELIVERY, "onSuccess: " + e.getMessage());
                         }
                     }
 
                     @Override
                     public void onError() {
-                        Log.e(DELIVERY, "onError: ERROR" );
+                        Log.e(DELIVERY, "onError: ERROR");
                     }
                 });
-            }
-            else {
-                ModelManager.orderProduct(self, user_id, billName, billPhone, allAddress, total, "cash", items, transportFee, transportType,new ModelManagerListener() {
+            } else {
+                ModelManager.orderProduct(self, user_id, billName, billPhone, allAddress, total, "cash", items, transportFee, transportType, new ModelManagerListener() {
                     @Override
                     public void onSuccess(Object object) {
                         try {
@@ -262,11 +262,11 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
 
                             if (!response.isError()) {
                                 //OrderObj orderObj = response.getDataObject(OrderObj.class);
-                                billCode =response.getDataObject().get("billingCode").toString();
+                                billCode = response.getDataObject().get("billingCode").toString();
 
                                 if ("Wfour Delivery".equals(deliveryObj.getName())) {
                                     goBillInformationActivity();
-                                }else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
+                                } else if (!"Wfour Delivery".equals(deliveryObj.getName())) {
                                     goBillTakingActivity();
                                 }
 
@@ -274,13 +274,13 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
                                 Toast.makeText(self, "Cannot creat order", Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
-                            Log.e(DELIVERY, "onSuccess: " + e.getMessage() );
+                            Log.e(DELIVERY, "onSuccess: " + e.getMessage());
                         }
                     }
 
                     @Override
                     public void onError() {
-                        Log.e(DELIVERY, "onError: ERROR" );
+                        Log.e(DELIVERY, "onError: ERROR");
                     }
                 });
             }
@@ -296,7 +296,7 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
     }
 
     private void goBillInformationActivity() {
-        Log.e(DELIVERY, "onSuccess: " + billCode );
+        Log.e(DELIVERY, "onSuccess: " + billCode);
         Bundle bundle = new Bundle();
         bundle.putString(DELIVERY, delivery);
         bundle.putString("billCode", billCode);
@@ -318,36 +318,54 @@ public class ConfirmInformationFragment extends BaseFragment implements View.OnC
         getActivity().finish();
     }
 
-
     @Override
     public void onClick(View v) {
         if (v == btnNext) {
-            orderProduct();
+            showDialogInformation();
+
         }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.e(DELIVERY, "onDestroy: " );
+        Log.e(DELIVERY, "onDestroy: ");
 
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.e(DELIVERY, "onStart: " );
+        Log.e(DELIVERY, "onStart: ");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.e(DELIVERY, "onStop: " );
+        Log.e(DELIVERY, "onStop: ");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e(DELIVERY, "onResume: " );
+        Log.e(DELIVERY, "onResume: ");
+    }
+
+    private void showDialogInformation() {
+        final Dialog dialogOrder = DialogUtil.setDialogCustomView(self, R.layout.payment_confirmation_layout, false);
+        //dialogOrder.setTitle("hehe");
+
+        personList = AddressManager.getInstance().getArray();
+        TextView btn_ok = dialogOrder.findViewById(R.id.btn_ok);
+
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                orderProduct();
+                dialogOrder.dismiss();
+            }
+        });
+        dialogOrder.show();
     }
 }

@@ -33,6 +33,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.sendbird.android.SendBird;
@@ -178,6 +179,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private String countryCodeSelected = "";
     private TextView tvConfirm, tvPhoneCode;
     String phone;
+    ShapeableImageView mis_action_notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,6 +215,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         // Get contacts from scratch
         //getContacts();
         AppUtil.logSizeMultiScreen(this);
+        mis_action_notification = findViewById(R.id.mis_action_notification);
+        mis_action_notification.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override
@@ -262,15 +274,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
     public void setbackGroundMainHaveData() {
-        if(bgMain!=null)
-        {
+        if (bgMain != null) {
             bgMain.setBackgroundResource(R.drawable.bg_deal);
         }
     }
 
     public void setbackGroundMainNoData() {
-        if(bgMain!=null)
-        {
+        if (bgMain != null) {
             bgMain.setBackgroundColor(getResources().getColor(R.color.colorBackgroundNodata));
 
         }
@@ -279,10 +289,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
-
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

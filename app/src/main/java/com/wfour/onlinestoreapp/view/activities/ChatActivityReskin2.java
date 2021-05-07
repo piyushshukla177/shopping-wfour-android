@@ -100,12 +100,6 @@ import java.util.Collections;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
-//import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
-
-
-/**
- * Created by Suusoft on 11/20/2017.
- */
 
 public class ChatActivityReskin2 extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener, FragmentChidChatActionDeal.IActionDeal, FragmentChidChatActionReviewDeal.IActionReview {
 
@@ -2165,9 +2159,4 @@ public class ChatActivityReskin2 extends BaseActivity implements View.OnClickLis
         public void onPageScrollStateChanged(int state) {
 
         }
-
-
-
-
-
 }

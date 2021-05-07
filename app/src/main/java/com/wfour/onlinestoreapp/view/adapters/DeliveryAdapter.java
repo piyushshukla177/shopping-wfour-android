@@ -55,6 +55,8 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.MyView
         }else {
             holder.tvTranspot.setText("Foti iha Loja");
         }
+
+
         holder.radioButton.setChecked(deliveryObj.isSelected());
         holder.radioButton.setTag(new Integer(position));
 
@@ -88,8 +90,8 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.MyView
                         lastChecked.setChecked(false);
                         deliveryList.get(lastCheckedPos).setSelected(false);
                     }
-                        lastChecked = cb;
-                        lastCheckedPos = clickedPos;
+                    lastChecked = cb;
+                    lastCheckedPos = clickedPos;
 
                 }
                 else

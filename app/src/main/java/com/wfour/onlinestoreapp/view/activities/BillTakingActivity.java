@@ -51,8 +51,6 @@ public class BillTakingActivity extends BaseActivity implements View.OnClickList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(this.getString(R.string.Bill_Information));
 
-
-
     }
 
     @Override
@@ -86,12 +84,12 @@ public class BillTakingActivity extends BaseActivity implements View.OnClickList
         btnGoBy.setOnClickListener(this);
         btnBill.setOnClickListener(this);
 
-        ImageView gif_done= findViewById(R.id.gif_done);
-        DrawableImageViewTarget target = new DrawableImageViewTarget(gif_done);
-
-        Glide.with(self).load(R.drawable.logo_cash)
-                .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
-                .into(target);
+//        ImageView gif_done= findViewById(R.id.gif_done);
+//        DrawableImageViewTarget target = new DrawableImageViewTarget(gif_done);
+//
+//        Glide.with(self).load(R.drawable.logo_cash)
+//                .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
+//                .into(target);
 
         getData();
         getProfile();

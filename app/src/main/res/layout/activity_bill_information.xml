@@ -4,39 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.BillInformationActivity"
-    android:orientation="vertical">
-    <include layout="@layout/toolbar"/>
+    android:orientation="vertical"
+    tools:context=".view.activities.BillInformationActivity">
+
+    <include layout="@layout/toolbar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="@color/white">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/gif_done"
-        android:src="@drawable/gif_done"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dimen_05x"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order Susesu"
-        android:textColor="#2CBA68"
-        android:textSize="@dimen/text_size_large"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dimen_1x"/>
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Obrigado ba kompra ona iha Wfour"-->
-<!--        android:textSize="@dimen/text_size_large"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:layout_marginTop="@dimen/dimen_1x"-->
-<!--        android:layout_marginLeft="@dimen/dimen_1x"/>-->
-    <!--<TextView-->
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/gif_done"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_05x"
+            android:src="@drawable/images" />
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center_horizontal"-->
+        <!--            android:layout_marginTop="@dimen/dimen_1x"-->
+        <!--            android:text="Order Susesu"-->
+        <!--            android:textColor="#2CBA68"-->
+        <!--            android:textSize="@dimen/text_size_large" />-->
+        <!--    <TextView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Obrigado ba kompra ona iha Wfour"-->
+        <!--        android:textSize="@dimen/text_size_large"-->
+        <!--        android:textColor="@color/black"-->
+        <!--        android:layout_marginTop="@dimen/dimen_1x"-->
+        <!--        android:layout_marginLeft="@dimen/dimen_1x"/>-->
+        <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_marginLeft="@dimen/dimen_1x"-->
@@ -47,13 +51,13 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/dimen_3x"
-            app:cardUseCompatPadding="true"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_1x"
-            android:padding="@dimen/dimen_1x"
+            android:layout_marginTop="@dimen/dimen_3x"
             android:layout_marginRight="@dimen/dimen_1x"
+            android:padding="@dimen/dimen_1x"
             app:cardCornerRadius="@dimen/dimen_05x"
-            android:layout_height="wrap_content">
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,69 +67,78 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
-                    android:layout_marginLeft="@dimen/dimen_1x">
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_width="@dimen/dimen_1x"
-                        android:layout_height="@dimen/dimen_1x"
-                        android:background="@drawable/bg_cycle_accent"
-                        android:layout_marginTop="@dimen/dimen_1x">
-                    </LinearLayout>
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:background="@drawable/bg_cycle_accent"></LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bill Code: "
                         android:layout_marginLeft="@dimen/dimen_1x"
-                        android:textSize="@dimen/text_size_large"/>
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Code Bill : "
+                        android:textSize="@dimen/text_size_normal" />
 
                     <TextView
                         android:id="@+id/tvBillCode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
                         android:layout_marginLeft="@dimen/dimen_1x"
-                        android:textSize="@dimen/text_size_large"/>
+                        android:fontFamily="@font/inter_bold"
+                        android:text=""
+                        android:textSize="@dimen/text_size_normal" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
-                    android:layout_marginLeft="@dimen/dimen_1x">
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_width="@dimen/dimen_1x"
-                        android:layout_height="@dimen/dimen_1x"
-                        android:background="@drawable/bg_cycle_accent"
-                        android:layout_marginTop="@dimen/dimen_1x">
-                    </LinearLayout>
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:background="@drawable/bg_cycle_accent"></LinearLayout>
+
                     <TextView
                         android:id="@+id/tvDelivery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Giao hang tieu chuan (Du kien giao hang thu tu 24/04/2019)"
                         android:layout_marginLeft="@dimen/dimen_1x"
-                        android:textSize="@dimen/text_size_large"/>
+                        android:fontFamily="@font/inter_regular"
+                        android:text="(Free shipping for orders from $10)"
+                        android:textSize="@dimen/text_size_normal" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="@dimen/dimen_1x"
+                    android:layout_marginLeft="@dimen/dimen_1x"
                     android:layout_marginTop="@dimen/dimen_1x"
-                    android:layout_marginLeft="@dimen/dimen_1x">
+                    android:layout_marginBottom="@dimen/dimen_1x"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_width="@dimen/dimen_1x"
-                        android:layout_height="@dimen/dimen_1x"
-                        android:background="@drawable/bg_cycle_accent"
-                        android:layout_marginTop="@dimen/dimen_1x">
-                    </LinearLayout>
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="@dimen/dimen_1x"
+                        android:background="@drawable/bg_cycle_accent"></LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/confirm_email"
                         android:layout_marginLeft="@dimen/dimen_1x"
-                        android:textSize="@dimen/text_size_large"/>
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/confirm_email"
+                        android:textSize="@dimen/text_size_normal" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -133,55 +146,62 @@
         </androidx.cardview.widget.CardView>
 
 
-
-
-    <!--<LinearLayout-->
+        <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:orientation="horizontal"-->
         <!--android:layout_marginTop="@dimen/dimen_1x"-->
         <!--android:layout_marginLeft="@dimen/dimen_1x">-->
         <!--<LinearLayout-->
-            <!--android:layout_width="@dimen/dimen_1x"-->
-            <!--android:layout_height="@dimen/dimen_1x"-->
-            <!--android:background="@drawable/bg_cycle_accent"-->
-            <!--android:layout_marginTop="@dimen/dimen_1x">-->
+        <!--android:layout_width="@dimen/dimen_1x"-->
+        <!--android:layout_height="@dimen/dimen_1x"-->
+        <!--android:background="@drawable/bg_cycle_accent"-->
+        <!--android:layout_marginTop="@dimen/dimen_1x">-->
         <!--</LinearLayout>-->
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Giao hang tieu chuan (Du kien giao hang thu tu 24/04/2019)"-->
-            <!--android:layout_marginLeft="@dimen/dimen_1x"-->
-            <!--android:textSize="@dimen/text_size_large"/>-->
-    <!--</LinearLayout>-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Giao hang tieu chuan (Du kien giao hang thu tu 24/04/2019)"-->
+        <!--android:layout_marginLeft="@dimen/dimen_1x"-->
+        <!--android:textSize="@dimen/text_size_large"/>-->
+        <!--</LinearLayout>-->
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white">
-        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
-            android:id="@+id/btnGoBy"
-            style="@style/Button.Primary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="@dimen/dimen_2x"
-            android:layout_marginTop="@dimen/dimen_1x"
-            android:layout_marginRight="@dimen/dimen_2x"
-            android:text="Kontinua Kompra"
-            android:textSize="@dimen/text_size_xnormal"/>
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
         <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
             android:id="@+id/btnBill"
             style="@style/Button.Primary"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/dimen_2x"
-            android:layout_marginTop="@dimen/dimen_2x"
             android:layout_marginRight="@dimen/dimen_2x"
             android:layout_marginBottom="@dimen/dimen_2x"
+            android:layout_weight="0.5"
             android:text="@string/hare_fatura"
-            android:textSize="@dimen/text_size_xnormal"/>
+            android:fontFamily="@font/inter_bold"
+            android:textSize="@dimen/text_size_normal" />
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+            android:id="@+id/btnGoBy"
+            style="@style/Button.Primary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dimen_2x"
+            android:layout_marginRight="@dimen/dimen_2x"
+            android:layout_weight="0.5"
+            android:text="Kontinua Kompra"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="@dimen/text_size_normal" />
+
+
     </LinearLayout>
 </LinearLayout>

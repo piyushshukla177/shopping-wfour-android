@@ -35,7 +35,7 @@ public class Args {
     public static final String KEY_END_TIME = "key_end_time";
     public static final String TYPE_OF_DEAL_NAME = "TYPE_OF_DEAL_NAME";
     public static final String DEAL_IS_ACTIVE = "DEAL_IS_ACTIVE";
-    public static final String KEY_ACTIVITY_CART= "key_activity_cart";
+    public static final String KEY_ACTIVITY_CART = "key_activity_cart";
 
     public static final String TOKEN = "login_token";
     public static final int RC_TURN_ON_LOCATION = 111;

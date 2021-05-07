@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import com.wfour.onlinestoreapp.base.BaseFragment;
 import com.wfour.onlinestoreapp.objects.ProductObj;
-import com.wfour.onlinestoreapp.view.activities.ChatActivityReskin2;
 import com.wfour.onlinestoreapp.R;
 import com.wfour.onlinestoreapp.globals.Args;
 import com.wfour.onlinestoreapp.objects.RecentChatObj;
 import com.wfour.onlinestoreapp.utils.ImageUtil;
 import com.wfour.onlinestoreapp.utils.ViewUtil;
+import com.wfour.onlinestoreapp.view.activities.ChatActivityReskin2;
 
 /**
  * Created by Suusoft on 11/24/2016.
@@ -134,6 +134,5 @@ public class DealAboutFragment extends BaseFragment implements View.OnClickListe
     public void setData() {
 
     }
-
 
 }

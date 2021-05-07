@@ -69,15 +69,14 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_login_connect"
-            android:text="@string/login_connect"
             style="@style/Widget.AppCompat.Button.Colored"
-            app:theme="@style/AppTheme.ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="44dp"
+            android:background="@color/colorPrimary"
             android:stateListAnimator="@null"
-            android:background="@color/colorPrimary">
-        </androidx.appcompat.widget.AppCompatButton>
+            android:text="@string/login_connect"
+            app:theme="@style/AppTheme.ButtonStyle"></androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
 
