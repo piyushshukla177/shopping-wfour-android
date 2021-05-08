@@ -1,4 +1,5 @@
 package com.wfour.onlinestoreapp.objects;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class HomeObj {
     public void setProductList(ArrayList<ProductObj> productList) {
         this.productList = productList;
     }
+
     public ArrayList<ProductObj> productList;
     @SerializedName("categories")
     public ArrayList<Category> categoryList;
@@ -26,6 +28,8 @@ public class HomeObj {
     private ArrayList<ProductObj> mListFeature;
     @SerializedName("new_list")
     private ArrayList<ProductObj> mListNew;
+    @SerializedName("recomemded_list")
+    private ArrayList<ProductObj> mListRecomended;
 
     public ArrayList<Category> getCategoryList() {
         return categoryList;
@@ -36,7 +40,7 @@ public class HomeObj {
     }
 
     public ArrayList<ProductObj> getmListHot() {
-        if(mListHot == null){
+        if (mListHot == null) {
             mListHot = new ArrayList<>();
         }
         return mListHot;
@@ -62,13 +66,16 @@ public class HomeObj {
         this.mListHot = mListHot;
     }
 
-    public HomeObj(){}
-    public HomeObj(String name, String type, ArrayList<ProductObj> list){
+    public HomeObj() {
+    }
+
+    public HomeObj(String name, String type, ArrayList<ProductObj> list) {
         this.name = name;
         this.type = type;
         this.productList = list;
     }
-    public HomeObj(String name, ArrayList<Category> list){
+
+    public HomeObj(String name, ArrayList<Category> list) {
         this.name = name;
         this.categoryList = list;
     }
@@ -97,5 +104,11 @@ public class HomeObj {
         this.type = type;
     }
 
+    public ArrayList<ProductObj> getmListRecomended() {
+        return mListRecomended;
+    }
 
+    public void setmListRecomended(ArrayList<ProductObj> mListRecomended) {
+        this.mListRecomended = mListRecomended;
+    }
 }

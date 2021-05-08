@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.google.gson.Gson;
 import com.wfour.onlinestoreapp.R;
 import com.wfour.onlinestoreapp.datastore.DataStoreManager;
 import com.wfour.onlinestoreapp.globals.Args;
@@ -36,6 +38,9 @@ import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.objects.RecomendedObj;
 import com.wfour.onlinestoreapp.objects.UserObj;
 import com.wfour.onlinestoreapp.quickblox.conversation.utils.DialogUtil;
+import com.wfour.onlinestoreapp.retrofit.ApiUtils;
+import com.wfour.onlinestoreapp.retrofit.respone.RecommendedProductResponse;
+import com.wfour.onlinestoreapp.retrofit.respone.ResponeUser;
 import com.wfour.onlinestoreapp.utils.StringUtil;
 import com.wfour.onlinestoreapp.view.activities.CartActivity;
 import com.wfour.onlinestoreapp.view.activities.DealDetailActivity;
@@ -45,6 +50,10 @@ import com.wfour.onlinestoreapp.view.adapters.CartAdapter;
 import com.wfour.onlinestoreapp.view.adapters.RecomendedListAdapter;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment implements View.OnClickListener {
 
@@ -282,7 +291,7 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
         }
     }
 
-    void setRecomendedRecyclerview() {
+/*    void setRecomendedRecyclerview() {
         RecomendedObj obj;
         int i = 0;
         while (i < 4) {
@@ -298,11 +307,48 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
         recomended_recyclerview.setHasFixedSize(true);
         LinearLayoutManager linearLayout = new LinearLayoutManager(getActivity());
         linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
-//        recomendLayoutManager = new LinearLayoutManager(getActivity());
         recomendedAdapter = new RecomendedListAdapter(getActivity(), recomendedlist);
         recomended_recyclerview.setLayoutManager(linearLayout);
         recomended_recyclerview.setAdapter(recomendedAdapter);
 
+    }*/
+
+    private void setRecomendedRecyclerview() {
+
+        ApiUtils.getAPIService().getRecommendedProducts(String.valueOf(1), String.valueOf(2)).enqueue(new Callback<RecommendedProductResponse>() {
+            @Override
+            public void onResponse(Call<RecommendedProductResponse> call, Response<RecommendedProductResponse> response) {
+                if (response.body() != null) {
+                    Log.e("TAG", "onResponse: " + new Gson().toJson(response.body()));
+                    if (response.body().getData() != null) {
+                        RecommendedProductResponse m = response.body();
+                        RecomendedObj obj;
+                        int i=0;
+                        while(i<m.getData().size())
+                        {
+                            obj=new RecomendedObj();
+                            obj.setProduct_Name(m.getData().get(i).getTitle());
+                            obj.setActual_rate(m.getData().get(i).getPrice());
+                            obj.setDiscount_rate(m.getData().get(i).getOld_price());
+                            obj.setDescription(m.getData().get(i).getOverview());
+                            recomendedlist.add(obj);
+                            i++;
+                        }
+                        recomended_recyclerview.setHasFixedSize(true);
+                        LinearLayoutManager linearLayout = new LinearLayoutManager(getActivity());
+                        linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+                        recomendedAdapter = new RecomendedListAdapter(getActivity(), recomendedlist);
+                        recomended_recyclerview.setLayoutManager(linearLayout);
+                        recomended_recyclerview.setAdapter(recomendedAdapter);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RecommendedProductResponse> call, Throwable t) {
+                Log.e("TAG", "onFailure: " + t.getMessage());
+            }
+        });
     }
 
 //    public void setAppBar(View view) {

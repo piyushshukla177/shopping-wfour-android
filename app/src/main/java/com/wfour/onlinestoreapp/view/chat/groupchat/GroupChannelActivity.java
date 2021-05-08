@@ -2,6 +2,7 @@ package com.wfour.onlinestoreapp.view.chat.groupchat;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -44,7 +45,6 @@ public class GroupChannelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_channel);
 
-
         if (savedInstanceState == null) {
             // Load list of Group Channels
             Fragment fragment = GroupChannelListFragment.newInstance();
@@ -60,9 +60,8 @@ public class GroupChannelActivity extends AppCompatActivity {
             MainActivity.mHomeFragment = (HomeFragment) getSupportFragmentManager().getFragment(savedInstanceState, "allDeals");
         }
 
-
         String channelUrl = getIntent().getStringExtra("groupChannelUrl");
-        if(channelUrl != null) {
+        if (channelUrl != null) {
             // If started from notification
 
             Fragment fragment = GroupChatFragment.newInstance(channelUrl);
@@ -91,14 +90,13 @@ public class GroupChannelActivity extends AppCompatActivity {
 //        }
 
 
-
     }
-
 
 
     interface onBackPressedListener {
         boolean onBack();
     }
+
     private onBackPressedListener mOnBackPressedListener;
 
     public void setOnBackPressedListener(onBackPressedListener listener) {

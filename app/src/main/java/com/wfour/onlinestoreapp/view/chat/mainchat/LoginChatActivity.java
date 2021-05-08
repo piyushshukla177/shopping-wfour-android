@@ -76,7 +76,6 @@ public class LoginChatActivity extends BaseActivity {
         mUserNicknameEditText  = findViewById(R.id.edittext_login_user_nickname);
 //        mUserIdConnectEditText.setText(DataStoreManager.getUser().getId());
 
-
         if (DataStoreManager.getUser().getRole() == 30) {
             mUserIdConnectEditText.setText("1");
         } else if (DataStoreManager.getUser().getRole() == 30 && DataStoreManager.getUser().getId() == String.valueOf(1)) {
@@ -94,9 +93,6 @@ public class LoginChatActivity extends BaseActivity {
         }else if (DataStoreManager.getUser().getName() != "") {
             mUserNicknameEditText.setText(DataStoreManager.getUser().getName());
         }
-
-
-
 //        mUserNicknameEditText.setText(DataStoreManager.getUser().getEmail());
 
 //        mUserIdConnectEditText.setText(PreferenceUtils.getUserId(this));

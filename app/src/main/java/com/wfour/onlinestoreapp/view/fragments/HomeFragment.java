@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,6 +28,7 @@ import android.view.ViewGroup;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.google.gson.Gson;
 import com.sendbird.android.GroupChannel;
 import com.wfour.onlinestoreapp.AppController;
 import com.wfour.onlinestoreapp.R;
@@ -43,6 +45,8 @@ import com.wfour.onlinestoreapp.objects.DealObj;
 import com.wfour.onlinestoreapp.objects.HomeObj;
 import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.objects.RecomendedObj;
+import com.wfour.onlinestoreapp.retrofit.ApiUtils;
+import com.wfour.onlinestoreapp.retrofit.respone.RecommendedProductResponse;
 import com.wfour.onlinestoreapp.utils.AppUtil;
 import com.wfour.onlinestoreapp.utils.NetworkUtility;
 import com.wfour.onlinestoreapp.view.activities.AllCategoryActivity;
@@ -72,12 +76,10 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.relex.circleindicator.CircleIndicator;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AllDealsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HomeFragment extends BaseFragment implements IOnItemClickListener, View.OnClickListener {
     private static final int RC_PERMISSIONS = 1;
     private static final int RC_TURN_ON_LOCATION = 2;
@@ -88,7 +90,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     public static final int CATEGORY = 3;
     private GroupChannel channel;
 
-
     private int widthScreen;
     private int heightScreen;
     /*view pager*/
@@ -97,6 +98,8 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     private AdapterViewPaggerCategory adapterIndicator;
     private ArrayList<DealObj> mDealFavorites;
     private ArrayList<ProductObj> productObjList;
+    private ArrayList<ProductObj> recomendedjList = new ArrayList<>();
+    private ArrayList<ProductObj> polularList = new ArrayList<>();
     private View screenFavorite;
     private ProductObj productObj;
 
@@ -117,7 +120,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     //Popular Deal
     private ListAdapter listAdapter;
     private HomeObj homeObj;
-    private ArrayList<HomeObj> homeObjList;
+    private ArrayList<HomeObj> homeObjList = new ArrayList<>();
 
     private int count;
     private ArrayList<CartObj> cartList;
@@ -158,7 +161,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         View view = super.onCreateView(inflater, container, savedInstanceState);
         mMainActivity = (MainActivity) getActivity();
         recomended_recyclerview = view.findViewById(R.id.recomended_recyclerview);
-        setRecomendedRecyclerview();
 
         return view;
     }
@@ -350,14 +352,16 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     }
 
     private void convertData() {
-        ArrayList<HomeObj> homeObjList = new ArrayList<>();
         homeObjList.add(new HomeObj(this.getString(R.string.BANNER), "BANNER", homeObj.getmListHot()));
         homeObjList.add(new HomeObj(this.getString(R.string.CATEGORIES), homeObj.getCategoryList()));
-        homeObjList.add(new HomeObj("SALE PRODUCT", "TYPE", homeObj.getmListHot()));
+//      homeObjList.add(new HomeObj("SALE PRODUCT", "TYPE", homeObj.getmListHot()));
         homeObjList.add(new HomeObj(this.getString(R.string.PRODUCTLALAIS), "TYPE", homeObj.getmListHot()));
         homeObjList.add(new HomeObj(this.getString(R.string.PRODUTUFOUN), "FEATURE LIST", homeObj.getmListFeature()));
         homeObjList.add(new HomeObj(this.getString(R.string.PRODUCTPROMOTION), "TYPE", homeObj.getmListNew()));
         listAdapter.addList(homeObjList);
+        setPopularRecyclerview();
+        setRecomendedRecyclerview();
+
     }
 
     @Override
@@ -421,8 +425,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
             } else {
                 bundle.putString(Args.TYPE_OF_SEARCH_DEAL, Constants.SEARCH_NEARBY);
             }
-
-
             GlobalFunctions.startActivityWithoutAnimation(self, DealsActivity.class, bundle);
         } else {
             MapsUtil.displayLocationSettingsRequest(self, RC_TURN_ON_LOCATION);
@@ -449,24 +451,184 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         }
     }
 
-    void setRecomendedRecyclerview() {
-        RecomendedObj obj;
-        int i = 0;
-        while (i < 4) {
-            obj = new RecomendedObj();
-            obj.setProduct_Name("Mie Sedaap Goreng");
-            obj.setDescription("Instant 5pcs");
-            obj.setActual_rate("$10");
-            obj.setDiscount_rate("$14");
-            recomendedlist.add(obj);
-            i++;
-        }
-        recomended_recyclerview.setHasFixedSize(true);
-        LinearLayoutManager linearLayout = new LinearLayoutManager(getActivity());
-        linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
-//      recomendLayoutManager = new LinearLayoutManager(getActivity());
-        recomendedAdapter = new RecomendedListAdapter(getActivity(), recomendedlist);
-        recomended_recyclerview.setLayoutManager(linearLayout);
-        recomended_recyclerview.setAdapter(recomendedAdapter);
+    private void setRecomendedRecyclerview() {
+        recomendedjList.clear();
+        recomendedjList = new ArrayList<>();
+
+        ApiUtils.getAPIService().getRecommendedProducts(String.valueOf(1), String.valueOf(2)).enqueue(new Callback<RecommendedProductResponse>() {
+            @Override
+            public void onResponse(Call<RecommendedProductResponse> call, Response<RecommendedProductResponse> response) {
+                if (response.body() != null) {
+                    Log.e("TAG", "onResponse: " + new Gson().toJson(response.body()));
+                    if (response.body().getData() != null) {
+                        RecommendedProductResponse m = response.body();
+                        RecomendedObj obj;
+                        int i = 0;
+                        ProductObj p;
+                        while (i < m.getData().size()) {
+                            p = new ProductObj();
+                            ArrayList image_files = new ArrayList();
+                            p.setApplication_id(String.valueOf(m.getData().get(i).getApplication_id()));
+                            p.setBanner(m.getData().get(i).getBanner());
+                            p.setBarcode_image(m.getData().get(i).getBarcode_image());
+                            p.setBrand(m.getData().get(i).getBrand());
+                            p.setCategory_id(m.getData().get(i).getCategory_id());
+                            p.setCode(m.getData().get(i).getCode());
+                            p.setContent(m.getData().get(i).getContent());
+                            p.setCost(m.getData().get(i).getCost());
+                            p.setCount_comments(String.valueOf(m.getData().get(i).getCount_comments()));
+                            p.setCount_likes(String.valueOf(m.getData().get(i).getCount_likes()));
+                            p.setCount_purchase(String.valueOf(m.getData().get(i).getCount_purchase()));
+                            p.setCount_rates(String.valueOf(m.getData().get(i).getCount_rates()));
+                            p.setCount_views(String.valueOf(m.getData().get(i).getCount_views()));
+                            p.setCreated_date(String.valueOf(m.getData().get(i).getCreated_date()));
+                            p.setCreated_user(String.valueOf(m.getData().get(i).getCreated_user()));
+                            p.setCurrency(String.valueOf(m.getData().get(i).getCurrency()));
+                            p.setId(String.valueOf(m.getData().get(i).getId()));
+                            p.setDiscount(String.valueOf(m.getData().get(i).getDiscount()));
+                            p.setImage(String.valueOf(m.getData().get(i).getImage()));
+                            p.setIs_active(m.getData().get(i).getIs_active());
+                            p.setIs_favourite(m.getData().get(i).getIs_favourite());
+                            p.setIs_hot(m.getData().get(i).getIs_hot());
+                            p.setIs_prize(m.getData().get(i).getIs_prize());
+                            p.setIs_promotion(m.getData().get(i).getIs_promotion());
+                            p.setIs_tax_included(m.getData().get(i).getIs_tax_included());
+                            p.setIs_top(m.getData().get(i).getIs_top());
+                            p.setModified_date(m.getData().get(i).getModified_date());
+                            p.setModified_user(m.getData().get(i).getModified_user());
+                            p.setQuantity(m.getData().get(i).getQuantity());
+                            p.setPromotion_id(m.getData().get(i).getPromotion_id());
+                            p.setOverview(m.getData().get(i).getOverview());
+                            p.setUnit(m.getData().get(i).getUnit());
+                            p.setType(m.getData().get(i).getType());
+                            p.setTitle(m.getData().get(i).getTitle());
+                            p.setThumbnail(m.getData().get(i).getThumbnail());
+                            p.setPrice(Double.parseDouble(m.getData().get(i).getPrice()));
+                            p.setOld_price(Double.parseDouble(m.getData().get(i).getOld_price()));
+                            image_files = new ArrayList();
+                            for (int j = 0; j < m.getData().get(i).getImage_files().size(); j++) {
+                                image_files.add(m.getData().get(i).getImage_files().get(j));
+                            }
+                            p.setImage_files(image_files);
+                            recomendedjList.add(p);
+
+                            i++;
+                        }
+                        Log.e("productObjList", String.valueOf(recomendedjList.size()));
+
+                        homeObjList.add(new HomeObj("REKOMENDA", "TYPE", recomendedjList));
+                        listAdapter.notifyDataSetChanged();
+//                        Log.e("homeobjectlist", String.valueOf(homeObjList.size()));
+
+//                        listAdapter.addList(homeObjList);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RecommendedProductResponse> call, Throwable t) {
+                Log.e("TAG", "onFailure: " + t.getMessage());
+            }
+        });
     }
+
+    private void setPopularRecyclerview() {
+        polularList.clear();
+        polularList = new ArrayList<>();
+
+        ApiUtils.getAPIService().getPopularProductsList(String.valueOf(1), String.valueOf(3)).enqueue(new Callback<RecommendedProductResponse>() {
+            @Override
+            public void onResponse(Call<RecommendedProductResponse> call, Response<RecommendedProductResponse> response) {
+                if (response.body() != null) {
+                    Log.e("TAG", "onResponse: " + new Gson().toJson(response.body()));
+                    if (response.body().getData() != null) {
+                        RecommendedProductResponse m = response.body();
+                        RecomendedObj obj;
+                        int i = 0;
+                        ProductObj p;
+                        while (i < m.getData().size()) {
+                            p = new ProductObj();
+                            ArrayList image_files = new ArrayList();
+                            p.setApplication_id(String.valueOf(m.getData().get(i).getApplication_id()));
+                            p.setBanner(m.getData().get(i).getBanner());
+                            p.setBarcode_image(m.getData().get(i).getBarcode_image());
+                            p.setBrand(m.getData().get(i).getBrand());
+                            p.setCategory_id(m.getData().get(i).getCategory_id());
+                            p.setCode(m.getData().get(i).getCode());
+                            p.setContent(m.getData().get(i).getContent());
+                            p.setCost(m.getData().get(i).getCost());
+                            p.setCount_comments(String.valueOf(m.getData().get(i).getCount_comments()));
+                            p.setCount_likes(String.valueOf(m.getData().get(i).getCount_likes()));
+                            p.setCount_purchase(String.valueOf(m.getData().get(i).getCount_purchase()));
+                            p.setCount_rates(String.valueOf(m.getData().get(i).getCount_rates()));
+                            p.setCount_views(String.valueOf(m.getData().get(i).getCount_views()));
+                            p.setCreated_date(String.valueOf(m.getData().get(i).getCreated_date()));
+                            p.setCreated_user(String.valueOf(m.getData().get(i).getCreated_user()));
+                            p.setCurrency(String.valueOf(m.getData().get(i).getCurrency()));
+                            p.setId(String.valueOf(m.getData().get(i).getId()));
+                            p.setDiscount(String.valueOf(m.getData().get(i).getDiscount()));
+                            p.setImage(String.valueOf(m.getData().get(i).getImage()));
+                            p.setIs_active(m.getData().get(i).getIs_active());
+                            p.setIs_favourite(m.getData().get(i).getIs_favourite());
+                            p.setIs_hot(m.getData().get(i).getIs_hot());
+                            p.setIs_prize(m.getData().get(i).getIs_prize());
+                            p.setIs_promotion(m.getData().get(i).getIs_promotion());
+                            p.setIs_tax_included(m.getData().get(i).getIs_tax_included());
+                            p.setIs_top(m.getData().get(i).getIs_top());
+                            p.setModified_date(m.getData().get(i).getModified_date());
+                            p.setModified_user(m.getData().get(i).getModified_user());
+                            p.setQuantity(m.getData().get(i).getQuantity());
+                            p.setPromotion_id(m.getData().get(i).getPromotion_id());
+                            p.setOverview(m.getData().get(i).getOverview());
+                            p.setUnit(m.getData().get(i).getUnit());
+                            p.setType(m.getData().get(i).getType());
+                            p.setTitle(m.getData().get(i).getTitle());
+                            p.setThumbnail(m.getData().get(i).getThumbnail());
+                            p.setPrice(Double.parseDouble(m.getData().get(i).getPrice()));
+                            p.setOld_price(Double.parseDouble(m.getData().get(i).getOld_price()));
+                            image_files = new ArrayList();
+                            for (int j = 0; j < m.getData().get(i).getImage_files().size(); j++) {
+                                image_files.add(m.getData().get(i).getImage_files().get(j));
+                            }
+                            p.setImage_files(image_files);
+                            polularList.add(p);
+
+                            i++;
+                        }
+                        homeObjList.add(new HomeObj("PRODUTU POPULAR", "TYPE", polularList));
+                        listAdapter.notifyDataSetChanged();
+//                        Log.e("homeobjectlist", String.valueOf(homeObjList.size()));
+
+//                        listAdapter.addList(homeObjList);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RecommendedProductResponse> call, Throwable t) {
+                Log.e("TAG", "onFailure: " + t.getMessage());
+            }
+        });
+    }
+
+//    void setRecomendedRecyclerview() {
+//        RecomendedObj obj;
+//        int i = 0;
+//        while (i < 4) {
+//            obj = new RecomendedObj();
+//            obj.setProduct_Name("Mie Sedaap Goreng");
+//            obj.setDescription("Instant 5pcs");
+//            obj.setActual_rate("$10");
+//            obj.setDiscount_rate("$14");
+//            recomendedlist.add(obj);
+//            i++;
+//        }
+//        recomended_recyclerview.setHasFixedSize(true);
+//        LinearLayoutManager linearLayout = new LinearLayoutManager(getActivity());
+//        linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+////      recomendLayoutManager = new LinearLayoutManager(getActivity());
+//        recomendedAdapter = new RecomendedListAdapter(getActivity(), recomendedlist);
+//        recomended_recyclerview.setLayoutManager(linearLayout);
+//        recomended_recyclerview.setAdapter(recomendedAdapter);
+//    }
 }

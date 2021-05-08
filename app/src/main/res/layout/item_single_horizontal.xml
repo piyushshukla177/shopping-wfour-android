@@ -56,26 +56,33 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_size_xnormal"
                     android:visibility="visible" />
-                <com.wfour.onlinestoreapp.widgets.textview.TextViewLightItalic
-                    android:id="@+id/lbl_price_old"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ABC"
-                    android:layout_marginLeft="@dimen/dimen_05x"
-                    />
-                <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
-                    android:id="@+id/lbl_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dimen_05x"
-                    android:layout_marginBottom="@dimen/dimen_05x"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:singleLine="true"
-                    android:text="$10"
-                    android:textColor="@color/text_color_price"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:textStyle="bold" />
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal">
+                 <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                     android:id="@+id/lbl_price"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginLeft="@dimen/dimen_05x"
+                     android:layout_marginBottom="@dimen/dimen_05x"
+                     android:ellipsize="marquee"
+                     android:marqueeRepeatLimit="marquee_forever"
+                     android:singleLine="true"
+                     android:text="$10"
+                     android:textColor="@color/text_color_price"
+                     android:textSize="@dimen/text_size_xnormal"
+                     android:textStyle="bold" />
+
+                 <com.wfour.onlinestoreapp.widgets.textview.TextViewLightItalic
+                     android:id="@+id/lbl_price_old"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="ABC"
+                     android:textSize="@dimen/text_size_small"
+                     android:layout_marginLeft="10dp"
+                     />
+             </LinearLayout>
 
             </LinearLayout>
         </RelativeLayout>

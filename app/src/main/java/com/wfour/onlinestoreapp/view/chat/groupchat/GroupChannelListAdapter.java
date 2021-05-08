@@ -2,8 +2,10 @@ package com.wfour.onlinestoreapp.view.chat.groupchat;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Base64;
 import android.util.Log;
 import android.util.SparseArray;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -45,7 +48,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Displays a list of Group Channels within a SendBird application.
  */
-class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<GroupChannel> mChannelList;
     private Context mContext;
@@ -96,18 +99,18 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             File dataFile = new File(appDir, TextUtils.generateMD5(SendBird.getCurrentUser().getUserId() + "channel_list") + ".data");
 
             String content = FileUtils.loadFromFile(dataFile);
-            String [] dataArray = content.split("\n");
+            String[] dataArray = content.split("\n");
 
             // Reset channel list, then add cached data.
             mChannelList.clear();
-            for(int i = 0; i < dataArray.length; i++) {
+            for (int i = 0; i < dataArray.length; i++) {
                 mChannelList.add((GroupChannel) BaseChannel.buildFromSerializedData(Base64.decode(dataArray[i], Base64.DEFAULT | Base64.NO_WRAP)));
             }
 
             mIsCacheLoading = true;
 
 //            notifyDataSetChanged();
-        } catch(Exception e) {
+        } catch (Exception e) {
             // Nothing to load.
         }
     }
@@ -139,17 +142,17 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 try {
                     String content = FileUtils.loadFromFile(hashFile);
                     // If data has not been changed, do not save.
-                    if(md5.equals(content)) {
+                    if (md5.equals(content)) {
                         return;
                     }
-                } catch(IOException e) {
+                } catch (IOException e) {
                     // File not found. Save the data.
                 }
 
                 FileUtils.saveToFile(dataFile, data);
                 FileUtils.saveToFile(hashFile, md5);
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -223,104 +226,113 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         MultiImageView coverImage;
         CircleImageView imgAvatar;
         LinearLayout typingIndicatorContainer;
+        RelativeLayout relatiive;
 
         ChannelHolder(View itemView) {
             super(itemView);
 
+            relatiive = itemView.findViewById(R.id.relatiive);
             topicText = (TextView) itemView.findViewById(R.id.text_group_channel_list_topic);
             lastMessageText = (TextView) itemView.findViewById(R.id.text_group_channel_list_message);
             unreadCountText = (TextView) itemView.findViewById(R.id.text_group_channel_list_unread_count);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_channel_list_date);
-            memberCountText = (TextView) itemView.findViewById(R.id.text_group_channel_list_member_count);
-            coverImage = (MultiImageView) itemView.findViewById(R.id.image_group_channel_list_cover_old);
-            coverImage.setShape(MultiImageView.Shape.CIRCLE);
+//            dateText = (TextView) itemView.findViewById(R.id.text_group_channel_list_date);
+//            memberCountText = (TextView) itemView.findViewById(R.id.text_group_channel_list_member_count);
+//            coverImage = (MultiImageView) itemView.findViewById(R.id.image_group_channel_list_cover_old);
+//            coverImage.setShape(MultiImageView.Shape.CIRCLE);
 
-            imgAvatar = (CircleImageView) itemView.findViewById(R.id.image_group_channel_list_cover);
+            imgAvatar = itemView.findViewById(R.id.image_group_channel_list_cover);
 
-            typingIndicatorContainer = (LinearLayout) itemView.findViewById(R.id.container_group_channel_list_typing_indicator);
+//            typingIndicatorContainer = (LinearLayout) itemView.findViewById(R.id.container_group_channel_list_typing_indicator);
         }
 
         /**
          * Binds views in the ViewHolder to information contained within the Group Channel.
+         *
          * @param context
          * @param channel
-         * @param clickListener A listener that handles simple clicks.
+         * @param clickListener     A listener that handles simple clicks.
          * @param longClickListener A listener that handles long clicks.
          */
         void bind(final Context context, final GroupChannel channel,
                   @Nullable final OnItemClickListener clickListener,
                   @Nullable final OnItemLongClickListener longClickListener) {
             topicText.setText(TextUtils.getGroupChannelTitle(channel));
-
-            memberCountText.setText(String.valueOf(channel.getMemberCount()));
-            if(channel.getMemberCount()< 3)
-                memberCountText.setVisibility(View.GONE);
-            else
-                memberCountText.setVisibility(View.VISIBLE);
-
-            if (!mIsCacheLoading) {
-                setChannelImage(context, channel, coverImage, imgAvatar);
-            }
+//
+//            memberCountText.setText(String.valueOf(channel.getMemberCount()));
+//            if(channel.getMemberCount()< 3)
+//                memberCountText.setVisibility(View.GONE);
+//            else
+//                memberCountText.setVisibility(View.VISIBLE);
+//
+//            if (!mIsCacheLoading) {
+//                setChannelImage(context, channel, coverImage, imgAvatar);
+//            }
+            Glide.with(context)
+                    .asBitmap()
+                    .load(channel.getCoverUrl())
+                    .into(imgAvatar);
 
             int unreadCount = channel.getUnreadMessageCount();
+            Log.e("unreadCount", channel.getCoverUrl());
             // If there are no unread messages, hide the unread count badge.
             if (unreadCount == 0) {
-                unreadCountText.setVisibility(View.INVISIBLE);
+//                unreadCountText.setVisibility(View.INVISIBLE);
+                relatiive.setVisibility(View.INVISIBLE);
             } else {
-                unreadCountText.setVisibility(View.VISIBLE);
+                relatiive.setVisibility(View.VISIBLE);
                 unreadCountText.setText(String.valueOf(channel.getUnreadMessageCount()));
             }
 
             BaseMessage lastMessage = channel.getLastMessage();
-            if (lastMessage != null) {
-                dateText.setVisibility(View.GONE);
-                lastMessageText.setVisibility(View.VISIBLE);
-
-                // Display information about the most recently sent message in the channel.
-                dateText.setText(String.valueOf(DateUtils.formatDateTime(lastMessage.getCreatedAt())));
-
-                // Bind last message text according to the type of message. Specifically, if
-                // the last message is a File Message, there must be special formatting.
-                if (lastMessage instanceof UserMessage) {
-                    lastMessageText.setText(((UserMessage) lastMessage).getMessage());
-                } else if (lastMessage instanceof AdminMessage) {
-                    lastMessageText.setText(((AdminMessage) lastMessage).getMessage());
-                } else {
-                    String lastMessageString = String.format(
-                            context.getString(R.string.group_channel_list_file_message_text),
-                            ((FileMessage) lastMessage).getSender().getNickname());
-                    lastMessageText.setText(lastMessageString);
-                }
-            } else {
-                dateText.setVisibility(View.INVISIBLE);
-                lastMessageText.setVisibility(View.INVISIBLE);
-            }
+//            if (lastMessage != null) {
+//                dateText.setVisibility(View.GONE);
+//                lastMessageText.setVisibility(View.VISIBLE);
+//
+//                // Display information about the most recently sent message in the channel.
+//                dateText.setText(String.valueOf(DateUtils.formatDateTime(lastMessage.getCreatedAt())));
+//
+//                // Bind last message text according to the type of message. Specifically, if
+//                // the last message is a File Message, there must be special formatting.
+//                if (lastMessage instanceof UserMessage) {
+//                    lastMessageText.setText(((UserMessage) lastMessage).getMessage());
+//                } else if (lastMessage instanceof AdminMessage) {
+//                    lastMessageText.setText(((AdminMessage) lastMessage).getMessage());
+//                } else {
+//                    String lastMessageString = String.format(
+//                            context.getString(R.string.group_channel_list_file_message_text),
+//                            ((FileMessage) lastMessage).getSender().getNickname());
+//                    lastMessageText.setText(lastMessageString);
+//                }
+//            } else {
+//                dateText.setVisibility(View.INVISIBLE);
+//                lastMessageText.setVisibility(View.INVISIBLE);
+//            }
 
             /*
              * Set up the typing indicator.
              * A typing indicator is basically just three dots contained within the layout
              * that animates. The animation is implemented in the {@link TypingIndicator#animate() class}
              */
-            ArrayList<ImageView> indicatorImages = new ArrayList<>();
-            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_1));
-            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_2));
-            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_3));
-
-            TypingIndicator indicator = new TypingIndicator(indicatorImages, 600);
-            indicator.animate();
+//            ArrayList<ImageView> indicatorImages = new ArrayList<>();
+//            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_1));
+//            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_2));
+//            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_3));
+//
+//            TypingIndicator indicator = new TypingIndicator(indicatorImages, 600);
+//            indicator.animate();
 
             // debug
 //            typingIndicatorContainer.setVisibility(View.VISIBLE);
 //            lastMessageText.setText(("Someone is typing"));
 
             // If someone in the channel is typing, display the typing indicator.
-            if (channel.isTyping()) {
-                typingIndicatorContainer.setVisibility(View.VISIBLE);
-                lastMessageText.setText(("Someone is typing"));
-            } else {
-                // Display typing indicator only when someone is typing
-                typingIndicatorContainer.setVisibility(View.GONE);
-            }
+//            if (channel.isTyping()) {
+//                typingIndicatorContainer.setVisibility(View.VISIBLE);
+//                lastMessageText.setText(("Someone is typing"));
+//            } else {
+//                // Display typing indicator only when someone is typing
+//                typingIndicatorContainer.setVisibility(View.GONE);
+//            }
 
             // Set an OnClickListener to this item.
             if (clickListener != null) {
@@ -346,28 +358,26 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             }
         }
 
-        private void setChannelImage(Context context, GroupChannel channel, MultiImageView multiImageView, CircleImageView circleImageView) {
+ /*       private void setChannelImage(Context context, GroupChannel channel, MultiImageView multiImageView, CircleImageView circleImageView) {
             List<Member> members = channel.getMembers();
             if (members != null) {
                 int size = members.size();
-                if(size > 1 && size <= 2){
+                if (size > 1 && size <= 2) {
                     circleImageView.setVisibility(View.VISIBLE);
                     multiImageView.setVisibility(View.GONE);
 
-                    if(size == 1){
+                    if (size == 1) {
                         Glide.with(context)
                                 .asBitmap()
                                 .load(members.get(0).getProfileUrl())
                                 .into(circleImageView);
-                    }
-                    else{
+                    } else {
                         Glide.with(context)
                                 .asBitmap()
                                 .load(members.get(1).getProfileUrl())
                                 .into(circleImageView);
                     }
-                }
-                else if (size >= 3) {
+                } else if (size >= 3) {
                     multiImageView.setVisibility(View.VISIBLE);
                     circleImageView.setVisibility(View.GONE);
                     int imageNum = size;
@@ -426,6 +436,6 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     }
                 }
             }
-        }
+        }*/
     }
 }

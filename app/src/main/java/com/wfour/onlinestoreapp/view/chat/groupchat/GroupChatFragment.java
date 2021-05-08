@@ -88,7 +88,7 @@ public class GroupChatFragment extends Fragment {
     private GroupChatAdapter mChatAdapter;
     private LinearLayoutManager mLayoutManager;
     private EditText mMessageEditText;
-    private Button mMessageSendButton;
+    private RelativeLayout mMessageSendButton;
     private ImageButton mUploadFileButton;
     private View mCurrentEventLayout;
     private TextView mCurrentEventText, tvNameProduct, tvPrice, tvDeal;
@@ -164,7 +164,7 @@ public class GroupChatFragment extends Fragment {
             mMessageEditText.setText("");
         }
         Log.e("TAG", "onCreateView: " + mMessageEditText.getText().length() );
-        mMessageSendButton  = (Button) rootView.findViewById(R.id.button_group_chat_send);
+        mMessageSendButton  =  rootView.findViewById(R.id.button_group_chat_send);
         mUploadFileButton   = (ImageButton) rootView.findViewById(R.id.button_group_chat_upload);
         mMessageSendButton.setEnabled(false);
 
@@ -556,7 +556,7 @@ public class GroupChatFragment extends Fragment {
                 mEditingMessage = null;
 
                 mUploadFileButton.setVisibility(View.VISIBLE);
-                mMessageSendButton.setText("SEND");
+//                mMessageSendButton.setText("SEND");
                 mMessageEditText.setText("");
                 break;
 
@@ -565,7 +565,7 @@ public class GroupChatFragment extends Fragment {
                 mEditingMessage = editingMessage;
 
                 mUploadFileButton.setVisibility(View.GONE);
-                mMessageSendButton.setText("SAVE");
+//                mMessageSendButton.setText("SAVE");
                 String messageString = ((UserMessage)editingMessage).getMessage();
                 if (messageString == null) {
                     messageString = "";

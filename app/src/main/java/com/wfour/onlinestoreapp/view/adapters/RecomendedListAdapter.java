@@ -55,7 +55,10 @@ public class RecomendedListAdapter extends RecyclerView.Adapter<RecomendedListAd
         holder.imgAvatar.setImageResource(R.drawable.demo_product);
         holder.tvTitle.setText(productObj.getProduct_Name());
         holder.tvDescription.setText(productObj.getDescription());
-        holder.tvPrice.setText(productObj.getActual_rate());
+        holder.tvPrice.setText("$ " + productObj.getActual_rate());
+        if(productObj.getDiscount_rate().equals("0.00")){
+            holder.tvOldPrice.setVisibility(View.GONE);
+        }
         holder.tvOldPrice.setText(productObj.getDiscount_rate());
     }
 

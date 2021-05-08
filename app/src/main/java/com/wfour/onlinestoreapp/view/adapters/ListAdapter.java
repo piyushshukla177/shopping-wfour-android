@@ -184,21 +184,31 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                 viewHolder.tvMore.setVisibility(View.GONE);
             }
             else if (homeObj.type.equals("TYPE")) {
+                String name = homeObj.name;
                 if(homeObj.name.equals("SALE PRODUCT")){
+                    viewHolder.tvName.setTextColor(Color.parseColor("#f22a2a"));
                     viewHolder.lv_count_down.setVisibility(View.VISIBLE);
                 } else {
                     viewHolder.lv_count_down.setVisibility(View.GONE);
                 }
-
                 LinearLayoutManager linearLayout = new LinearLayoutManager(activity);
 
-                viewHolder.rcvData.setAdapter(new SingleHorizontalAdapter(activity, homeObj.productList, new IMyOnClick() {
+//                if(homeObj.name.equals("REKOMENDA"))
+//                {
+//                    viewHolder.rcvData.setAdapter(new SingleHorizontalAdapter(activity, homeObj.getmListRecomended(), new IMyOnClick() {
+//                        @Override
+//                        public void MyOnClick(int position, ProductObj productObj) {
+//                            setData(productObj);
+//                        }
+//                    }));
+//                }
+                    viewHolder.rcvData.setAdapter(new SingleHorizontalAdapter(activity, homeObj.productList, new IMyOnClick() {
                     @Override
                     public void MyOnClick(int position, ProductObj productObj) {
                         setData(productObj);
-
                     }
                 }));
+
                 viewHolder.rcvData.setHasFixedSize(true);
                 linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
                 viewHolder.rcvData.setLayoutManager(linearLayout);
@@ -227,20 +237,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             viewHolder.rcvData.setRecycledViewPool(viewpool);
             viewHolder.rcvData.setHasFixedSize(true);
         } else if(holder instanceof ViewHolderHeader) {
-//                final HomeObj Obj = homeObjList.get(0);
-//                    ViewHolderHeader viewholder = (ViewHolderHeader) holder;
-//                    viewholder.setAdapter(Obj.productList);
-//                    ArrayList<BannerObj> bannerList = new ArrayList<>();
-//                    bannerList.add(new BannerObj(R.drawable.banner01));
-//                    bannerList.add(new BannerObj(R.drawable.banner02));
-//                    bannerList.add(new BannerObj(R.drawable.banner03));
-//                    bannerList.add(new BannerObj(R.drawable.banner04));
 
             ViewHolderHeader viewholder = (ViewHolderHeader) holder;
             viewholder.setAdapter();
 
         }
-
     }
 
 
