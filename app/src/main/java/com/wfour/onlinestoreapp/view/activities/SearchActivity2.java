@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,8 +33,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnScrollListener.OnLoadMoreListener{
+public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnScrollListener.OnLoadMoreListener {
 
+    LinearLayout last_seen_linear;
     private Toolbar toolbar;
     private SearchProductAdapter mAdapter;
     private RecyclerView mRclDeal;
@@ -55,7 +57,8 @@ public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnSc
         mRclDeal = findViewById(R.id.rcv_data);
         llNoData = findViewById(R.id.ll_no_data);
         toolbar = findViewById(R.id.toolbar);
-        manager = new LinearLayoutManager(self) ;
+        last_seen_linear = findViewById(R.id.last_seen_linear);
+        manager = new LinearLayoutManager(self);
         mRclDeal.setLayoutManager(manager);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -76,7 +79,7 @@ public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnSc
             }
         });
         mRclDeal.setAdapter(mAdapter);
-        onScrollListener = new EndlessRecyclerOnScrollListener( this);
+        onScrollListener = new EndlessRecyclerOnScrollListener(this);
         mRclDeal.addOnScrollListener(onScrollListener);
         onScrollListener.setEnded(false);
 //        mRclDeal.setLayoutManager(new GridLayoutManager(self, 1));
@@ -100,12 +103,13 @@ public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnSc
         searchView.setIconifiedByDefault(true);
         searchView.setQueryHint(Html.fromHtml("<font color = #BDBDBD>" + getResources().getString(R.string.hintSearchMess) + "</font>"));
 
-
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
 //                mDatas.clear();
+//                if (mDatas.size() != 0) {
+//                    last_seen_linear.setVisibility(View.GONE);
+//                }
                 text = query;
                 page = 1;
                 // setcurrent page ve 0
@@ -127,15 +131,17 @@ public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnSc
 
         return super.onCreateOptionsMenu(menu);
     }
-    private void getData(String query, int number){
-        if(NetworkUtility.getInstance(self).isNetworkAvailable()){
+
+    private void getData(String query, int number) {
+        if (NetworkUtility.getInstance(self).isNetworkAvailable()) {
             ModelManager.getProductSearch(self, query, number, 20, new ModelManagerListener() {
                 @Override
                 public void onSuccess(Object object) {
                     JSONObject jsonObject = (JSONObject) object;
                     com.wfour.onlinestoreapp.base.ApiResponse response = new com.wfour.onlinestoreapp.base.ApiResponse(jsonObject);
 
-                    if (!response.isError()){
+                    last_seen_linear.setVisibility(View.GONE);
+                    if (!response.isError()) {
                         mDatas.addAll(response.getDataList(ProductObj.class));
                         mAdapter.addList(mDatas);
                         onScrollListener.onLoadMoreComplete();
@@ -155,9 +161,10 @@ public class SearchActivity2 extends BaseActivity implements EndlessRecyclerOnSc
 
         }
     }
+
     private void checkViewHideShow() {
         if (mDatas.size() == 0) {
-            llNoData.setVisibility(View.VISIBLE);
+//            llNoData.setVisibility(View.VISIBLE);
         } else {
             llNoData.setVisibility(View.GONE);
         }

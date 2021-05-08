@@ -135,16 +135,17 @@ public class Dialog_Cart extends BottomSheetDialogFragment implements View.OnCli
     }
 
     private void checkLayout() {
-        if (item.getSizes().size() > 0) {
+        if (item.getSizes()!=null &&item.getSizes().size() > 0) {
             lnlSize.setVisibility(View.VISIBLE);
             lnl1.setVisibility(View.VISIBLE);
             lnl2.setVisibility(View.VISIBLE);
         } else {
+
             lnlSize.setVisibility(View.GONE);
             lnl1.setVisibility(View.GONE);
             lnl2.setVisibility(View.GONE);
         }
-        if (item.getColors().size() > 0) {
+        if (item.getColors()!=null && item.getColors().size() > 0) {
             lnlColor.setVisibility(View.VISIBLE);
             lnl1.setVisibility(View.VISIBLE);
             lnl2.setVisibility(View.VISIBLE);

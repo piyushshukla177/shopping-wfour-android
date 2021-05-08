@@ -6,21 +6,209 @@
     android:layout_height="match_parent"
     tools:context=".view.activities.SearchActivity2">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <include layout="@layout/toolbar"></include>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_data"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
             android:layout_marginTop="@dimen/dimen_05x" />
-    </LinearLayout>
 
 
+        <LinearLayout
+            android:id="@+id/last_seen_linear"
 
-    <include layout="@layout/layout_no_data"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="Last Seen"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shirt" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/shirt"
+
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/shirt" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/shirt" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="Most Popular"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Shirt"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Mie Sedaap"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Shirt"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Mie Sedaap"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingRight="10dp"
+                    android:text="Mie Sedaap"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Shirt"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_x1x"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Mie Sedaap"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <include layout="@layout/layout_no_data" />
 
     <include layout="@layout/layout_no_connection" />
 

@@ -74,7 +74,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     public static final int RC_UPDATE_DEAL = 344;
     public static int coun = 1;
     /*reskin*/
-    private ImageView img, imgContent, imgFavorite;
+    private ImageView img, imgContent, imgFavorite, back_imageview, cart_imageview, share_imageview;
     private TextView tvAddress, tvFavoriteCount, tvPrice, tvOldPrice, lblSalePercent,
             tvName, tvAbout, tvFileName, lblRateQuantity, tvEndTime, tvDeal, btnBuy, tvContent, tvStatus, tvBrand, tvType, tvFavotite;
     private WebView webview;
@@ -116,8 +116,9 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     private CountObj countObj;
     private Bundle bundle;
     private ArrayList<CartObj> cartList;
-    private CircleImageView circleImageViewMessage;
+    private ImageView circleImageViewMessage;
 
+    RelativeLayout add_to_cart_relative;
     public String getAction() {
         return action;
     }
@@ -153,7 +154,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
             return;
         }
-
     }
 
 
@@ -161,6 +161,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         screenFavorite = findViewById(R.id.screen_favorite);
         mViewPager = findViewById(R.id.view_pager);
         mIndicator = findViewById(R.id.circle_indicator);
+
         adapterIndicator = new AdapterViewPaggerImage(self, item.getImage_files());
         screenFavorite.setNestedScrollingEnabled(false);
         setPageAdapter();
@@ -172,6 +173,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         mIndicator.setViewPager(mViewPager);
         adapterIndicator.registerDataSetObserver(mIndicator.getDataSetObserver());
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -190,7 +192,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
     @Override
     protected void initilize() {
-        if (item != null){
+        if (item != null) {
             setToolbarTitle(item.getTitle());
         }
 
@@ -215,6 +217,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         imgContent = findViewById(R.id.imgContent);
 //        tvContent = findViewById(R.id.tvContent);
         btnBuy = findViewById(R.id.btnBuy);
+        add_to_cart_relative = findViewById(R.id.add_to_cart_relative);
         circleImageViewMessage = findViewById(R.id.img_message);
         if (DataStoreManager.getUser() == null) {
             circleImageViewMessage.setVisibility(View.VISIBLE);
@@ -224,6 +227,45 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
             circleImageViewMessage.setVisibility(View.VISIBLE);
         }
 
+        back_imageview = findViewById(R.id.back_imageview);
+        cart_imageview = findViewById(R.id.cart_imageview);
+        share_imageview = findViewById(R.id.share_imageview);
+        back_imageview.setOnClickListener(
+
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DealDetailActivity.super.onBackPressed();
+                    }
+                }
+        );
+        cart_imageview.setOnClickListener(
+
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                }
+        );
+        add_to_cart_relative.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showDialog();
+                    }
+                }
+        );
+        share_imageview.setOnClickListener(
+
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        shareText("Product", item.getTitle()+" - "+item.getPrice());
+                    }
+                }
+        );
+        getToolbar().setVisibility(View.GONE);
         circleImageViewMessage.setOnClickListener(this);
 //        tvType = findViewById(R.id.tvType);
 //        tvBrand = findViewById(R.id.tvBrand);
@@ -259,7 +301,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
         bundle = getIntent().getExtras();
         idDeal = bundle.getParcelable(Args.KEY_ID_DEAL);
-        Log.e(TAG, "init: "+item.getId() );
+        Log.e(TAG, "init: " + item.getId());
 
         getDetailDeal(item.getId());
 
@@ -268,6 +310,15 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
 
     }
+
+    public void shareText(String subject, String body) {
+        Intent txtIntent = new Intent(android.content.Intent.ACTION_SEND);
+        txtIntent.setType("text/plain");
+        txtIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+        txtIntent.putExtra(android.content.Intent.EXTRA_TEXT, body);
+        startActivity(Intent.createChooser(txtIntent, "Share"));
+    }
+
 
     @Override
     public void onLoadMore(int page) {
@@ -278,7 +329,8 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     public void onClick(View v) {
         if (v == btnBuy) {
             showDialog();
-        } else if (v == circleImageViewMessage) {
+        }
+        else if (v == circleImageViewMessage) {
             if (DataStoreManager.getUser() == null) {
                 AppUtil.showToast(self, "You are not logged in");
             } else if (DataStoreManager.getUser() != null) {
@@ -312,10 +364,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     }
 
     private void showDialog() {
-//        if (DataStoreManager.getUser() == null) {
-//            AppUtil.showToast(self, R.string.you_are_not_login);
-//            return;
-//        }
 
         Dialog_Cart dialogCart = new Dialog_Cart();
         dialogCart.show(getSupportFragmentManager(), "DialogCart");
@@ -631,8 +679,8 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                     Log.e(TAG, "ERROR: GET DETAIL DEAL");
                 }
             });
-        }else {
-            Log.e(TAG, "getDetailDeal: " );
+        } else {
+            Log.e(TAG, "getDetailDeal: ");
         }
     }
 }

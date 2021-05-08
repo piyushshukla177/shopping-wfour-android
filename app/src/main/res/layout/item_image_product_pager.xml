@@ -7,14 +7,12 @@
     android:orientation="vertical"
     android:id="@+id/lnl_container">
 
-    <!-- TODO: Update blank fragment layout -->
    <ImageView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:scaleType="centerCrop"
        android:id="@+id/imageView"
        android:layout_marginTop="@dimen/dimen_1x"
-       android:layout_marginBottom="@dimen/dimen_1x"
-       />
+       android:layout_marginBottom="@dimen/dimen_1x"/>
 
 </LinearLayout>

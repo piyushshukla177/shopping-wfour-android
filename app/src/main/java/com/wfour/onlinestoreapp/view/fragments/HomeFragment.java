@@ -41,10 +41,12 @@ import com.wfour.onlinestoreapp.network.modelmanager.ModelManagerListener;
 import com.wfour.onlinestoreapp.objects.BannerObj;
 import com.wfour.onlinestoreapp.objects.CartObj;
 import com.wfour.onlinestoreapp.objects.Category;
+import com.wfour.onlinestoreapp.objects.ColorProduct;
 import com.wfour.onlinestoreapp.objects.DealObj;
 import com.wfour.onlinestoreapp.objects.HomeObj;
 import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.objects.RecomendedObj;
+import com.wfour.onlinestoreapp.objects.SizeProduct;
 import com.wfour.onlinestoreapp.retrofit.ApiUtils;
 import com.wfour.onlinestoreapp.retrofit.respone.RecommendedProductResponse;
 import com.wfour.onlinestoreapp.utils.AppUtil;
@@ -509,6 +511,10 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                             for (int j = 0; j < m.getData().get(i).getImage_files().size(); j++) {
                                 image_files.add(m.getData().get(i).getImage_files().get(j));
                             }
+                            ArrayList<SizeProduct> size_list=new ArrayList<>();
+                            ArrayList<ColorProduct> color_list=new ArrayList<>();
+                            p.setSizes(size_list);
+                            p.setColors(color_list);
                             p.setImage_files(image_files);
                             recomendedjList.add(p);
 
@@ -590,6 +596,10 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                             for (int j = 0; j < m.getData().get(i).getImage_files().size(); j++) {
                                 image_files.add(m.getData().get(i).getImage_files().get(j));
                             }
+                            ArrayList<SizeProduct> size_list=new ArrayList<>();
+                            ArrayList<ColorProduct> color_list=new ArrayList<>();
+                            p.setSizes(size_list);
+                            p.setColors(color_list);
                             p.setImage_files(image_files);
                             polularList.add(p);
 
