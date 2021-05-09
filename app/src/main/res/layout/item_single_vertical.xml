@@ -18,6 +18,14 @@
             android:layout_margin="@dimen/dimen_1x">
 
             <ImageView
+                android:id="@+id/add_fev_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_fev_icon"
+                android:layout_alignParentRight="true"
+                />
+            <ImageView
+                android:layout_below="@+id/add_fev_imageview"
                 android:id="@+id/img_avatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

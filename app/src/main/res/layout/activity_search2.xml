@@ -41,7 +41,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+               android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -52,7 +54,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/shirt"
 
                     />
@@ -60,13 +62,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/shirt" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/shirt" />
             </LinearLayout>
 
@@ -75,13 +77,16 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_medium"
                 android:text="Most Popular"
+                android:layout_marginTop="30dp"
                 android:textColor="@color/red"
                 android:textSize="@dimen/text_size_large" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -102,7 +107,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/btn_shape"
                     android:fontFamily="@font/inter_semibold"
                     android:gravity="center"
@@ -118,7 +123,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/btn_shape"
                     android:fontFamily="@font/inter_semibold"
                     android:gravity="center"
@@ -134,7 +139,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/btn_shape"
                     android:fontFamily="@font/inter_semibold"
                     android:gravity="center"
@@ -163,7 +168,7 @@
                     android:fontFamily="@font/inter_semibold"
                     android:gravity="center"
                     android:padding="@dimen/dimen_x1x"
-                    android:paddingRight="10dp"
+                    android:paddingRight="15dp"
                     android:text="Mie Sedaap"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -173,7 +178,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/btn_shape"
                     android:fontFamily="@font/inter_semibold"
                     android:gravity="center"
@@ -189,7 +194,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/btn_shape"
                     android:fontFamily="@font/inter_semibold"
                     android:gravity="center"

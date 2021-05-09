@@ -79,7 +79,7 @@
                         <androidx.viewpager.widget.ViewPager
                             android:id="@+id/view_pager"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="220dp"
                             android:layout_below="@+id/relative">
 
                         </androidx.viewpager.widget.ViewPager>
@@ -97,6 +97,23 @@
 
                         </me.relex.circleindicator.CircleIndicator>
 
+                        <RelativeLayout
+                            android:id="@+id/image_relative"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rectangle"
+                            android:layout_below="@+id/view_pager">
+
+                            <TextView
+                                android:id="@+id/image_number_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1/5"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/inter_semibold"
+                                android:layout_centerInParent="true"/>
+                        </RelativeLayout>
                     </RelativeLayout>
 
                     <!--<ImageView-->
@@ -279,6 +296,7 @@
                             android:textSize="@dimen/text_size_normal" />
 
                         <TextView
+                            android:id="@+id/stock_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -302,6 +320,7 @@
                             android:textSize="@dimen/text_size_normal" />
 
                         <TextView
+                            android:id="@+id/brand_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -325,6 +344,7 @@
                             android:textSize="@dimen/text_size_normal" />
 
                         <TextView
+                            android:id="@+id/dikirim_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"

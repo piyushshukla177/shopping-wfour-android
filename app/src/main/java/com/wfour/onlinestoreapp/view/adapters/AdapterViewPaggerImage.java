@@ -52,8 +52,6 @@ public class AdapterViewPaggerImage extends PagerAdapter {
             public void onClick(View view) {
                 Intent intent = new Intent(new Intent(ImageViewerActivity.newUrlInstance(context, list.get(position))));
                 context.startActivity(intent);
-
-
             }
         });
 

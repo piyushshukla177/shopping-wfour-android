@@ -126,18 +126,24 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-                        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (mHomeFragment == null) {
-                            mHomeFragment = HomeFragment.newInstance(Args.TYPE_OF_CATEGORY_ALLS);
-                        }
-                        fragmentTransaction.replace(R.id.frl_main, mHomeFragment).commit();
                         BottomNavigationView mBottomNavigationView = getActivity().findViewById(R.id.nav_main);
+                        if (mBottomNavigationView != null) {
 
-                        mBottomNavigationView.setSelectedItemId(R.id.home_menu);
-//                        Intent intent = new Intent(self, MainActivity.class);
-//                        startActivity(intent);
-//                        getActivity().finish();
+                            fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                            if (mHomeFragment == null) {
+                                mHomeFragment = HomeFragment.newInstance(Args.TYPE_OF_CATEGORY_ALLS);
+                            }
+                            fragmentTransaction.replace(R.id.frl_main, mHomeFragment).commit();
+
+
+                            mBottomNavigationView.setSelectedItemId(R.id.home_menu);
+                        }else
+                        {
+                            Intent intent = new Intent(self, MainActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
+                        }
+
                     }
                 }
         );
@@ -323,10 +329,9 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
                     if (response.body().getData() != null) {
                         RecommendedProductResponse m = response.body();
                         RecomendedObj obj;
-                        int i=0;
-                        while(i<m.getData().size())
-                        {
-                            obj=new RecomendedObj();
+                        int i = 0;
+                        while (i < m.getData().size()) {
+                            obj = new RecomendedObj();
                             obj.setProduct_Name(m.getData().get(i).getTitle());
                             obj.setActual_rate(m.getData().get(i).getPrice());
                             obj.setDiscount_rate(m.getData().get(i).getOld_price());

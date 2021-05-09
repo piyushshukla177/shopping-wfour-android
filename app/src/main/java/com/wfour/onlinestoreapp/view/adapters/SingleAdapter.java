@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wfour.onlinestoreapp.R;
+import com.wfour.onlinestoreapp.datastore.DataStoreManager;
 import com.wfour.onlinestoreapp.interfaces.IMyOnClick;
+import com.wfour.onlinestoreapp.network.BaseRequest;
+import com.wfour.onlinestoreapp.network.modelmanager.RequestManger;
 import com.wfour.onlinestoreapp.objects.HomeObj;
 import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.utils.AppUtil;
@@ -64,6 +68,32 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.MyViewHold
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         final ProductObj productObj = productObjList.get(position);
 
+        holder.add_fev_imageview.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if (DataStoreManager.getUser() != null) {
+                            RequestManger.addFavorite(DataStoreManager.getUser().getId(),productObj.getId(), "deal", new BaseRequest.CompleteListener() {
+                                @Override
+                                public void onSuccess(com.wfour.onlinestoreapp.network.ApiResponse response) {
+                                    if (!response.isError()) {
+                                        AppUtil.showToast(context, response.getMessage() + "");
+                                        holder.add_fev_imageview.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_favorite));
+                                    } else {
+                                        AppUtil.showToast(context, response.getMessage() + "");
+                                    }
+                                }
+
+                                @Override
+                                public void onError(String message) {
+//                                    Log.e(TAG, "onError: " + message);
+                                }
+                            });
+                        }
+                    }
+                }
+        );
         if(productObj.getIs_prize()==1){
             holder.tvTitle.setText(productObj.getTitle());
             holder.tvTitle.setVisibility(View.GONE);
@@ -123,7 +153,7 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.MyViewHold
 
         private TextView tvTitle, tvDescription, tvPrice, tvOldPrice;
         private CardView cardView;
-        private ImageView imgAvatar;
+        private ImageView imgAvatar,add_fev_imageview;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -133,6 +163,7 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.MyViewHold
             imgAvatar = itemView.findViewById(R.id.img_avatar);
             tvPrice = itemView.findViewById(R.id.lbl_price);
             tvOldPrice = itemView.findViewById(R.id.lbl_price_old);
+            add_fev_imageview = itemView.findViewById(R.id.add_fev_imageview);
             tvOldPrice.setPaintFlags(tvOldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
     }
