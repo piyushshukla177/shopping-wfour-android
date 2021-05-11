@@ -250,7 +250,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Bill"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -286,7 +286,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Favoritu"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -320,7 +320,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="30dp"
                 android:text="Kontaktu Ami"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="bold"
                 app:fontFamily="@font/inter_extrabold" />
         </RelativeLayout>
@@ -338,7 +338,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Facebook Menssenger"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -374,7 +374,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Wfourstore.com"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -409,7 +409,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Sentru Ajuda"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 app:fontFamily="@font/inter_extrabold" />
         </RelativeLayout>
 
@@ -426,7 +426,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="FAQ"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -462,7 +462,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Ajuda"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -498,7 +498,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Konaba Ami"
-                android:textSize="12sp"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="normal"
                 app:fontFamily="@font/inter_semibold" />
 
@@ -521,18 +521,18 @@
             android:background="@color/bg_deal_list" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="314dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/transparent_bg_bordered_button"
             android:fontFamily="@font/inter_bold"
             android:text="Logout"
             android:textAllCaps="false"
             android:textColor="@color/red"
-            android:textSize="12sp" />
+            android:textSize="@dimen/text_size_normal" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"

@@ -243,7 +243,6 @@ public class ImageUtil {
                     .load(imageUrl)
                     .error(R.mipmap.ic_launcher)
                     .placeholder(R.drawable.placeholder)
-
                     .into(imageView);
         } else {
             imageView.setImageResource(R.mipmap.ic_launcher);

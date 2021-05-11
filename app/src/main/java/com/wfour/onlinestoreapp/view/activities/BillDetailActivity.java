@@ -60,7 +60,6 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill_detail);
 
-
         tvBill_id = findViewById(R.id.tvIdBill);
         tvName = findViewById(R.id.tvName);
         tvDate = findViewById(R.id.tvDateTime);

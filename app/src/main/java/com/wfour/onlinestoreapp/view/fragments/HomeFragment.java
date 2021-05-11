@@ -303,6 +303,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
             ModelManager.getHomeList(self, new ModelManagerListener() {
                 @Override
                 public void onSuccess(Object object) {
+                    homeObjList.clear();
                     JSONObject jsonObject = (JSONObject) object;
                     ApiResponse response = new ApiResponse(jsonObject);
                     productObjList = new ArrayList<>();

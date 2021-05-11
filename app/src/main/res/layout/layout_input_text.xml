@@ -62,7 +62,7 @@
                     android:padding="@dimen/dimen_16dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/color_textHint"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <EditText
                     android:id="@+id/txt_email"
@@ -79,7 +79,7 @@
                     android:padding="@dimen/dimen_16dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/color_textHint"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
 
                 <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
@@ -96,7 +96,7 @@
                     android:padding="@dimen/dimen_16dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/color_textHint"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     app:drawable_hide="@drawable/invisible"
                     app:drawable_show="@drawable/visibility" />
 
@@ -115,7 +115,7 @@
                     android:padding="@dimen/dimen_16dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/color_textHint"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     app:drawable_hide="@drawable/invisible"
                     app:drawable_show="@drawable/visibility" />
 
@@ -132,7 +132,7 @@
                     android:padding="@dimen/dimen_16dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/color_textHint"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
 <!--            </LinearLayout>-->
 <!--        </ScrollView>-->

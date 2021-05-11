@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content"
                         android:text="ID"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_small"
+                        android:textSize="@dimen/text_size_normal"
                         android:textStyle="bold" />
 
                     <TextView
@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_regular"
                         android:text="Data Order:"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <TextView
                         android:id="@+id/tvDateTime"
@@ -70,7 +70,7 @@
                         android:layout_marginLeft="@dimen/dimen_1x"
                         android:fontFamily="@font/inter_regular"
                         android:text="14:20, 20/04/2019"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
                 </LinearLayout>
 
                 <View
@@ -132,7 +132,7 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="Enderesu Reseptor"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
 
                 <TextView
@@ -144,7 +144,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Naran"
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvPhone"
@@ -155,7 +155,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Telemovel"
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvAllAddress"
@@ -167,7 +167,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Enderesu"
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -185,7 +185,7 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="@string/metode_haruka"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
 
                 <TextView
@@ -198,7 +198,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Shipping method"
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -215,7 +215,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Transporte Fee"
                         android:textColor="#7E7E7E"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -231,7 +231,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text="$"
                             android:textColor="#7E7E7E"
-                            android:textSize="@dimen/text_size_small" />
+                            android:textSize="@dimen/text_size_normal" />
 
                         <TextView
                             android:id="@+id/tvTransportFee"
@@ -242,7 +242,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text="0"
                             android:textColor="#7E7E7E"
-                            android:textSize="@dimen/text_size_small" />
+                            android:textSize="@dimen/text_size_normal" />
                     </LinearLayout>
 
 
@@ -263,7 +263,7 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="Metode Pagamentu"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
 
                 <TextView
@@ -276,7 +276,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Thanh toan tien mat khi nhan hang"
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -293,7 +293,7 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:text="@string/informasaun_produtu"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -310,7 +310,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Naran Produtu"
                         android:textColor="@color/text_black"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -319,7 +319,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Qty"
                         android:textColor="@color/text_black"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -328,7 +328,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Presu"
                         android:textColor="@color/text_black"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -337,7 +337,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:text="Subtotal"
                         android:textColor="@color/text_black"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -380,7 +380,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text="Subtotal"
                             android:textColor="@color/text_black"
-                            android:textSize="10sp" />
+                            android:textSize="@dimen/text_size_small" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -389,7 +389,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text=""
                             android:textColor="@color/text_black"
-                            android:textSize="@dimen/text_size_small" />
+                            android:textSize="@dimen/text_size_normal" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -398,7 +398,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text=""
                             android:textColor="@color/text_black"
-                            android:textSize="@dimen/text_size_small" />
+                            android:textSize="@dimen/text_size_normal" />
 
                         <TextView
                             android:id="@+id/tvPay"
@@ -408,7 +408,7 @@
                             android:fontFamily="@font/inter_bold"
                             android:text="$ 108"
                             android:textColor="@color/red"
-                            android:textSize="10sp" />
+                            android:textSize="@dimen/text_size_small" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -425,7 +425,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text="Delivery Charge"
                             android:textColor="@color/text_black"
-                            android:textSize="10sp" />
+                            android:textSize="@dimen/text_size_small" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -434,7 +434,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text=""
                             android:textColor="@color/text_black"
-                            android:textSize="@dimen/text_size_small" />
+                            android:textSize="@dimen/text_size_normal" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -443,7 +443,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text=""
                             android:textColor="@color/text_black"
-                            android:textSize="@dimen/text_size_small" />
+                            android:textSize="@dimen/text_size_normal" />
 
                         <TextView
                             android:id="@+id/tv_delivery_charges"
@@ -453,7 +453,7 @@
                             android:fontFamily="@font/inter_regular"
                             android:text="Free"
                             android:textColor="@color/text_black"
-                            android:textSize="10sp" />
+                            android:textSize="@dimen/text_size_small" />
                     </LinearLayout>
 
                 </LinearLayout>

@@ -81,7 +81,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     /*reskin*/
     private ImageView img, imgContent, imgFavorite, back_imageview, cart_imageview, share_imageview;
     private TextView tvAddress, tvFavoriteCount, tvPrice, tvOldPrice, lblSalePercent,
-            tvName, tvAbout, tvFileName, lblRateQuantity, tvEndTime, tvDeal, btnBuy, tvContent, tvStatus, tvBrand, tvType, tvFavotite, stock_tv, brand_tv, dikirim_tv, image_number_tv;
+            tvName, tvAbout, tvFileName, lblRateQuantity, tvEndTime, tvDeal, btnBuy, tvContent, tvStatus, tvBrand, tvType, tvFavotite, image_number_tv,product_information_tv;
     private WebView webview;
 
     private RelativeLayout btnDeal;
@@ -236,11 +236,11 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         tvOldPrice.setPaintFlags(tvOldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         img = findViewById(R.id.image);
         imgContent = findViewById(R.id.imgContent);
-        stock_tv = findViewById(R.id.stock_tv);
-        brand_tv = findViewById(R.id.brand_tv);
+//        stock_tv = findViewById(R.id.stock_tv);
+//        brand_tv = findViewById(R.id.brand_tv);
         image_number_tv = findViewById(R.id.image_number_tv);
-        dikirim_tv = findViewById(R.id.dikirim_tv);
-//        tvContent = findViewById(R.id.tvContent);
+//        dikirim_tv = findViewById(R.id.dikirim_tv);
+        product_information_tv = findViewById(R.id.product_information_tv);
         btnBuy = findViewById(R.id.btnBuy);
         add_to_cart_relative = findViewById(R.id.add_to_cart_relative);
         circleImageViewMessage = findViewById(R.id.img_message);
@@ -689,9 +689,10 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                         item = response.getDataObject(ProductObj.class);
                         imgFavorite.setImageResource(item.getIs_favourite() == 1 ? R.drawable.ic_heart_favorite : R.drawable.ic_heart_unfavorite);
                         if (item != null) {
-                            brand_tv.setText(item.getBrand());
-                            stock_tv.setText(item.getQuantity());
+//                            brand_tv.setText(item.getBrand());
+//                            stock_tv.setText(item.getQuantity());
 //                            dikirim_tv.setText(item.get);
+                            Log.e("description",item.getContent());
                             setToolbarTitle(item.getTitle());
                             if (itemActivate == null && itemDeActivate == null) {
                                 initMenu(menu);
@@ -712,3 +713,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         }
     }
 }
+
+/*
+https://drive.google.com/file/d/16EuycwaRXlYNpYW1r2_HCYIfGy-0vQrS/view?usp=sharing
+ */

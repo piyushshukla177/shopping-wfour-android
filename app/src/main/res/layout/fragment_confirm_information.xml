@@ -27,8 +27,8 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:src="@drawable/next_gray" />
 
             <TextView
@@ -37,11 +37,11 @@
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/inter_regular"
                 android:text="Delivery"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/next_gray" />
 
@@ -51,11 +51,11 @@
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/inter_regular"
                 android:text="Payment"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/next_red" />
 
@@ -65,7 +65,7 @@
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/inter_regular"
                 android:text="Confirm"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
         </LinearLayout>
 
 
@@ -102,7 +102,7 @@
                     android:fontFamily="@font/inter_medium"
                     android:text="Foti Iha loja"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvName"
@@ -111,7 +111,7 @@
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:text="Naran"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvPhone"
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:text="0336540462"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvAddress"
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:text="Van Khe, Ha Dong, Ha Noi"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -156,7 +156,7 @@
                     android:fontFamily="@font/inter_medium"
                     android:text="Enderesu Wfour"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvDelivery"
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:text="Giao hang tieu chuan"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -178,7 +178,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:text="Transporte Fee"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -227,7 +227,7 @@
                     android:fontFamily="@font/inter_medium"
                     android:text="Metode Pagamentu"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvPay"
@@ -235,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_1x"
                     android:text="Giao tien mat khi nhan hang"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -255,7 +255,7 @@
                     android:fontFamily="@font/inter_medium"
                     android:text="Product List"
                     android:textColor="@color/red"
-                    android:textSize="@dimen/text_size_normal" />
+                    android:textSize="@dimen/text_size_xnormal" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/contentRcl"
@@ -318,7 +318,7 @@
                     android:text="Total"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -335,7 +335,7 @@
                         android:layout_marginRight="@dimen/dimen_1x"
                         android:text="$"
                         android:textColor="@color/red"
-                        android:textSize="@dimen/text_size_normal"
+                        android:textSize="@dimen/text_size_xnormal"
                         android:textStyle="bold" />
 
                     <TextView
@@ -344,7 +344,7 @@
                         android:layout_height="wrap_content"
                         android:text="50.00"
                         android:textColor="@color/red"
-                        android:textSize="@dimen/text_size_normal"
+                        android:textSize="@dimen/text_size_xnormal"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -362,7 +362,7 @@
                 android:layout_marginRight="@dimen/dimen_2x"
                 android:layout_marginBottom="@dimen/dimen_2x"
                 android:text="Kontinua"
-                android:textSize="@dimen/text_size_small"
+                android:textSize="@dimen/text_size_normal"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>

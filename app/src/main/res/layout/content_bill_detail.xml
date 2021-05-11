@@ -61,7 +61,7 @@
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:text="ID :"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
 
                 <TextView
@@ -71,7 +71,7 @@
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:text=""
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -88,7 +88,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Data Order: "
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvDateTime"
@@ -98,7 +98,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text=""
                     android:textColor="#7E7E7E"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -114,7 +114,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:text="Status: "
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <TextView
                     android:id="@+id/tvStatus"
@@ -123,7 +123,7 @@
                     android:layout_marginLeft="@dimen/dimen_1x"
                     android:text=""
                     android:textColor="@color/red"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
         </LinearLayout>

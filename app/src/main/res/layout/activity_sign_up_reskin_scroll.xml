@@ -90,11 +90,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <!--screen btn-->
+
                         <include
                             android:id="@+id/include_layout"
                             layout="@layout/layout_input_text" />
 
-                        <!--screen btn-->
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

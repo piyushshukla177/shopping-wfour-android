@@ -85,7 +85,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
     public void addList2(ArrayList<BannerObj> bannerObjs) {
         this.listbanner = bannerObjs;
         this.notifyDataSetChanged();
-
     }
 
     @Override
@@ -109,10 +108,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
         h = AppUtil.getScreenHeight(activity);
     }
 
-
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         if(viewType == ITEM_BANNER){
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home, parent, false);
             return new ViewHolderHeader(view);
@@ -120,7 +117,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_row, parent, false);
             return new MyViewHolder(view);
         }
-
     }
 
     @Override
@@ -208,7 +204,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                         setData(productObj);
                     }
                 }));
-
                 viewHolder.rcvData.setHasFixedSize(true);
                 linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
                 viewHolder.rcvData.setLayoutManager(linearLayout);
@@ -244,15 +239,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
         }
     }
 
-
     public void setData(ProductObj productObj) {
         Bundle bundle = new Bundle();
         bundle.putParcelable(Args.KEY_PRODUCT_OBJECT, productObj);
         Log.e(TAG, "setData: "+ new Gson().toJson(productObj) );
         GlobalFunctions.startActivityWithoutAnimation(activity, DealDetailActivity.class, bundle);
     }
-
-
     @Override
     public int getItemCount() {
 //        if (homeObjList != null)
@@ -381,5 +373,4 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
 
         }
     }
-
 }

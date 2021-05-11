@@ -58,7 +58,7 @@
             android:background="@color/colorPrimary"
             app:tabGravity="fill"
             app:tabMode="scrollable"
-            app:tabTextAppearance="@style/TextAppearance.AppCompat.Small" />
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"

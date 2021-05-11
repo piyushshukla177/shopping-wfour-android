@@ -70,7 +70,7 @@
                         android:inputType="textCapWords"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black_transparent_50"
-                        android:textSize="@dimen/text_size_small" />
+                        android:textSize="@dimen/text_size_normal" />
 
                     <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
                         android:id="@+id/txt_password"
@@ -86,7 +86,7 @@
                         android:fontFamily="@font/inter_regular"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black_transparent_50"
-                        android:textSize="@dimen/text_size_small"
+                        android:textSize="@dimen/text_size_normal"
                         tools:ignore="MissingClass" />
 
                     <LinearLayout
@@ -155,7 +155,7 @@
                     android:layout_marginTop="@dimen/dimen_2x"
                     android:layout_width="match_parent"
                     android:padding="@dimen/dimen_2x"
-                    android:textSize="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size_normal"
                     android:text="@string/don_t_have_account_register_here"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="@color/black"

@@ -31,8 +31,8 @@
                 android:padding="10dp">
 
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:src="@drawable/next_gray" />
 
                 <TextView
@@ -41,11 +41,11 @@
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/inter_regular"
                     android:text="Delivery"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/next_red" />
 
@@ -55,11 +55,11 @@
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/inter_regular"
                     android:text="Payment"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
 
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/next_gray" />
 
@@ -69,7 +69,7 @@
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/inter_regular"
                     android:text="Confirm"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_normal" />
             </LinearLayout>
 
         </RelativeLayout>

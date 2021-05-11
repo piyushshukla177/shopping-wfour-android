@@ -194,7 +194,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="Naran"
             android:textColor="#D7D7D7"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <TextView
             android:id="@+id/name_tv"
@@ -204,7 +204,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="Melania Flora Pereira"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="Email"
             android:textColor="#D7D7D7"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <TextView
             android:id="@+id/email_tv"
@@ -223,7 +223,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="melaniaflorapereira@gmail.com"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
                 android:fontFamily="@font/inter_semibold"
                 android:text="Numeru Telemovel"
                 android:textColor="#D7D7D7"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -248,7 +248,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:text="verfied"
                 android:textColor="#E12B2B"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
 
         </LinearLayout>
 
@@ -259,7 +259,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="77391203"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -268,7 +268,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="Enderesu"
             android:textColor="#D7D7D7"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <TextView
             android:id="@+id/address_tv"
@@ -278,7 +278,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="Bemori Centro Has-Laran"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -292,7 +292,7 @@
                 android:fontFamily="@font/inter_semibold"
                 android:text="Member Number"
                 android:textColor="#D7D7D7"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -302,7 +302,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:text="verfied"
                 android:textColor="#E12B2B"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_normal" />
 
         </LinearLayout>
 
@@ -315,7 +315,7 @@
             android:fontFamily="@font/inter_semibold"
             android:text="010101010101010010"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_normal" />
 
 
         <TextView
@@ -329,7 +329,7 @@
             android:text="@string/Edit_Profile"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_small"
+            android:textSize="@dimen/text_size_normal"
             android:textStyle="bold" />
     </LinearLayout>
 
