@@ -1,6 +1,5 @@
 package com.wfour.onlinestoreapp.view.fragments;
 
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -132,9 +131,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
 
     private ShapeableImageView search_bar;
 
-
     private MainActivity mMainActivity;
-
 
     private ArrayList<RecomendedObj> recomendedlist = new ArrayList<>();
     RecyclerView recomended_recyclerview;
@@ -194,6 +191,8 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         btnSearchBar.setVisibility(View.VISIBLE);
         btnNotifyBar.setVisibility(View.VISIBLE);
         toolbars.setVisibility(View.VISIBLE);
+        toolbars.setBackgroundResource(R.drawable.gradient_toolbar_shape);
+
     }
 
     public void initSearch(View view) {

@@ -78,7 +78,8 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MyViewHolder> 
             holder.tvStatus.setText(AppController.getInstance().getString(R.string.not_paid));
         } else if (orderObj.getStatus().equals("5")) {
             holder.tvStatus.setText(R.string.delivery);
-        } else {
+        }
+        else {
             holder.tvStatus.setText(AppController.getInstance().getString(R.string.rejected));
             if (orderObj.getPaymentMethod().equals("point")) {
                 holder.tvStatus.setText(R.string.troka_ona);

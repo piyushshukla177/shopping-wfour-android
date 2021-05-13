@@ -132,14 +132,19 @@ public class TabAllFragment extends Fragment {
                 if (obj.getStatus().equals("3")) {
                     filter_list.add(obj);
                 }
-            } else if (index == 3) {
+            } else if (index == 4) {
                 obj = orderObjList.get(i);
                 if (obj.getStatus().equals("5")) {
                     filter_list.add(obj);
                 }
-            } else if (index == 4) {
+            } else if (index == 5) {
                 obj = orderObjList.get(i);
                 if (obj.getStatus().equals("2")) {
+                    filter_list.add(obj);
+                }
+            } else if (index == 3) {
+                obj = orderObjList.get(i);
+                if (obj.getPaymentMethod().equals("point")) {
                     filter_list.add(obj);
                 }
             }

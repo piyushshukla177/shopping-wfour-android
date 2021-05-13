@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.MenuItem;
 import android.view.View;
 
@@ -14,7 +15,7 @@ import com.wfour.onlinestoreapp.globals.GlobalFunctions;
 import com.wfour.onlinestoreapp.view.fragments.CartListFragment;
 import com.wfour.onlinestoreapp.view.fragments.HomeFragment;
 
-public class CartActivity extends BaseActivity implements View.OnClickListener  {
+public class CartActivity extends BaseActivity implements View.OnClickListener {
 
     private CartListFragment mFrgCartList;
     private Toolbar toolbar;
@@ -34,7 +35,7 @@ public class CartActivity extends BaseActivity implements View.OnClickListener  
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         addFragment();
-}
+    }
 
     @Override
     protected void getExtraValues() {
@@ -45,16 +46,14 @@ public class CartActivity extends BaseActivity implements View.OnClickListener  
     void inflateLayout() {
 
     }
-    public void addFragment(){
+
+    public void addFragment() {
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            if (mFrgCartList == null) {
-                mFrgCartList = CartListFragment.newInstance();
-            }
-            fragmentTransaction.replace(R.id.frgCart, mFrgCartList).commit();
+        if (mFrgCartList == null) {
+            mFrgCartList = CartListFragment.newInstance();
+        }
+        fragmentTransaction.replace(R.id.frgCart, mFrgCartList).commit();
     }
-
-
-
 
     @Override
     void initUI() {

@@ -24,7 +24,6 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:theme="@style/ToolbarStyle">
 
-
                <TextView
                    android:id="@+id/tv_title"
                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
@@ -48,7 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/appbar"
-
         android:orientation="vertical">
 
         <com.google.android.material.tabs.TabLayout
@@ -57,8 +55,8 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             app:tabGravity="fill"
-            app:tabMode="scrollable"
-            app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium" />
+            app:tabTextAppearance="@style/MineCustomTabText"
+            app:tabMode="scrollable" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -67,11 +65,6 @@
             android:layout_below="@+id/tabs"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/contentRcl"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:visibility="gone" />-->
     </LinearLayout>
 
 </RelativeLayout>

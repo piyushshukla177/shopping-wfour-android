@@ -377,5 +377,7 @@
 
     <style name="edt_line_red">edt_line_red</style>
 
-
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>
+    </style>
 </resources>

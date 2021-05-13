@@ -114,9 +114,14 @@ public class BillManagementFragment extends BaseFragment {
                 } else if (tab.getPosition() == 3) {
 
                     TabAllFragment.ttt.setAdapter(3);
-                } else if (tab.getPosition() == 4) {
+                }
+                else if (tab.getPosition() == 4) {
 
                     TabAllFragment.ttt.setAdapter(4);
+                }
+                else if (tab.getPosition() == 5) {
+
+                    TabAllFragment.ttt.setAdapter(5);
                 }
             }
 
@@ -208,8 +213,10 @@ public class BillManagementFragment extends BaseFragment {
         adapter.addFragment(new TabAllFragment(), "All");
         adapter.addFragment(new TabAllFragment(), "Prosesu");
         adapter.addFragment(new TabAllFragment(), "Haruka Ona");
+        adapter.addFragment(new TabAllFragment(), "Troka Ona");
         adapter.addFragment(new TabAllFragment(), "Selu Ona");
         adapter.addFragment(new TabAllFragment(), "Kansela");
+
         viewPager.setAdapter(adapter);
     }
 

@@ -136,7 +136,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     public static FragmentTransaction fragmentTransaction;
     public static CartListFragment mCartFragment;
 
-
     String action = "";
 
     @Override
@@ -702,7 +701,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                         }
                     }
                 }
-
                 @Override
                 public void onError() {
                     Log.e(TAG, "ERROR: GET DETAIL DEAL");
@@ -713,7 +711,3 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         }
     }
 }
-
-/*
-https://drive.google.com/file/d/16EuycwaRXlYNpYW1r2_HCYIfGy-0vQrS/view?usp=sharing
- */

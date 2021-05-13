@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,8 +63,7 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
     private AppCompatButton btnOrder;
     private DealObj item;
     private static final int RC_ACTIVATE_DEAL = 1;
-    private Bundle bundle;
-    //  private ArrayList<ProductObj> cartObjList;
+    private Bundle bundle;//  private ArrayList<ProductObj> cartObjList;
     private ArrayList<CartObj> cartObjList;
     private RecyclerView contentRcl;
     private CartAdapter pAdapter;
@@ -85,7 +85,7 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
     private RecomendedListAdapter recomendedAdapter;
     public static FragmentTransaction fragmentTransaction;
     public static HomeFragment mHomeFragment;
-
+    ImageView back_imageview;
     CardView total_cardview;
 
     public static CartListFragment newInstance() {
@@ -115,10 +115,12 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
         if (toolbars != null) {
             initRemoveActionBar(view);
         }
+
         llNoData = (LinearLayout) view.findViewById(R.id.ll_no_data);
         total_cardview = view.findViewById(R.id.total_cardview);
         tvMoney = view.findViewById(R.id.tvMoney);
         btnOrder = view.findViewById(R.id.btnOrder);
+        back_imageview = view.findViewById(R.id.back_imageview);
         shop_now_textview = view.findViewById(R.id.shop_now_textview);
         recomended_recyclerview = view.findViewById(R.id.recomended_recyclerview);
         btnOrder.setOnClickListener(this);
@@ -137,8 +139,7 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
 
 
                             mBottomNavigationView.setSelectedItemId(R.id.home_menu);
-                        }else
-                        {
+                        } else {
                             Intent intent = new Intent(self, MainActivity.class);
                             startActivity(intent);
                             getActivity().finish();
@@ -191,6 +192,29 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
         contentRcl.setAdapter(pAdapter);
 
         setRecomendedRecyclerview();
+        back_imageview.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        BottomNavigationView mBottomNavigationView = getActivity().findViewById(R.id.nav_main);
+                        if (mBottomNavigationView != null) {
+
+                            fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                            if (mHomeFragment == null) {
+                                mHomeFragment = HomeFragment.newInstance(Args.TYPE_OF_CATEGORY_ALLS);
+                            }
+                            fragmentTransaction.replace(R.id.frl_main, mHomeFragment).commit();
+
+
+                            mBottomNavigationView.setSelectedItemId(R.id.home_menu);
+                        } else {
+                            Intent intent = new Intent(self, MainActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
+                        }
+                    }
+                }
+        );
     }
 
     public void initRemoveActionBar(View view) {

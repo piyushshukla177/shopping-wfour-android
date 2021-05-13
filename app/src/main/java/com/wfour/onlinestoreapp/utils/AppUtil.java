@@ -247,7 +247,11 @@ public class AppUtil {
         // return display.getWidth();
 
         DisplayMetrics dm = new DisplayMetrics();
-        act.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        if(act!=null)
+        {
+            act.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        }
+
         return dm.widthPixels;
     }
 
