@@ -88,9 +88,6 @@ public class AdapterWhistList extends RecyclerView.Adapter<AdapterWhistList.MyVi
             }
         });
 
-
-
-
     }
 
 

@@ -1,15 +1,19 @@
 package com.wfour.onlinestoreapp.view.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import com.wfour.onlinestoreapp.R;
@@ -28,6 +32,7 @@ import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.utils.AppUtil;
 import com.wfour.onlinestoreapp.view.activities.CartActivity;
 import com.wfour.onlinestoreapp.view.activities.DealDetailActivity;
+import com.wfour.onlinestoreapp.view.activities.MainActivity;
 import com.wfour.onlinestoreapp.view.adapters.AdapterWhistList;
 import com.wfour.onlinestoreapp.widgets.onscroll.EndlessRecyclerOnScrollListener;
 
@@ -44,7 +49,8 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
     private ArrayList<CartObj> cartObjList;
     private int count;
     private CartObj cart;
-    private String color,size;
+    private String color, size;
+    public HomeFragment mHomeFragment;
 
     public static FragmentWhisList newInstance() {
         Bundle args = new Bundle();
@@ -96,7 +102,7 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
         setAppBar(view);
     }
 
-    public void setAppBar(View view){
+    public void setAppBar(View view) {
         MaterialToolbar toolbars = getActivity().findViewById(R.id.toolbar);
         ShapeableImageView logoAppBar = getActivity().findViewById(R.id.logo_appbar);
         ShapeableImageView btnSearchBar = getActivity().findViewById(R.id.mis_action_search);
@@ -107,6 +113,7 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
         btnSearchBar.setVisibility(View.GONE);
         btnNotifyBar.setVisibility(View.GONE);
         toolbars.setVisibility(View.VISIBLE);
+        toolbars.setBackgroundResource(R.drawable.red_toolbar_shape);
     }
 
     @Override
@@ -116,12 +123,13 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
 
     private void getWhistList() {
         if (NetworkUtility.getInstance(self).isNetworkAvailable()) {
-            RequestManger.getListFavorite(DataStoreManager.getUser().getId(), "deal", page, 10, new BaseRequest.CompleteListener() {
+            RequestManger.getListFavorite(DataStoreManager.getUser().getId(), "deal", page, 50, new BaseRequest.CompleteListener() {
                 @Override
                 public void onSuccess(ApiResponse response) {
                     if (!response.isError()) {
                         list.addAll(response.getDataList(ProductObj.class));
                         adapter.addList(list);
+                        adapter.notifyDataSetChanged();
                         onScrollListener.onLoadMoreComplete();
                         onScrollListener.setEnded(ApiResponse.isEnded(response, page));
                     }
@@ -132,7 +140,7 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
                     Log.e(TAG, "onError: " + message);
                 }
             });
-        }else {
+        } else {
             AppUtil.showToast(self, R.string.no_connection);
         }
     }
@@ -150,7 +158,11 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
                 @Override
                 public void onSuccess(ApiResponse response) {
                     AppUtil.showToast(self, getString(R.string.remove_success));
-                    list.remove(position);
+                    try {
+                        list.remove(position);
+                    } catch (ArrayIndexOutOfBoundsException ex) {
+                        ex.printStackTrace();
+                    }
                     adapter.notifyDataSetChanged();
                 }
 
@@ -177,12 +189,12 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
 
     private void setOrder(ProductObj item) {
 
-        if(item.getColors().size()>0){
-             color = item.getColors().get(0).getColor();
+        if (item.getColors().size() > 0) {
+            color = item.getColors().get(0).getColor();
         }
-       if(item.getSizes().size()>0){
-           size = item.getSizes().get(0).getSize();
-       }
+        if (item.getSizes().size() > 0) {
+            size = item.getSizes().get(0).getSize();
+        }
 
         cartObjList = CartManager.getInstance().getArray();
         if (cartObjList.size() != 0) {
@@ -240,5 +252,44 @@ public class FragmentWhisList extends BaseFragment implements EndlessRecyclerOnS
         count++;
         //getContext().invalidateOptionsMenu();
         DataStoreManager.saveCountCart(count);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (getView() == null) {
+            return;
+        }
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    // handle back button's click listener
+                    BottomNavigationView mBottomNavigationView = getActivity().findViewById(R.id.nav_main);
+                    if (mBottomNavigationView != null) {
+
+                        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        if (mHomeFragment == null) {
+                            mHomeFragment = HomeFragment.newInstance(Args.TYPE_OF_CATEGORY_ALLS);
+                        }
+                        fragmentTransaction.replace(R.id.frl_main, mHomeFragment).commit();
+
+                        mBottomNavigationView.setSelectedItemId(R.id.home_menu);
+                    } else {
+                        Intent intent = new Intent(self, MainActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

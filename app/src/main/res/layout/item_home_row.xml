@@ -20,6 +20,7 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/relative"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/dimen_1x">
@@ -29,9 +30,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="@dimen/dimen_1x"
+                    android:layout_marginLeft="7dp"
+                    android:fontFamily="@font/inter_extrabold"
                     android:text="Naran"
-                    android:textColor="@color/textColorBlackPrimary"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size_xnormal" />
 
                 <LinearLayout
@@ -116,14 +118,13 @@
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
-
                 <TextView
                     android:id="@+id/tvMore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/dimen_1x"
                     android:text="Hare liu tan"
+                    android:layout_marginRight="7dp"
                     android:textColor="@color/com_facebook_messenger_blue"
                     android:textSize="@dimen/text_size_xnormal" />
             </RelativeLayout>

@@ -521,6 +521,7 @@
             android:background="@color/bg_deal_list" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_logout"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="30dp"

@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/min_height_img"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingLeft="1dp"
     android:paddingTop="2dp"
     android:paddingRight="1dp"
-    android:paddingBottom="2dp">
+    android:paddingBottom="2dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp">
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:elevation="@dimen/dimen_1x"
         app:cardElevation="1dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dimen_05x"
-            android:background="@drawable/bg_item_horizontal">
+            android:layout_height="150dp"
+            android:background="@drawable/bg_item_horizontal"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/img_avatar"
@@ -30,61 +33,66 @@
                 android:layout_marginLeft="@dimen/dimen_x05x"
                 android:layout_marginTop="@dimen/dimen_x05x"
                 android:layout_marginRight="@dimen/dimen_x05x"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_add" />
 
-            <LinearLayout
-                android:id="@+id/rlt_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="@dimen/dimen_x05x"
-                android:layout_marginRight="@dimen/dimen_x05x"
-                android:layout_marginBottom="@dimen/dimen_x05x"
-                android:background="@color/backgroundColor"
-                android:orientation="vertical">
+        </LinearLayout>
 
-                <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
-                    android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dimen_05x"
-                    android:ellipsize="end"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="Ronaldo Ronaldo"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_xnormal"
-                    android:visibility="visible" />
-             <LinearLayout
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="horizontal">
-                 <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
-                     android:id="@+id/lbl_price"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginLeft="@dimen/dimen_05x"
-                     android:layout_marginBottom="@dimen/dimen_05x"
-                     android:ellipsize="marquee"
-                     android:marqueeRepeatLimit="marquee_forever"
-                     android:singleLine="true"
-                     android:text="$10"
-                     android:textColor="@color/text_color_price"
-                     android:textSize="@dimen/text_size_xnormal"
-                     android:textStyle="bold" />
-
-                 <com.wfour.onlinestoreapp.widgets.textview.TextViewLightItalic
-                     android:id="@+id/lbl_price_old"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="ABC"
-                     android:textSize="@dimen/text_size_small"
-                     android:layout_marginLeft="10dp"
-                     />
-             </LinearLayout>
-
-            </LinearLayout>
-        </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/rlt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dimen_x05x"
+        android:layout_marginRight="@dimen/dimen_x05x"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/dimen_x05x"
+        android:background="@color/white"
+        android:orientation="vertical">
+<!--backgroundcolor-->
+        <com.wfour.onlinestoreapp.widgets.textview.TextViewRegular
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_05x"
+            android:ellipsize="end"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="Ronaldo Ronaldo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_xnormal"
+            android:visibility="visible" />
+ e
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
+                android:id="@+id/lbl_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_05x"
+                android:layout_marginBottom="@dimen/dimen_05x"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="$10"
+                android:textColor="@color/text_color_price"
+                android:textSize="@dimen/text_size_xnormal"
+                android:textStyle="bold" />
+
+            <com.wfour.onlinestoreapp.widgets.textview.TextViewLightItalic
+                android:id="@+id/lbl_price_old"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ABC"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

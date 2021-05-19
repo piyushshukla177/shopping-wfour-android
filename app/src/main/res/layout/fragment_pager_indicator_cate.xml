@@ -6,10 +6,10 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitStart"
-        android:src="@drawable/bg_header_banner" />
-
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/slide_background" />
+<!--    bg_header_banner-->
     <androidx.cardview.widget.CardView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
@@ -17,10 +15,9 @@
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:gravity="center"
         android:text=""
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/text_size_xnormal"
         android:maxLines="1"
         android:textStyle="bold"
         android:singleLine="true"

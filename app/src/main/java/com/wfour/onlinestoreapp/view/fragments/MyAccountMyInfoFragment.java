@@ -21,10 +21,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.wfour.onlinestoreapp.AppController;
 import com.wfour.onlinestoreapp.R;
 import com.wfour.onlinestoreapp.base.ApiResponse;
@@ -73,11 +75,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-/**
- * Created by Suusoft on 01/12/2016.
- */
-
 public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClickListener, IObserver {
     private static final String TAG = MyAccountMyInfoFragment.class.getName();
     private static final int RC_ADDRESS = 134;
@@ -90,7 +87,8 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
     private ImageView imgSymbolAccount;
     private FrameLayout frDivider;
     private TextViewRegular btnEdit;
-    private TextViewRegular tvChangePassword, tvNumRate, btnViewReviews, tvLogout;
+    private TextViewRegular tvChangePassword, tvNumRate, btnViewReviews ;
+    AppCompatButton tvLogout;
     private TextView tvPhoneCode, tvEg;
     private RelativeLayout btnSave, bill_relative;
     private TextView tvFunction, tvPoint;
@@ -147,7 +145,7 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
 
         btnEdit = view.findViewById(R.id.btn_edit_infomation);
         tvChangePassword = view.findViewById(R.id.tv_change_password);
-        //  tvLogout = (TextViewRegular) view.findViewById(R.id.tv_logout);
+          tvLogout =view.findViewById(R.id.tv_logout);
         //btnSave = view.findViewById(R.id.btn_functions);
         //tvFunction = view.findViewById(R.id.tv_btn);
         //btnSave.setVisibility(View.GONE);
@@ -200,7 +198,7 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
         imgEditAvatar.setOnClickListener(this);
         btnEdit.setOnClickListener(this);
         tvChangePassword.setOnClickListener(this);
-        //tvLogout.setOnClickListener(this);
+        tvLogout.setOnClickListener(this);
         btnViewReviews.setOnClickListener(this);
         //btnSave.setOnClickListener(this);
         tvPhoneCode.setOnClickListener(this);
@@ -284,13 +282,13 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
             Intent intent = new Intent(getActivity(), ChangePassWordActivity.class);
             startActivityForResult(intent, RQ_CHANGE_PASS);
         }
-//        else if(view == tvLogout){
-//            if (DataStoreManager.getUser() != null) {
-//                logout();
-//            } else {
-//                AppUtil.showToast(self, "No Account");
-//            }
-//        }
+        else if(view == tvLogout){
+            if (DataStoreManager.getUser() != null) {
+                logout();
+            } else {
+                AppUtil.showToast(self, "No Account");
+            }
+        }
         else if (view == imgEditAvatar) {
             Intent intent = new Intent(getActivity(), ViewProfileActivity.class);
             startActivity(intent);
@@ -732,6 +730,45 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(GlobalFunctions.updateBalance event) {
         getProfile();
+    }
+    public  HomeFragment mHomeFragment;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(getView() == null){
+            return;
+        }
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                    // handle back button's click listener
+                    BottomNavigationView mBottomNavigationView = getActivity().findViewById(R.id.nav_main);
+                    if (mBottomNavigationView != null) {
+
+                        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        if (mHomeFragment == null) {
+                            mHomeFragment = HomeFragment.newInstance(Args.TYPE_OF_CATEGORY_ALLS);
+                        }
+                        fragmentTransaction.replace(R.id.frl_main, mHomeFragment).commit();
+
+                        mBottomNavigationView.setSelectedItemId(R.id.home_menu);
+                    } else {
+                        Intent intent = new Intent(self, MainActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
 }

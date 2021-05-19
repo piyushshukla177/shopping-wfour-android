@@ -181,12 +181,8 @@ public class ProductListActivity extends BaseActivity {
     void initUI() {
 
     }
-
     @Override
     void initControl() {
 
     }
-
-
-
 }

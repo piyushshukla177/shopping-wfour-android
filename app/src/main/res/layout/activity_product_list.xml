@@ -10,7 +10,6 @@
 
     <include layout="@layout/toolbar"></include>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_data"
         android:layout_width="match_parent"
@@ -21,6 +20,5 @@
     <include layout="@layout/layout_no_data" />
 
     <include layout="@layout/layout_no_connection" />
-
 
 </LinearLayout>

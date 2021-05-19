@@ -125,6 +125,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             MyViewHolder viewHolder = (MyViewHolder) holder;
             final HomeObj homeObj = homeObjList.get(position);
             viewHolder.tvName.setText(homeObj.name);
+
             if (homeObj.name.equals(AppController.getInstance().getString(R.string.PRODUTUFOUN))) {
                 Log.e(TAG, "setData: "+ new Gson().toJson(homeObj.productList) );
                 viewHolder.rcvData.setAdapter(new SingleVerticalAdapter(activity, homeObj.productList, new IMyOnClick() {
@@ -147,6 +148,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                 });
             }
             else if (homeObj.name.equals(AppController.getInstance().getString(R.string.CATEGORIES))) {
+//                viewHolder.tvName.setVisibility(View.GONE);
                 viewHolder.rcvData.setLayoutManager(new GridLayoutManager(activity, 2,GridLayoutManager.HORIZONTAL, false));
                 viewHolder.rcvData.setAdapter(new CategoryAdapter(activity, homeObj.categoryList, new MyOnClickCategory() {
                     @Override
@@ -177,12 +179,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                     }
                 }));
                 viewHolder.rcvData.setBackgroundColor(Color.WHITE);
-                viewHolder.tvMore.setVisibility(View.GONE);
+                viewHolder.relative.setVisibility(View.GONE);
             }
             else if (homeObj.type.equals("TYPE")) {
                 String name = homeObj.name;
                 if(homeObj.name.equals("SALE PRODUCT")){
-                    viewHolder.tvName.setTextColor(Color.parseColor("#f22a2a"));
                     viewHolder.lv_count_down.setVisibility(View.VISIBLE);
                 } else {
                     viewHolder.lv_count_down.setVisibility(View.GONE);
@@ -217,7 +218,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                         } else if (homeObj.name.equals(AppController.getInstance().getString(R.string.PRODUCTPROMOTION))) {
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
                             bundle.putString(Args.FILTER, "new");
-                        } else if (homeObj.name.equals("Sale Product")){
+                        }
+                        else if (homeObj.name.equals("Sale Product")){
+                            bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
+                            bundle.putString(Args.FILTER, "hot");
+                        }
+                        else if (homeObj.name.equals("REKOMENDA")){
+                            bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
+                            bundle.putString(Args.FILTER, "hot");
+                        } else if (homeObj.name.equals("PRODUTU POPULAR")){
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
                             bundle.putString(Args.FILTER, "hot");
                         }
@@ -265,6 +274,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
         TextView tvName, tvMore;
         LinearLayout lv_count_down;
         RecyclerView rcvData;
+        RelativeLayout relative;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -272,6 +282,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             tvName = (TextView) itemView.findViewById(R.id.tvName);
             rcvData = (RecyclerView) itemView.findViewById(R.id.rcv_data);
             lv_count_down = (LinearLayout) itemView.findViewById(R.id.lv_count_down);
+            relative =  itemView.findViewById(R.id.relative);
         }
     }
 

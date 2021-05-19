@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -90,7 +93,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     public static final int FEATURE_LIST = 2;
     public static final int CATEGORY = 3;
     private GroupChannel channel;
-
     private int widthScreen;
     private int heightScreen;
     /*view pager*/
@@ -160,7 +162,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         View view = super.onCreateView(inflater, container, savedInstanceState);
         mMainActivity = (MainActivity) getActivity();
         recomended_recyclerview = view.findViewById(R.id.recomended_recyclerview);
-
+//        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return view;
     }
 
@@ -187,6 +189,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         ShapeableImageView btnNotifyBar = getActivity().findViewById(R.id.mis_action_notification);
         MaterialTextView titleBar = getActivity().findViewById(R.id.tv_title);
         titleBar.setText("WFOUR");
+//        titleBar.setTextColor(color.);
         logoAppBar.setVisibility(View.VISIBLE);
         btnSearchBar.setVisibility(View.VISIBLE);
         btnNotifyBar.setVisibility(View.VISIBLE);
@@ -265,6 +268,9 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         GlobalFunctions.getCountCart(cartList, count);
         count = DataStoreManager.getCountCart();
         getActivity().invalidateOptionsMenu();
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
+
     }
 
     @Override
@@ -511,8 +517,8 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                             for (int j = 0; j < m.getData().get(i).getImage_files().size(); j++) {
                                 image_files.add(m.getData().get(i).getImage_files().get(j));
                             }
-                            ArrayList<SizeProduct> size_list=new ArrayList<>();
-                            ArrayList<ColorProduct> color_list=new ArrayList<>();
+                            ArrayList<SizeProduct> size_list = new ArrayList<>();
+                            ArrayList<ColorProduct> color_list = new ArrayList<>();
                             p.setSizes(size_list);
                             p.setColors(color_list);
                             p.setImage_files(image_files);
@@ -596,8 +602,8 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                             for (int j = 0; j < m.getData().get(i).getImage_files().size(); j++) {
                                 image_files.add(m.getData().get(i).getImage_files().get(j));
                             }
-                            ArrayList<SizeProduct> size_list=new ArrayList<>();
-                            ArrayList<ColorProduct> color_list=new ArrayList<>();
+                            ArrayList<SizeProduct> size_list = new ArrayList<>();
+                            ArrayList<ColorProduct> color_list = new ArrayList<>();
                             p.setSizes(size_list);
                             p.setColors(color_list);
                             p.setImage_files(image_files);
@@ -641,4 +647,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
 //        recomended_recyclerview.setLayoutManager(linearLayout);
 //        recomended_recyclerview.setAdapter(recomendedAdapter);
 //    }
+
+
 }

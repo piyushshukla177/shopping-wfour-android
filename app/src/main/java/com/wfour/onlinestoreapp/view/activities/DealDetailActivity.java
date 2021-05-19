@@ -154,13 +154,11 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     }
 
     @Override
-
     protected void getExtraData(Intent intent) {
         args = intent.getExtras();
         if (args != null) {
             cartString = args.getString("cart");
             item = args.getParcelable(Args.KEY_PRODUCT_OBJECT);
-
             return;
         }
     }
@@ -494,6 +492,9 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
     private void addFavorite() {
         if (DataStoreManager.getUser() != null) {
+            Log.e("user_id ",DataStoreManager.getUser().getId());
+            Log.e("item_id ",item.getId());
+            Log.e("object_type","deal");
             RequestManger.addFavorite(DataStoreManager.getUser().getId(), item.getId(), "deal", new BaseRequest.CompleteListener() {
                 @Override
                 public void onSuccess(com.wfour.onlinestoreapp.network.ApiResponse response) {
@@ -511,7 +512,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                 }
             });
         }
-
     }
 
     private void getFavorite() {

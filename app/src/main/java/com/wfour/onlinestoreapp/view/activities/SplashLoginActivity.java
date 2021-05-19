@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.RequestQueue;
@@ -57,7 +58,7 @@ public class SplashLoginActivity extends BaseActivity implements View.OnClickLis
     private TextView mLblSignUp;
     private TextViewCondensedItalic tvGuide;
 
-    private LinearLayout mLblFacebook, mLblGoogle;
+    private RelativeLayout mLblFacebook, mLblGoogle;
 
     private GoogleApiClient mGoogleApiClient;
 

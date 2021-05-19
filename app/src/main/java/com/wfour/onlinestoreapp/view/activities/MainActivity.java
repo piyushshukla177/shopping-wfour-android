@@ -5,12 +5,14 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -132,7 +134,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public static final String LOG_OUT = "LOG_OUT";
     public static final String FRAG_WHISLIST = "WHISLIST";
 
-
     public static FragmentTransaction fragmentTransaction;
     private DrawerLayout mDrawer;
     private NavigationView mNavigationView;
@@ -186,6 +187,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         super.onCreate(savedInstanceState);
         //initGoogleApiClient();
         // Get saved instances
+
         if (savedInstanceState != null) {
             mFavoriteFragment = (FragmentFavorite) getSupportFragmentManager().getFragment(savedInstanceState, FRAG_HOME);
             mFrgDealManager = (DealManagerFragment) getSupportFragmentManager().getFragment(savedInstanceState, FRAG_DEAL_MANAGER);
@@ -229,6 +231,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     void inflateLayout() {
+
         setContentView(R.layout.activity_main);
     }
 
@@ -290,6 +293,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -360,18 +364,25 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             }
                             break;
                         case R.id.cart_menu:
-//                            GlobalFunctions.startActivityWithoutAnimation(self, CartActivity.class);
-                            fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                            if (DataStoreManager.getUser() != null) {
-                                if (cartlistFragment == null) {
-                                    cartlistFragment = CartListFragment.newInstance();
-                                }
-                                fragmentTransaction.replace(R.id.frl_main, cartlistFragment).commit();
+                            if(DataStoreManager.getUser() != null)
+                            {
+                                GlobalFunctions.startActivityWithoutAnimation(self, CartActivity.class);
 
-                                setTitle(R.string.profile);
-                            } else {
+                            }else
+                            {
                                 showLogout();
                             }
+//                            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//                            if (DataStoreManager.getUser() != null) {
+//                                if (cartlistFragment == null) {
+//                                    cartlistFragment = CartListFragment.newInstance();
+//                                }
+//                                fragmentTransaction.replace(R.id.frl_main, cartlistFragment).commit();
+//
+//                                setTitle(R.string.profile);
+//                            } else {
+//                                showLogout();
+//                            }
                             break;
                         case R.id.akun_menu:
 
@@ -881,14 +892,33 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         getExtra(intent);
     }
 
+    boolean doubleBackToExitPressedOnce = false;
+
     @Override
     public void onBackPressed() {
-        //if (mDrawer.isDrawerOpen(GravityCompat.START)) {
-        //    mDrawer.closeDrawer(GravityCompat.START);
-        //} else {
-        super.onBackPressed();
-        //}
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click back again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
+//
+//    @Override
+//    public void onBackPressed() {
+//        //if (mDrawer.isDrawerOpen(GravityCompat.START)) {
+//        //    mDrawer.closeDrawer(GravityCompat.START);
+//        //} else {
+//        super.onBackPressed();
+//        //}
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -1169,7 +1199,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 });
             }
         });
-
     }
 
     private void updateDriverLocation() {
@@ -1323,7 +1352,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             userObj.setPassWord(passWord);
                             userObj.setRememberMe(DataStoreManager.getUser().isRememberMe());
                             //tvMoney.setText("POINT " + StringUtil.convertNumberToString(userObj.getPoint(), 0));
-
 
                             DataStoreManager.saveUser(userObj);
                             AppController.getInstance().setUserUpdated(true);

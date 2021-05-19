@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -379,7 +380,43 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
             }
         });
     }
+    @Override
+    public void onResume() {
+        super.onResume();
 
+        if(getView() == null){
+            return;
+        }
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                    // handle back button's click listener
+                    BottomNavigationView mBottomNavigationView = getActivity().findViewById(R.id.nav_main);
+                    if (mBottomNavigationView != null) {
+
+                        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        if (mHomeFragment == null) {
+                            mHomeFragment = HomeFragment.newInstance(Args.TYPE_OF_CATEGORY_ALLS);
+                        }
+                        fragmentTransaction.replace(R.id.frl_main, mHomeFragment).commit();
+
+                        mBottomNavigationView.setSelectedItemId(R.id.home_menu);
+                    } else {
+                        Intent intent = new Intent(self, MainActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
 //    public void setAppBar(View view) {
 //        MaterialToolbar toolbars = getActivity().findViewById(R.id.toolbar);
 //        ShapeableImageView logoAppBar = getActivity().findViewById(R.id.logo_appbar);
