@@ -53,6 +53,10 @@
         <item name="android:background">@drawable/bg_button</item>
     </style>
 
+    <style name="Button.With_Radius">
+        <item name="android:background">@drawable/bg_btn_radius</item>
+    </style>
+
     <style name="Button.Accent">
         <item name="android:background">@drawable/bg_pressed_accent</item>
     </style>

@@ -9,10 +9,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,9 +22,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
@@ -138,6 +133,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     private ArrayList<RecomendedObj> recomendedlist = new ArrayList<>();
     RecyclerView recomended_recyclerview;
     private RecomendedListAdapter recomendedAdapter;
+    SwipeRefreshLayout swipe_refresh_layout;
 
     public static HomeFragment newInstance(int type) {
 
@@ -161,8 +157,16 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                              Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         mMainActivity = (MainActivity) getActivity();
+        swipe_refresh_layout = view.findViewById(R.id.swipe_refresh_layout);
+        swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getData();
+            }
+        });
+
         recomended_recyclerview = view.findViewById(R.id.recomended_recyclerview);
-//        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //     getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return view;
     }
 
@@ -269,8 +273,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         count = DataStoreManager.getCountCart();
         getActivity().invalidateOptionsMenu();
 //        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
-
-
     }
 
     @Override
@@ -323,7 +325,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
 
                 @Override
                 public void onError() {
-
+                    swipe_refresh_layout.setRefreshing(false);
                 }
             });
         }
@@ -369,7 +371,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         listAdapter.addList(homeObjList);
         setPopularRecyclerview();
         setRecomendedRecyclerview();
-
+        swipe_refresh_layout.setRefreshing(false);
     }
 
     @Override
@@ -647,6 +649,4 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
 //        recomended_recyclerview.setLayoutManager(linearLayout);
 //        recomended_recyclerview.setAdapter(recomendedAdapter);
 //    }
-
-
 }

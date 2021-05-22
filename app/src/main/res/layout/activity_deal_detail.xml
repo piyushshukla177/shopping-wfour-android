@@ -87,7 +87,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_margin="10dp"
-                            android:background="#77ffffff">
+                            android:background="#80ffffff">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -370,34 +370,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/card_edge"
-       >
+        android:background="@drawable/card_edge">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:padding="10dp"
-            android:orientation="horizontal">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/img_message"
-                android:layout_width="0dp"
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.1"
                 android:src="@drawable/ic_sms_24px" />
 
             <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
                 android:id="@+id/btnBuy"
-                style="@style/Button.Primary"
-                android:layout_width="0dp"
+                style="@style/Button.With_Radius"
+                android:layout_width="180dp"
                 android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_weight="0.7"
                 android:text="Buy Now"
                 android:textAllCaps="false"
                 android:textSize="@dimen/text_size_normal"
@@ -405,8 +402,9 @@
 
             <RelativeLayout
                 android:id="@+id/add_to_cart_relative"
-                android:layout_width="0dp"
+                android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_alignParentRight="true"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -419,7 +417,7 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/ic_add_shopping_cart_24px" />
             </RelativeLayout>
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

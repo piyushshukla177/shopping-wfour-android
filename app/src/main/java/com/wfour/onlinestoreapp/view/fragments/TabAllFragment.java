@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,6 +119,7 @@ public class TabAllFragment extends Fragment {
     public void setAdapter(int index) {
         OrderObj obj;
         filter_list.clear();
+        mAdapter.notifyDataSetChanged();
         int i = 0;
         while (i < orderObjList.size()) {
             if (index == 0) {
@@ -161,9 +163,10 @@ public class TabAllFragment extends Fragment {
             }
         });
         mAdapter.addList(filter_list);
-        mAdapter.notifyDataSetChanged();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         contentRcl.setLayoutManager(layoutManager);
         contentRcl.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+        Log.e("filter_list_size",String.valueOf(filter_list.size()));
     }
 }
