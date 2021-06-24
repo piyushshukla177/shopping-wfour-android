@@ -34,14 +34,12 @@ import java.util.ArrayList;
 
 public class TabAllFragment extends Fragment {
 
-    public static TabAllFragment ttt = null;
+//    public static TabAllFragment ttt = null;
     private RecyclerView contentRcl;
     private BillAdapter mAdapter;
     public static final int REQUEST_CODE = 100;
     private MainActivity mMainActivity;
 
-    public static ArrayList<OrderObj> orderObjList = new ArrayList<>();
-    public static ArrayList<OrderObj> filter_list = new ArrayList<>();
     Context context;
 
     @Override
@@ -50,7 +48,7 @@ public class TabAllFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_tab, container, false);
         init(root);
-        ttt = this;
+//        ttt = this;
         return root;
     }
 
@@ -59,9 +57,9 @@ public class TabAllFragment extends Fragment {
 
         context = getActivity();
         contentRcl = root.findViewById(R.id.contentRcl);
-//        initData();
+//      initData();
 
-        mAdapter = new BillAdapter(mMainActivity, orderObjList, 0, new MyOnClickOrderHistory() {
+        mAdapter = new BillAdapter(mMainActivity, BillManagementFragment.orderObjList, new MyOnClickOrderHistory() {
             @Override
             public void onClick(OrderObj orderObj, int position) {
                 Intent intent = new Intent(context, BillDetailActivity.class);
@@ -75,8 +73,8 @@ public class TabAllFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         contentRcl.setLayoutManager(layoutManager);
         contentRcl.setAdapter(mAdapter);
-
     }
+/*
 
     private void initData() {
         orderObjList.clear();
@@ -106,6 +104,7 @@ public class TabAllFragment extends Fragment {
 
         }
     }
+*/
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -116,7 +115,7 @@ public class TabAllFragment extends Fragment {
         }
     }
 
-    public void setAdapter(int index) {
+/*    public void setAdapter(int index) {
         OrderObj obj;
         filter_list.clear();
         mAdapter.notifyDataSetChanged();
@@ -144,7 +143,8 @@ public class TabAllFragment extends Fragment {
                 if (obj.getStatus().equals("2")) {
                     filter_list.add(obj);
                 }
-            } else if (index == 3) {
+            }
+            else if (index == 3) {
                 obj = orderObjList.get(i);
                 if (obj.getPaymentMethod().equals("point")) {
                     filter_list.add(obj);
@@ -168,5 +168,5 @@ public class TabAllFragment extends Fragment {
         contentRcl.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
         Log.e("filter_list_size",String.valueOf(filter_list.size()));
-    }
+    }*/
 }

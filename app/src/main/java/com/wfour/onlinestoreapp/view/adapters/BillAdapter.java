@@ -25,13 +25,11 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MyViewHolder> 
     private ArrayList<OrderObj> orderObjList;
     private MainActivity activity;
     private MyOnClickOrderHistory onItemClick;
-    public int tab_index;
 
-    public BillAdapter(MainActivity activity, ArrayList<OrderObj> orderObjList, int tab_index, MyOnClickOrderHistory onItemClick) {
+    public BillAdapter(MainActivity activity, ArrayList<OrderObj> orderObjList, MyOnClickOrderHistory onItemClick) {
         this.activity = activity;
         this.orderObjList = orderObjList;
         this.onItemClick = onItemClick;
-        this.tab_index = tab_index;
     }
 
     public void addList(ArrayList<OrderObj> orderObjList) {

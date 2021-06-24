@@ -3,7 +3,7 @@ package com.wfour.onlinestoreapp.view.activities;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.database.DataSetObserver;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
 
@@ -28,12 +28,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.wfour.onlinestoreapp.R;
 import com.wfour.onlinestoreapp.base.ApiResponse;
 import com.wfour.onlinestoreapp.datastore.DataStoreManager;
 import com.wfour.onlinestoreapp.network.BaseRequest;
 import com.wfour.onlinestoreapp.network.modelmanager.RequestManger;
+import com.wfour.onlinestoreapp.network.modelmanager.singletonmanager.CartManager;
 import com.wfour.onlinestoreapp.objects.CartObj;
 import com.wfour.onlinestoreapp.objects.DealReviewObj;
 import com.wfour.onlinestoreapp.objects.ProductObj;
@@ -53,16 +55,15 @@ import com.wfour.onlinestoreapp.objects.SettingsObj;
 import com.wfour.onlinestoreapp.utils.AppUtil;
 import com.wfour.onlinestoreapp.view.chat.mainchat.LoginChatActivity;
 import com.wfour.onlinestoreapp.view.fragments.CartListFragment;
-import com.wfour.onlinestoreapp.view.fragments.HomeFragment;
 import com.wfour.onlinestoreapp.widgets.recyclerview.EndlessRecyclerOnScrollListener;
 import com.wfour.onlinestoreapp.widgets.textview.TextViewBold;
 import com.wfour.onlinestoreapp.widgets.textview.TextViewRegular;
 
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import me.relex.circleindicator.CircleIndicator;
 
 /**
@@ -81,7 +82,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     /*reskin*/
     private ImageView img, imgContent, imgFavorite, back_imageview, cart_imageview, share_imageview;
     private TextView tvAddress, tvFavoriteCount, tvPrice, tvOldPrice, lblSalePercent,
-            tvName, tvAbout, tvFileName, lblRateQuantity, tvEndTime, tvDeal, btnBuy, tvContent, tvStatus, tvBrand, tvType, tvFavotite, image_number_tv,product_information_tv;
+            tvName, tvAbout, tvFileName, lblRateQuantity, tvEndTime, tvDeal, btnBuy, tvContent, tvStatus, tvBrand, tvType, tvFavotite, image_number_tv, product_information_tv;
     private WebView webview;
 
     private RelativeLayout btnDeal;
@@ -124,6 +125,10 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     private ImageView circleImageViewMessage;
 
     RelativeLayout add_to_cart_relative;
+    SharedPreferences prefs;
+    public static final String MyPREFERENCES = "last_seen_list";
+    SharedPreferences sharedPreferences;
+    static ArrayList<ProductObj> last_seen_List = new ArrayList<ProductObj>();
 
     public String getAction() {
         return action;
@@ -153,14 +158,61 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         return R.layout.activity_deal_detail;
     }
 
+    //add_last_seen
     @Override
     protected void getExtraData(Intent intent) {
         args = intent.getExtras();
         if (args != null) {
-            cartString = args.getString("cart");
-            item = args.getParcelable(Args.KEY_PRODUCT_OBJECT);
+            prefs = this.getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+            try {
+                Gson gson = new Gson();
+                String json = prefs.getString("codeList", null);
+                if (json != null) {
+                    Type type = new TypeToken<ArrayList<ProductObj>>() {
+                    }.getType();
+                    last_seen_List = gson.fromJson(json, type);
+//                    Log.e("lastseensize_in_deal", last_seen_List.size() + "");
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            try {
+                cartString = args.getString("cart");
+                item = args.getParcelable(Args.KEY_PRODUCT_OBJECT);
+
+                if (last_seen_List.size() == 4) {
+                    last_seen_List.remove(0);
+                }
+                if (!check_last_Seen_Exists(item.getId())) {
+                    last_seen_List.add(item);
+                    String jsonText = new Gson().toJson(last_seen_List);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("codeList", jsonText);
+                    editor.apply();
+                    editor.commit();
+                    Toast.makeText(DealDetailActivity.this,"Saved",Toast.LENGTH_SHORT).show();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
             return;
         }
+    }
+
+    boolean check_last_Seen_Exists(String id) {
+        boolean b = false;
+
+        int i = 0;
+        while (i < last_seen_List.size()) {
+
+            ProductObj obj = last_seen_List.get(i);
+            if (obj.getId().equals(id)) {
+                b = true;
+                return b;
+            }
+            i++;
+        }
+        return b;
     }
 
     private void initViewPager() {
@@ -171,7 +223,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         adapterIndicator = new AdapterViewPaggerImage(self, item.getImage_files());
         screenFavorite.setNestedScrollingEnabled(false);
         setPageAdapter();
-
     }
 
     private void setPageAdapter() {
@@ -188,7 +239,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
             public void onPageSelected(int position) {
 
-                Log.e("positionnnn", "Total " + adapterIndicator.getCount() + " selected position =" + position);
+//                Log.e("positionnnn", "Total " + adapterIndicator.getCount() + " selected position =" + position);
                 image_number_tv.setText(position + "/" + adapterIndicator.getCount());
             }
         });
@@ -207,7 +258,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
         }
     }
-
 
     @Override
     protected void initilize() {
@@ -265,7 +315,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent =new Intent(DealDetailActivity.this,CartActivity.class);
+                        Intent intent = new Intent(DealDetailActivity.this, CartActivity.class);
                         startActivity(intent);
                         finish();
                     }
@@ -275,7 +325,8 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        showDialog();
+//                        showDialog();
+                        setOrder();
                     }
                 }
         );
@@ -297,7 +348,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         imgFavorite.setOnClickListener(this);
         tvFavotite.setOnClickListener(this);
 
-
         //ImageUtil.setImage(self, img, item.getImage());
         tvName.setText(item.getTitle());
         if (item.getIs_prize() == 1) {
@@ -314,7 +364,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         } else {
             tvOldPrice.setText(" $" + StringUtil.convertNumberToString(item.getOld_price(), 2));
         }
-
 //        tvContent.setText(item.getContent());
         ImageUtil.setImage(self, imgContent, item.getImage());
 //        tvType.setText(item.getType());
@@ -330,8 +379,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
         //getFavorite();
         initViewPager();
-
-
     }
 
     public void shareText(String subject, String body) {
@@ -341,7 +388,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         txtIntent.putExtra(android.content.Intent.EXTRA_TEXT, body);
         startActivity(Intent.createChooser(txtIntent, "Share"));
     }
-
 
     @Override
     public void onLoadMore(int page) {
@@ -366,12 +412,9 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
             if (DataStoreManager.getUser() != null) {
                 addFavorite();
             }
-
         } else if (v == tvFavotite) {
             addFavorite();
         }
-
-
     }
 
     @Override
@@ -386,7 +429,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
     }
 
     private void showDialog() {
-
         Dialog_Cart dialogCart = new Dialog_Cart();
         dialogCart.show(getSupportFragmentManager(), "DialogCart");
 
@@ -411,7 +453,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                 finish();
             }
         });
-
     }
 
     public int percentPriceOldAndPriceNew(double priceOld, double priceNew) {
@@ -423,7 +464,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         int i = (int) ((priceSale / priceOld) * 100);
         return i;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -492,9 +532,9 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 
     private void addFavorite() {
         if (DataStoreManager.getUser() != null) {
-            Log.e("user_id ",DataStoreManager.getUser().getId());
-            Log.e("item_id ",item.getId());
-            Log.e("object_type","deal");
+            Log.e("user_id ", DataStoreManager.getUser().getId());
+            Log.e("item_id ", item.getId());
+            Log.e("object_type", "deal");
             RequestManger.addFavorite(DataStoreManager.getUser().getId(), item.getId(), "deal", new BaseRequest.CompleteListener() {
                 @Override
                 public void onSuccess(com.wfour.onlinestoreapp.network.ApiResponse response) {
@@ -556,7 +596,6 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                     }
                 }
 //                finish();
-
             }
 
         } else
@@ -691,7 +730,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
 //                            brand_tv.setText(item.getBrand());
 //                            stock_tv.setText(item.getQuantity());
 //                            dikirim_tv.setText(item.get);
-                            Log.e("description",item.getContent());
+                            Log.e("description", item.getContent());
                             setToolbarTitle(item.getTitle());
                             if (itemActivate == null && itemDeActivate == null) {
                                 initMenu(menu);
@@ -701,6 +740,7 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
                         }
                     }
                 }
+
                 @Override
                 public void onError() {
                     Log.e(TAG, "ERROR: GET DETAIL DEAL");
@@ -709,5 +749,66 @@ public class DealDetailActivity extends com.wfour.onlinestoreapp.base.BaseActivi
         } else {
             Log.e(TAG, "getDetailDeal: ");
         }
+    }
+
+    private ArrayList<CartObj> cartObjList;
+    private CartObj cart1;
+    private String color, size;
+
+    private void setOrder() {
+        cartObjList = CartManager.getInstance().getArray();
+        if (cartObjList.size() != 0) {
+            boolean isExist = false;
+            String id = item.getId();
+
+            for (int i = 0; i < cartObjList.size(); i++) {
+                cart1 = cartObjList.get(i);
+                if (color != null && size != null) {
+                    if (cart.getId().equals(id) && cart.getColor().equals(color) && cart.getSize().equals(size)) {
+                        isExist = true;
+                        break;
+                    }
+                } else if (color != null && size == null) {
+                    if (cart.getId().equals(id) && cart.getColor().equals(color)) {
+                        isExist = true;
+                        break;
+                    }
+                } else if (color == null && size != null) {
+                    if (cart.getId().equals(id) && cart.getSize().equals(size)) {
+                        isExist = true;
+                        break;
+                    }
+                } else {
+                    if (cart != null && cart.getId().equals(id)) {
+                        isExist = true;
+                        break;
+                    }
+                }
+            }
+            if (isExist) {
+                int number = cart.getNumber();
+                number += 1;
+                cart.setNumber(number);
+
+                double money = cart.getTotalMoney();
+                money = number * cart.getPrice();
+                cart.setTotalMoney(money);
+            } else {
+                CartManager.getInstance().addItem(new CartObj(item.getId(), item.getTitle(), item.getPrice(), item.getImage(), 1, item.getPrice(), color, size, item.getOld_price(), item.getIs_prize()));
+
+            }
+        } else {
+            CartManager.getInstance().addItem(new CartObj(item.getId(), item.getTitle(), item.getPrice(), item.getImage(), 1, item.getPrice(), color, size, item.getOld_price(), item.getIs_prize()));
+        }
+
+        doIncrease();
+    }
+
+    private void doIncrease() {
+        count = DataStoreManager.getCountCart();
+        count++;
+        //getContext().invalidateOptionsMenu();
+        DataStoreManager.saveCountCart(count);
+        Toast.makeText(DealDetailActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
     }
 }

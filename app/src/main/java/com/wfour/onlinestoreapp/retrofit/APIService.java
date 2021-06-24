@@ -1,13 +1,17 @@
 package com.wfour.onlinestoreapp.retrofit;
 
+import com.wfour.onlinestoreapp.objects.PopularProductsObj;
 import com.wfour.onlinestoreapp.retrofit.respone.BaseRespone;
 import com.wfour.onlinestoreapp.retrofit.respone.RecommendedProductResponse;
 import com.wfour.onlinestoreapp.retrofit.respone.ResponeUser;
+
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
@@ -53,10 +57,14 @@ public interface APIService {
     );
 
     @Headers({"Content-Type:application/json"})
+    @GET("ecommerce/product-list")
+    Call<RecommendedProductResponse> getRecommendedProducts(@Query("is_recomended") String is_recomended);
+
+
     @POST("ecommerce/product-list")
-    Call<RecommendedProductResponse> getRecommendedProducts(@Query("is_recomended") String is_recomended, @Query("category_id") String category_id);
+    Call<ResponseBody> getPopular(@Body Map<String, String> body);
 
     @Headers({"Content-Type:application/json"})
-    @POST("ecommerce/product-list")
-    Call<RecommendedProductResponse> getPopularProductsList(@Query("is_popular") String is_recomended, @Query("category_id") String category_id);
+    @GET("ecommerce/product-list")
+    Call<RecommendedProductResponse> getPopularProductsList(@Query("is_popular") String is_recomended);
 }

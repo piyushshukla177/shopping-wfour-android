@@ -120,6 +120,7 @@
                     app:drawable_show="@drawable/visibility" />
 
                 <EditText
+                    android:visibility="gone"
                     android:id="@+id/txt_full_et"
                     style="@style/edt_line_white"
                     android:layout_width="match_parent"

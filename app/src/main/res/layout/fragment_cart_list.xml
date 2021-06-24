@@ -23,8 +23,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:text="Karosa Kompra"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/back_imageview"
+            android:layout_marginLeft="20dp"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold"></TextView>

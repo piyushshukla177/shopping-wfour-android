@@ -65,13 +65,13 @@
             android:visibility="visible" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <com.wfour.onlinestoreapp.widgets.textview.TextViewBold
                 android:id="@+id/lbl_price"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_05x"
                 android:layout_marginBottom="@dimen/dimen_05x"

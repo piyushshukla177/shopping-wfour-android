@@ -53,6 +53,7 @@ import com.wfour.onlinestoreapp.utils.StringUtil;
 import com.wfour.onlinestoreapp.utils.map.LocationService;
 import com.wfour.onlinestoreapp.utils.map.MapsUtil;
 import com.wfour.onlinestoreapp.view.activities.ChangePassWordActivity;
+import com.wfour.onlinestoreapp.view.activities.LoginActivity;
 import com.wfour.onlinestoreapp.view.activities.MainActivity;
 import com.wfour.onlinestoreapp.view.activities.PhoneCountryListActivity;
 import com.wfour.onlinestoreapp.view.activities.SplashLoginActivity;
@@ -674,7 +675,9 @@ public class MyAccountMyInfoFragment extends BaseFragment implements View.OnClic
             final MyProgressDialog progressDialog = new MyProgressDialog(self);
             progressDialog.show();
             processBeforeLoggingOut(progressDialog);
-
+            Intent intent =new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent);
+            getActivity().finish();
         } else {
             Toast.makeText(self, R.string.msg_no_network, Toast.LENGTH_SHORT).show();
         }

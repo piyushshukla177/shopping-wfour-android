@@ -317,7 +317,6 @@
             android:textColor="@color/text_black"
             android:textSize="@dimen/text_size_normal" />
 
-
         <TextView
             android:id="@+id/lbl_update_profile"
             android:layout_width="match_parent"

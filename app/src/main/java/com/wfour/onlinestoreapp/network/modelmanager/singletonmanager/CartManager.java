@@ -57,8 +57,6 @@ public class CartManager {
                 if(productList.get(i).getIs_point()==0){
                     total2=true;
                 }
-
-
             }
         }
         if (total&&total2){
@@ -76,8 +74,6 @@ public class CartManager {
                 if(productList.get(i).getIs_point()==1){
                     total +=productList.get(i).getTotalMoney();
                 }
-
-
             }
         }
         return Math.round(total*100)/100.0d;

@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.wfour.onlinestoreapp.AppController;
 import com.wfour.onlinestoreapp.R;
+import com.wfour.onlinestoreapp.datastore.DataStoreManager;
 import com.wfour.onlinestoreapp.globals.Args;
 import com.wfour.onlinestoreapp.globals.Constants;
 import com.wfour.onlinestoreapp.globals.GlobalFunctions;
@@ -39,6 +42,7 @@ import com.wfour.onlinestoreapp.view.activities.DealDetailActivity;
 import com.wfour.onlinestoreapp.view.activities.DealsActivity;
 import com.wfour.onlinestoreapp.view.activities.ProductListActivity;
 import com.wfour.onlinestoreapp.view.activities.SubCategoryActivity;
+
 import static com.wfour.onlinestoreapp.view.fragments.HomeFragment.bannerObjs;
 
 import java.util.ArrayList;
@@ -65,23 +69,27 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
     private Intent intent;
     private RecyclerView.RecycledViewPool viewpool;
     private static ArrayList<BannerObj> listbanner;
+
     public ListAdapter(Activity activity, ArrayList<HomeObj> homeObjList, IMyOnClick onClick) {
         this.activity = activity;
         this.homeObjList = homeObjList;
         this.onClick = onClick;
         initParam(activity);
     }
+
     public ListAdapter(Activity activity, IMyOnClick onClick) {
         this.activity = activity;
 
         this.onClick = onClick;
         initParam(activity);
     }
+
     public void addList(ArrayList<HomeObj> homeObjList) {
         this.homeObjList = homeObjList;
         this.notifyDataSetChanged();
         viewpool = new RecyclerView.RecycledViewPool();
     }
+
     public void addList2(ArrayList<BannerObj> bannerObjs) {
         this.listbanner = bannerObjs;
         this.notifyDataSetChanged();
@@ -91,15 +99,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
     public int getItemViewType(int position) {
         if (position == 0) {
             return ITEM_BANNER;
-        }else if(position ==1){
+        } else if (position == 1) {
             return ITEM_CATEGORY;
-        }else if(position == 2){
+        } else if (position == 2) {
             return ITEM_NEW;
-        }else if(position == 3) {
+        } else if (position == 3) {
             return ITEM_HOT;
-        }else if(position == 4){
+        } else if (position == 4) {
             return ITEM_FEATURE;
-        }else {
+        } else {
             return TEST;
         }
     }
@@ -110,10 +118,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if(viewType == ITEM_BANNER){
+        if (viewType == ITEM_BANNER) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home, parent, false);
             return new ViewHolderHeader(view);
-        }else {
+        } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_row, parent, false);
             return new MyViewHolder(view);
         }
@@ -127,7 +135,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             viewHolder.tvName.setText(homeObj.name);
 
             if (homeObj.name.equals(AppController.getInstance().getString(R.string.PRODUTUFOUN))) {
-                Log.e(TAG, "setData: "+ new Gson().toJson(homeObj.productList) );
+                Log.e(TAG, "setData: " + new Gson().toJson(homeObj.productList));
                 viewHolder.rcvData.setAdapter(new SingleVerticalAdapter(activity, homeObj.productList, new IMyOnClick() {
                     @Override
                     public void MyOnClick(int position, ProductObj productObj) {
@@ -146,14 +154,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                         GlobalFunctions.startActivityWithoutAnimation(activity, ProductListActivity.class, bundle);
                     }
                 });
-            }
-            else if (homeObj.name.equals(AppController.getInstance().getString(R.string.CATEGORIES))) {
-//                viewHolder.tvName.setVisibility(View.GONE);
-                viewHolder.rcvData.setLayoutManager(new GridLayoutManager(activity, 2,GridLayoutManager.HORIZONTAL, false));
+            } else if (homeObj.name.equals(AppController.getInstance().getString(R.string.CATEGORIES))) {
+//              viewHolder.tvName.setVisibility(View.GONE);
+                viewHolder.rcvData.setLayoutManager(new GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false));
                 viewHolder.rcvData.setAdapter(new CategoryAdapter(activity, homeObj.categoryList, new MyOnClickCategory() {
                     @Override
                     public void onClick(Category category, int position) {
-                        if(category.getHave_child()){
+                        if (category.getHave_child()) {
                             Bundle bundle = new Bundle();
                             bundle.putString(Args.KEY_ID_PRODUCT_CATE, category.getId() + "");
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, category.getName() + "");
@@ -163,8 +170,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                                 bundle.putString(Args.TYPE_OF_SEARCH_PRODUCT, Constants.SEARCH_NEARBY);
                             }
                             GlobalFunctions.startActivityWithoutAnimation(activity, SubCategoryActivity.class, bundle);//DealsActivity
-                        }
-                        else {
+                        } else {
                             Bundle bundle = new Bundle();
                             bundle.putString(Args.KEY_ID_PRODUCT_CATE, category.getId() + "");
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, category.getName() + "");
@@ -175,15 +181,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                             }
                             GlobalFunctions.startActivityWithoutAnimation(activity, DealsActivity.class, bundle);//DealsActivity
                         }
-
                     }
                 }));
                 viewHolder.rcvData.setBackgroundColor(Color.WHITE);
                 viewHolder.relative.setVisibility(View.GONE);
-            }
-            else if (homeObj.type.equals("TYPE")) {
+            } else if (homeObj.type.equals("TYPE")) {
                 String name = homeObj.name;
-                if(homeObj.name.equals("SALE PRODUCT")){
+                if (homeObj.name.equals("SALE PRODUCT")) {
                     viewHolder.lv_count_down.setVisibility(View.VISIBLE);
                 } else {
                     viewHolder.lv_count_down.setVisibility(View.GONE);
@@ -199,7 +203,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
 //                        }
 //                    }));
 //                }
-                    viewHolder.rcvData.setAdapter(new SingleHorizontalAdapter(activity, homeObj.productList, new IMyOnClick() {
+                viewHolder.rcvData.setAdapter(new SingleHorizontalAdapter(activity, homeObj.productList, new IMyOnClick() {
                     @Override
                     public void MyOnClick(int position, ProductObj productObj) {
                         setData(productObj);
@@ -218,15 +222,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                         } else if (homeObj.name.equals(AppController.getInstance().getString(R.string.PRODUCTPROMOTION))) {
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
                             bundle.putString(Args.FILTER, "new");
-                        }
-                        else if (homeObj.name.equals("Sale Product")){
+                        } else if (homeObj.name.equals("Sale Product")) {
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
                             bundle.putString(Args.FILTER, "hot");
-                        }
-                        else if (homeObj.name.equals("REKOMENDA")){
+                        } else if (homeObj.name.equals("REKOMENDA")) {
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
                             bundle.putString(Args.FILTER, "hot");
-                        } else if (homeObj.name.equals("PRODUTU POPULAR")){
+                        } else if (homeObj.name.equals("PRODUTU POPULAR")) {
                             bundle.putString(Args.TYPE_OF_PRODUCT_NAME, homeObj.name);
                             bundle.putString(Args.FILTER, "hot");
                         }
@@ -240,7 +242,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             viewHolder.rcvData.setNestedScrollingEnabled(false);
             viewHolder.rcvData.setRecycledViewPool(viewpool);
             viewHolder.rcvData.setHasFixedSize(true);
-        } else if(holder instanceof ViewHolderHeader) {
+        } else if (holder instanceof ViewHolderHeader) {
 
             ViewHolderHeader viewholder = (ViewHolderHeader) holder;
             viewholder.setAdapter();
@@ -251,9 +253,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
     public void setData(ProductObj productObj) {
         Bundle bundle = new Bundle();
         bundle.putParcelable(Args.KEY_PRODUCT_OBJECT, productObj);
-        Log.e(TAG, "setData: "+ new Gson().toJson(productObj) );
+        Log.e(TAG, "setData: " + new Gson().toJson(productObj));
         GlobalFunctions.startActivityWithoutAnimation(activity, DealDetailActivity.class, bundle);
     }
+
     @Override
     public int getItemCount() {
 //        if (homeObjList != null)
@@ -276,13 +279,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
         RecyclerView rcvData;
         RelativeLayout relative;
 
+
         public MyViewHolder(View itemView) {
             super(itemView);
             tvMore = (TextView) itemView.findViewById(R.id.tvMore);
             tvName = (TextView) itemView.findViewById(R.id.tvName);
             rcvData = (RecyclerView) itemView.findViewById(R.id.rcv_data);
             lv_count_down = (LinearLayout) itemView.findViewById(R.id.lv_count_down);
-            relative =  itemView.findViewById(R.id.relative);
+            relative = itemView.findViewById(R.id.relative);
         }
     }
 
@@ -290,11 +294,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
         ViewPager viewPager;
         CircleIndicator circleIndicator;
         HeaderItemAdapter adapter;
+        TextView tv_account_name_profile,tv_point_profile;
 
         public ViewHolderHeader(View itemView) {
             super(itemView);
             viewPager = itemView.findViewById(R.id.view_pager);
+            tv_account_name_profile = itemView.findViewById(R.id.tv_account_name_profile);
+            tv_point_profile = itemView.findViewById(R.id.tv_point_profile);
             circleIndicator = itemView.findViewById(R.id.circle_indicator);
+            if(DataStoreManager.getUser()!=null) {
+                tv_account_name_profile.setText(DataStoreManager.getUser().getName());
+                tv_point_profile.setText("Point : " + (int)DataStoreManager.getUser().getPoint());
+            }
         }
 
         public void setAdapter() {
@@ -309,7 +320,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             private static final long DELAY = 5000;
             //private ArrayList<ProductObj> mListData;
 
-            private ArrayList<BannerObj>mListData;
+            private ArrayList<BannerObj> mListData;
             private Handler handler = new Handler();
             public ImageView imageView;
             private Runnable runnable = new Runnable() {
@@ -334,6 +345,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
             public HeaderItemAdapter(ArrayList<BannerObj> mListData) {
                 this.mListData = mListData;
             }
+
             @Override
             public int getCount() {
                 return listbanner == null ? 0 : listbanner.size();
@@ -368,7 +380,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                 container.addView(view);
 
                 return view;
-
             }
 
             @Override
@@ -381,7 +392,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.BaseViewHolder
                 handler.postDelayed(runnable, DELAY);
 
             }
-
         }
     }
 }

@@ -200,8 +200,6 @@ public class Dialog_Cart extends BottomSheetDialogFragment implements View.OnCli
             }
         } else {
             CartManager.getInstance().addItem(new CartObj(item.getId(), item.getTitle(), item.getPrice(),item.getImage(),1, item.getPrice(),color, size,item.getOld_price(),item.getIs_prize()));
-
-
         }
 
         doIncrease();
@@ -328,5 +326,4 @@ public class Dialog_Cart extends BottomSheetDialogFragment implements View.OnCli
 
         }
     }
-
 }

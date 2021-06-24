@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:scaleType="fitXY"
-        android:src="@drawable/slide_background" />
+        android:src="@drawable/slide_bg" />
 <!--    bg_header_banner-->
     <androidx.cardview.widget.CardView
         xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -100,7 +100,7 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
         initOrderHistoryDetail();
 
         rclView = findViewById(R.id.contentRcl);
-        mAdapter = new OrderDetailAdapter(self, orderDetailObjs);
+        mAdapter = new OrderDetailAdapter(self, orderDetailObjs,item.getStatus());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(self);
         rclView.setLayoutManager(layoutManager);
         rclView.setNestedScrollingEnabled(false);
@@ -113,6 +113,8 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
         info_detailRcl.setNestedScrollingEnabled(false);
         info_detailRcl.setAdapter(bill_DetailAdapter);
 
+        Log.e("statuss",item.getStatus());
+        String status = item.getStatus();
         if (item.getStatus().equals("2") || item.getStatus().equals("5") || item.getStatus().equals("1") || item.getStatus().equals("3") || "point".equals(item.getPaymentMethod())) {
             btnDeleteBill.setVisibility(View.GONE);
         } else {
@@ -143,10 +145,9 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
             } else {
                 tvDevery.setText(R.string.metode_haruka);
                 delivery.setText(R.string.enderesu_reseptor);
-
             }
+            tvStatus.setText("Pjhdkjhsjdh");
             tvShippingMethod.setText(item.getTransportType());
-
 
             if (item.getStatus().equals("0")) {
                 tvStatus.setText(getString(R.string.moving));
@@ -169,7 +170,6 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
                     tvStatus.setText(R.string.troka_ona);
                 }
             }
-
 
             if (item.getPaymentMethod().equals("cash")) {
                 tvPayMethod.setText(getString(R.string.Cash_payment_on_delivery));
@@ -200,9 +200,7 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
             onBackPressed();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
-
     }
 
     @Override
@@ -303,6 +301,7 @@ public class BillDetailActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
             if (resultCode == Activity.RESULT_OK) {
                 btnDeleteBill.setVisibility(View.GONE);

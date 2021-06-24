@@ -1,66 +1,102 @@
 package com.wfour.onlinestoreapp.view.fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.wfour.onlinestoreapp.R;
+import com.wfour.onlinestoreapp.globals.Args;
+import com.wfour.onlinestoreapp.interfaces.MyOnClickOrderHistory;
+import com.wfour.onlinestoreapp.objects.OrderObj;
+import com.wfour.onlinestoreapp.view.activities.BillDetailActivity;
+import com.wfour.onlinestoreapp.view.activities.MainActivity;
+import com.wfour.onlinestoreapp.view.adapters.BillAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link KanselaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class KanselaFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public KanselaFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment KanselaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static KanselaFragment newInstance(String param1, String param2) {
-        KanselaFragment fragment = new KanselaFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private RecyclerView contentRcl;
+    private BillAdapter mAdapter;
+    public static final int REQUEST_CODE = 100;
+    private MainActivity mMainActivity;
+    Context context;
+    public ArrayList<OrderObj> filter_list = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kansela, container, false);
+        View root = inflater.inflate(R.layout.fragment_kansela, container, false);
+        init(root);
+        return root;
     }
+    void init(View root)
+    {
+        mMainActivity = (MainActivity) getActivity();
+
+        context = getActivity();
+        contentRcl = root.findViewById(R.id.contentRcl);
+        setAdapter();
+    }
+
+    public void setAdapter() {
+        OrderObj obj;
+        filter_list.clear();
+        int i = 0;
+        while (i < BillManagementFragment.orderObjList.size()) {
+
+            obj = BillManagementFragment.orderObjList.get(i);
+
+            obj = BillManagementFragment.orderObjList.get(i);
+            if (obj.getStatus().equals("2")) {
+                filter_list.add(obj);
+            }
+//            } else if (index == 4) {
+//                obj = BillManagementFragment.orderObjList.get(i);
+//                if (obj.getStatus().equals("5")) {
+//                    filter_list.add(obj);
+//                }
+//            } else if (index == 5) {
+//                obj = BillManagementFragment.orderObjList.get(i);
+//                if (obj.getStatus().equals("2")) {
+//                    filter_list.add(obj);
+//                }
+//            } else if (index == 3) {
+//                obj = BillManagementFragment.orderObjList.get(i);
+//                if (obj.getPaymentMethod().equals("point")) {
+//                    filter_list.add(obj);
+//                }
+//
+//            }
+            i++;
+        }
+        mAdapter = new BillAdapter(mMainActivity, filter_list, new MyOnClickOrderHistory() {
+            @Override
+            public void onClick(OrderObj orderObj, int position) {
+                Intent intent = new Intent(context, BillDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(Args.KEY_PRODUCT_OBJECT, orderObj);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+        mAdapter.addList(filter_list);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
+        contentRcl.setLayoutManager(layoutManager);
+        contentRcl.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+        Log.e("filter_list_size",String.valueOf(filter_list.size()));
+    }
+
 }

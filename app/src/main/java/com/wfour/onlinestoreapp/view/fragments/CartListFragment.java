@@ -346,7 +346,7 @@ public class CartListFragment extends com.wfour.onlinestoreapp.base.BaseFragment
 
     private void setRecomendedRecyclerview() {
 
-        ApiUtils.getAPIService().getRecommendedProducts(String.valueOf(1), String.valueOf(2)).enqueue(new Callback<RecommendedProductResponse>() {
+        ApiUtils.getAPIService().getRecommendedProducts(String.valueOf(1)).enqueue(new Callback<RecommendedProductResponse>() {
             @Override
             public void onResponse(Call<RecommendedProductResponse> call, Response<RecommendedProductResponse> response) {
                 if (response.body() != null) {

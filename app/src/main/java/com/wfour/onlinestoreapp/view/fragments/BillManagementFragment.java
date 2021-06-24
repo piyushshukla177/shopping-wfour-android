@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -43,7 +44,8 @@ public class BillManagementFragment extends BaseFragment {
     //    private RecyclerView contentRcl;
     private BillAdapter mAdapter;
 
-    private ArrayList<OrderObj> orderObjList=new ArrayList<>();
+//    private ArrayList<OrderObj> orderObjList = new ArrayList<>();
+    public static ArrayList<OrderObj> orderObjList = new ArrayList<>();
 
     private MainActivity mMainActivity;
     private int count;
@@ -99,42 +101,40 @@ public class BillManagementFragment extends BaseFragment {
 //            }
 //        });
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-
-                    TabAllFragment.ttt.setAdapter(0);
-                } else if (tab.getPosition() == 1) {
-
-                    TabAllFragment.ttt.setAdapter(1);
-                } else if (tab.getPosition() == 2) {
-
-                    TabAllFragment.ttt.setAdapter(2);
-                } else if (tab.getPosition() == 3) {
-
-                    TabAllFragment.ttt.setAdapter(3);
-                }
-                else if (tab.getPosition() == 4) {
-
-                    TabAllFragment.ttt.setAdapter(4);
-                }
-                else if (tab.getPosition() == 5) {
-
-                    TabAllFragment.ttt.setAdapter(5);
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                if (tab.getPosition() == 0) {
+//
+//                    TabAllFragment.ttt.setAdapter(0);
+//                } else if (tab.getPosition() == 1) {
+//
+//                    TabAllFragment.ttt.setAdapter(1);
+//                } else if (tab.getPosition() == 2) {
+//
+//                    TabAllFragment.ttt.setAdapter(2);
+//                } else if (tab.getPosition() == 3) {
+//
+//                    TabAllFragment.ttt.setAdapter(3);
+//                } else if (tab.getPosition() == 4) {
+//
+//                    TabAllFragment.ttt.setAdapter(4);
+//                } else if (tab.getPosition() == 5) {
+//
+//                    TabAllFragment.ttt.setAdapter(5);
+//                }
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
         initData();
     }
@@ -175,8 +175,6 @@ public class BillManagementFragment extends BaseFragment {
 
     private void initData() {
         orderObjList.clear();
-        TabAllFragment.orderObjList.clear();
-        TabAllFragment.filter_list.clear();
         if (NetworkUtility.isNetworkAvailable()) {
             String id = DataStoreManager.getUser().getId();
 
@@ -187,9 +185,8 @@ public class BillManagementFragment extends BaseFragment {
                     ApiResponse response = new ApiResponse(obj);
                     if (!response.isError()) {
                         orderObjList.addAll(response.getDataList(OrderObj.class));
-                        TabAllFragment.orderObjList=orderObjList;
+//                        orderObjList = orderObjList;
                         setupViewPager(viewPager);
-
                         //                        mAdapter.addList(orderObjList);
                     }
                 }
@@ -211,11 +208,11 @@ public class BillManagementFragment extends BaseFragment {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new TabAllFragment(), "All");
-        adapter.addFragment(new TabAllFragment(), "Prosesu");
-        adapter.addFragment(new TabAllFragment(), "Haruka Ona");
-        adapter.addFragment(new TabAllFragment(), "Troka Ona");
-        adapter.addFragment(new TabAllFragment(), "Selu Ona");
-        adapter.addFragment(new TabAllFragment(), "Kansela");
+        adapter.addFragment(new ProcesuFragment(), "Prosesu");
+        adapter.addFragment(new HarukaOnaFragment(), "Haruka Ona");
+        adapter.addFragment(new TrokaOnaFragment(), "Troka Ona");
+        adapter.addFragment(new SeluOnaFragment(), "Selu Ona");
+        adapter.addFragment(new KanselaFragment(), "Kansela");
 
         viewPager.setAdapter(adapter);
     }

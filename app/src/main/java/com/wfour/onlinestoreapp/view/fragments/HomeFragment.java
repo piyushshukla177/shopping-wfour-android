@@ -22,6 +22,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
@@ -41,6 +44,7 @@ import com.wfour.onlinestoreapp.objects.Category;
 import com.wfour.onlinestoreapp.objects.ColorProduct;
 import com.wfour.onlinestoreapp.objects.DealObj;
 import com.wfour.onlinestoreapp.objects.HomeObj;
+import com.wfour.onlinestoreapp.objects.PopularProductsObj;
 import com.wfour.onlinestoreapp.objects.ProductObj;
 import com.wfour.onlinestoreapp.objects.RecomendedObj;
 import com.wfour.onlinestoreapp.objects.SizeProduct;
@@ -69,12 +73,18 @@ import com.wfour.onlinestoreapp.view.adapters.RecomendedListAdapter;
 import com.wfour.onlinestoreapp.view.chat.mainchat.LoginChatActivity;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.relex.circleindicator.CircleIndicator;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -134,9 +144,9 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     RecyclerView recomended_recyclerview;
     private RecomendedListAdapter recomendedAdapter;
     SwipeRefreshLayout swipe_refresh_layout;
+    TextView tv_account_name_profile;
 
     public static HomeFragment newInstance(int type) {
-
         Bundle args = new Bundle();
         args.putInt(Args.TYPE_OF_CATEGORY, type);
         HomeFragment fragment = new HomeFragment();
@@ -158,6 +168,8 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         View view = super.onCreateView(inflater, container, savedInstanceState);
         mMainActivity = (MainActivity) getActivity();
         swipe_refresh_layout = view.findViewById(R.id.swipe_refresh_layout);
+        tv_account_name_profile = view.findViewById(R.id.tv_account_name_profile);
+
         swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -199,7 +211,6 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         btnNotifyBar.setVisibility(View.VISIBLE);
         toolbars.setVisibility(View.VISIBLE);
         toolbars.setBackgroundResource(R.drawable.gradient_toolbar_shape);
-
     }
 
     public void initSearch(View view) {
@@ -273,6 +284,9 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         count = DataStoreManager.getCountCart();
         getActivity().invalidateOptionsMenu();
 //        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
+//        tv_account_name_profile=view.findViewById(R.id.tv_account_name_profile);
+//        tv_account_name_profile.setText("Piyush");
     }
 
     @Override
@@ -314,6 +328,7 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                     JSONObject jsonObject = (JSONObject) object;
                     ApiResponse response = new ApiResponse(jsonObject);
                     productObjList = new ArrayList<>();
+                    Log.e("homeee_response", response.toString());
                     if (!response.isError()) {
                         homeObj = response.getDataObject(HomeObj.class);
                         convertData();
@@ -465,11 +480,11 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
         recomendedjList.clear();
         recomendedjList = new ArrayList<>();
 
-        ApiUtils.getAPIService().getRecommendedProducts(String.valueOf(1), String.valueOf(2)).enqueue(new Callback<RecommendedProductResponse>() {
+        ApiUtils.getAPIService().getRecommendedProducts(String.valueOf(1)).enqueue(new Callback<RecommendedProductResponse>() {
             @Override
             public void onResponse(Call<RecommendedProductResponse> call, Response<RecommendedProductResponse> response) {
                 if (response.body() != null) {
-                    Log.e("TAG", "onResponse: " + new Gson().toJson(response.body()));
+                    Log.e("TAG", "recomenda" + new Gson().toJson(response.body()));
                     if (response.body().getData() != null) {
                         RecommendedProductResponse m = response.body();
                         RecomendedObj obj;
@@ -549,18 +564,87 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
     private void setPopularRecyclerview() {
         polularList.clear();
         polularList = new ArrayList<>();
+        Map<String, String> requestBody = new HashMap<>();
+        requestBody.put("apikey", "36638d85c67dc3ceab7901c2bc9bb36b");
+        requestBody.put("domain", "@biz");
 
-        ApiUtils.getAPIService().getPopularProductsList(String.valueOf(1), String.valueOf(3)).enqueue(new Callback<RecommendedProductResponse>() {
+        ApiUtils.getAPIService().getPopular(requestBody).enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<RecommendedProductResponse> call, Response<RecommendedProductResponse> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.body() != null) {
-                    Log.e("TAG", "onResponse: " + new Gson().toJson(response.body()));
-                    if (response.body().getData() != null) {
-                        RecommendedProductResponse m = response.body();
+                    Log.e("TAG", "popular" + new Gson().toJson(response.body()));
+                    if (response.isSuccessful()) {
+                        ResponseBody m = response.body();
+                        try {
+                            JSONObject obj = new JSONObject(response.body().string());
+                            if (obj.getString("status").equals("SUCCESS")) {
+
+                                ProductObj p;
+                                JSONArray array = obj.getJSONArray("data");
+                                for (int i = 0; i < array.length(); i++) {
+                                    JSONObject item_obj = (JSONObject) array.get(i);
+                                    p = new ProductObj();
+                                    ArrayList image_files = new ArrayList();
+                                    p.setApplication_id(String.valueOf(item_obj.getString("application_id")));
+                                    p.setBanner(item_obj.getString("banner"));
+                                    p.setBarcode_image(item_obj.getString("barcode_image"));
+                                    p.setBrand(item_obj.getString("brand"));
+                                    p.setCategory_id(item_obj.getString("category_id"));
+                                    p.setCode(item_obj.getString("code"));
+                                    p.setContent(item_obj.getString("content"));
+                                    p.setCost(item_obj.getString("cost"));
+                                    p.setCount_comments(item_obj.getString("count_comments"));
+                                    p.setCount_likes(item_obj.getString("count_likes"));
+                                    p.setCount_purchase(item_obj.getString("count_purchase"));
+                                    p.setCount_rates(item_obj.getString("count_rates"));
+                                    p.setCount_views(item_obj.getString("count_views"));
+                                    p.setCreated_date(item_obj.getString("created_date"));
+                                    p.setCreated_user(item_obj.getString("created_user"));
+                                    p.setCurrency(item_obj.getString("currency"));
+                                    p.setId(item_obj.getString("id"));
+                                    p.setDiscount(item_obj.getString("discount"));
+                                    p.setImage(item_obj.getString("image"));
+                                    p.setIs_active(Integer.parseInt(item_obj.getString("is_active")));
+                                    p.setIs_favourite(Integer.parseInt(item_obj.getString("is_favourite")));
+                                    p.setIs_hot(Integer.parseInt(item_obj.getString("is_hot")));
+                                    p.setIs_prize(Integer.parseInt(item_obj.getString("is_prize")));
+                                    p.setIs_promotion(item_obj.getString("is_promotion"));
+                                    p.setIs_tax_included(item_obj.getString("is_tax_included"));
+                                    p.setIs_top(Integer.parseInt(item_obj.getString("is_top")));
+                                    p.setModified_date(item_obj.getString("modified_date"));
+                                    p.setModified_user(item_obj.getString("modified_user"));
+                                    p.setQuantity(item_obj.getString("quantity"));
+                                    p.setPromotion_id(item_obj.getString("is_promotion"));
+                                    p.setOverview(item_obj.getString("overview"));
+                                    p.setUnit(item_obj.getString("unit"));
+                                    p.setType(item_obj.getString("type"));
+                                    p.setTitle(item_obj.getString("title"));
+                                    p.setThumbnail(item_obj.getString("thumbnail"));
+                                    p.setPrice(Double.parseDouble(item_obj.getString("price")));
+                                    p.setOld_price(Double.parseDouble(item_obj.getString("old_price")));
+                                    image_files = new ArrayList();
+                                    JSONArray image_array = item_obj.getJSONArray("image_files");
+                                    for (int j = 0; j < image_array.length(); j++) {
+                                        image_files.add(image_array.get(j));
+                                    }
+                                    ArrayList<SizeProduct> size_list = new ArrayList<>();
+                                    ArrayList<ColorProduct> color_list = new ArrayList<>();
+                                    p.setSizes(size_list);
+                                    p.setColors(color_list);
+                                    p.setImage_files(image_files);
+                                    polularList.add(p);
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+//                        PopularProductsObj m = response.body();
                         RecomendedObj obj;
                         int i = 0;
                         ProductObj p;
-                        while (i < m.getData().size()) {
+                        /*while (i < m.getData().size()) {
                             p = new ProductObj();
                             ArrayList image_files = new ArrayList();
                             p.setApplication_id(String.valueOf(m.getData().get(i).getApplication_id()));
@@ -610,20 +694,18 @@ public class HomeFragment extends BaseFragment implements IOnItemClickListener, 
                             p.setColors(color_list);
                             p.setImage_files(image_files);
                             polularList.add(p);
-
                             i++;
-                        }
+                        }*/
                         homeObjList.add(new HomeObj("PRODUTU POPULAR", "TYPE", polularList));
                         listAdapter.notifyDataSetChanged();
 //                        Log.e("homeobjectlist", String.valueOf(homeObjList.size()));
-
 //                        listAdapter.addList(homeObjList);
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<RecommendedProductResponse> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Log.e("TAG", "onFailure: " + t.getMessage());
             }
         });

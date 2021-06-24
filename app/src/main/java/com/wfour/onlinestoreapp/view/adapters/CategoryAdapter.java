@@ -32,6 +32,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         this.onclick = onclick;
         initParam(context);
     }
+
     public void addList(ArrayList<Category> listData) {
         this.listData = listData;
         this.notifyDataSetChanged();
@@ -41,6 +42,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         //h = AppUtil.getScreenHeight(context);
         w = AppUtil.getScreenHeight(context);
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -62,7 +64,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         holder.tvName.setText(item.getName());
         ImageUtil.setImage(context, holder.imgAvatar, item.getImage());
 
-//        holder.imgAvatar.setImageResource(item.getImage());
+//      holder.imgAvatar.setImageResource(item.getImage());
         Log.d( "onBindViewHolder", item.getImage()+ "");
 //        holder.cardView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -83,7 +85,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return (listData == null) ? 0: listData.size();
     }
 

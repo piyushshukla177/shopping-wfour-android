@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
+    android:layout_height="250dp"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,59 +15,61 @@
             android:layout_height="match_parent" />
 
         <me.relex.circleindicator.CircleIndicator
-            android:layout_alignParentBottom="true"
             android:id="@+id/circle_indicator"
-            app:ci_drawable="@drawable/indicator_drawble"
             android:layout_width="wrap_content"
-            android:layout_marginBottom="@dimen/dimen_3x"
             android:layout_height="@dimen/dimen_3x"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/dimen_3x">
-        </me.relex.circleindicator.CircleIndicator>
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dimen_3x"
+            android:layout_marginBottom="@dimen/dimen_3x"
+            app:ci_drawable="@drawable/indicator_drawble"></me.relex.circleindicator.CircleIndicator>
 
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        android:layout_marginRight="15dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="5dp"
-        android:elevation="10dp">
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1">
+
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_account_name_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Melania Flora"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="User" />
 
             </LinearLayout>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="0"
-            android:background="@color/btn_send_disabled">
 
-        </View>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0"
+                android:background="@color/btn_send_disabled"></View>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -76,17 +78,18 @@
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        app:srcCompat="@drawable/ic_coin"
                         android:layout_centerInParent="true"
                         android:layout_marginRight="10dp"
-                        android:layout_toLeftOf="@+id/tv_point_profile"/>
+                        android:layout_toLeftOf="@+id/tv_point_profile"
+                        app:srcCompat="@drawable/ic_coin" />
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_point_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Point : 7000"
+                        android:layout_centerInParent="true"
                         android:gravity="center"
-                        android:layout_centerInParent="true" />
+                        android:text="Point : 0" />
                 </RelativeLayout>
 
             </LinearLayout>

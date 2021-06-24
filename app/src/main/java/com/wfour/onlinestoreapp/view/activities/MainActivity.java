@@ -187,7 +187,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         super.onCreate(savedInstanceState);
         //initGoogleApiClient();
         // Get saved instances
-
+//        tv_account_name_profile = findViewById(R.id.tv_account_name_profile);
+//        tv_point_profile = findViewById(R.id.tv_point_profile);
+//        tv_account_name_profile.setText("Piyush");
         if (savedInstanceState != null) {
             mFavoriteFragment = (FragmentFavorite) getSupportFragmentManager().getFragment(savedInstanceState, FRAG_HOME);
             mFrgDealManager = (DealManagerFragment) getSupportFragmentManager().getFragment(savedInstanceState, FRAG_DEAL_MANAGER);

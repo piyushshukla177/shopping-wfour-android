@@ -357,6 +357,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         //notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     private void createNotificationChannel() {
         NotificationManager
@@ -376,4 +377,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         mChannel.setShowBadge(false);
         mNotificationManager.createNotificationChannel(mChannel);
     }
+
+
 }

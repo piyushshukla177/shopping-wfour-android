@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.wfour.onlinestoreapp.AppController;
 import com.wfour.onlinestoreapp.R;
 import com.wfour.onlinestoreapp.objects.OrderDetailObj;
 import com.wfour.onlinestoreapp.utils.ImageUtil;
@@ -23,9 +24,11 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
 
     private ArrayList<OrderDetailObj> orderDetailObjs;
     private Context context;
+    private String status;
 
-    public OrderDetailAdapter(Context context, ArrayList<OrderDetailObj> orderDetailObjs) {
+    public OrderDetailAdapter(Context context, ArrayList<OrderDetailObj> orderDetailObjs,String status) {
         this.context = context;
+        this.status = status;
         this.orderDetailObjs = orderDetailObjs;
     }
 
@@ -61,7 +64,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
             holder.tvOldPrice.setText(" $" + StringUtil.convertNumberToString(orderDetailObj.getOld_price(), 2));
         }
         holder.tvNumber.setText(String.valueOf(orderDetailObj.getQuantity()));
-        holder.tvStatus.setText("Prosesu");
+//        holder.tvStatus.setText(status);
         ImageUtil.setImage(context, holder.img, orderDetailObj.getImage());
         if (orderDetailObj.getSize() == null) {
             holder.lnlSize.setVisibility(View.GONE);
@@ -75,6 +78,28 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
         }
         holder.tvSize.setText(orderDetailObj.getSize());
         holder.tvColor.setText(orderDetailObj.getColor());
+
+        if (status.equals("0")) {
+            holder.tvStatus.setText(context.getString(R.string.moving));
+        } else if (status.equals("1")) {
+            holder.tvStatus.setText(R.string.appoved);
+        } else if (status.equals("2")) {
+            holder.tvStatus.setText(AppController.getInstance().getString(R.string.canceled));
+        } else if (status.equals("3")) {
+            holder.tvStatus.setText(R.string.haruka_ona);
+//            if (item.getPaymentMethod().equals("point")) {
+//                tvStatus.setText(R.string.troka_ona);
+//            }
+        } else if (status.equals("4")) {
+            holder.tvStatus.setText(AppController.getInstance().getString(R.string.not_paid));
+        } else if (status.equals("5")) {
+            holder.tvStatus.setText(R.string.delivery);
+        } else {
+            holder.tvStatus.setText(AppController.getInstance().getString(R.string.rejected));
+//            if (item.getPaymentMethod().equals("point")) {
+//                tvStatus.setText(R.string.troka_ona);
+//            }
+        }
     }
 
     @Override
